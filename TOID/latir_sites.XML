@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root>
+<SITE Name="toid" Server="localhost" DB="toid" USER="root" PASSWORD="" TIMEOUT="1000" PROVIDER="mysql" AT="a" INTEGRATED="False" INTEGRATEDARM="False" IMAGES="C:\LATIR\Generated\Generated Dlls\Images\" LAYOUTS="C:\LATIR\Generated\Generated Dlls\Layouts\" TEMP="" FUNC="" PROC="" KERNEL="" />
+<SITE Name="toid_ET" Server="ET55" DB="toid" USER="root" PASSWORD="3420890" TIMEOUT="1000" PROVIDER="mysql" AT="a" INTEGRATED="False" INTEGRATEDARM="False" IMAGES="C:\LATIR\Generated\Generated Dlls\Images\" LAYOUTS="C:\LATIR\Generated\Generated Dlls\Layouts\" TEMP="" FUNC="" PROC="" KERNEL="" />
+
+</root>

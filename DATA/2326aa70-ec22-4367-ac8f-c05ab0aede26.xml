@@ -1,0 +1,47 @@
+<root>
+  <APPLICATION ID="2326aa70-ec22-4367-ac8f-c05ab0aede26" TYPENAME="MTZJrnl" NAME="MTZ2JOB" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="5ae68fb1-b4b2-4d31-be9d-e242468563b2" Deleted="False" IsLocked="0" RetriveTime="636090453014155175" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Отложенные обработки" the_Alias="Отложенные обработки" TheComment="Журнал для документов типа: Специализированный документ, который описывает набор событий, которые должны быть обработаны автоматически при наступлении определенного момента. Например, ввод в действие подписанного приказа." jrnlIconCls="" UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="747fc17b-1834-450c-8a9d-30004af2af38" Deleted="False" IsLocked="0" RetriveTime="636090453014436309" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTOMTZ2JOB_DEF" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="2c31c34b-8443-4723-ae65-f1212f93613e" Deleted="False" IsLocked="0" RetriveTime="636090453014805979" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="7" name="Обработан" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="a15bbeb1-caf2-457b-b0f7-8bf79ca59a5b" Deleted="False" IsLocked="0" RetriveTime="636090453015092670" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="747fc17b-1834-450c-8a9d-30004af2af38" ViewField="MTZ2JOB_DEF_Processed" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="00193558-281d-486c-825a-9c6914755f3b" Deleted="False" IsLocked="0" RetriveTime="636090453014805979" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" name="Тип события" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="73605e7d-b951-479e-80bd-92c6ce65d2b5" Deleted="False" IsLocked="0" RetriveTime="636090453015132669" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="747fc17b-1834-450c-8a9d-30004af2af38" ViewField="MTZ2JOB_DEF_EvenType" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="d3b2e769-7b54-4fbf-b085-7cb78646938f" Deleted="False" IsLocked="0" RetriveTime="636090453014805979" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="5" name="Состояние после обработки" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="62cea2a1-36a2-4fe7-a58b-d7e1c4f830f5" Deleted="False" IsLocked="0" RetriveTime="636090453015162665" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="747fc17b-1834-450c-8a9d-30004af2af38" ViewField="MTZ2JOB_DEF_NextState" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="e4c84f77-b74e-44a4-aee7-89368fc37dcc" Deleted="False" IsLocked="0" RetriveTime="636090453014805979" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="6" name="Момент обработки" ColumnAlignment="0" ColSort="2" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="e65fffa7-0db7-43ba-b790-950b39f426d5" Deleted="False" IsLocked="0" RetriveTime="636090453015182655" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="747fc17b-1834-450c-8a9d-30004af2af38" ViewField="MTZ2JOB_DEF_ProcessDate" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="e741fb85-6bad-4370-ac59-ed95ebedabe8" Deleted="False" IsLocked="0" RetriveTime="636090453014805979" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" name="Объект - причина события" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="19ed0bd0-9e21-4c38-ab66-f7a5ab4d358f" Deleted="False" IsLocked="0" RetriveTime="636090453015202482" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="747fc17b-1834-450c-8a9d-30004af2af38" ViewField="MTZ2JOB_DEF_ThruObject" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="1d406a90-abdc-40c5-8579-ee7e73c7ec25" Deleted="False" IsLocked="0" RetriveTime="636090453014805979" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="4" name="Состояние - причина" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="e42d76b1-e8d0-4782-8ed5-1fdaf5003ee0" Deleted="False" IsLocked="0" RetriveTime="636090453015367273" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="747fc17b-1834-450c-8a9d-30004af2af38" ViewField="MTZ2JOB_DEF_ThruState" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="0b9181e7-f3e9-40ba-8e94-bb277e7562a3" Deleted="False" IsLocked="0" RetriveTime="636090453014805979" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="Отложено до" ColumnAlignment="0" ColSort="2" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="dcfd5714-03e9-4582-9898-7389fe9fb359" Deleted="False" IsLocked="0" RetriveTime="636090453015387277" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="747fc17b-1834-450c-8a9d-30004af2af38" ViewField="MTZ2JOB_DEF_EventDate" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

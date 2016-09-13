@@ -1,0 +1,32 @@
+<root>
+  <APPLICATION ID="ec9a627d-0aab-499f-be3e-6a8833329cf0" TYPENAME="MTZJrnl" NAME="STDInfoStore" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="d7d9afee-cbf4-456d-a938-28b68c47909a" Deleted="False" IsLocked="0" RetriveTime="636090453018375638" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Каталог" the_Alias="Каталог" TheComment="Журнал для документов типа: " jrnlIconCls="" UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="98496b84-d452-40a9-8822-1df33bd16c09" Deleted="False" IsLocked="0" RetriveTime="636090453018395628" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTOInfoStoreDef" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="63c41718-eba3-46f5-9db2-55f256c69ca6" Deleted="False" IsLocked="0" RetriveTime="636090453018425621" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="4" name="Пользователь" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="ffc73d1c-0aaa-4ad9-9162-2a0b548caa77" Deleted="False" IsLocked="0" RetriveTime="636090453018445629" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="98496b84-d452-40a9-8822-1df33bd16c09" ViewField="InfoStoreDef_TheUser" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="42dccc81-2319-40d0-bb59-aef0b640e92a" Deleted="False" IsLocked="0" RetriveTime="636090453018425621" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" name="Название" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="9d1b4cfe-aacf-4ca8-bedb-b25fdb6c69f8" Deleted="False" IsLocked="0" RetriveTime="636090453018475640" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="98496b84-d452-40a9-8822-1df33bd16c09" ViewField="InfoStoreDef_Name" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="a18ef0b3-6cb0-4c59-930a-25c9df30ceee" Deleted="False" IsLocked="0" RetriveTime="636090453018425621" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" name="Тип каталога" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="5090403c-fcf7-4ad9-b4ea-3a5e200e75dc" Deleted="False" IsLocked="0" RetriveTime="636090453018485623" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="98496b84-d452-40a9-8822-1df33bd16c09" ViewField="InfoStoreDef_InfoStoreType" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="1f7a78ef-6445-48e3-b12a-43e7f72ecebe" Deleted="False" IsLocked="0" RetriveTime="636090453018425621" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="Группа" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="82938289-8525-4c94-9bb9-b12fa70af57e" Deleted="False" IsLocked="0" RetriveTime="636090453018505642" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="98496b84-d452-40a9-8822-1df33bd16c09" ViewField="InfoStoreDef_TheGroup" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

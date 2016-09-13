@@ -1,0 +1,17 @@
+<root>
+  <APPLICATION ID="66181c08-337a-4019-8e46-63de1e044637" TYPENAME="MTZJrnl" NAME="tod" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="2607f13f-254b-4775-bd6a-612750889985" Deleted="False" IsLocked="0" RetriveTime="636090453019373253" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Справочник" the_Alias="Справочник" TheComment="Журнал для документов типа: " jrnlIconCls="" UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="8bb8b787-69af-427a-8e70-70bfdadca103" Deleted="False" IsLocked="0" RetriveTime="636090453019393234" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTOtod_model" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="fe93ad92-7582-42d2-8199-285f829b1cad" Deleted="False" IsLocked="0" RetriveTime="636090453019413247" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="Название" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="496b3206-03f4-43b8-9a05-c121446fc14f" Deleted="False" IsLocked="0" RetriveTime="636090453019433265" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="8bb8b787-69af-427a-8e70-70bfdadca103" ViewField="tod_model_Name" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

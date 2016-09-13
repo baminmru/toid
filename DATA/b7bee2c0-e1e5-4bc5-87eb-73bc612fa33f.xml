@@ -1,0 +1,14 @@
+<root>
+  <APPLICATION ID="b7bee2c0-e1e5-4bc5-87eb-73bc612fa33f" TYPENAME="MTZFltr" NAME="tod" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Filters_COL IsLocked="0">
+      <Filters ID="9fed1669-b828-497e-82fc-c0275d259935" Deleted="False" IsLocked="0" RetriveTime="636090453404490038" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="tod" TheCaption="Фильтр для Справочник" TheComment="" />
+    </Filters_COL>
+    <FilterFieldGroup_COL IsLocked="0">
+      <FilterFieldGroup ID="929ff5a0-adfe-4da2-818d-012885257a1e" Deleted="False" IsLocked="0" RetriveTime="636090453404510205" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="0" Name="fGroup" Caption="Модели станков" AllowIgnore="0">
+        <FileterField_COL IsLocked="0">
+          <FileterField ID="dbb71ac8-cbfd-4362-bd16-4b04ff487e5d" Deleted="False" IsLocked="0" RetriveTime="636090453404540188" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="0" Name="tod_model_Name" Caption="Название" FieldType="e776e448-f532-417d-b8d7-7d5b47fccd6f" FieldSize="120" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+        </FileterField_COL>
+      </FilterFieldGroup>
+    </FilterFieldGroup_COL>
+  </APPLICATION>
+</root>

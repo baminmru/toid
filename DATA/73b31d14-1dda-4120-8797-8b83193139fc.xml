@@ -1,0 +1,16 @@
+<root>
+  <APPLICATION ID="73b31d14-1dda-4120-8797-8b83193139fc" TYPENAME="MTZFltr" NAME="totask" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Filters_COL IsLocked="0">
+      <Filters ID="1b005f36-331c-42ce-9ac0-afe71dd8ceff" Deleted="False" IsLocked="0" RetriveTime="636090453404970191" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="totask" TheCaption="Фильтр для Задача" TheComment="" />
+    </Filters_COL>
+    <FilterFieldGroup_COL IsLocked="0">
+      <FilterFieldGroup ID="f8fc30fa-109b-40c9-9c2c-78ef93430882" Deleted="False" IsLocked="0" RetriveTime="636090453404980189" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="0" Name="fGroup" Caption="Описание" AllowIgnore="0">
+        <FileterField_COL IsLocked="0">
+          <FileterField ID="801f2d50-468d-4cf6-a85c-16165d56ffbe" Deleted="False" IsLocked="0" RetriveTime="636090453404990023" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" Name="to_taskinfo_oper" Caption="Оператор" FieldType="9465f49d-b492-4db3-8052-290bec7e9e2b" FieldSize="0" RefType="2" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="8f0075de-45b7-48e7-b188-9af3edfa6cfd" ValueArray="0" />
+          <FileterField ID="b9d97651-8765-4fb4-8529-2810baef189e" Deleted="False" IsLocked="0" RetriveTime="636090453404990023" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="0" Name="to_taskinfo_theMachine" Caption="Станок" FieldType="9465f49d-b492-4db3-8052-290bec7e9e2b" FieldSize="0" RefType="2" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="882cbdbc-e3ab-484b-a7fb-ca8ccefc8465" ValueArray="0" />
+          <FileterField ID="5e22b7ba-0c9c-485a-ad57-afc468ac727e" Deleted="False" IsLocked="0" RetriveTime="636090453405000188" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" Name="to_taskinfo_theCard" Caption="Диагностическая карта" FieldType="9465f49d-b492-4db3-8052-290bec7e9e2b" FieldSize="0" RefType="2" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="6b9e6113-d992-48fc-9e2c-eeef3c24c807" ValueArray="0" />
+        </FileterField_COL>
+      </FilterFieldGroup>
+    </FilterFieldGroup_COL>
+  </APPLICATION>
+</root>

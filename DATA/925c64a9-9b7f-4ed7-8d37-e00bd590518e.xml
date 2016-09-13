@@ -1,0 +1,27 @@
+<root>
+  <APPLICATION ID="925c64a9-9b7f-4ed7-8d37-e00bd590518e" TYPENAME="MTZJrnl" NAME="tocard" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="bba08ced-bd11-4338-8725-4b3c1177e9d0" Deleted="False" IsLocked="0" RetriveTime="636090453019063237" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Диагностическая карта" the_Alias="Диагностическая карта" TheComment="Журнал для документов типа: " jrnlIconCls="" UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="6147322d-6bd5-4e62-bdba-a2c287c87f02" Deleted="False" IsLocked="0" RetriveTime="636090453019083241" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTOto_cardinfo" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="69954421-4e88-4e1d-ac47-249d00dcf0b8" Deleted="False" IsLocked="0" RetriveTime="636090453019113251" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" name="Дата составления карты" ColumnAlignment="0" ColSort="2" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="d3788356-8670-4a27-8260-2e699432a502" Deleted="False" IsLocked="0" RetriveTime="636090453019133232" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="6147322d-6bd5-4e62-bdba-a2c287c87f02" ViewField="to_cardinfo_card_date" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="751d4e21-082b-4a4f-ae52-39f6969abd77" Deleted="False" IsLocked="0" RetriveTime="636090453019113251" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="Станок" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="17ca5b74-08d0-4027-97b1-4c3d24b3dccc" Deleted="False" IsLocked="0" RetriveTime="636090453019162730" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="6147322d-6bd5-4e62-bdba-a2c287c87f02" ViewField="to_cardinfo_the_machine" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="9cfd459c-5f1f-49c0-ac54-272e1ca12735" Deleted="False" IsLocked="0" RetriveTime="636090453019113251" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" name="Архивная карта" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="6d54a6e1-30ce-490a-9a01-54eaca94bcc4" Deleted="False" IsLocked="0" RetriveTime="636090453019183242" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="6147322d-6bd5-4e62-bdba-a2c287c87f02" ViewField="to_cardinfo_card_archived" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

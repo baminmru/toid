@@ -1,0 +1,17 @@
+<root>
+  <APPLICATION ID="57e64a7a-ec69-470a-bf5f-a33b72a2afd6" TYPENAME="MTZFltr" NAME="tosched" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Filters_COL IsLocked="0">
+      <Filters ID="f659a693-a55c-4e44-9f68-1b2c3eaaed59" Deleted="False" IsLocked="0" RetriveTime="636090453404830028" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="tosched" TheCaption="Фильтр для Расписание ТО" TheComment="" />
+    </Filters_COL>
+    <FilterFieldGroup_COL IsLocked="0">
+      <FilterFieldGroup ID="cf22f6f1-36f6-451e-9462-a3266c04369c" Deleted="False" IsLocked="0" RetriveTime="636090453404840025" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="0" Name="fGroup" Caption="Описание" AllowIgnore="0">
+        <FileterField_COL IsLocked="0">
+          <FileterField ID="cace8431-61b6-41dd-bb3d-d43670a57147" Deleted="False" IsLocked="0" RetriveTime="636090453404850372" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" Name="to_schedinfo_dfrom_LE" Caption="С по" FieldType="7c62a262-098d-46a5-afdc-c0286c87edcc" FieldSize="0" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+          <FileterField ID="86e40d42-0d8e-473c-9ddb-7492c36c809a" Deleted="False" IsLocked="0" RetriveTime="636090453404850372" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="0" Name="to_schedinfo_dfrom_GE" Caption="С C" FieldType="7c62a262-098d-46a5-afdc-c0286c87edcc" FieldSize="0" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+          <FileterField ID="fe3d257c-2993-46df-a172-7b06e7281d18" Deleted="False" IsLocked="0" RetriveTime="636090453404860384" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" Name="to_schedinfo_dto_GE" Caption="По C" FieldType="7c62a262-098d-46a5-afdc-c0286c87edcc" FieldSize="0" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+          <FileterField ID="83d93f86-f5f8-4e47-845d-a3106b67d252" Deleted="False" IsLocked="0" RetriveTime="636090453404860384" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" Name="to_schedinfo_dto_LE" Caption="По по" FieldType="7c62a262-098d-46a5-afdc-c0286c87edcc" FieldSize="0" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+        </FileterField_COL>
+      </FilterFieldGroup>
+    </FilterFieldGroup_COL>
+  </APPLICATION>
+</root>

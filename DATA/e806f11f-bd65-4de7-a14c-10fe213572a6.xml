@@ -1,0 +1,27 @@
+<root>
+  <APPLICATION ID="e806f11f-bd65-4de7-a14c-10fe213572a6" TYPENAME="MTZJrnl" NAME="totask" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="9518e6a7-cb36-4034-aaaa-418fc62ad317" Deleted="False" IsLocked="0" RetriveTime="636090453020213303" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Задача" the_Alias="Задача" TheComment="Журнал для документов типа: " jrnlIconCls=" " UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="2562fa6f-0a24-4115-b4d5-b4aff53c75f9" Deleted="False" IsLocked="0" RetriveTime="636090453020232780" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTOto_taskinfo" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="0ef94d79-b88b-4456-a191-78f0f089cf85" Deleted="False" IsLocked="0" RetriveTime="636090453020253307" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" name="Диагностическая карта" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="9d4a2606-a45e-42d1-aed6-11f1c986fe66" Deleted="False" IsLocked="0" RetriveTime="636090453020283308" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="2562fa6f-0a24-4115-b4d5-b4aff53c75f9" ViewField="to_taskinfo_theCard" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="00b4c5f1-3ee5-402b-b492-018ca4e9d7c8" Deleted="False" IsLocked="0" RetriveTime="636090453020263295" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" name="Оператор" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="4e96dcfb-b3c6-4506-9f4b-94a15507aae7" Deleted="False" IsLocked="0" RetriveTime="636090453020303321" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="2562fa6f-0a24-4115-b4d5-b4aff53c75f9" ViewField="to_taskinfo_oper" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="ba28c1fb-ad32-4e04-a62f-7faba22fd5a1" Deleted="False" IsLocked="0" RetriveTime="636090453020263295" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="Станок" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="405df7a7-400d-4065-b698-6a1bd019d992" Deleted="False" IsLocked="0" RetriveTime="636090453020313309" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="2562fa6f-0a24-4115-b4d5-b4aff53c75f9" ViewField="to_taskinfo_theMachine" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

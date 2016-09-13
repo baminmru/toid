@@ -1,0 +1,18 @@
+<root>
+  <APPLICATION ID="c327c18d-bdf2-497a-8982-91cfc689beaa" TYPENAME="MTZFltr" NAME="toop" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Filters_COL IsLocked="0">
+      <Filters ID="bb247076-410b-459a-ae71-3ad7a2ffe9e6" Deleted="False" IsLocked="0" RetriveTime="636090453404680174" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="toop" TheCaption="Фильтр для Оператор" TheComment="" />
+    </Filters_COL>
+    <FilterFieldGroup_COL IsLocked="0">
+      <FilterFieldGroup ID="72577439-aa5c-4f51-a0fc-3a4a4547e7be" Deleted="False" IsLocked="0" RetriveTime="636090453404690167" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="0" Name="fGroup" Caption="Оператор" AllowIgnore="0">
+        <FileterField_COL IsLocked="0">
+          <FileterField ID="2934a602-0f0f-44d4-a458-ba21da8b1461" Deleted="False" IsLocked="0" RetriveTime="636090453404709984" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" Name="to_oper_tnum" Caption="Табельный номер" FieldType="e776e448-f532-417d-b8d7-7d5b47fccd6f" FieldSize="20" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+          <FileterField ID="d4861540-692c-49b4-a4ee-6a6f77df727b" Deleted="False" IsLocked="0" RetriveTime="636090453404709984" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="4" Name="to_oper_login" Caption="Логин" FieldType="e776e448-f532-417d-b8d7-7d5b47fccd6f" FieldSize="64" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+          <FileterField ID="7bc68596-ee8a-4b2b-819b-269676f8ffdb" Deleted="False" IsLocked="0" RetriveTime="636090453404709984" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" Name="to_oper_SurName" Caption="Отчество" FieldType="e776e448-f532-417d-b8d7-7d5b47fccd6f" FieldSize="255" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+          <FileterField ID="523d3cb0-26e9-4ff7-baa4-12cead2fc52e" Deleted="False" IsLocked="0" RetriveTime="636090453404709984" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="0" Name="to_oper_Name" Caption="Имя" FieldType="e776e448-f532-417d-b8d7-7d5b47fccd6f" FieldSize="255" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+          <FileterField ID="6d7862dc-7aaa-4c73-9fb7-8b9dab0c6ea0" Deleted="False" IsLocked="0" RetriveTime="636090453404709984" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" Name="to_oper_FamilyName" Caption="Фамилия" FieldType="e776e448-f532-417d-b8d7-7d5b47fccd6f" FieldSize="256" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+        </FileterField_COL>
+      </FilterFieldGroup>
+    </FilterFieldGroup_COL>
+  </APPLICATION>
+</root>

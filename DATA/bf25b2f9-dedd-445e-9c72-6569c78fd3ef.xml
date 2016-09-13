@@ -1,0 +1,52 @@
+<root>
+  <APPLICATION ID="bf25b2f9-dedd-445e-9c72-6569c78fd3ef" TYPENAME="MTZJrnl" NAME="MTZUsers" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="d488e8b4-9f7f-4903-872e-a1e92efc7d54" Deleted="False" IsLocked="0" RetriveTime="636090453017477400" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Справочник: пользователи" the_Alias="Справочник: пользователи" TheComment="Журнал для документов типа: Документ содержит списки пользователей и состав групп пользователей системы." jrnlIconCls="" UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="7e87f932-6f2e-43a4-b359-eef22872fed3" Deleted="False" IsLocked="0" RetriveTime="636090453017497409" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTOUsers" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="f887be1e-1f43-410f-b87a-9c1d9f92a6eb" Deleted="False" IsLocked="0" RetriveTime="636090453017527228" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="8" name="Местный телефон" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="7843194e-6216-44c9-9e43-fb51e401adc8" Deleted="False" IsLocked="0" RetriveTime="636090453017673555" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="7e87f932-6f2e-43a4-b359-eef22872fed3" ViewField="Users_LocalPhone" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="d87a295c-493e-46b5-8fc2-faf9cf3c4c78" Deleted="False" IsLocked="0" RetriveTime="636090453017527228" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="5" name="Доменное имя" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="1a7dcedd-c487-4199-80c5-c3017b9c2785" Deleted="False" IsLocked="0" RetriveTime="636090453017693816" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="7e87f932-6f2e-43a4-b359-eef22872fed3" ViewField="Users_DomaiName" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="7e6ce85f-866a-472e-b005-bfd570d6194e" Deleted="False" IsLocked="0" RetriveTime="636090453017527228" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" name="Имя" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="8f067f17-d770-4212-a8f4-9c78214bc9fa" Deleted="False" IsLocked="0" RetriveTime="636090453017713838" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="7e87f932-6f2e-43a4-b359-eef22872fed3" ViewField="Users_Name" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="2e6e0783-1131-4f73-b84e-64c732984e9c" Deleted="False" IsLocked="0" RetriveTime="636090453017527228" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" name="Отчество" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="85ed1650-7384-44ec-9e35-d1014482d09d" Deleted="False" IsLocked="0" RetriveTime="636090453017733819" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="7e87f932-6f2e-43a4-b359-eef22872fed3" ViewField="Users_SurName" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="bb8cce84-4a83-44c5-9224-9dda5e4f2660" Deleted="False" IsLocked="0" RetriveTime="636090453017527228" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="4" name="Имя для входа" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="0ff98897-29e4-4da5-8d3c-2354dd0ff116" Deleted="False" IsLocked="0" RetriveTime="636090453017753623" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="7e87f932-6f2e-43a4-b359-eef22872fed3" ViewField="Users_Login" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="cdfe5986-8b9e-47a1-9af5-7026a470838f" Deleted="False" IsLocked="0" RetriveTime="636090453017527228" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="7" name="Телефон" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="5aaf4e8a-833f-4b26-bae8-d306011d3ecb" Deleted="False" IsLocked="0" RetriveTime="636090453017773785" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="7e87f932-6f2e-43a4-b359-eef22872fed3" ViewField="Users_Phone" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="894c63c9-3cb6-41b1-81e3-46d3ba57d711" Deleted="False" IsLocked="0" RetriveTime="636090453017537221" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="6" name="e-mail" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="b4440edb-1c3a-4a46-bdfe-dba92229d3d9" Deleted="False" IsLocked="0" RetriveTime="636090453017793663" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="7e87f932-6f2e-43a4-b359-eef22872fed3" ViewField="Users_EMail" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="d9a2dfdf-ffd7-4e80-8c87-79b996c78ad4" Deleted="False" IsLocked="0" RetriveTime="636090453017537221" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="Фамилия" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="4be15ef8-6291-4bc8-9445-de67c48ee7f9" Deleted="False" IsLocked="0" RetriveTime="636090453017813658" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="7e87f932-6f2e-43a4-b359-eef22872fed3" ViewField="Users_Family" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

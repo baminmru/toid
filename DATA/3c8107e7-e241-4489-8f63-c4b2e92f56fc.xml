@@ -1,0 +1,27 @@
+<root>
+  <APPLICATION ID="3c8107e7-e241-4489-8f63-c4b2e92f56fc" TYPENAME="MTZJrnl" NAME="MTZExt" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="71e8b40a-e998-4e70-8267-62f3008a4adc" Deleted="False" IsLocked="0" RetriveTime="636090453015617292" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Расширения функциональности" the_Alias="Расширения функциональности" TheComment="Журнал для документов типа: Каталог функциональных расширений системы (ADDINS). " jrnlIconCls="" UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="04e1be58-d05d-42f2-85a3-6b233ab60599" Deleted="False" IsLocked="0" RetriveTime="636090453015637095" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTOMTZExt_def" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="15d6c505-9eec-48fa-be2c-1dfac916df9e" Deleted="False" IsLocked="0" RetriveTime="636090453015657286" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" name="Описание" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="9b58bb37-d69c-438a-8611-557956457bfa" Deleted="False" IsLocked="0" RetriveTime="636090453015677295" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="04e1be58-d05d-42f2-85a3-6b233ab60599" ViewField="MTZExt_def_TheDescription" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="e7f715b9-fd9d-46a9-b171-581400a68824" Deleted="False" IsLocked="0" RetriveTime="636090453015657286" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="Название" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="c29b2e94-658f-4ab6-a92e-ccc0311f866e" Deleted="False" IsLocked="0" RetriveTime="636090453015697294" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="04e1be58-d05d-42f2-85a3-6b233ab60599" ViewField="MTZExt_def_Name" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="fa80c9fe-834c-446b-960f-5fc18f89d141" Deleted="False" IsLocked="0" RetriveTime="636090453015667292" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" name="Тип расширения" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="e7f4bb44-f57e-47fb-aeda-e9cffe6b7b38" Deleted="False" IsLocked="0" RetriveTime="636090453015977332" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="04e1be58-d05d-42f2-85a3-6b233ab60599" ViewField="MTZExt_def_ExtType" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

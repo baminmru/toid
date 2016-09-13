@@ -1,0 +1,22 @@
+<root>
+  <APPLICATION ID="da3ec3b0-ac28-497a-be18-60ea73b23eb5" TYPENAME="MTZJrnl" NAME="tosched" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="dd7d8fb3-28fe-4877-8085-2304b3c59607" Deleted="False" IsLocked="0" RetriveTime="636090453019942982" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Расписание ТО" the_Alias="Расписание ТО" TheComment="Журнал для документов типа: " jrnlIconCls="" UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="282a300c-1452-4329-af6d-2c2f6ae85fcd" Deleted="False" IsLocked="0" RetriveTime="636090453019963275" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTOto_schedinfo" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="d2c945d6-25e1-4511-8648-e7c6a318847e" Deleted="False" IsLocked="0" RetriveTime="636090453019993295" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" name="По" ColumnAlignment="0" ColSort="2" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="a97abc1a-55c6-44f2-a7af-d8977c445848" Deleted="False" IsLocked="0" RetriveTime="636090453020013304" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="282a300c-1452-4329-af6d-2c2f6ae85fcd" ViewField="to_schedinfo_dto" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="bde819f7-6535-4941-81aa-11d30b8f00c1" Deleted="False" IsLocked="0" RetriveTime="636090453019993295" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="С" ColumnAlignment="0" ColSort="2" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="14274c95-ef5b-4a0c-88e0-e6161da37fe3" Deleted="False" IsLocked="0" RetriveTime="636090453020033294" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="282a300c-1452-4329-af6d-2c2f6ae85fcd" ViewField="to_schedinfo_dfrom" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

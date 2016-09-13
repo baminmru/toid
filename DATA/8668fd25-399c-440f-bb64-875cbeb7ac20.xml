@@ -1,0 +1,10 @@
+<root>
+  <APPLICATION ID="8668fd25-399c-440f-bb64-875cbeb7ac20" TYPENAME="tosched" NAME="Расписание ТО 24.08.2016 19:17:02" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <to_schedinfo_COL IsLocked="0">
+      <to_schedinfo ID="71fcb4dc-a356-4546-8543-7967d452415e" Deleted="False" IsLocked="0" RetriveTime="636090453176282003" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" dfrom="636075936000000000" dto="637022016000000000" />
+    </to_schedinfo_COL>
+    <to_scheditems_COL IsLocked="0">
+      <to_scheditems ID="d7d8739a-7ffd-4361-bb4a-45c3d197849b" Deleted="False" IsLocked="0" RetriveTime="636090453176561812" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" TheMachine="0b0776c6-1216-4c8b-a11c-011f90c78f68" todate="636075936000000000" />
+    </to_scheditems_COL>
+  </APPLICATION>
+</root>

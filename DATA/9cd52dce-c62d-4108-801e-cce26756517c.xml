@@ -1,0 +1,37 @@
+<root>
+  <APPLICATION ID="9cd52dce-c62d-4108-801e-cce26756517c" TYPENAME="MTZJrnl" NAME="MTZJrnl" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="b6917576-1506-42ec-91dd-029c59d13516" Deleted="False" IsLocked="0" RetriveTime="636090453016467344" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Описание журнала" the_Alias="Описание журнала" TheComment="Журнал для документов типа: Документ описывает журнал, который используется для работы с множеством документов. В журнале могут отображаться документы одного, или нескольких типов." jrnlIconCls="" UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="34510c44-0107-4fd2-adfa-ab93c4d3fd35" Deleted="False" IsLocked="0" RetriveTime="636090453016487147" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTOJournal" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="a4736c27-7206-4b6a-9a5b-cdf55074ecf7" Deleted="False" IsLocked="0" RetriveTime="636090453016517340" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" name="Псевдоним" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="b25309b8-362a-487a-9496-679ef3e502f5" Deleted="False" IsLocked="0" RetriveTime="636090453016537349" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="34510c44-0107-4fd2-adfa-ab93c4d3fd35" ViewField="Journal_the_Alias" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="4264f596-8bd6-4fb9-a195-7cb83acf8a1b" Deleted="False" IsLocked="0" RetriveTime="636090453016517340" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="Название" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="d333db37-2e76-4e17-b9b0-6380dd3f9c55" Deleted="False" IsLocked="0" RetriveTime="636090453016557292" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="34510c44-0107-4fd2-adfa-ab93c4d3fd35" ViewField="Journal_Name" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="016c589b-13dd-43ee-8972-8bc4ce453c71" Deleted="False" IsLocked="0" RetriveTime="636090453016517340" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="5" name="Массовое выделение" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="8b1f8213-f5d2-4835-a96f-99f3a38897a2" Deleted="False" IsLocked="0" RetriveTime="636090453016577352" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="34510c44-0107-4fd2-adfa-ab93c4d3fd35" ViewField="Journal_UseFavorites" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="0fa1d2cb-476d-4705-b364-e9d9c4321e40" Deleted="False" IsLocked="0" RetriveTime="636090453016517340" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" name="Описание" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="7e351e83-3ec4-44f3-8374-23fba67b4644" Deleted="False" IsLocked="0" RetriveTime="636090453016597342" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="34510c44-0107-4fd2-adfa-ab93c4d3fd35" ViewField="Journal_TheComment" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="af83e5ed-800a-4f73-bf0c-cd47e37cba7c" Deleted="False" IsLocked="0" RetriveTime="636090453016517340" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="4" name="Иконка журнала" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="f44871c4-6e56-4b3c-8220-1b6644be38a6" Deleted="False" IsLocked="0" RetriveTime="636090453016617346" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="34510c44-0107-4fd2-adfa-ab93c4d3fd35" ViewField="Journal_jrnlIconCls" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

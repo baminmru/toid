@@ -1,0 +1,27 @@
+<root>
+  <APPLICATION ID="eee87d41-50c3-4968-8b22-dc6b488f290a" TYPENAME="MTZJrnl" NAME="MTZFltr" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="dcd292d1-cfb9-490e-8199-08e7e1d24728" Deleted="False" IsLocked="0" RetriveTime="636090453016177317" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Описание фильтра" the_Alias="Описание фильтра" TheComment="Журнал для документов типа: Документ описывает структуру фильтра, который используется для ограничения множества информации, которая отображается в журнале , отчете и т.п." jrnlIconCls="" UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="6682954e-1751-4c4d-b0e2-bcd4b48a5014" Deleted="False" IsLocked="0" RetriveTime="636090453016197345" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTOFilters" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="ce45b210-3a51-4b41-8f4c-a218ba830df7" Deleted="False" IsLocked="0" RetriveTime="636090453016217153" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" name="Заголовок" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="2074d6f3-23fd-4c69-a282-81040d1fa89a" Deleted="False" IsLocked="0" RetriveTime="636090453016247322" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="6682954e-1751-4c4d-b0e2-bcd4b48a5014" ViewField="Filters_TheCaption" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="70657984-f983-4e0b-b7ec-4e4dd318d7d3" Deleted="False" IsLocked="0" RetriveTime="636090453016217153" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="Название" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="a3bd0482-ed42-4603-b787-fb5f97649707" Deleted="False" IsLocked="0" RetriveTime="636090453016267331" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="6682954e-1751-4c4d-b0e2-bcd4b48a5014" ViewField="Filters_Name" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="d7b830f2-2b3b-45b4-8c0c-17cebe8b58cb" Deleted="False" IsLocked="0" RetriveTime="636090453016227346" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" name="Описание" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="d729eda4-4af8-48eb-adb9-95a0db8bb3d6" Deleted="False" IsLocked="0" RetriveTime="636090453016287307" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="6682954e-1751-4c4d-b0e2-bcd4b48a5014" ViewField="Filters_TheComment" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

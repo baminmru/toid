@@ -1,0 +1,17 @@
+<root>
+  <APPLICATION ID="749a5bac-be6a-4e75-bb53-8c0f7258fbed" TYPENAME="MTZFltr" NAME="tocard" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Filters_COL IsLocked="0">
+      <Filters ID="5d0e0069-4c2c-4a2b-99b7-f165a4e3b367" Deleted="False" IsLocked="0" RetriveTime="636090453403302258" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="tocard" TheCaption="Фильтр для Диагностическая карта" TheComment="" />
+    </Filters_COL>
+    <FilterFieldGroup_COL IsLocked="0">
+      <FilterFieldGroup ID="70bdf3e4-9a06-4392-845d-249be35bdd86" Deleted="False" IsLocked="0" RetriveTime="636090453403748972" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="0" Name="fGroup" Caption="Описание" AllowIgnore="0">
+        <FileterField_COL IsLocked="0">
+          <FileterField ID="3bb1d560-9314-49e9-a6b2-158c47c25da7" Deleted="False" IsLocked="0" RetriveTime="636090453404150197" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" Name="to_cardinfo_card_archived" Caption="Архивная карта" FieldType="08614079-255d-4fd5-abbe-de9bc7987090" FieldSize="0" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+          <FileterField ID="a10e6967-7f00-4add-81ea-bdb7f5912167" Deleted="False" IsLocked="0" RetriveTime="636090453404150197" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" Name="to_cardinfo_card_date_GE" Caption="Дата составления карты C" FieldType="7c62a262-098d-46a5-afdc-c0286c87edcc" FieldSize="0" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+          <FileterField ID="524e5593-0ed6-4a08-a69c-a3fb017ac0d0" Deleted="False" IsLocked="0" RetriveTime="636090453404160185" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="0" Name="to_cardinfo_the_machine" Caption="Станок" FieldType="9465f49d-b492-4db3-8052-290bec7e9e2b" FieldSize="0" RefType="2" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="882cbdbc-e3ab-484b-a7fb-ca8ccefc8465" ValueArray="0" />
+          <FileterField ID="db425fee-ab46-4655-aa7b-a2998c70b9fc" Deleted="False" IsLocked="0" RetriveTime="636090453404160185" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" Name="to_cardinfo_card_date_LE" Caption="Дата составления карты по" FieldType="7c62a262-098d-46a5-afdc-c0286c87edcc" FieldSize="0" RefType="0" RefToType="00000000-0000-0000-0000-000000000000" RefToPart="00000000-0000-0000-0000-000000000000" ValueArray="0" />
+        </FileterField_COL>
+      </FilterFieldGroup>
+    </FilterFieldGroup_COL>
+  </APPLICATION>
+</root>

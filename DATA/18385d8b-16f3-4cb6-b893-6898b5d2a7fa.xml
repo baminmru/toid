@@ -1,0 +1,27 @@
+<root>
+  <APPLICATION ID="18385d8b-16f3-4cb6-b893-6898b5d2a7fa" TYPENAME="MTZJrnl" NAME="MTZMetaModel" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="b098aa34-a6cb-4c78-a94e-88fcfd9b2015" Deleted="False" IsLocked="0" RetriveTime="636090453016807413" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Спец.: Метамодель системы" the_Alias="Спец.: Метамодель системы" TheComment="Журнал для документов типа: Документ, который содержит исчерпывающую информацию о структурных особенностях и базовом поведении документов." jrnlIconCls="" UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="5f29eafa-cd0d-4e2f-8596-2c8be740ef73" Deleted="False" IsLocked="0" RetriveTime="636090453016827338" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTOMTZAPP" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="c6b3f30a-f144-450d-9875-742c71460c88" Deleted="False" IsLocked="0" RetriveTime="636090453016847356" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="3" name="Описание" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="31237f8b-7732-4d02-8810-6ac571e3d0a6" Deleted="False" IsLocked="0" RetriveTime="636090453016867341" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="5f29eafa-cd0d-4e2f-8596-2c8be740ef73" ViewField="MTZAPP_TheComment" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="6fe34e2b-d7d2-4750-b85f-67b9e9d81a24" Deleted="False" IsLocked="0" RetriveTime="636090453016847356" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="Название" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="eadb0190-781e-4889-854e-18b49349815a" Deleted="False" IsLocked="0" RetriveTime="636090453016887364" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="5f29eafa-cd0d-4e2f-8596-2c8be740ef73" ViewField="MTZAPP_Name" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="36343049-0399-4c40-9438-ba82fcd0c371" Deleted="False" IsLocked="0" RetriveTime="636090453016847356" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" name="База данных" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="c1f13195-1b61-4877-91ab-e7239bbe5c93" Deleted="False" IsLocked="0" RetriveTime="636090453016907368" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="5f29eafa-cd0d-4e2f-8596-2c8be740ef73" ViewField="MTZAPP_DBName" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

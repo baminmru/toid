@@ -1,0 +1,7 @@
+<root>
+  <APPLICATION ID="54524d8f-5aff-4e76-a2cc-1a3dc82e3c2a" TYPENAME="toop" NAME="Операторы 30.08.2016 11:08:04" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <to_oper_COL IsLocked="0">
+      <to_oper ID="49e6fc7a-e06e-4350-a430-9d1585f17b27" Deleted="False" IsLocked="0" RetriveTime="636090453265512172" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Иван " FamilyName="Иванов" SurName="Иванович" tnum="12345" login="master" />
+    </to_oper_COL>
+  </APPLICATION>
+</root>

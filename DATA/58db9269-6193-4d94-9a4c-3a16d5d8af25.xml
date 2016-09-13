@@ -1,0 +1,22 @@
+<root>
+  <APPLICATION ID="58db9269-6193-4d94-9a4c-3a16d5d8af25" TYPENAME="MTZJrnl" NAME="STDNumerator" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <Journal_COL IsLocked="0">
+      <Journal ID="13c7d331-f01f-42c1-bfb2-1e8d5d49538b" Deleted="False" IsLocked="0" RetriveTime="636090453018783450" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Нумератор" the_Alias="Нумератор" TheComment="Журнал для документов типа: " jrnlIconCls="" UseFavorites="0" />
+    </Journal_COL>
+    <JournalSrc_COL IsLocked="0">
+      <JournalSrc ID="665f06e3-a029-464f-956a-5a507da6e4b2" Deleted="False" IsLocked="0" RetriveTime="636090453018803449" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" PartView="00000000-0000-0000-0000-000000000000" OnRun="2" OpenMode="" ViewAlias="AUTONum_head" />
+    </JournalSrc_COL>
+    <JournalColumn_COL IsLocked="0">
+      <JournalColumn ID="e7d9df12-da32-4cb9-bcc4-eba52ac03ef9" Deleted="False" IsLocked="0" RetriveTime="636090453018833437" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="2" name="Схема нумерации" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="e9a8b7ee-4b82-4c01-b4d9-97a740737fec" Deleted="False" IsLocked="0" RetriveTime="636090453018853455" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="665f06e3-a029-464f-956a-5a507da6e4b2" ViewField="Num_head_Shema" />
+        </JColumnSource_COL>
+      </JournalColumn>
+      <JournalColumn ID="7ace70a4-f0ce-4efc-a2c3-001067c12aa7" Deleted="False" IsLocked="0" RetriveTime="636090453018833437" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" sequence="1" name="Название" ColumnAlignment="0" ColSort="0" GroupAggregation="0">
+        <JColumnSource_COL IsLocked="0">
+          <JColumnSource ID="9773ffb7-868f-48f1-bc2b-a3461bd2effa" Deleted="False" IsLocked="0" RetriveTime="636090453018873286" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" SrcPartView="665f06e3-a029-464f-956a-5a507da6e4b2" ViewField="Num_head_Name" />
+        </JColumnSource_COL>
+      </JournalColumn>
+    </JournalColumn_COL>
+  </APPLICATION>
+</root>

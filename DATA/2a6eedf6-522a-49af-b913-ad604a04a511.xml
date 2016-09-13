@@ -1,0 +1,58 @@
+<root>
+  <APPLICATION ID="2a6eedf6-522a-49af-b913-ad604a04a511" TYPENAME="tod" NAME="Справочник" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <tod_model_COL IsLocked="0">
+      <tod_model ID="0de06014-0f0f-406b-8382-a4d4c5996653" Deleted="False" IsLocked="0" RetriveTime="636090453098974165" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="АС57ТМ/500" />
+      <tod_model ID="5435b927-e59d-4bfa-83fb-f7fb3313ed3f" Deleted="False" IsLocked="0" RetriveTime="636090453098974165" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Kondia Urban2500" />
+      <tod_model ID="670b3a34-806c-4fc6-9587-f1a61d87b09c" Deleted="False" IsLocked="0" RetriveTime="636090453098974165" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="SR2000" />
+      <tod_model ID="fed79046-6c7f-4609-9487-6d27de5c82d0" Deleted="False" IsLocked="0" RetriveTime="636090453098974165" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="S2500" />
+      <tod_model ID="60f59d55-465f-4dfc-8b5e-51f8887a8c19" Deleted="False" IsLocked="0" RetriveTime="636090453098974165" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="PRECISA CSX" />
+      <tod_model ID="08779b7e-607d-4421-9544-56d6143f02e0" Deleted="False" IsLocked="0" RetriveTime="636090453098974165" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="АС46ТМ/400" />
+      <tod_model ID="5a574b97-fa43-4f23-8f94-da6a94460b45" Deleted="False" IsLocked="0" RetriveTime="636090453098974165" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="АС24ТМ2000" />
+      <tod_model ID="1e807c9f-fc70-42f8-a511-1302ed2c1d6f" Deleted="False" IsLocked="0" RetriveTime="636090453098974165" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="ФА-АОР-150" />
+      <tod_model ID="fe65ceab-239d-4f91-8282-cbc89d1ccc60" Deleted="False" IsLocked="0" RetriveTime="636090453098984144" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="СФРО280Д" />
+      <tod_model ID="080e9eb9-c91c-4241-a51d-fcc0f294a618" Deleted="False" IsLocked="0" RetriveTime="636090453098984144" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="CFSWZ-150" />
+      <tod_model ID="9372bac5-fa95-4fee-bd87-5ee4e00f650c" Deleted="False" IsLocked="0" RetriveTime="636090453098984144" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="НС-17" />
+      <tod_model ID="e36473f6-044b-4d5a-a6d0-0534de72d234" Deleted="False" IsLocked="0" RetriveTime="636090453098984144" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="КУ-178" />
+      <tod_model ID="920442fd-dd81-4b06-9998-17c06c0daa20" Deleted="False" IsLocked="0" RetriveTime="636090453098984144" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="NC2520D" />
+    </tod_model_COL>
+    <tod_st_COL IsLocked="0">
+      <tod_st ID="0b0776c6-1216-4c8b-a11c-011f90c78f68" Deleted="False" IsLocked="0" RetriveTime="636090453099242629" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" INVN="4050-959" Name="Вертикальный токарно-фрезерный обрабатывающий центр" the_model="0de06014-0f0f-406b-8382-a4d4c5996653" />
+    </tod_st_COL>
+    <tod_system_COL IsLocked="0">
+      <tod_system ID="ca6cd300-feec-4413-ae69-898dffc67b2d" Deleted="False" IsLocked="0" RetriveTime="636090453100096726" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Устройство смены инструмента			" />
+      <tod_system ID="49520e0d-52c0-4668-a7eb-4f291f762349" Deleted="False" IsLocked="0" RetriveTime="636090453100096726" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Электрооборудование			" />
+      <tod_system ID="99bde63d-ddb6-48a3-9e72-17f1494a9844" Deleted="False" IsLocked="0" RetriveTime="636090453100096726" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Коробка скоростей главного привода, гидропривод, система смазки. 			" />
+      <tod_system ID="5047245c-9668-41a2-91aa-9d990d6b9db7" Deleted="False" IsLocked="0" RetriveTime="636090453100096726" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Система смазки стола и основания			" />
+      <tod_system ID="5a7f9190-62ba-4858-a453-ce9d2ba267fa" Deleted="False" IsLocked="0" RetriveTime="636090453100096726" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name=" Система охлаждения СОЖ			" />
+      <tod_system ID="bee21797-1add-4f68-bfd2-fe9c5ed5dcdb" Deleted="False" IsLocked="0" RetriveTime="636090453100106658" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name=" Оси подач			" />
+      <tod_system ID="492b50a6-c29c-4e54-ab16-5c220cca815c" Deleted="False" IsLocked="0" RetriveTime="636090453100106658" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name=" Пневматическая система			" />
+      <tod_system ID="d30c71b2-18c1-4364-ae0a-59230b1d50b7" Deleted="False" IsLocked="0" RetriveTime="636090453100106658" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name=" Стружечный транспортёр			" />
+      <tod_system ID="92904ccf-8fa1-4161-83c7-34058b477159" Deleted="False" IsLocked="0" RetriveTime="636090453100106658" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name=" Гидравлическая система			" />
+      <tod_system ID="3a2cbad1-075a-4267-9eac-1236689205d8" Deleted="False" IsLocked="0" RetriveTime="636090453100106658" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Шпиндель навесной головки			" />
+      <tod_system ID="fe3774d4-c175-4f5b-8bf9-9d66f7318650" Deleted="False" IsLocked="0" RetriveTime="636090453100106658" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Поперечина.			" />
+      <tod_system ID="8640ffe1-6939-454f-a45b-7e9c30cdf24c" Deleted="False" IsLocked="0" RetriveTime="636090453100106658" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Салазки. Суппорт. Ползун." />
+    </tod_system_COL>
+    <tod_edizm_COL IsLocked="0">
+      <tod_edizm ID="1ec7a5d2-6660-45c7-a64a-bc1ae41a3018" Deleted="False" IsLocked="0" RetriveTime="636090453100266486" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="%" fullname="Процент" />
+      <tod_edizm ID="0d3047e3-295a-4859-9630-efc07c0a205e" Deleted="False" IsLocked="0" RetriveTime="636090453100266486" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="C" fullname="Градус цельсия" />
+    </tod_edizm_COL>
+    <tod_bug_COL IsLocked="0">
+      <tod_bug ID="5f49fb1d-b29a-4ed6-9d4d-d98aa1162970" Deleted="False" IsLocked="0" RetriveTime="636090453100446494" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" the_system="5a7f9190-62ba-4858-a453-ce9d2ba267fa" Name="Течь охлаждающей жидкости" the_comment="" />
+      <tod_bug ID="5a25e5b7-9fba-476a-ac23-e73d974210c2" Deleted="False" IsLocked="0" RetriveTime="636090453100446494" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" the_system="92904ccf-8fa1-4161-83c7-34058b477159" Name="Течь в системе" the_comment="" />
+    </tod_bug_COL>
+    <tod_valtype_COL IsLocked="0">
+      <tod_valtype ID="cbd5d56b-72b6-4071-aef3-42244a092dac" Deleted="False" IsLocked="0" RetriveTime="636090453100673108" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Да \ Нет" edizm="00000000-0000-0000-0000-000000000000" />
+      <tod_valtype ID="cc4902a8-d6aa-4417-a4c5-91c37167e2e5" Deleted="False" IsLocked="0" RetriveTime="636090453100673108" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Температура" edizm="0d3047e3-295a-4859-9630-efc07c0a205e" />
+      <tod_valtype ID="ad148aaf-45dd-48fa-9374-fdcd2710612f" Deleted="False" IsLocked="0" RetriveTime="636090453100673108" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Вибрация" edizm="00000000-0000-0000-0000-000000000000" />
+      <tod_valtype ID="038125da-645d-45f6-9d0f-1cf7e8902d42" Deleted="False" IsLocked="0" RetriveTime="636090453100673108" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Давление" edizm="00000000-0000-0000-0000-000000000000" />
+    </tod_valtype_COL>
+    <tod_material_COL IsLocked="0">
+      <tod_material ID="c3e92607-4e8f-4a9c-9e8c-98e79c873148" Deleted="False" IsLocked="0" RetriveTime="636090453100894034" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Тепловизор" />
+      <tod_material ID="fdaed430-9abc-4b8f-bc3d-f8655d7b46eb" Deleted="False" IsLocked="0" RetriveTime="636090453100894034" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Пирометр" />
+      <tod_material ID="e0755252-fcaa-4063-bd26-04fc3a88d286" Deleted="False" IsLocked="0" RetriveTime="636090453100894034" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Манометр" />
+      <tod_material ID="96ea2e82-3f09-4a11-b5ea-69a4c000a35e" Deleted="False" IsLocked="0" RetriveTime="636090453100894034" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Виброметр" />
+      <tod_material ID="b95b6cc3-0659-434a-b6cd-c44e5231d7ae" Deleted="False" IsLocked="0" RetriveTime="636090453100894034" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Power check" />
+      <tod_material ID="37a383d8-f465-4fcb-b50c-bbfb850722c7" Deleted="False" IsLocked="0" RetriveTime="636090453100894034" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" Name="Доступ к ЧПУ" />
+    </tod_material_COL>
+  </APPLICATION>
+</root>

@@ -1,0 +1,29 @@
+<root>
+  <APPLICATION ID="ff316deb-e0df-46a1-acc3-5a5161292a40" TYPENAME="tocard" NAME="Диагностическая карта 24.08.2016 17:51:40" IsLocked="LockPermanent" WorkOffline="False" STATUS="00000000-0000-0000-0000-000000000000" SecureStyleID="00000000-0000-0000-0000-000000000000">
+    <to_cardinfo_COL IsLocked="0">
+      <to_cardinfo ID="5b7750a5-d7de-46a1-aa7c-dab39ddb49b9" Deleted="False" IsLocked="0" RetriveTime="636090453327262207" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" the_machine="0b0776c6-1216-4c8b-a11c-011f90c78f68" card_date="636075936000000000" card_archived="0" />
+    </to_cardinfo_COL>
+    <to_cardchecks_COL IsLocked="0">
+      <to_cardchecks ID="4befe40d-4f6f-41c1-a184-d72439da539d" Deleted="False" IsLocked="0" RetriveTime="636090453329011538" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" the_system="3a2cbad1-075a-4267-9eac-1236689205d8" the_check="Усилие зажима инструмента ." normochas="0,3" ValueType="cbd5d56b-72b6-4071-aef3-42244a092dac" lowvalue="" hivalue="" the_comment="" tagid="" the_image="" the_doc="">
+        <to_carddevices_COL IsLocked="0">
+          <to_carddevices ID="ef78008a-5de2-4141-aa2d-4e02b094e702" Deleted="False" IsLocked="0" RetriveTime="636090453329855026" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" mat="b95b6cc3-0659-434a-b6cd-c44e5231d7ae" />
+        </to_carddevices_COL>
+      </to_cardchecks>
+      <to_cardchecks ID="e615bb25-9d8a-404b-80d8-4e46f75e92bd" Deleted="False" IsLocked="0" RetriveTime="636090453329011538" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" the_system="3a2cbad1-075a-4267-9eac-1236689205d8" the_check="Наличие повреждений  конуса  шпинделя " normochas="0,2" ValueType="cbd5d56b-72b6-4071-aef3-42244a092dac" lowvalue="" hivalue="" the_comment="" tagid="" the_image="" the_doc="">
+        <to_carddevices_COL IsLocked="0" />
+      </to_cardchecks>
+      <to_cardchecks ID="e108848e-c53e-463b-aed2-22e32c00037f" Deleted="False" IsLocked="0" RetriveTime="636090453329011538" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" the_system="8640ffe1-6939-454f-a45b-7e9c30cdf24c" the_check="Уровень масла системы смазки" normochas="0,1" ValueType="cbd5d56b-72b6-4071-aef3-42244a092dac" lowvalue="" hivalue="" the_comment="" tagid="" the_image="" the_doc="">
+        <to_carddevices_COL IsLocked="0" />
+      </to_cardchecks>
+      <to_cardchecks ID="126dabc5-e831-40cf-ad4f-b34fc8fea1f4" Deleted="False" IsLocked="0" RetriveTime="636090453329011538" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" the_system="fe3774d4-c175-4f5b-8bf9-9d66f7318650" the_check="Работа механизма зажима поперечины" normochas="0,2" ValueType="038125da-645d-45f6-9d0f-1cf7e8902d42" lowvalue="" hivalue="" the_comment="" tagid="" the_image="" the_doc="">
+        <to_carddevices_COL IsLocked="0" />
+      </to_cardchecks>
+      <to_cardchecks ID="cc95cdcd-d0eb-4dbe-9ec7-ab83e8f8a6ea" Deleted="False" IsLocked="0" RetriveTime="636090453329011538" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" the_system="fe3774d4-c175-4f5b-8bf9-9d66f7318650" the_check="Работа механизма перемещения" normochas="0,2" ValueType="cbd5d56b-72b6-4071-aef3-42244a092dac" lowvalue="" hivalue="" the_comment="" tagid="" the_image="" the_doc="">
+        <to_carddevices_COL IsLocked="0" />
+      </to_cardchecks>
+      <to_cardchecks ID="f33eccee-ffdf-48d4-ad67-fa8440529933" Deleted="False" IsLocked="0" RetriveTime="636090453329011538" ChangeTime="599264352000000000" AccessTime="599264352000000000" SecureStyleID="00000000-0000-0000-0000-000000000000" the_system="3a2cbad1-075a-4267-9eac-1236689205d8" the_check="Подача СОЖ в рабочую зону" normochas="0,3" ValueType="cbd5d56b-72b6-4071-aef3-42244a092dac" lowvalue="" hivalue="" the_comment="" tagid="" the_image="" the_doc="">
+        <to_carddevices_COL IsLocked="0" />
+      </to_cardchecks>
+    </to_cardchecks_COL>
+  </APPLICATION>
+</root>
