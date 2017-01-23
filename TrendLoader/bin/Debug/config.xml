@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cmconfig DataSource="//10.11.35.10/opc" UserID="BIV" Password="BIV" 
+          MSDataSource="10.211.141.99\sqlexpress" MsUserID="OMATIVE" MsPassword="OMATIVE"  MsBase="ELECTROSILA"
+          toid_site="toid_ORA_CM" toid_usr="supervisor" toid_pwd="bami"
+logpath="C:\bami\Projects\CMMON_2016\LOG"
+
+/>

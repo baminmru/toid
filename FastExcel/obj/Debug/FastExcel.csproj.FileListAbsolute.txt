@@ -1,0 +1,5 @@
+C:\bami\projects\CM_2016\FastExcel-master\FastExcel\bin\Debug\FastExcel.dll
+C:\bami\projects\CM_2016\FastExcel-master\FastExcel\bin\Debug\FastExcel.pdb
+C:\bami\projects\CM_2016\FastExcel-master\FastExcel\obj\Debug\FastExcel.dll
+C:\bami\projects\CM_2016\FastExcel-master\FastExcel\obj\Debug\FastExcel.pdb
+C:\bami\projects\CM_2016\FastExcel-master\FastExcel\obj\Debug\FastExcel.csprojResolveAssemblyReference.cache

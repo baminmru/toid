@@ -1,0 +1,11 @@
+C:\bami\projects\CM_2016\ImageGallery_In_VBNet\gPic\obj\Release\gPic.vbprojResolveAssemblyReference.cache
+C:\bami\projects\CM_2016\ImageGallery_In_VBNet\gPic\obj\Release\gPic.GaugePicture.resources
+C:\bami\projects\CM_2016\ImageGallery_In_VBNet\gPic\obj\Release\gPic.Resources.resources
+C:\bami\projects\CM_2016\ImageGallery_In_VBNet\gPic\obj\Release\gPic.vbproj.GenerateResource.Cache
+C:\bami\projects\CM_2016\ImageGallery_In_VBNet\gPic\obj\Release\gPic.xml
+C:\bami\projects\CM_2016\ImageGallery_In_VBNet\gPic\bin\Release\gPic.dll.config
+C:\bami\projects\CM_2016\ImageGallery_In_VBNet\gPic\bin\Release\gPic.dll
+C:\bami\projects\CM_2016\ImageGallery_In_VBNet\gPic\bin\Release\gPic.pdb
+C:\bami\projects\CM_2016\ImageGallery_In_VBNet\gPic\bin\Release\gPic.xml
+C:\bami\projects\CM_2016\ImageGallery_In_VBNet\gPic\obj\Release\gPic.dll
+C:\bami\projects\CM_2016\ImageGallery_In_VBNet\gPic\obj\Release\gPic.pdb

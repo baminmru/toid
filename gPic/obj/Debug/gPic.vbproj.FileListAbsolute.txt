@@ -1,0 +1,13 @@
+C:\bami\projects\CM_2016\gPic\bin\Debug\gPic.dll.config
+C:\bami\projects\CM_2016\gPic\bin\Debug\gPic.dll
+C:\bami\projects\CM_2016\gPic\bin\Debug\gPic.pdb
+C:\bami\projects\CM_2016\gPic\bin\Debug\gPic.xml
+C:\bami\projects\CM_2016\gPic\obj\Debug\gPic.GaleryItem.resources
+C:\bami\projects\CM_2016\gPic\obj\Debug\gPic.GaugePicture.resources
+C:\bami\projects\CM_2016\gPic\obj\Debug\gPic.Resources.resources
+C:\bami\projects\CM_2016\gPic\obj\Debug\gPic.touchInput.resources
+C:\bami\projects\CM_2016\gPic\obj\Debug\gPic.vbproj.GenerateResource.Cache
+C:\bami\projects\CM_2016\gPic\obj\Debug\gPic.dll
+C:\bami\projects\CM_2016\gPic\obj\Debug\gPic.xml
+C:\bami\projects\CM_2016\gPic\obj\Debug\gPic.pdb
+C:\bami\projects\CM_2016\gPic\obj\Debug\gPic.vbprojResolveAssemblyReference.cache

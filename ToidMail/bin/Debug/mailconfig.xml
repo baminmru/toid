@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cmconfig DataSource="//10.11.35.10/opc" UserID="MTO" Password="MTO173"
+  smtp="MX.powerm.ru"
+  smtp_usr=""
+  smtp_pass=""
+  smtp_port="25"
+  logpath="C:\bami\Projects\CM_2016\LOG"
+
+/>

@@ -1,0 +1,22 @@
+C:\Users\Михаил\AppData\Local\Temporary Projects\TrendLoader\bin\Debug\TrendLoader.exe.config
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\config.xml
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\latir_sites.XML
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\TrendLoader.exe.config
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\TrendLoader.exe
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\TrendLoader.pdb
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\TrendLoader.xml
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\L2Manager.dll
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\tod.dll
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\totrn.dll
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\MySql.Data.dll
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\L2Manager.pdb
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\L2Manager.xml
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\tod.pdb
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\bin\Debug\totrn.pdb
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\obj\Debug\TrendLoader.Resources.resources
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\obj\Debug\TrendLoader.vbproj.GenerateResource.Cache
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\obj\Debug\TrendLoader.exe
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\obj\Debug\TrendLoader.xml
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\obj\Debug\TrendLoader.pdb
+C:\bami\projects\CM_2016\TrendLoader\TrendLoader\obj\Debug\TrendLoader.vbprojResolveAssemblyReference.cache
