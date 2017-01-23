@@ -23,6 +23,7 @@
     <OutputPath>C:\LATIR4\Build\</OutputPath>
     <DocumentationFile>TOID.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,7 +47,54 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>oper2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AForge.Controls.2.2.5\lib\AForge.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="L2Manager, Version=1.0.3000.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\L2Manager.dll</HintPath>
+    </Reference>
+    <Reference Include="LATIR2GuiManager, Version=1.0.2400.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\LATIR2GuiManager.dll</HintPath>
+    </Reference>
+    <Reference Include="LATIRJournalSTD, Version=1.0.2400.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\LATIRJournalSTD.dll</HintPath>
+    </Reference>
+    <Reference Include="MTZJrnl, Version=1.0.6148.23779, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\MTZJrnl.dll</HintPath>
+    </Reference>
+    <Reference Include="MTZUsers, Version=1.0.6148.23779, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\MTZUsers.dll</HintPath>
+    </Reference>
     <Reference Include="NdefLibrary, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NdefLibrary.3.1.1\lib\portable-net45+win8+wp8+wpa81\NdefLibrary.dll</HintPath>
       <Private>True</Private>
@@ -59,14 +107,15 @@
       <HintPath>..\..\packages\SpreadsheetLight.3.4.4\lib\SpreadsheetLight.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="STDLATIRGUIControls, Version=1.0.6148.23718, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\STDLATIRGUIControls.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.WindowsRuntime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\System.Runtime.WindowsRuntime\4.0.10\ref\dotnet\System.Runtime.WindowsRuntime.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
@@ -74,9 +123,42 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="tocard, Version=1.0.6114.37770, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\tocard.dll</HintPath>
+    </Reference>
+    <Reference Include="tod, Version=1.0.6141.18143, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\tod.dll</HintPath>
+    </Reference>
+    <Reference Include="toimg, Version=1.0.6127.22102, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\toimg.dll</HintPath>
+    </Reference>
+    <Reference Include="toop, Version=1.0.6114.37772, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\toop.dll</HintPath>
+    </Reference>
+    <Reference Include="tor, Version=1.0.6137.21299, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\tor.dll</HintPath>
+    </Reference>
+    <Reference Include="tosched, Version=1.0.6114.37772, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\tosched.dll</HintPath>
+    </Reference>
+    <Reference Include="totask, Version=1.0.6144.24626, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\totask.dll</HintPath>
+    </Reference>
+    <Reference Include="totrn, Version=1.0.6148.20503, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\LATIR4\Build\totrn.dll</HintPath>
+    </Reference>
     <Reference Include="Windows">
       <HintPath>C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral\Windows.winmd</HintPath>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -92,25 +174,64 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddComment.Designer.vb">
+      <DependentUpon>frmAddComment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddComment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPhoto.Designer.vb">
+      <DependentUpon>frmAddPhoto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPhoto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCFG.Designer.vb">
+      <DependentUpon>frmCFG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCFG.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmChart.Designer.vb">
       <DependentUpon>frmChart.vb</DependentUpon>
     </Compile>
     <Compile Include="frmChart.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChild.vb">
+    <Compile Include="frmExit.Designer.vb">
+      <DependentUpon>frmExit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmExit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGant.Designer.vb">
-      <DependentUpon>frmGant.vb</DependentUpon>
+    <Compile Include="frmJob.Designer.vb">
+      <DependentUpon>frmJob.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmGant.vb">
+    <Compile Include="frmJob.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmJournalViewIG.Designer.vb">
-      <DependentUpon>frmJournalViewIG.vb</DependentUpon>
+    <Compile Include="frmLog.Designer.vb">
+      <DependentUpon>frmLog.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmJournalViewIG.vb">
+    <Compile Include="frmLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMyTask.Designer.vb">
+      <DependentUpon>frmMyTask.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMyTask.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewPass.Designer.vb">
+      <DependentUpon>frmNewPass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewPass.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmNFC.Designer.vb">
@@ -119,17 +240,46 @@
     <Compile Include="frmNFC.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmScale.vb">
+    <Compile Include="frmReject.Designer.vb">
+      <DependentUpon>frmReject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReject.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmScale.Designer.vb">
-      <DependentUpon>frmScale.vb</DependentUpon>
+    <Compile Include="frmReport.Designer.vb">
+      <DependentUpon>frmReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMDI.Designer.vb">
-      <DependentUpon>frmMDI.vb</DependentUpon>
+    <Compile Include="frmStartup.Designer.vb">
+      <DependentUpon>frmStartup.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMDI.vb">
+    <Compile Include="frmStartup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSystemTO.Designer.vb">
+      <DependentUpon>frmSystemTO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSystemTO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTakeJOB.Designer.vb">
+      <DependentUpon>frmTakeJOB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTakeJOB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaskSystem.Designer.vb">
+      <DependentUpon>frmTaskSystem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaskSystem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWait.Designer.vb">
+      <DependentUpon>frmWait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWait.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainModule.vb" />
@@ -149,45 +299,69 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ndef\NFC.vb" />
-    <Compile Include="SplashScreen1.Designer.vb">
-      <DependentUpon>SplashScreen1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SplashScreen1.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Replicator.vb" />
+    <Compile Include="SystemComment.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAddComment.resx">
+      <DependentUpon>frmAddComment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPhoto.resx">
+      <DependentUpon>frmAddPhoto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCFG.resx">
+      <DependentUpon>frmCFG.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChart.resx">
       <DependentUpon>frmChart.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChild.resx">
-      <DependentUpon>frmChild.vb</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="frmExit.resx">
+      <DependentUpon>frmExit.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGant.resx">
-      <DependentUpon>frmGant.vb</DependentUpon>
+    <EmbeddedResource Include="frmJob.resx">
+      <DependentUpon>frmJob.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmJournalViewIG.resx">
-      <DependentUpon>frmJournalViewIG.vb</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="frmLog.resx">
+      <DependentUpon>frmLog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMyTask.resx">
+      <DependentUpon>frmMyTask.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewPass.resx">
+      <DependentUpon>frmNewPass.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNFC.resx">
       <DependentUpon>frmNFC.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmScale.resx">
-      <DependentUpon>frmScale.vb</DependentUpon>
+    <EmbeddedResource Include="frmReject.resx">
+      <DependentUpon>frmReject.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMDI.resx">
-      <DependentUpon>frmMDI.vb</DependentUpon>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStartup.resx">
+      <DependentUpon>frmStartup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSystemTO.resx">
+      <DependentUpon>frmSystemTO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTakeJOB.resx">
+      <DependentUpon>frmTakeJOB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaskSystem.resx">
+      <DependentUpon>frmTaskSystem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWait.resx">
+      <DependentUpon>frmWait.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SplashScreen1.resx">
-      <DependentUpon>SplashScreen1.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -204,44 +378,174 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\GanttChart\GanttChart.csproj">
-      <Project>{f98f97d5-4f29-4531-ad05-d90f8e84c9aa}</Project>
-      <Name>GanttChart</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Generated\Ядро2\VB.NET Model\MTZJrnl\MTZJrnl.vbproj">
-      <Project>{b0c9ae57-aa49-4c08-9fb1-e3d531c1af15}</Project>
-      <Name>MTZJrnl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Generated\Ядро\VB.NET Interface\MTZUsers\MTZUsersGUI.vbproj">
-      <Project>{5a015873-4f52-4643-b03b-a934813a92a1}</Project>
-      <Name>MTZUsersGUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Generated\Ядро\VB.NET Model\MTZUsers\MTZUsers.vbproj">
-      <Project>{fe4b362e-88e2-4e42-be6e-bc5c96edca5d}</Project>
-      <Name>MTZUsers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\GuiManager\Latir2GuiManager.vbproj">
-      <Project>{60996302-32d9-4636-9695-4046e51779be}</Project>
-      <Name>Latir2GuiManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\objmanager\L2Manager.vbproj">
-      <Project>{c2aed02b-2ed8-497a-b79e-afc4e5967f29}</Project>
-      <Name>L2Manager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\StdGuiControls\STDLATIRGUIControls.vbproj">
-      <Project>{1cb10a3b-3341-4e1d-b5b7-531919d79944}</Project>
-      <Name>STDLATIRGUIControls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\StdJournal\STDJournal.vbproj">
-      <Project>{e40d6710-c21d-444d-8e81-3f8d07cd8260}</Project>
-      <Name>STDJournal</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="code.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\check.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\checks.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\checks2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\danger.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\diag1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\diag2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\diag3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\diagcomp.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\dictionary.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\exit.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\gantt1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\gantt2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\graph.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\graph2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\graph3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\group.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\image1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\images.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\instructage.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\instruction.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\learning.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\list.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\list2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\nophoto.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\password.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="oper2.ico" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\bricks.png" />
+    <None Include="Resources\box.png" />
+    <None Include="Resources\tag_blue.png" />
+    <None Include="Resources\camera_delete.png" />
+    <None Include="Resources\comment_delete.png" />
+    <None Include="Resources\iu_accept.png" />
+    <None Include="Resources\iu_inform.png" />
+    <None Include="Resources\iu_montag.png" />
+    <None Include="Resources\iu_liter.png" />
+    <None Include="Resources\script.png" />
+    <None Include="Resources\iu_taskdone.png" />
+    <None Include="Resources\iu_convert.png" />
+    <None Include="Resources\iu_zavershen.png" />
+    <None Include="Resources\iu_task_todo.png" />
+    <None Include="Resources\iu_task_done.png" />
+    <None Include="Resources\photo_add.png" />
+    <None Include="Resources\photo.gif" />
+    <None Include="Resources\camera.png" />
+    <None Include="Resources\resultset_next.gif" />
+    <None Include="Resources\resultset_previous.gif" />
+    <None Include="Resources\accept.png" />
+    <None Include="Resources\comment_add.png" />
+    <None Include="Resources\camera_add.png" />
+    <None Include="IMAGES\login.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="IMAGES\manager.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\NFC2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\oper.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\oper2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\oper3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\oper4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\oper5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\operrest.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\other.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\pusel.jpg" />
+    <Content Include="IMAGES\report.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\report2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\report3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\to1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\todo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\tools.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMAGES\zoom_ok.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="latir_sites.XML">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Compile Include="ndef\NdefMimeImageRecord.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\configurator\Configurator.vbproj">
+      <Project>{0bd8c5cd-f6f5-46fe-993b-6b8eb9c29eb8}</Project>
+      <Name>Configurator</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\bami\projects\CM_2016\gPic\gPic.vbproj">
+      <Project>{c3853a33-ee99-4c9a-a48b-3340a1ce171e}</Project>
+      <Name>gPic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
