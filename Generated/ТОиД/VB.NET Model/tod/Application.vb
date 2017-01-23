@@ -683,6 +683,34 @@ end enum
 
 
 ''' <summary>
+''' Внутренняя переменная для раздела Завод
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+  Private m_tod_factory As tod_factory_col
+
+
+''' <summary>
+'''Свойство для доступа к строкам раздела Завод
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public ReadOnly Property tod_factory() As tod_factory_col
+            Get
+                If m_tod_factory Is Nothing Then
+                    m_tod_factory = New tod_factory_col
+                    m_tod_factory.Application = Me
+                    m_tod_factory.Parent = Me
+                    m_tod_factory.Refresh()
+                End If
+                tod_factory = m_tod_factory
+            End Get
+        End Property
+
+
+''' <summary>
 ''' Внутренняя переменная для раздела Типичные проблемы
 ''' </summary>
 ''' <remarks>
@@ -706,6 +734,34 @@ end enum
                     m_tod_bug.Refresh()
                 End If
                 tod_bug = m_tod_bug
+            End Get
+        End Property
+
+
+''' <summary>
+''' Внутренняя переменная для раздела Цех
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+  Private m_tod_building As tod_building_col
+
+
+''' <summary>
+'''Свойство для доступа к строкам раздела Цех
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public ReadOnly Property tod_building() As tod_building_col
+            Get
+                If m_tod_building Is Nothing Then
+                    m_tod_building = New tod_building_col
+                    m_tod_building.Application = Me
+                    m_tod_building.Parent = Me
+                    m_tod_building.Refresh()
+                End If
+                tod_building = m_tod_building
             End Get
         End Property
 
@@ -767,7 +823,7 @@ end enum
 
 
 ''' <summary>
-''' Внутренняя переменная для раздела Узлы станков
+''' Внутренняя переменная для раздела Группы узлов
 ''' </summary>
 ''' <remarks>
 '''
@@ -776,7 +832,7 @@ end enum
 
 
 ''' <summary>
-'''Свойство для доступа к строкам раздела Узлы станков
+'''Свойство для доступа к строкам раздела Группы узлов
 ''' </summary>
 ''' <remarks>
 '''
@@ -790,6 +846,62 @@ end enum
                     m_tod_system.Refresh()
                 End If
                 tod_system = m_tod_system
+            End Get
+        End Property
+
+
+''' <summary>
+''' Внутренняя переменная для раздела Роль
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+  Private m_tod_oprole As tod_oprole_col
+
+
+''' <summary>
+'''Свойство для доступа к строкам раздела Роль
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public ReadOnly Property tod_oprole() As tod_oprole_col
+            Get
+                If m_tod_oprole Is Nothing Then
+                    m_tod_oprole = New tod_oprole_col
+                    m_tod_oprole.Application = Me
+                    m_tod_oprole.Parent = Me
+                    m_tod_oprole.Refresh()
+                End If
+                tod_oprole = m_tod_oprole
+            End Get
+        End Property
+
+
+''' <summary>
+''' Внутренняя переменная для раздела Тип тренда
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+  Private m_tod_trand As tod_trand_col
+
+
+''' <summary>
+'''Свойство для доступа к строкам раздела Тип тренда
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public ReadOnly Property tod_trand() As tod_trand_col
+            Get
+                If m_tod_trand Is Nothing Then
+                    m_tod_trand = New tod_trand_col
+                    m_tod_trand.Application = Me
+                    m_tod_trand.Parent = Me
+                    m_tod_trand.Refresh()
+                End If
+                tod_trand = m_tod_trand
             End Get
         End Property
 
@@ -886,7 +998,7 @@ end enum
 ''' </remarks>
         Public Overrides ReadOnly Property CountOfParts() As Long
             Get
-                CountOfParts = 7
+                CountOfParts = 11
             End Get
         End Property
 
@@ -914,6 +1026,14 @@ end enum
             return tod_valtype
          Case 7
             return tod_material
+         Case 8
+            return tod_trand
+         Case 9
+            return tod_factory
+         Case 10
+            return tod_building
+         Case 11
+            return tod_oprole
             End Select
             return nothing
         End Function
@@ -926,6 +1046,10 @@ end enum
             tod_bug.Dispose()
             tod_valtype.Dispose()
             tod_material.Dispose()
+            tod_trand.Dispose()
+            tod_factory.Dispose()
+            tod_building.Dispose()
+            tod_oprole.Dispose()
         End Sub
 
 
@@ -952,6 +1076,14 @@ end enum
             mFindInCollections = tod_valtype.FindObject(Table, InstID)
             if not mFindInCollections is nothing then return mFindInCollections
             mFindInCollections = tod_material.FindObject(Table, InstID)
+            if not mFindInCollections is nothing then return mFindInCollections
+            mFindInCollections = tod_trand.FindObject(Table, InstID)
+            if not mFindInCollections is nothing then return mFindInCollections
+            mFindInCollections = tod_factory.FindObject(Table, InstID)
+            if not mFindInCollections is nothing then return mFindInCollections
+            mFindInCollections = tod_building.FindObject(Table, InstID)
+            if not mFindInCollections is nothing then return mFindInCollections
+            mFindInCollections = tod_oprole.FindObject(Table, InstID)
             if not mFindInCollections is nothing then return mFindInCollections
         End Function
 
@@ -980,6 +1112,14 @@ end enum
             tod_valtype.XMLLoad(e_list, LoadMode)
             e_list = node.SelectNodes("tod_material_COL")
             tod_material.XMLLoad(e_list, LoadMode)
+            e_list = node.SelectNodes("tod_trand_COL")
+            tod_trand.XMLLoad(e_list, LoadMode)
+            e_list = node.SelectNodes("tod_factory_COL")
+            tod_factory.XMLLoad(e_list, LoadMode)
+            e_list = node.SelectNodes("tod_building_COL")
+            tod_building.XMLLoad(e_list, LoadMode)
+            e_list = node.SelectNodes("tod_oprole_COL")
+            tod_oprole.XMLLoad(e_list, LoadMode)
 catch ex as System.Exception
  Debug.Print( ex.Message + " >> " + ex.StackTrace)
 end try
@@ -1001,6 +1141,10 @@ end try
             tod_bug.XMLSave(node, Xdom)
             tod_valtype.XMLSave(node, Xdom)
             tod_material.XMLSave(node, Xdom)
+            tod_trand.XMLSave(node, Xdom)
+            tod_factory.XMLSave(node, Xdom)
+            tod_building.XMLSave(node, Xdom)
+            tod_oprole.XMLSave(node, Xdom)
         End Sub
 
 
@@ -1019,6 +1163,10 @@ Public Overrides Sub BatchUpdate()
     tod_bug.BatchUpdate
     tod_valtype.BatchUpdate
     tod_material.BatchUpdate
+    tod_trand.BatchUpdate
+    tod_factory.BatchUpdate
+    tod_building.BatchUpdate
+    tod_oprole.BatchUpdate
 End Sub
     End Class
 End Namespace

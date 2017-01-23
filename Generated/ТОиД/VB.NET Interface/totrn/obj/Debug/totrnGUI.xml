@@ -1,0 +1,543 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+totrnGUI
+</name>
+</assembly>
+<members>
+<member name="M:totrnGUI.viewtotrn_datamain.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_datamain.Init">
+	<summary>
+Load table settings
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_datamain.gv_OnEdit(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание редактирования Edit action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_datamain.gv_OnDel(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание удаления Delete action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_datamain.gv_OnAdd(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание создания записи Create action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_datamain.gv_OnRefresh">
+	<summary>
+Обслуживание кнопки (обновить) refresh action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_datamain.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_datamain.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.frmtotrn_datamain">
+	<summary>
+Форма редактирования раздела Данные тренда режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_datamain.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_datamain.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.edittotrn_datamain">
+	<summary>
+Контрол редактирования раздела Данные тренда режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_defmain.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_defmain.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_defmain.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.frmtotrn_defmain">
+	<summary>
+Форма редактирования раздела Описание тренда режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_defmain.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_defmain.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.edittotrn_defmain">
+	<summary>
+Контрол редактирования раздела Описание тренда режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrnmain.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+Процедура инициализации формы
+ </remarks>
+</member><member name="F:totrnGUI.Tabviewmain.item">
+	<summary>
+Редактируемый объект
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totrnGUI.Tabviewmain.GuiManager">
+	<summary>
+Объект управления визуальными компонентами
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabviewmain.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация контрольного элемента
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabviewmain.Save(System.Boolean,System.Boolean)">
+	<summary>
+Сохранение всех изменений
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabviewmain.IsOK">
+	<summary>
+Корректны ли измененные данные проверка после Verify
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabviewmain.IsChanged">
+	<summary>
+Были ли изменения данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabviewmain.Verify(System.Boolean)">
+	<summary>
+Проверить корректность данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_dataadm.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_dataadm.Init">
+	<summary>
+Load table settings
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_dataadm.gv_OnEdit(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание редактирования Edit action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_dataadm.gv_OnDel(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание удаления Delete action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_dataadm.gv_OnAdd(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание создания записи Create action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_dataadm.gv_OnRefresh">
+	<summary>
+Обслуживание кнопки (обновить) refresh action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_dataadm.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_dataadm.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.frmtotrn_dataadm">
+	<summary>
+Форма редактирования раздела Данные тренда режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_dataadm.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_dataadm.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.edittotrn_dataadm">
+	<summary>
+Контрол редактирования раздела Данные тренда режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_defadm.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_defadm.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_defadm.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.frmtotrn_defadm">
+	<summary>
+Форма редактирования раздела Описание тренда режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_defadm.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_defadm.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.edittotrn_defadm">
+	<summary>
+Контрол редактирования раздела Описание тренда режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrnadm.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+Процедура инициализации формы
+ </remarks>
+</member><member name="F:totrnGUI.Tabviewadm.item">
+	<summary>
+Редактируемый объект
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totrnGUI.Tabviewadm.GuiManager">
+	<summary>
+Объект управления визуальными компонентами
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabviewadm.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация контрольного элемента
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabviewadm.Save(System.Boolean,System.Boolean)">
+	<summary>
+Сохранение всех изменений
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabviewadm.IsOK">
+	<summary>
+Корректны ли измененные данные проверка после Verify
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabviewadm.IsChanged">
+	<summary>
+Были ли изменения данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabviewadm.Verify(System.Boolean)">
+	<summary>
+Проверить корректность данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_data.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_data.Init">
+	<summary>
+Load table settings
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_data.gv_OnEdit(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание редактирования Edit action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_data.gv_OnDel(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание удаления Delete action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_data.gv_OnAdd(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание создания записи Create action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_data.gv_OnRefresh">
+	<summary>
+Обслуживание кнопки (обновить) refresh action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_data.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_data.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.frmtotrn_data">
+	<summary>
+Форма редактирования раздела Данные тренда режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_data.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_data.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.edittotrn_data">
+	<summary>
+Контрол редактирования раздела Данные тренда режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.viewtotrn_def.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_def.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn_def.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.frmtotrn_def">
+	<summary>
+Форма редактирования раздела Описание тренда режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_def.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.edittotrn_def.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.edittotrn_def">
+	<summary>
+Контрол редактирования раздела Описание тренда режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.frmtotrn.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+Процедура инициализации формы
+ </remarks>
+</member><member name="F:totrnGUI.Tabview.item">
+	<summary>
+Редактируемый объект
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totrnGUI.Tabview.GuiManager">
+	<summary>
+Объект управления визуальными компонентами
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabview.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация контрольного элемента
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabview.Save(System.Boolean,System.Boolean)">
+	<summary>
+Сохранение всех изменений
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabview.IsOK">
+	<summary>
+Корректны ли измененные данные проверка после Verify
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabview.IsChanged">
+	<summary>
+Были ли изменения данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.Tabview.Verify(System.Boolean)">
+	<summary>
+Проверить корректность данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totrnGUI.GUI.TypeName">
+	<summary>
+Имя типа
+ </summary>
+	<returns>
+Строковое значение кода типа объекта 
+ </returns>
+	<remarks>
+Код типа в метамодели
+ </remarks>
+</member><member name="M:totrnGUI.GUI.ShowPartEditForm(System.String,LATIR2.Document.DocRow_Base@,System.Boolean)">
+	<summary>
+Форма редактирования раздела
+ </summary>
+	<returns>
+Результат работы формы редактирования
+ </returns>
+	<remarks>
+Определяется какая форма должна быть вызвана, происходит инициализация и вызов формы
+ </remarks>
+</member><member name="M:totrnGUI.GUI.ShowForm(System.String,LATIR2.Document.Doc_Base@,System.Boolean)">
+	<summary>
+Форма редактирования документа
+ </summary>
+	<returns>
+Резултат работы формы редактирования
+ </returns>
+	<remarks>
+Определяется какая форма должна быть вызвана, происходит инициализация и вызов формы в модальном режиме
+ </remarks>
+</member><member name="M:totrnGUI.GUI.GetObjectControl(System.String,System.String)">
+	<summary>
+Получить контрол, реализующий работу в заданном режиме
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totrnGUI.GUI">
+	<summary>
+Основной класс компонента
+ </summary>
+	<remarks>
+Класс обслуживает визуальное редактирование 
+ </remarks>
+</member>
+</members>
+</doc>

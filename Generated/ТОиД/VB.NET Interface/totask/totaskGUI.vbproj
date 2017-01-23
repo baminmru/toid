@@ -3,7 +3,7 @@
   <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>"79b16593-3c9b-4209-952d-a7b4d54040d6"</ProjectGuid>
+    <ProjectGuid>"921b65dc-24e5-4f9b-bdc4-5afae1b0d6a7"</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ApplicationIcon>
@@ -173,14 +173,11 @@
       <SubType>UserControl</SubType>
     </Compile>
 
-    <Compile Include="editto_taskvalues.vb">
+    <Compile Include="editto_taskcheckcomment.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmto_taskvalues.vb">
+    <Compile Include="frmto_taskcheckcomment.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="viewto_taskvalues.vb">
-      <SubType>UserControl</SubType>
     </Compile>
 
     <Compile Include="editto_taskcomment.vb">
@@ -190,6 +187,92 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="viewto_taskcomment.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="Tabviewmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtotaskmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editto_taskinfomain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_taskinfomain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewto_taskinfomain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="editto_taskchecksmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_taskchecksmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewto_taskchecksmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="editto_taskcheckcommentmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_taskcheckcommentmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+
+    <Compile Include="editto_taskcommentmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_taskcommentmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewto_taskcommentmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="Tabviewadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtotaskadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editto_taskinfoadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_taskinfoadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewto_taskinfoadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="editto_taskchecksadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_taskchecksadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewto_taskchecksadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="editto_taskcheckcommentadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_taskcheckcommentadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+
+    <Compile Include="editto_taskcommentadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_taskcommentadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewto_taskcommentadm.vb">
       <SubType>UserControl</SubType>
     </Compile>
 

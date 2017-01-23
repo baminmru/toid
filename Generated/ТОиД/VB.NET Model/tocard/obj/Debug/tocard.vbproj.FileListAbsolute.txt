@@ -1,0 +1,19 @@
+C:\LATIR4\Build\tocard.dll
+C:\LATIR4\Build\tocard.pdb
+C:\LATIR4\Build\tocard_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\obj\Debug\tocard.vbprojResolveAssemblyReference.cache
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\obj\Debug\tocard.dll
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\obj\Debug\tocard_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\obj\Debug\tocard.pdb
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\bin\Debug\tocard.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\bin\Debug\tocard.pdb
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\bin\Debug\tocard_doc.xml
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\bin\Debug\L2Manager.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\bin\Debug\MySql.Data.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\bin\Debug\L2Manager.pdb
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\bin\Debug\L2Manager.xml
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\obj\Debug\tocard.vbprojResolveAssemblyReference.cache
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\obj\Debug\tocard.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\obj\Debug\tocard_doc.xml
+E:\LATIR4\Generated\ТОиД\VB.NET Model\tocard\obj\Debug\tocard.pdb

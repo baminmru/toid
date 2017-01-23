@@ -116,10 +116,7 @@ private sub cmdmat_Click(ByVal sender As System.Object, ByVal e As System.EventA
 Dim id As guid
 Dim brief As String = string.Empty
 Dim OK as boolean 
-        If GuiManager.GetReferenceDialog("tod_material","",System.guid.Empty, id, brief) Then
-          txtmat.Tag = id
-          txtmat.text = brief
-        End If
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
         catch ex as System.Exception
         Debug.Print(ex.Message +" >> " + ex.StackTrace)
         end try
@@ -164,11 +161,6 @@ end sub
 Public Sub Save() Implements LATIR2GUIManager.IRowEditor.Save
   if mRowReadOnly =false then
 
-If not txtmat.Tag.Equals(System.Guid.Empty) Then
-  item.mat = Item.Application.FindRowObject("tod_material",txtmat.Tag)
-Else
-   item.mat = Nothing
-End If
   end if
   mChanged = false
   raiseevent saved()

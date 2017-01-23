@@ -53,14 +53,18 @@ Public Class edittod_st
 
  Dim iii As Integer
     Friend WithEvents HolderPanel As LATIR2GUIControls.AutoPanel
-Friend WithEvents lblINVN  as  System.Windows.Forms.Label
-Friend WithEvents txtINVN As LATIR2GuiManager.TouchTextBox
-Friend WithEvents lblName  as  System.Windows.Forms.Label
-Friend WithEvents txtName As LATIR2GuiManager.TouchTextBox
+Friend WithEvents lblinvn  as  System.Windows.Forms.Label
+Friend WithEvents txtinvn As LATIR2GuiManager.TouchTextBox
+Friend WithEvents lblname  as  System.Windows.Forms.Label
+Friend WithEvents txtname As LATIR2GuiManager.TouchTextBox
 Friend WithEvents lblthe_model  as  System.Windows.Forms.Label
 Friend WithEvents txtthe_model As LATIR2GuiManager.TouchTextBox
 Friend WithEvents cmdthe_model As System.Windows.Forms.Button
 Friend WithEvents cmdthe_modelClear As System.Windows.Forms.Button
+Friend WithEvents lblthebuilding  as  System.Windows.Forms.Label
+Friend WithEvents txtthebuilding As LATIR2GuiManager.TouchTextBox
+Friend WithEvents cmdthebuilding As System.Windows.Forms.Button
+Friend WithEvents cmdthebuildingClear As System.Windows.Forms.Button
 
 <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
 
@@ -77,37 +81,43 @@ Me.HolderPanel.Location = New System.Drawing.Point(0, 0)
 Me.HolderPanel.Name = "HolderPanel"
 Me.HolderPanel.Size = New System.Drawing.Size(232, 120)
 Me.HolderPanel.TabIndex = 0
-Me.lblINVN = New System.Windows.Forms.Label
-Me.txtINVN = New LATIR2GuiManager.TouchTextBox
-Me.lblName = New System.Windows.Forms.Label
-Me.txtName = New LATIR2GuiManager.TouchTextBox
+Me.lblinvn = New System.Windows.Forms.Label
+Me.txtinvn = New LATIR2GuiManager.TouchTextBox
+Me.lblname = New System.Windows.Forms.Label
+Me.txtname = New LATIR2GuiManager.TouchTextBox
 Me.lblthe_model = New System.Windows.Forms.Label
 Me.txtthe_model = New LATIR2GuiManager.TouchTextBox
 Me.cmdthe_model = New System.Windows.Forms.Button
 Me.cmdthe_modelClear = New System.Windows.Forms.Button
+Me.lblthebuilding = New System.Windows.Forms.Label
+Me.txtthebuilding = New LATIR2GuiManager.TouchTextBox
+Me.cmdthebuilding = New System.Windows.Forms.Button
+Me.cmdthebuildingClear = New System.Windows.Forms.Button
 
-Me.lblINVN.Location = New System.Drawing.Point(20,5)
-Me.lblINVN.name = "lblINVN"
-Me.lblINVN.Size = New System.Drawing.Size(200, 20)
-Me.lblINVN.TabIndex = 1
-Me.lblINVN.Text = "Инвентарный номер"
-Me.lblINVN.ForeColor = System.Drawing.Color.Black
-Me.txtINVN.Location = New System.Drawing.Point(20,27)
-Me.txtINVN.name = "txtINVN"
-Me.txtINVN.Size = New System.Drawing.Size(200, 20)
-Me.txtINVN.TabIndex = 2
-Me.txtINVN.Text = "" 
-Me.lblName.Location = New System.Drawing.Point(20,52)
-Me.lblName.name = "lblName"
-Me.lblName.Size = New System.Drawing.Size(200, 20)
-Me.lblName.TabIndex = 3
-Me.lblName.Text = "Название"
-Me.lblName.ForeColor = System.Drawing.Color.Black
-Me.txtName.Location = New System.Drawing.Point(20,74)
-Me.txtName.name = "txtName"
-Me.txtName.Size = New System.Drawing.Size(200, 20)
-Me.txtName.TabIndex = 4
-Me.txtName.Text = "" 
+Me.lblinvn.Location = New System.Drawing.Point(20,5)
+Me.lblinvn.name = "lblinvn"
+Me.lblinvn.Size = New System.Drawing.Size(200, 20)
+Me.lblinvn.TabIndex = 1
+Me.lblinvn.Text = "Инвентарный номер"
+Me.lblinvn.ForeColor = System.Drawing.Color.Black
+Me.txtinvn.Location = New System.Drawing.Point(20,27)
+Me.txtinvn.name = "txtinvn"
+Me.txtinvn.Size = New System.Drawing.Size(200, 20)
+Me.txtinvn.TabIndex = 2
+Me.txtinvn.Text = "" 
+Me.txtinvn.ReadOnly = True
+Me.lblname.Location = New System.Drawing.Point(20,52)
+Me.lblname.name = "lblname"
+Me.lblname.Size = New System.Drawing.Size(200, 20)
+Me.lblname.TabIndex = 3
+Me.lblname.Text = "Название"
+Me.lblname.ForeColor = System.Drawing.Color.Black
+Me.txtname.Location = New System.Drawing.Point(20,74)
+Me.txtname.name = "txtname"
+Me.txtname.Size = New System.Drawing.Size(200, 20)
+Me.txtname.TabIndex = 4
+Me.txtname.Text = "" 
+Me.txtname.ReadOnly = True
 Me.lblthe_model.Location = New System.Drawing.Point(20,99)
 Me.lblthe_model.name = "lblthe_model"
 Me.lblthe_model.Size = New System.Drawing.Size(200, 20)
@@ -130,16 +140,42 @@ Me.cmdthe_modelClear.name = "cmdthe_modelClear"
 Me.cmdthe_modelClear.Size = New System.Drawing.Size(22, 20)
 Me.cmdthe_modelClear.TabIndex = 8
 Me.cmdthe_modelClear.Text = "X" 
+Me.lblthebuilding.Location = New System.Drawing.Point(20,146)
+Me.lblthebuilding.name = "lblthebuilding"
+Me.lblthebuilding.Size = New System.Drawing.Size(200, 20)
+Me.lblthebuilding.TabIndex = 9
+Me.lblthebuilding.Text = "Цех"
+Me.lblthebuilding.ForeColor = System.Drawing.Color.Blue
+Me.txtthebuilding.Location = New System.Drawing.Point(20,168)
+Me.txtthebuilding.name = "txtthebuilding"
+Me.txtthebuilding.ReadOnly = True
+Me.txtthebuilding.Size = New System.Drawing.Size(155, 20)
+Me.txtthebuilding.TabIndex = 10
+Me.txtthebuilding.Text = "" 
+Me.cmdthebuilding.Location = New System.Drawing.Point(176,168)
+Me.cmdthebuilding.name = "cmdthebuilding"
+Me.cmdthebuilding.Size = New System.Drawing.Size(22, 20)
+Me.cmdthebuilding.TabIndex = 11
+Me.cmdthebuilding.Text = "..." 
+Me.cmdthebuildingClear.Location = New System.Drawing.Point(198,168)
+Me.cmdthebuildingClear.name = "cmdthebuildingClear"
+Me.cmdthebuildingClear.Size = New System.Drawing.Size(22, 20)
+Me.cmdthebuildingClear.TabIndex = 12
+Me.cmdthebuildingClear.Text = "X" 
         Me.AutoScroll = True
 
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblINVN)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtINVN)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblName)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtName)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblinvn)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtinvn)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblname)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtname)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblthe_model)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtthe_model)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdthe_model)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdthe_modelClear)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblthebuilding)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtthebuilding)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdthebuilding)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdthebuildingClear)
         Me.Controls.Add(Me.HolderPanel)
         Me.HolderPanel.ResumeLayout(False)
         Me.HolderPanel.PerformLayout()
@@ -149,11 +185,11 @@ CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdthe_modelClear)
     End Sub
 #End Region
 
-private sub txtINVN_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtINVN.TextChanged
+private sub txtinvn_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtinvn.TextChanged
   Changing
 
 end sub
-private sub txtName_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtName.TextChanged
+private sub txtname_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtname.TextChanged
   Changing
 
 end sub
@@ -166,18 +202,35 @@ private sub cmdthe_model_Click(ByVal sender As System.Object, ByVal e As System.
 Dim id As guid
 Dim brief As String = string.Empty
 Dim OK as boolean 
-        If GuiManager.GetReferenceDialog("tod_model","",System.guid.Empty, id, brief) Then
-          txtthe_model.Tag = id
-          txtthe_model.text = brief
-        End If
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
         catch ex as System.Exception
         Debug.Print(ex.Message +" >> " + ex.StackTrace)
         end try
 end sub
 private sub cmdthe_modelClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdthe_modelClear.Click
   try
-          txtthe_model.Tag = Guid.Empty
-          txtthe_model.text = ""
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
+        catch ex as System.Exception
+        Debug.Print(ex.Message +" >> " + ex.StackTrace)
+        end try
+end sub
+private sub txtthebuilding_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtthebuilding.TextChanged
+  Changing
+
+end sub
+private sub cmdthebuilding_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdthebuilding.Click
+  try
+Dim id As guid
+Dim brief As String = string.Empty
+Dim OK as boolean 
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
+        catch ex as System.Exception
+        Debug.Print(ex.Message +" >> " + ex.StackTrace)
+        end try
+end sub
+private sub cmdthebuildingClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdthebuildingClear.Click
+  try
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
         catch ex as System.Exception
         Debug.Print(ex.Message +" >> " + ex.StackTrace)
         end try
@@ -201,14 +254,21 @@ Public Sub Attach(ByVal gm As LATIR2GuiManager.LATIRGuiManager, ByVal ri As LATI
         If Item Is Nothing Then Exit Sub
         mOnInit = true
 
-txtINVN.text = item.INVN
-txtName.text = item.Name
+txtinvn.text = item.invn
+txtname.text = item.name
 If Not item.the_model Is Nothing Then
   txtthe_model.Tag = item.the_model.id
   txtthe_model.text = item.the_model.brief
 else
   txtthe_model.Tag = System.Guid.Empty 
   txtthe_model.text = "" 
+End If
+If Not item.thebuilding Is Nothing Then
+  txtthebuilding.Tag = item.thebuilding.id
+  txtthebuilding.text = item.thebuilding.brief
+else
+  txtthebuilding.Tag = System.Guid.Empty 
+  txtthebuilding.text = "" 
 End If
         mOnInit = false
   raiseevent Refreshed()
@@ -224,13 +284,6 @@ end sub
 Public Sub Save() Implements LATIR2GUIManager.IRowEditor.Save
   if mRowReadOnly =false then
 
-item.INVN = txtINVN.text
-item.Name = txtName.text
-If not txtthe_model.Tag.Equals(System.Guid.Empty) Then
-  item.the_model = Item.Application.FindRowObject("tod_model",txtthe_model.Tag)
-Else
-   item.the_model = Nothing
-End If
   end if
   mChanged = false
   raiseevent saved()
@@ -240,8 +293,8 @@ Public function IsOK() as boolean Implements LATIR2GUIManager.IRowEditor.IsOK
  mIsOK=true
  if mRowReadOnly  then return true
 
-if mIsOK then mIsOK =( txtINVN.text <> "" ) 
-if mIsOK then mIsOK =( txtName.text <> "" ) 
+if mIsOK then mIsOK =( txtinvn.text <> "" ) 
+if mIsOK then mIsOK =( txtname.text <> "" ) 
  return mIsOK
 end function
 Public function IsChanged() as boolean Implements LATIR2GUIManager.IRowEditor.IsChanged

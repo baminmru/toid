@@ -6,7 +6,7 @@ Imports System.Drawing
 
 
 ''' <summary>
-'''Форма редактирования раздела Узлы станков режим:
+'''Форма редактирования раздела Группы узлов режим:
 ''' </summary>
 ''' <remarks>
 '''
@@ -89,7 +89,7 @@ Public Class frmtod_system
         Me.Edittod_system.AutoScroll = True
         Me.Edittod_system.Location = New System.Drawing.Point(8, 8)
         Me.Edittod_system.name = "Edittod_system"
-        Me.Edittod_system.Size = New System.Drawing.Size(490, 600)
+        Me.Edittod_system.Size = New System.Drawing.Size(800-40-16, 600-16)
         Me.Edittod_system.TabIndex = 20
         Me.Edittod_system.Dock = System.Windows.Forms.DockStyle.Fill
         '
@@ -100,7 +100,8 @@ Public Class frmtod_system
         Me.Controls.Add (Edittod_system)
         Me.Controls.Add (Me.btnPanel)
         Me.name = "frmtod_system"
-        Me.Text = "Узлы станков"
+        Me.Text = "Группы узлов"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout (False)
 
     End Sub
@@ -108,6 +109,7 @@ Public Class frmtod_system
 #End Region
     Public Item As tod.tod.tod_system
     Public GuiManager As LATIR2GuiManager.LATIRGuiManager
+    Private myResizer As LATIR2GuiManager.Resizer = New LATIR2GuiManager.Resizer
     Private mReadOnly As Boolean
 
 
@@ -156,8 +158,17 @@ Public Class frmtod_system
         Exit Sub
         End If
     End Sub
-    Private Sub frmUsers_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Me.ClientSize() = New System.Drawing.Size(Edittod_system.GetMaxX() + 10, Edittod_system.GetMaxY() + 35)
-        LATIR2GuiManager.LATIRGuiManager.ScaleForm(Me)
+    Private Sub frm_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+          Me.StartPosition = FormStartPosition.Manual
+          Me.WindowState = FormWindowState.Normal
+          Me.Location = Screen.PrimaryScreen.WorkingArea.Location
+          Me.Size = Screen.PrimaryScreen.WorkingArea.Size
     End Sub
+    Private Sub frm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Me.ClientSize() = New System.Drawing.Size(Edittod_system.GetMaxX() + 10, Edittod_system.GetMaxY() + 35)
+        myResizer.FindAllControls(Me) 
+    End Sub
+    Private Sub frm_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+      myResizer.ResizeAllControls(Me)
+   End Sub
 End Class

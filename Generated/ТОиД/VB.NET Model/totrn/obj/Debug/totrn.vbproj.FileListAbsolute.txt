@@ -1,0 +1,7 @@
+C:\LATIR4\Build\totrn.dll
+C:\LATIR4\Build\totrn.pdb
+C:\LATIR4\Build\totrn_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\totrn\obj\Debug\totrn.vbprojResolveAssemblyReference.cache
+C:\LATIR4\Generated\ТОиД\VB.NET Model\totrn\obj\Debug\totrn.dll
+C:\LATIR4\Generated\ТОиД\VB.NET Model\totrn\obj\Debug\totrn_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\totrn\obj\Debug\totrn.pdb

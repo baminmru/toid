@@ -25,12 +25,48 @@ Namespace totask
 
 
 ''' <summary>
-'''Локальная переменная для поля Станок
+'''Локальная переменная для поля Задача завершена
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_theMachine  as System.Guid
+            private m_taskfinished  as enumBoolean
+
+
+''' <summary>
+'''Локальная переменная для поля Дата создания
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_crdate  as DATE
+
+
+''' <summary>
+'''Локальная переменная для поля Время завершения задачи
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_finishtime  as DATE
+
+
+''' <summary>
+'''Локальная переменная для поля Пункт расписания
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_themachine  as System.Guid
+
+
+''' <summary>
+'''Локальная переменная для поля Диагностическая карта
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_thecard  as System.Guid
 
 
 ''' <summary>
@@ -42,15 +78,6 @@ Namespace totask
             private m_oper  as System.Guid
 
 
-''' <summary>
-'''Локальная переменная для поля Диагностическая карта
-''' </summary>
-''' <remarks>
-'''
-''' </remarks>
-            private m_theCard  as System.Guid
-
-
 
 ''' <summary>
 '''Очистить поля раздела
@@ -59,9 +86,12 @@ Namespace totask
 '''
 ''' </remarks>
         Public Overrides Sub CleanFields()
-            ' m_theMachine=   
+            ' m_taskfinished=   
+            ' m_crdate=   
+            ' m_finishtime=   
+            ' m_themachine=   
+            ' m_thecard=   
             ' m_oper=   
-            ' m_theCard=   
         End Sub
 
 
@@ -74,7 +104,7 @@ Namespace totask
 ''' </remarks>
     Public Overrides ReadOnly Property Count() As Long
         Get
-           Count = 3
+           Count = 6
         End Get
     End Property
 
@@ -95,11 +125,17 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 0
                     Value = ID
                 Case 1
-                    Value = theMachine
+                    Value = themachine
                 Case 2
                     Value = oper
                 Case 3
-                    Value = theCard
+                    Value = thecard
+                Case 4
+                    Value = crdate
+                Case 5
+                    Value = taskfinished
+                Case 6
+                    Value = finishtime
             End Select
         else
         try
@@ -118,11 +154,17 @@ Public Overrides Property Value(ByVal Index As Object) As Object
             Case 0
                  ID=value
                 Case 1
-                    theMachine = value
+                    themachine = value
                 Case 2
                     oper = value
                 Case 3
-                    theCard = value
+                    thecard = value
+                Case 4
+                    crdate = value
+                Case 5
+                    taskfinished = value
+                Case 6
+                    finishtime = value
         End Select
      Else
         Try
@@ -154,11 +196,17 @@ Public Overrides Function FieldNameByID(ByVal Index As long) As String
                 Case 0
                    Return "ID"
                 Case 1
-                    Return "theMachine"
+                    Return "themachine"
                 Case 2
                     Return "oper"
                 Case 3
-                    Return "theCard"
+                    Return "thecard"
+                Case 4
+                    Return "crdate"
+                Case 5
+                    Return "taskfinished"
+                Case 6
+                    Return "finishtime"
                 Case else
                 return "" 
             End Select
@@ -180,12 +228,12 @@ End Function
             try
             dr("ID") =ID
             dr("Brief") =Brief
-             if theMachine is nothing then
-               dr("theMachine") =system.dbnull.value
-               dr("theMachine_ID") =System.Guid.Empty
+             if themachine is nothing then
+               dr("themachine") =system.dbnull.value
+               dr("themachine_ID") =System.Guid.Empty
              else
-               dr("theMachine") =theMachine.BRIEF
-               dr("theMachine_ID") =theMachine.ID
+               dr("themachine") =themachine.BRIEF
+               dr("themachine_ID") =themachine.ID
              end if 
              if oper is nothing then
                dr("oper") =system.dbnull.value
@@ -194,13 +242,23 @@ End Function
                dr("oper") =oper.BRIEF
                dr("oper_ID") =oper.ID
              end if 
-             if theCard is nothing then
-               dr("theCard") =system.dbnull.value
-               dr("theCard_ID") =System.Guid.Empty
+             if thecard is nothing then
+               dr("thecard") =system.dbnull.value
+               dr("thecard_ID") =System.Guid.Empty
              else
-               dr("theCard") =theCard.BRIEF
-               dr("theCard_ID") =theCard.ID
+               dr("thecard") =thecard.BRIEF
+               dr("thecard_ID") =thecard.ID
              end if 
+             dr("crdate") =crdate
+             select case taskfinished
+            case enumBoolean.Boolean_Da
+              dr ("taskfinished")  = "Да"
+              dr ("taskfinished_VAL")  = -1
+            case enumBoolean.Boolean_Net
+              dr ("taskfinished")  = "Нет"
+              dr ("taskfinished_VAL")  = 0
+              end select 'taskfinished
+             dr("finishtime") =finishtime
             DestDataTable.Rows.Add (dr)
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -229,20 +287,31 @@ End Function
 '''
 ''' </remarks>
         Public Overrides Sub Pack(ByVal nv As LATIR2.NamedValues)
-          if m_theMachine.Equals(System.Guid.Empty) then
-            nv.Add("theMachine", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          if m_themachine.Equals(System.Guid.Empty) then
+            nv.Add("themachine", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           else
-            nv.Add("theMachine", Application.Session.GetProvider.ID2Param(m_theMachine), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+            nv.Add("themachine", Application.Session.GetProvider.ID2Param(m_themachine), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           end if 
           if m_oper.Equals(System.Guid.Empty) then
             nv.Add("oper", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           else
             nv.Add("oper", Application.Session.GetProvider.ID2Param(m_oper), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           end if 
-          if m_theCard.Equals(System.Guid.Empty) then
-            nv.Add("theCard", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          if m_thecard.Equals(System.Guid.Empty) then
+            nv.Add("thecard", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           else
-            nv.Add("theCard", Application.Session.GetProvider.ID2Param(m_theCard), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+            nv.Add("thecard", Application.Session.GetProvider.ID2Param(m_thecard), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          end if 
+          if crdate=System.DateTime.MinValue then
+            nv.Add("crdate", system.dbnull.value, dbtype.DATETIME)
+          else
+            nv.Add("crdate", crdate, dbtype.DATETIME)
+          end if 
+          nv.Add("taskfinished", taskfinished, dbtype.int16)
+          if finishtime=System.DateTime.MinValue then
+            nv.Add("finishtime", system.dbnull.value, dbtype.DATETIME)
+          else
+            nv.Add("finishtime", finishtime, dbtype.DATETIME)
           end if 
             nv.Add(PartName() & "id", Application.Session.GetProvider.ID2Param(ID),  Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
         End Sub
@@ -266,11 +335,11 @@ End Function
 
             RowRetrived = True
             RetriveTime = Now
-      If reader.Table.Columns.Contains("theMachine") Then
-          if isdbnull(reader.item("theMachine")) then
-            If reader.Table.Columns.Contains("theMachine") Then m_theMachine = System.GUID.Empty
+      If reader.Table.Columns.Contains("themachine") Then
+          if isdbnull(reader.item("themachine")) then
+            If reader.Table.Columns.Contains("themachine") Then m_themachine = System.GUID.Empty
           else
-            If reader.Table.Columns.Contains("theMachine") Then m_theMachine= New System.Guid(reader.item("theMachine").ToString())
+            If reader.Table.Columns.Contains("themachine") Then m_themachine= New System.Guid(reader.item("themachine").ToString())
           end if 
       end if 
       If reader.Table.Columns.Contains("oper") Then
@@ -280,11 +349,26 @@ End Function
             If reader.Table.Columns.Contains("oper") Then m_oper= New System.Guid(reader.item("oper").ToString())
           end if 
       end if 
-      If reader.Table.Columns.Contains("theCard") Then
-          if isdbnull(reader.item("theCard")) then
-            If reader.Table.Columns.Contains("theCard") Then m_theCard = System.GUID.Empty
+      If reader.Table.Columns.Contains("thecard") Then
+          if isdbnull(reader.item("thecard")) then
+            If reader.Table.Columns.Contains("thecard") Then m_thecard = System.GUID.Empty
           else
-            If reader.Table.Columns.Contains("theCard") Then m_theCard= New System.Guid(reader.item("theCard").ToString())
+            If reader.Table.Columns.Contains("thecard") Then m_thecard= New System.Guid(reader.item("thecard").ToString())
+          end if 
+      end if 
+      If reader.Table.Columns.Contains("crdate") Then
+          if isdbnull(reader.item("crdate")) then
+            If reader.Table.Columns.Contains("crdate") Then m_crdate = System.DateTime.MinValue
+          else
+            If reader.Table.Columns.Contains("crdate") Then m_crdate=reader.item("crdate")
+          end if 
+      end if 
+          If reader.Table.Columns.Contains("taskfinished") Then m_taskfinished=reader.item("taskfinished")
+      If reader.Table.Columns.Contains("finishtime") Then
+          if isdbnull(reader.item("finishtime")) then
+            If reader.Table.Columns.Contains("finishtime") Then m_finishtime = System.DateTime.MinValue
+          else
+            If reader.Table.Columns.Contains("finishtime") Then m_finishtime=reader.item("finishtime")
           end if 
       end if 
            catch ex as System.Exception
@@ -294,23 +378,23 @@ End Function
 
 
 ''' <summary>
-'''Доступ к полю Станок
+'''Доступ к полю Пункт расписания
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property theMachine() As LATIR2.Document.docrow_base
+        Public Property themachine() As LATIR2.Document.docrow_base
             Get
                 LoadFromDatabase()
-                theMachine = me.application.Findrowobject("tod_st",m_theMachine)
+                themachine = me.application.Findrowobject("to_scheditems",m_themachine)
                 AccessTime = Now
             End Get
             Set(ByVal Value As LATIR2.Document.docrow_base )
                 LoadFromDatabase()
                 if not Value is nothing then
-                    m_theMachine = Value.id
+                    m_themachine = Value.id
                 else
-                   m_theMachine=System.Guid.Empty
+                   m_themachine=System.Guid.Empty
                 end if
                 ChangeTime = Now
             End Set
@@ -347,19 +431,79 @@ End Function
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property theCard() As LATIR2.Document.docrow_base
+        Public Property thecard() As LATIR2.Document.docrow_base
             Get
                 LoadFromDatabase()
-                theCard = me.application.Findrowobject("to_cardinfo",m_theCard)
+                thecard = me.application.Findrowobject("to_cardinfo",m_thecard)
                 AccessTime = Now
             End Get
             Set(ByVal Value As LATIR2.Document.docrow_base )
                 LoadFromDatabase()
                 if not Value is nothing then
-                    m_theCard = Value.id
+                    m_thecard = Value.id
                 else
-                   m_theCard=System.Guid.Empty
+                   m_thecard=System.Guid.Empty
                 end if
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Дата создания
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property crdate() As DATE
+            Get
+                LoadFromDatabase()
+                crdate = m_crdate
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As DATE )
+                LoadFromDatabase()
+                m_crdate = Value
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Задача завершена
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property taskfinished() As enumBoolean
+            Get
+                LoadFromDatabase()
+                taskfinished = m_taskfinished
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As enumBoolean )
+                LoadFromDatabase()
+                m_taskfinished = Value
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Время завершения задачи
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property finishtime() As DATE
+            Get
+                LoadFromDatabase()
+                finishtime = m_finishtime
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As DATE )
+                LoadFromDatabase()
+                m_finishtime = Value
                 ChangeTime = Now
             End Set
         End Property
@@ -374,9 +518,14 @@ End Function
         Protected Overrides sub XMLUnpack(ByVal node As System.Xml.XmlNode, Optional ByVal LoadMode As Integer = 0)
           Dim e_list As XmlNodeList
           try 
-            m_theMachine = new system.guid(node.Attributes.GetNamedItem("theMachine").Value)
+            m_themachine = new system.guid(node.Attributes.GetNamedItem("themachine").Value)
             m_oper = new system.guid(node.Attributes.GetNamedItem("oper").Value)
-            m_theCard = new system.guid(node.Attributes.GetNamedItem("theCard").Value)
+            m_thecard = new system.guid(node.Attributes.GetNamedItem("thecard").Value)
+            m_crdate = System.DateTime.MinValue
+            crdate = m_crdate.AddTicks( node.Attributes.GetNamedItem("crdate").Value)
+            taskfinished = node.Attributes.GetNamedItem("taskfinished").Value
+            m_finishtime = System.DateTime.MinValue
+            finishtime = m_finishtime.AddTicks( node.Attributes.GetNamedItem("finishtime").Value)
              Changed = true
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -394,9 +543,14 @@ End Function
 ''' </remarks>
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
-          node.SetAttribute("theMachine", m_theMachine.tostring)  
+          node.SetAttribute("themachine", m_themachine.tostring)  
           node.SetAttribute("oper", m_oper.tostring)  
-          node.SetAttribute("theCard", m_theCard.tostring)  
+          node.SetAttribute("thecard", m_thecard.tostring)  
+         ' if crdate = System.DateTime.MinValue then crdate=new Date(1899,12,30)  ' SQL Server trouble
+          node.SetAttribute("crdate", crdate.Ticks)  
+          node.SetAttribute("taskfinished", taskfinished)  
+         ' if finishtime = System.DateTime.MinValue then finishtime=new Date(1899,12,30)  ' SQL Server trouble
+          node.SetAttribute("finishtime", finishtime.Ticks)  
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
           end try

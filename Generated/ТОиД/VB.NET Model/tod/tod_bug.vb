@@ -25,6 +25,15 @@ Namespace tod
 
 
 ''' <summary>
+'''Локальная переменная для поля Примечание
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_the_comment  as STRING
+
+
+''' <summary>
 '''Локальная переменная для поля Узел
 ''' </summary>
 ''' <remarks>
@@ -39,16 +48,7 @@ Namespace tod
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_Name  as String
-
-
-''' <summary>
-'''Локальная переменная для поля Примечание
-''' </summary>
-''' <remarks>
-'''
-''' </remarks>
-            private m_the_comment  as STRING
+            private m_name  as String
 
 
 
@@ -59,9 +59,9 @@ Namespace tod
 '''
 ''' </remarks>
         Public Overrides Sub CleanFields()
-            ' m_the_system=   
-            ' m_Name=   
             ' m_the_comment=   
+            ' m_the_system=   
+            ' m_name=   
         End Sub
 
 
@@ -97,7 +97,7 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 1
                     Value = the_system
                 Case 2
-                    Value = Name
+                    Value = name
                 Case 3
                     Value = the_comment
             End Select
@@ -120,7 +120,7 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 1
                     the_system = value
                 Case 2
-                    Name = value
+                    name = value
                 Case 3
                     the_comment = value
         End Select
@@ -156,7 +156,7 @@ Public Overrides Function FieldNameByID(ByVal Index As long) As String
                 Case 1
                     Return "the_system"
                 Case 2
-                    Return "Name"
+                    Return "name"
                 Case 3
                     Return "the_comment"
                 Case else
@@ -187,7 +187,7 @@ End Function
                dr("the_system") =the_system.BRIEF
                dr("the_system_ID") =the_system.ID
              end if 
-             dr("Name") =Name
+             dr("name") =name
              dr("the_comment") =the_comment
             DestDataTable.Rows.Add (dr)
            catch ex as System.Exception
@@ -222,7 +222,7 @@ End Function
           else
             nv.Add("the_system", Application.Session.GetProvider.ID2Param(m_the_system), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           end if 
-          nv.Add("Name", Name, dbtype.string)
+          nv.Add("name", name, dbtype.string)
           nv.Add("the_comment", the_comment, dbtype.string)
             nv.Add(PartName() & "id", Application.Session.GetProvider.ID2Param(ID),  Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
         End Sub
@@ -253,7 +253,7 @@ End Function
             If reader.Table.Columns.Contains("the_system") Then m_the_system= New System.Guid(reader.item("the_system").ToString())
           end if 
       end if 
-          If reader.Table.Columns.Contains("Name") Then m_Name=reader.item("Name").ToString()
+          If reader.Table.Columns.Contains("name") Then m_name=reader.item("name").ToString()
           If reader.Table.Columns.Contains("the_comment") Then m_the_comment=reader.item("the_comment").ToString()
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -291,15 +291,15 @@ End Function
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property Name() As String
+        Public Property name() As String
             Get
                 LoadFromDatabase()
-                Name = m_Name
+                name = m_name
                 AccessTime = Now
             End Get
             Set(ByVal Value As String )
                 LoadFromDatabase()
-                m_Name = Value
+                m_name = Value
                 ChangeTime = Now
             End Set
         End Property
@@ -335,7 +335,7 @@ End Function
           Dim e_list As XmlNodeList
           try 
             m_the_system = new system.guid(node.Attributes.GetNamedItem("the_system").Value)
-            Name = node.Attributes.GetNamedItem("Name").Value
+            name = node.Attributes.GetNamedItem("name").Value
             the_comment = node.Attributes.GetNamedItem("the_comment").Value
              Changed = true
            catch ex as System.Exception
@@ -355,7 +355,7 @@ End Function
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
           node.SetAttribute("the_system", m_the_system.tostring)  
-          node.SetAttribute("Name", Name)  
+          node.SetAttribute("name", name)  
           node.SetAttribute("the_comment", the_comment)  
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)

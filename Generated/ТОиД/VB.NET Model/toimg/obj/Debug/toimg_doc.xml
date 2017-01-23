@@ -1,0 +1,858 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+toimg
+</name>
+</assembly>
+<members>
+<member name="M:toimg.toimg.toimg_def_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.toimg_def_col">
+	<summary>
+Реализация раздела Описание хранилищав виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_def.m_computername">
+	<summary>
+Локальная переменная для поля Имя  станции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_def.m_imagestore">
+	<summary>
+Локальная переменная для поля Папка с фотографиями
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_def.m_sharedfolder">
+	<summary>
+Локальная переменная для поля Имя общей директории
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_def.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_def.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_def.computername">
+	<summary>
+Доступ к полю Имя  станции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_def.imagestore">
+	<summary>
+Доступ к полю Папка с фотографиями
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_def.sharedfolder">
+	<summary>
+Доступ к полю Имя общей директории
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_def.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_def.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.toimg_def">
+	<summary>
+Реализация строки раздела Описание хранилища
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.toimg_todelete_col">
+	<summary>
+Реализация раздела Файлы на удалениев виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_todelete.m_fname">
+	<summary>
+Локальная переменная для поля Имя файла
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_todelete.m_filerowid">
+	<summary>
+Локальная переменная для поля ид строки дя удаления
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_todelete.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_todelete.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_todelete.fname">
+	<summary>
+Доступ к полю Имя файла
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_todelete.filerowid">
+	<summary>
+Доступ к полю ид строки дя удаления
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_todelete.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_todelete.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.toimg_todelete">
+	<summary>
+Реализация строки раздела Файлы на удаление
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.toimg_data_col">
+	<summary>
+Реализация раздела Картинкив виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_data.m_link2part">
+	<summary>
+Локальная переменная для поля Раздел привязки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_data.m_link1part">
+	<summary>
+Локальная переменная для поля Раздел2
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_data.m_oper">
+	<summary>
+Локальная переменная для поля Оператор
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_data.m_link1id">
+	<summary>
+Локальная переменная для поля Идентификатор2
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_data.m_link2id">
+	<summary>
+Локальная переменная для поля Идентификатор привязки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_data.m_filetype">
+	<summary>
+Локальная переменная для поля Тип файла
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.toimg_data.m_fname">
+	<summary>
+Локальная переменная для поля Имя файла
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_data.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_data.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_data.fname">
+	<summary>
+Доступ к полю Имя файла
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_data.link2part">
+	<summary>
+Доступ к полю Раздел привязки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_data.link2id">
+	<summary>
+Доступ к полю Идентификатор привязки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_data.filetype">
+	<summary>
+Доступ к полю Тип файла
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_data.link1part">
+	<summary>
+Доступ к полю Раздел2
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_data.link1id">
+	<summary>
+Доступ к полю Идентификатор2
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_data.oper">
+	<summary>
+Доступ к полю Оператор
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.toimg_data.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.toimg_data.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.toimg_data">
+	<summary>
+Реализация строки раздела Картинки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumStructType">
+	<summary>
+Перечисление Тип раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumWFFuncParam">
+	<summary>
+Перечисление Вариант расшифровки параметра функции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumReportType">
+	<summary>
+Перечисление Вариант отчета
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumEducation">
+	<summary>
+Перечисление Образование
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumTypeStyle">
+	<summary>
+Перечисление Вариант трактовки типа поля
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumReplicationType">
+	<summary>
+Перечисление Вариант репликации докуента
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumNumerationRule">
+	<summary>
+Перечисление Правило нумерации
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumWFProcessState">
+	<summary>
+Перечисление Состояния процесса
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumMenuActionType">
+	<summary>
+Перечисление Вариант действия при выборе пункта меню
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumWFShortcutType">
+	<summary>
+Перечисление Варианты ярлыков, которые может размещать процесс
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumVHAlignment">
+	<summary>
+Перечисление Выравнивание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumCurrencyType">
+	<summary>
+Перечисление Валюта платежа
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumInfoStoreType">
+	<summary>
+Перечисление Тип каталога
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumDevelopmentBase">
+	<summary>
+Перечисление Платформа разработки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumQuarter">
+	<summary>
+Перечисление Квартал
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumMonths">
+	<summary>
+Перечисление Месяцы
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumColumnSortType">
+	<summary>
+Перечисление Вариант сортиовки данных колонки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumBoolean">
+	<summary>
+Перечисление Да / Нет
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumJournalLinkType">
+	<summary>
+Перечисление Для связи журналов друг с другом
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumTargetType">
+	<summary>
+Перечисление Вариант уровня приложения, куда может генерироваться код
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumCacheType">
+	<summary>
+Перечисление Тип кеширования для расчета прав на объекты
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumMesureFormat">
+	<summary>
+Перечисление Формат индикатора
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumExportType">
+	<summary>
+Перечисление Тип экспорта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumWFStepClass">
+	<summary>
+Перечисление Тип шага процесса
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumDayInWeek">
+	<summary>
+Перечисление День недели
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumGeneratorStyle">
+	<summary>
+Перечисление GeneratorStyle
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumPlatType">
+	<summary>
+Перечисление Тип плательщика
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enummsgState">
+	<summary>
+Перечисление Состояние заявки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumOnJournalRowClick">
+	<summary>
+Перечисление действие при открытии строки журнала
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumPartType">
+	<summary>
+Перечисление PartType
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumReferenceType">
+	<summary>
+Перечисление ReferenceType
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumstateNomen">
+	<summary>
+Перечисление 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumConditionType">
+	<summary>
+Перечисление Варианты условий
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumFolderType">
+	<summary>
+Перечисление Тип папки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enummsgResult">
+	<summary>
+Перечисление Результат
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumPartAddBehaivor">
+	<summary>
+Перечисление Поведение при добавлении строки раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumExtentionType">
+	<summary>
+Перечисление Тип расширения
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumSex">
+	<summary>
+Перечисление Мужской / Женский
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumYesNo">
+	<summary>
+Перечисление Да / Нет (0 или 1)
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumAggregationType">
+	<summary>
+Перечисление Вариант агрегации по полю
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumWFFuncState">
+	<summary>
+Перечисление Состояние функции в бизнес процессе
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumEmployment">
+	<summary>
+Перечисление Занятость
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.enumTriState">
+	<summary>
+Перечисление Да / Нет / Не определено
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.Application.MyTypeName">
+	<summary>
+Название типа документа
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.Application.m_toimg_data">
+	<summary>
+ Внутренняя переменная для раздела Картинки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.Application.toimg_data">
+	<summary>
+Свойство для доступа к строкам раздела Картинки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.Application.m_toimg_todelete">
+	<summary>
+ Внутренняя переменная для раздела Файлы на удаление
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.Application.toimg_todelete">
+	<summary>
+Свойство для доступа к строкам раздела Файлы на удаление
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:toimg.toimg.Application.m_toimg_def">
+	<summary>
+ Внутренняя переменная для раздела Описание хранилища
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.Application.toimg_def">
+	<summary>
+Свойство для доступа к строкам раздела Описание хранилища
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:toimg.toimg.Application.CountOfParts">
+	<summary>
+Количество разделов в объекте
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.Application.GetDocCollection_Base(System.Int64)">
+	<summary>
+Получить раздел по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.Application.FindInCollections(System.String,System.String)">
+	<summary>
+Поиск элемента в коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.Application.XMLLoadCollections(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Загрузка данных из XML  файла
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.Application.XMLSaveCollections(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Сохранение данных в XML  файле
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:toimg.toimg.Application.BatchUpdate">
+	<summary>
+Сохранение изменений в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:toimg.toimg.Application">
+	<summary>
+Реализация документа 
+ </summary>
+	<remarks>
+Изображения
+ </remarks>
+</member>
+</members>
+</doc>

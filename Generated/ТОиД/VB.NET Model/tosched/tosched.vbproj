@@ -4,7 +4,7 @@
  <PropertyGroup>
  <Configuration Condition = " '$(Configuration)' == '' ">Debug</Configuration>
       <Platform Condition = " '$(Platform)' == '' ">AnyCPU</Platform>
- <ProjectGuid>95b08e28-6e65-48ca-8f90-e2f9eed9838e</ProjectGuid>
+ <ProjectGuid>494625e9-6e1e-4a4f-b180-f0113b01a634</ProjectGuid>
  <OutputType>Library</OutputType>
  <RootNamespace>tosched</RootNamespace>
  <AssemblyName>tosched</AssemblyName>

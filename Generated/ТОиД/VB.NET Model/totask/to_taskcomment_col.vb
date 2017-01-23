@@ -47,7 +47,10 @@ Namespace totask
             dt.Columns.Add("Brief", Gettype(System.string))
             dt.Columns.Add("codetocomment_ID" , GetType(System.guid))
             dt.Columns.Add("codetocomment", Gettype(System.string))
-            dt.Columns.Add("theComment", Gettype(System.string))
+            dt.Columns.Add("thecomment", Gettype(System.string))
+            dt.Columns.Add("the_operator_ID" , GetType(System.guid))
+            dt.Columns.Add("the_operator", Gettype(System.string))
+            dt.Columns.Add("the_date", GetType(System.DateTime))
             return dt
         End Function
 
@@ -99,6 +102,8 @@ Public Overrides Function FieldList() As String
            mFieldList =mFieldList+","+.ID2Base("SecurityStyleID") 
            mFieldList =mFieldList+","+.ID2Base("codetocomment") 
            mFieldList =mFieldList+ ", thecomment" 
+           mFieldList =mFieldList+","+.ID2Base("the_operator") 
+           mFieldList =mFieldList+","+.Date2Base("the_date") 
        end with
     End If
     Return mFieldList

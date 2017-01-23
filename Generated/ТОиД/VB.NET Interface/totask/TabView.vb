@@ -43,8 +43,6 @@ Public Class Tabview
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents Viewto_taskchecks As totaskGUI.viewto_taskchecks
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
-    Friend WithEvents Viewto_taskvalues As totaskGUI.viewto_taskvalues
-    Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     Friend WithEvents Viewto_taskcomment As totaskGUI.viewto_taskcomment
    
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
@@ -54,14 +52,11 @@ Public Class Tabview
    TabPage2 = New System.Windows.Forms.TabPage
    Viewto_taskchecks = new viewto_taskchecks
    TabPage3 = New System.Windows.Forms.TabPage
-   Viewto_taskvalues = new viewto_taskvalues
-   TabPage4 = New System.Windows.Forms.TabPage
    Viewto_taskcomment = new viewto_taskcomment
         Me.tab.SuspendLayout()
    Me.TabPage1.SuspendLayout()
    Me.TabPage2.SuspendLayout()
    Me.TabPage3.SuspendLayout()
-   Me.TabPage4.SuspendLayout()
         Me.SuspendLayout()
         '
         'tab
@@ -110,31 +105,13 @@ Public Class Tabview
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add (Me.Viewto_taskvalues)
+        Me.TabPage3.Controls.Add (Me.Viewto_taskcomment)
         Me.TabPage3.Location = New System.Drawing.Point(-10000, -10000)
         Me.TabPage3.name = "TabPage3"
-        Me.TabPage3.Text = "Измеренные значения"
+        Me.TabPage3.Text = "Примечания"
         Me.TabPage3.Size = New System.Drawing.Size(520, 366)
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.AutoScroll = True
-        '
-        'Viewto_taskvalues
-        '
-        Me.Viewto_taskvalues.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Viewto_taskvalues.Location = New System.Drawing.Point(0, 0)
-        Me.Viewto_taskvalues.name = "Viewto_taskvalues"
-        Me.Viewto_taskvalues.Size = New System.Drawing.Size(504, 352)
-        Me.Viewto_taskvalues.TabIndex = 0
-        '
-        'TabPage4
-        '
-        Me.TabPage4.Controls.Add (Me.Viewto_taskcomment)
-        Me.TabPage4.Location = New System.Drawing.Point(-10000, -10000)
-        Me.TabPage4.name = "TabPage4"
-        Me.TabPage4.Text = "Примечания"
-        Me.TabPage4.Size = New System.Drawing.Size(520, 366)
-        Me.TabPage4.TabIndex = 0
-        Me.TabPage4.AutoScroll = True
         '
         'Viewto_taskcomment
         '
@@ -146,7 +123,6 @@ Public Class Tabview
    Me.tab.Controls.Add (Me.TabPage1)
    Me.tab.Controls.Add (Me.TabPage2)
    Me.tab.Controls.Add (Me.TabPage3)
-   Me.tab.Controls.Add (Me.TabPage4)
         '
         'Tabview
         '
@@ -157,7 +133,6 @@ Public Class Tabview
    Me.TabPage1.ResumeLayout (False)
    Me.TabPage2.ResumeLayout (False)
    Me.TabPage3.ResumeLayout (False)
-   Me.TabPage4.ResumeLayout (False)
         Me.ResumeLayout (False)
 
     End Sub
@@ -199,7 +174,6 @@ Public Class Tabview
         GuiManager = gm
         Viewto_taskinfo.Attach(item, GuiManager,DocReadOnly)
         Viewto_taskchecks.Attach(item, GuiManager,DocReadOnly)
-        Viewto_taskvalues.Attach(item, GuiManager,DocReadOnly)
         Viewto_taskcomment.Attach(item, GuiManager,DocReadOnly)
     End Sub
 
@@ -215,7 +189,6 @@ Public Class Tabview
     ok = True
         ok = ok And Viewto_taskinfo.Save(Sielent, NoError)
         ok = ok And Viewto_taskchecks.Save(Sielent, NoError)
-        ok = ok And Viewto_taskvalues.Save(Sielent, NoError)
         ok = ok And Viewto_taskcomment.Save(Sielent, NoError)
        Return ok
     End function
@@ -232,7 +205,6 @@ Public Class Tabview
     ok = True
         ok = ok And Viewto_taskinfo.IsOK()
         ok = ok And Viewto_taskchecks.IsOK()
-        ok = ok And Viewto_taskvalues.IsOK()
         ok = ok And Viewto_taskcomment.IsOK()
        Return ok
     End function
@@ -250,7 +222,6 @@ Public Class Tabview
     ok = False
         ok = ok or Viewto_taskinfo.IsChanged()
         ok = ok or Viewto_taskchecks.IsChanged()
-        ok = ok or Viewto_taskvalues.IsChanged()
         ok = ok or Viewto_taskcomment.IsChanged()
        Return ok
     End function
@@ -268,7 +239,6 @@ Public Class Tabview
     ok = True
         ok = ok And Viewto_taskinfo.Verify(NoError)
         ok = ok And Viewto_taskchecks.Verify(NoError)
-        ok = ok And Viewto_taskvalues.Verify(NoError)
         ok = ok And Viewto_taskcomment.Verify(NoError)
        Return ok
     End function
@@ -287,15 +257,8 @@ Public Class Tabview
         End If
     End Sub
     Private Sub TabPage3_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabPage3.Leave
-        If Viewto_taskvalues.IsChanged() Then
-            If MsgBox("Сохранить изменения на вкладке <" + TabPage3.Text + "> ?", MsgBoxStyle.YesNo, "Изменения") = MsgBoxResult.Yes Then
-                Viewto_taskvalues.Save(True, False)
-            End If
-        End If
-    End Sub
-    Private Sub TabPage4_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabPage4.Leave
         If Viewto_taskcomment.IsChanged() Then
-            If MsgBox("Сохранить изменения на вкладке <" + TabPage4.Text + "> ?", MsgBoxStyle.YesNo, "Изменения") = MsgBoxResult.Yes Then
+            If MsgBox("Сохранить изменения на вкладке <" + TabPage3.Text + "> ?", MsgBoxStyle.YesNo, "Изменения") = MsgBoxResult.Yes Then
                 Viewto_taskcomment.Save(True, False)
             End If
         End If

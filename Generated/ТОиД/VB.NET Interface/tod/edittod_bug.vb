@@ -57,8 +57,8 @@ Friend WithEvents lblthe_system  as  System.Windows.Forms.Label
 Friend WithEvents txtthe_system As LATIR2GuiManager.TouchTextBox
 Friend WithEvents cmdthe_system As System.Windows.Forms.Button
 Friend WithEvents cmdthe_systemClear As System.Windows.Forms.Button
-Friend WithEvents lblName  as  System.Windows.Forms.Label
-Friend WithEvents txtName As LATIR2GuiManager.TouchTextBox
+Friend WithEvents lblname  as  System.Windows.Forms.Label
+Friend WithEvents txtname As LATIR2GuiManager.TouchTextBox
 Friend WithEvents lblthe_comment  as  System.Windows.Forms.Label
 Friend WithEvents txtthe_comment As LATIR2GuiManager.TouchTextBox
 
@@ -81,8 +81,8 @@ Me.lblthe_system = New System.Windows.Forms.Label
 Me.txtthe_system = New LATIR2GuiManager.TouchTextBox
 Me.cmdthe_system = New System.Windows.Forms.Button
 Me.cmdthe_systemClear = New System.Windows.Forms.Button
-Me.lblName = New System.Windows.Forms.Label
-Me.txtName = New LATIR2GuiManager.TouchTextBox
+Me.lblname = New System.Windows.Forms.Label
+Me.txtname = New LATIR2GuiManager.TouchTextBox
 Me.lblthe_comment = New System.Windows.Forms.Label
 Me.txtthe_comment = New LATIR2GuiManager.TouchTextBox
 
@@ -108,17 +108,18 @@ Me.cmdthe_systemClear.name = "cmdthe_systemClear"
 Me.cmdthe_systemClear.Size = New System.Drawing.Size(22, 20)
 Me.cmdthe_systemClear.TabIndex = 4
 Me.cmdthe_systemClear.Text = "X" 
-Me.lblName.Location = New System.Drawing.Point(20,52)
-Me.lblName.name = "lblName"
-Me.lblName.Size = New System.Drawing.Size(200, 20)
-Me.lblName.TabIndex = 5
-Me.lblName.Text = "Название "
-Me.lblName.ForeColor = System.Drawing.Color.Black
-Me.txtName.Location = New System.Drawing.Point(20,74)
-Me.txtName.name = "txtName"
-Me.txtName.Size = New System.Drawing.Size(200, 20)
-Me.txtName.TabIndex = 6
-Me.txtName.Text = "" 
+Me.lblname.Location = New System.Drawing.Point(20,52)
+Me.lblname.name = "lblname"
+Me.lblname.Size = New System.Drawing.Size(200, 20)
+Me.lblname.TabIndex = 5
+Me.lblname.Text = "Название "
+Me.lblname.ForeColor = System.Drawing.Color.Black
+Me.txtname.Location = New System.Drawing.Point(20,74)
+Me.txtname.name = "txtname"
+Me.txtname.Size = New System.Drawing.Size(200, 20)
+Me.txtname.TabIndex = 6
+Me.txtname.Text = "" 
+Me.txtname.ReadOnly = True
 Me.lblthe_comment.Location = New System.Drawing.Point(20,99)
 Me.lblthe_comment.name = "lblthe_comment"
 Me.lblthe_comment.Size = New System.Drawing.Size(200, 20)
@@ -132,14 +133,15 @@ Me.txtthe_comment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
 Me.txtthe_comment.Size = New System.Drawing.Size(200, 50 + 20)
 Me.txtthe_comment.TabIndex = 8
 Me.txtthe_comment.Text = "" 
+Me.txtthe_comment.ReadOnly = True
         Me.AutoScroll = True
 
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblthe_system)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtthe_system)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdthe_system)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdthe_systemClear)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblName)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtName)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblname)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtname)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblthe_comment)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtthe_comment)
         Me.Controls.Add(Me.HolderPanel)
@@ -160,23 +162,19 @@ private sub cmdthe_system_Click(ByVal sender As System.Object, ByVal e As System
 Dim id As guid
 Dim brief As String = string.Empty
 Dim OK as boolean 
-        If GuiManager.GetReferenceDialog("tod_system","",System.guid.Empty, id, brief) Then
-          txtthe_system.Tag = id
-          txtthe_system.text = brief
-        End If
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
         catch ex as System.Exception
         Debug.Print(ex.Message +" >> " + ex.StackTrace)
         end try
 end sub
 private sub cmdthe_systemClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdthe_systemClear.Click
   try
-          txtthe_system.Tag = Guid.Empty
-          txtthe_system.text = ""
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
         catch ex as System.Exception
         Debug.Print(ex.Message +" >> " + ex.StackTrace)
         end try
 end sub
-private sub txtName_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtName.TextChanged
+private sub txtname_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtname.TextChanged
   Changing
 
 end sub
@@ -210,7 +208,7 @@ else
   txtthe_system.Tag = System.Guid.Empty 
   txtthe_system.text = "" 
 End If
-txtName.text = item.Name
+txtname.text = item.name
 txtthe_comment.text = item.the_comment
         mOnInit = false
   raiseevent Refreshed()
@@ -226,13 +224,6 @@ end sub
 Public Sub Save() Implements LATIR2GUIManager.IRowEditor.Save
   if mRowReadOnly =false then
 
-If not txtthe_system.Tag.Equals(System.Guid.Empty) Then
-  item.the_system = Item.Application.FindRowObject("tod_system",txtthe_system.Tag)
-Else
-   item.the_system = Nothing
-End If
-item.Name = txtName.text
-item.the_comment = txtthe_comment.text
   end if
   mChanged = false
   raiseevent saved()
@@ -242,7 +233,7 @@ Public function IsOK() as boolean Implements LATIR2GUIManager.IRowEditor.IsOK
  mIsOK=true
  if mRowReadOnly  then return true
 
-if mIsOK then mIsOK =( txtName.text <> "" ) 
+if mIsOK then mIsOK =( txtname.text <> "" ) 
  return mIsOK
 end function
 Public function IsChanged() as boolean Implements LATIR2GUIManager.IRowEditor.IsChanged

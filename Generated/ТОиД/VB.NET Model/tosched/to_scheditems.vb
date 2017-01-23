@@ -25,21 +25,57 @@ Namespace tosched
 
 
 ''' <summary>
+'''Локальная переменная для поля ТО проведено
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_isdone  as enumBoolean
+
+
+''' <summary>
 '''Локальная переменная для поля Станок
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_TheMachine  as System.Guid
+            private m_themachine  as System.Guid
 
 
 ''' <summary>
-'''Локальная переменная для поля Дата проведения ТО
+'''Локальная переменная для поля Дата завершения ТО
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_finishdate  as DATE
+
+
+''' <summary>
+'''Локальная переменная для поля Плановая дата ТО
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
             private m_todate  as DATE
+
+
+''' <summary>
+'''Локальная переменная для поля Взят в работу
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_checkin  as DATE
+
+
+''' <summary>
+'''Локальная переменная для поля Оператор
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_oper  as System.Guid
 
 
 
@@ -50,8 +86,12 @@ Namespace tosched
 '''
 ''' </remarks>
         Public Overrides Sub CleanFields()
-            ' m_TheMachine=   
+            ' m_isdone=   
+            ' m_themachine=   
+            ' m_finishdate=   
             ' m_todate=   
+            ' m_checkin=   
+            ' m_oper=   
         End Sub
 
 
@@ -64,7 +104,7 @@ Namespace tosched
 ''' </remarks>
     Public Overrides ReadOnly Property Count() As Long
         Get
-           Count = 2
+           Count = 6
         End Get
     End Property
 
@@ -85,9 +125,17 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 0
                     Value = ID
                 Case 1
-                    Value = TheMachine
+                    Value = themachine
                 Case 2
                     Value = todate
+                Case 3
+                    Value = checkin
+                Case 4
+                    Value = oper
+                Case 5
+                    Value = isdone
+                Case 6
+                    Value = finishdate
             End Select
         else
         try
@@ -106,9 +154,17 @@ Public Overrides Property Value(ByVal Index As Object) As Object
             Case 0
                  ID=value
                 Case 1
-                    TheMachine = value
+                    themachine = value
                 Case 2
                     todate = value
+                Case 3
+                    checkin = value
+                Case 4
+                    oper = value
+                Case 5
+                    isdone = value
+                Case 6
+                    finishdate = value
         End Select
      Else
         Try
@@ -140,9 +196,17 @@ Public Overrides Function FieldNameByID(ByVal Index As long) As String
                 Case 0
                    Return "ID"
                 Case 1
-                    Return "TheMachine"
+                    Return "themachine"
                 Case 2
                     Return "todate"
+                Case 3
+                    Return "checkin"
+                Case 4
+                    Return "oper"
+                Case 5
+                    Return "isdone"
+                Case 6
+                    Return "finishdate"
                 Case else
                 return "" 
             End Select
@@ -164,14 +228,31 @@ End Function
             try
             dr("ID") =ID
             dr("Brief") =Brief
-             if TheMachine is nothing then
-               dr("TheMachine") =system.dbnull.value
-               dr("TheMachine_ID") =System.Guid.Empty
+             if themachine is nothing then
+               dr("themachine") =system.dbnull.value
+               dr("themachine_ID") =System.Guid.Empty
              else
-               dr("TheMachine") =TheMachine.BRIEF
-               dr("TheMachine_ID") =TheMachine.ID
+               dr("themachine") =themachine.BRIEF
+               dr("themachine_ID") =themachine.ID
              end if 
              dr("todate") =todate
+             dr("checkin") =checkin
+             if oper is nothing then
+               dr("oper") =system.dbnull.value
+               dr("oper_ID") =System.Guid.Empty
+             else
+               dr("oper") =oper.BRIEF
+               dr("oper_ID") =oper.ID
+             end if 
+             select case isdone
+            case enumBoolean.Boolean_Da
+              dr ("isdone")  = "Да"
+              dr ("isdone_VAL")  = -1
+            case enumBoolean.Boolean_Net
+              dr ("isdone")  = "Нет"
+              dr ("isdone_VAL")  = 0
+              end select 'isdone
+             dr("finishdate") =finishdate
             DestDataTable.Rows.Add (dr)
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -200,15 +281,31 @@ End Function
 '''
 ''' </remarks>
         Public Overrides Sub Pack(ByVal nv As LATIR2.NamedValues)
-          if m_TheMachine.Equals(System.Guid.Empty) then
-            nv.Add("TheMachine", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          if m_themachine.Equals(System.Guid.Empty) then
+            nv.Add("themachine", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           else
-            nv.Add("TheMachine", Application.Session.GetProvider.ID2Param(m_TheMachine), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+            nv.Add("themachine", Application.Session.GetProvider.ID2Param(m_themachine), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           end if 
           if todate=System.DateTime.MinValue then
             nv.Add("todate", system.dbnull.value, dbtype.DATETIME)
           else
             nv.Add("todate", todate, dbtype.DATETIME)
+          end if 
+          if checkin=System.DateTime.MinValue then
+            nv.Add("checkin", system.dbnull.value, dbtype.DATETIME)
+          else
+            nv.Add("checkin", checkin, dbtype.DATETIME)
+          end if 
+          if m_oper.Equals(System.Guid.Empty) then
+            nv.Add("oper", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          else
+            nv.Add("oper", Application.Session.GetProvider.ID2Param(m_oper), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          end if 
+          nv.Add("isdone", isdone, dbtype.int16)
+          if finishdate=System.DateTime.MinValue then
+            nv.Add("finishdate", system.dbnull.value, dbtype.DATETIME)
+          else
+            nv.Add("finishdate", finishdate, dbtype.DATETIME)
           end if 
             nv.Add(PartName() & "id", Application.Session.GetProvider.ID2Param(ID),  Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
         End Sub
@@ -232,11 +329,11 @@ End Function
 
             RowRetrived = True
             RetriveTime = Now
-      If reader.Table.Columns.Contains("TheMachine") Then
-          if isdbnull(reader.item("TheMachine")) then
-            If reader.Table.Columns.Contains("TheMachine") Then m_TheMachine = System.GUID.Empty
+      If reader.Table.Columns.Contains("themachine") Then
+          if isdbnull(reader.item("themachine")) then
+            If reader.Table.Columns.Contains("themachine") Then m_themachine = System.GUID.Empty
           else
-            If reader.Table.Columns.Contains("TheMachine") Then m_TheMachine= New System.Guid(reader.item("TheMachine").ToString())
+            If reader.Table.Columns.Contains("themachine") Then m_themachine= New System.Guid(reader.item("themachine").ToString())
           end if 
       end if 
       If reader.Table.Columns.Contains("todate") Then
@@ -244,6 +341,28 @@ End Function
             If reader.Table.Columns.Contains("todate") Then m_todate = System.DateTime.MinValue
           else
             If reader.Table.Columns.Contains("todate") Then m_todate=reader.item("todate")
+          end if 
+      end if 
+      If reader.Table.Columns.Contains("checkin") Then
+          if isdbnull(reader.item("checkin")) then
+            If reader.Table.Columns.Contains("checkin") Then m_checkin = System.DateTime.MinValue
+          else
+            If reader.Table.Columns.Contains("checkin") Then m_checkin=reader.item("checkin")
+          end if 
+      end if 
+      If reader.Table.Columns.Contains("oper") Then
+          if isdbnull(reader.item("oper")) then
+            If reader.Table.Columns.Contains("oper") Then m_oper = System.GUID.Empty
+          else
+            If reader.Table.Columns.Contains("oper") Then m_oper= New System.Guid(reader.item("oper").ToString())
+          end if 
+      end if 
+          If reader.Table.Columns.Contains("isdone") Then m_isdone=reader.item("isdone")
+      If reader.Table.Columns.Contains("finishdate") Then
+          if isdbnull(reader.item("finishdate")) then
+            If reader.Table.Columns.Contains("finishdate") Then m_finishdate = System.DateTime.MinValue
+          else
+            If reader.Table.Columns.Contains("finishdate") Then m_finishdate=reader.item("finishdate")
           end if 
       end if 
            catch ex as System.Exception
@@ -258,18 +377,18 @@ End Function
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property TheMachine() As LATIR2.Document.docrow_base
+        Public Property themachine() As LATIR2.Document.docrow_base
             Get
                 LoadFromDatabase()
-                TheMachine = me.application.Findrowobject("tod_st",m_TheMachine)
+                themachine = me.application.Findrowobject("tod_st",m_themachine)
                 AccessTime = Now
             End Get
             Set(ByVal Value As LATIR2.Document.docrow_base )
                 LoadFromDatabase()
                 if not Value is nothing then
-                    m_TheMachine = Value.id
+                    m_themachine = Value.id
                 else
-                   m_TheMachine=System.Guid.Empty
+                   m_themachine=System.Guid.Empty
                 end if
                 ChangeTime = Now
             End Set
@@ -277,7 +396,7 @@ End Function
 
 
 ''' <summary>
-'''Доступ к полю Дата проведения ТО
+'''Доступ к полю Плановая дата ТО
 ''' </summary>
 ''' <remarks>
 '''
@@ -297,6 +416,90 @@ End Function
 
 
 ''' <summary>
+'''Доступ к полю Взят в работу
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property checkin() As DATE
+            Get
+                LoadFromDatabase()
+                checkin = m_checkin
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As DATE )
+                LoadFromDatabase()
+                m_checkin = Value
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Оператор
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property oper() As LATIR2.Document.docrow_base
+            Get
+                LoadFromDatabase()
+                oper = me.application.Findrowobject("to_oper",m_oper)
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As LATIR2.Document.docrow_base )
+                LoadFromDatabase()
+                if not Value is nothing then
+                    m_oper = Value.id
+                else
+                   m_oper=System.Guid.Empty
+                end if
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю ТО проведено
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property isdone() As enumBoolean
+            Get
+                LoadFromDatabase()
+                isdone = m_isdone
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As enumBoolean )
+                LoadFromDatabase()
+                m_isdone = Value
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Дата завершения ТО
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property finishdate() As DATE
+            Get
+                LoadFromDatabase()
+                finishdate = m_finishdate
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As DATE )
+                LoadFromDatabase()
+                m_finishdate = Value
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
 '''Заполнить поля данными из XML
 ''' </summary>
 ''' <remarks>
@@ -305,9 +508,15 @@ End Function
         Protected Overrides sub XMLUnpack(ByVal node As System.Xml.XmlNode, Optional ByVal LoadMode As Integer = 0)
           Dim e_list As XmlNodeList
           try 
-            m_TheMachine = new system.guid(node.Attributes.GetNamedItem("TheMachine").Value)
+            m_themachine = new system.guid(node.Attributes.GetNamedItem("themachine").Value)
             m_todate = System.DateTime.MinValue
             todate = m_todate.AddTicks( node.Attributes.GetNamedItem("todate").Value)
+            m_checkin = System.DateTime.MinValue
+            checkin = m_checkin.AddTicks( node.Attributes.GetNamedItem("checkin").Value)
+            m_oper = new system.guid(node.Attributes.GetNamedItem("oper").Value)
+            isdone = node.Attributes.GetNamedItem("isdone").Value
+            m_finishdate = System.DateTime.MinValue
+            finishdate = m_finishdate.AddTicks( node.Attributes.GetNamedItem("finishdate").Value)
              Changed = true
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -325,9 +534,15 @@ End Function
 ''' </remarks>
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
-          node.SetAttribute("TheMachine", m_TheMachine.tostring)  
-          if todate = System.DateTime.MinValue then todate=System.DateTime.Parse("12/30/1899")
+          node.SetAttribute("themachine", m_themachine.tostring)  
+         ' if todate = System.DateTime.MinValue then todate=new Date(1899,12,30)  ' SQL Server trouble
           node.SetAttribute("todate", todate.Ticks)  
+         ' if checkin = System.DateTime.MinValue then checkin=new Date(1899,12,30)  ' SQL Server trouble
+          node.SetAttribute("checkin", checkin.Ticks)  
+          node.SetAttribute("oper", m_oper.tostring)  
+          node.SetAttribute("isdone", isdone)  
+         ' if finishdate = System.DateTime.MinValue then finishdate=new Date(1899,12,30)  ' SQL Server trouble
+          node.SetAttribute("finishdate", finishdate.Ticks)  
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
           end try

@@ -1,0 +1,1158 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+totask
+</name>
+</assembly>
+<members>
+<member name="M:totask.totask.to_taskcheckcomment_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.to_taskcheckcomment_col">
+	<summary>
+Реализация раздела Комментарии к проверкев виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskcheckcomment.m_the_date">
+	<summary>
+Локальная переменная для поля Дата комментария
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskcheckcomment.m_the_operator">
+	<summary>
+Локальная переменная для поля Оператор
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskcheckcomment.m_info">
+	<summary>
+Локальная переменная для поля Суть комментария
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcheckcomment.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcheckcomment.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcheckcomment.the_operator">
+	<summary>
+Доступ к полю Оператор
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcheckcomment.the_date">
+	<summary>
+Доступ к полю Дата комментария
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcheckcomment.info">
+	<summary>
+Доступ к полю Суть комментария
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcheckcomment.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcheckcomment.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.to_taskcheckcomment">
+	<summary>
+Реализация строки раздела Комментарии к проверке
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.to_taskchecks_col">
+	<summary>
+Реализация раздела Проверкив виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_thesubsystem">
+	<summary>
+Локальная переменная для поля Узел
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_checkref">
+	<summary>
+Локальная переменная для поля Основание для проверки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_the_system">
+	<summary>
+Локальная переменная для поля Группа узлов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_the_comment">
+	<summary>
+Локальная переменная для поля Примечание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_the_doc">
+	<summary>
+Локальная переменная для поля Документация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_lowvalue">
+	<summary>
+Локальная переменная для поля Нижняя граница ()=)
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_the_check">
+	<summary>
+Локальная переменная для поля Показатель
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_hivalue">
+	<summary>
+Локальная переменная для поля Верхняя граница ((=)
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_normochas">
+	<summary>
+Локальная переменная для поля Нормочас
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_thevalue">
+	<summary>
+Локальная переменная для поля Значение
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_valuetype">
+	<summary>
+Локальная переменная для поля Измерение
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_tagid">
+	<summary>
+Локальная переменная для поля Метка
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_tagtime">
+	<summary>
+Локальная переменная для поля Дата регистрации метки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskchecks.m_to_taskcheckcomment">
+	<summary>
+Локальная переменная для дочернего раздела Комментарии к проверке
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.the_system">
+	<summary>
+Доступ к полю Группа узлов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.thesubsystem">
+	<summary>
+Доступ к полю Узел
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.the_check">
+	<summary>
+Доступ к полю Показатель
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.normochas">
+	<summary>
+Доступ к полю Нормочас
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.valuetype">
+	<summary>
+Доступ к полю Измерение
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.lowvalue">
+	<summary>
+Доступ к полю Нижняя граница ()=)
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.hivalue">
+	<summary>
+Доступ к полю Верхняя граница ((=)
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.the_comment">
+	<summary>
+Доступ к полю Примечание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.thevalue">
+	<summary>
+Доступ к полю Значение
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.the_doc">
+	<summary>
+Доступ к полю Документация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.checkref">
+	<summary>
+Доступ к полю Основание для проверки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.tagid">
+	<summary>
+Доступ к полю Метка
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.tagtime">
+	<summary>
+Доступ к полю Дата регистрации метки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.to_taskcheckcomment">
+	<summary>
+Доступ к дочернему разделу Комментарии к проверке
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskchecks.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskchecks.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.to_taskchecks">
+	<summary>
+Реализация строки раздела Проверки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.to_taskinfo_col">
+	<summary>
+Реализация раздела Описаниев виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskinfo.m_taskfinished">
+	<summary>
+Локальная переменная для поля Задача завершена
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskinfo.m_crdate">
+	<summary>
+Локальная переменная для поля Дата создания
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskinfo.m_finishtime">
+	<summary>
+Локальная переменная для поля Время завершения задачи
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskinfo.m_themachine">
+	<summary>
+Локальная переменная для поля Пункт расписания
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskinfo.m_thecard">
+	<summary>
+Локальная переменная для поля Диагностическая карта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskinfo.m_oper">
+	<summary>
+Локальная переменная для поля Оператор
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskinfo.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskinfo.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskinfo.themachine">
+	<summary>
+Доступ к полю Пункт расписания
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskinfo.oper">
+	<summary>
+Доступ к полю Оператор
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskinfo.thecard">
+	<summary>
+Доступ к полю Диагностическая карта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskinfo.crdate">
+	<summary>
+Доступ к полю Дата создания
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskinfo.taskfinished">
+	<summary>
+Доступ к полю Задача завершена
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskinfo.finishtime">
+	<summary>
+Доступ к полю Время завершения задачи
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskinfo.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskinfo.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.to_taskinfo">
+	<summary>
+Реализация строки раздела Описание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.to_taskcomment_col">
+	<summary>
+Реализация раздела Примечанияв виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskcomment.m_thecomment">
+	<summary>
+Локальная переменная для поля Примечание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskcomment.m_the_date">
+	<summary>
+Локальная переменная для поля Дата комментария
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskcomment.m_codetocomment">
+	<summary>
+Локальная переменная для поля Узел
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.to_taskcomment.m_the_operator">
+	<summary>
+Локальная переменная для поля Оператор
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcomment.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcomment.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcomment.codetocomment">
+	<summary>
+Доступ к полю Узел
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcomment.thecomment">
+	<summary>
+Доступ к полю Примечание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcomment.the_operator">
+	<summary>
+Доступ к полю Оператор
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcomment.the_date">
+	<summary>
+Доступ к полю Дата комментария
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.to_taskcomment.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.to_taskcomment.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.to_taskcomment">
+	<summary>
+Реализация строки раздела Примечания
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumStructType">
+	<summary>
+Перечисление Тип раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumWFFuncParam">
+	<summary>
+Перечисление Вариант расшифровки параметра функции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumReportType">
+	<summary>
+Перечисление Вариант отчета
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumEducation">
+	<summary>
+Перечисление Образование
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumTypeStyle">
+	<summary>
+Перечисление Вариант трактовки типа поля
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumReplicationType">
+	<summary>
+Перечисление Вариант репликации докуента
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumNumerationRule">
+	<summary>
+Перечисление Правило нумерации
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumWFProcessState">
+	<summary>
+Перечисление Состояния процесса
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumMenuActionType">
+	<summary>
+Перечисление Вариант действия при выборе пункта меню
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumWFShortcutType">
+	<summary>
+Перечисление Варианты ярлыков, которые может размещать процесс
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumVHAlignment">
+	<summary>
+Перечисление Выравнивание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumCurrencyType">
+	<summary>
+Перечисление Валюта платежа
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumInfoStoreType">
+	<summary>
+Перечисление Тип каталога
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumDevelopmentBase">
+	<summary>
+Перечисление Платформа разработки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumQuarter">
+	<summary>
+Перечисление Квартал
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumMonths">
+	<summary>
+Перечисление Месяцы
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumColumnSortType">
+	<summary>
+Перечисление Вариант сортиовки данных колонки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumBoolean">
+	<summary>
+Перечисление Да / Нет
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumJournalLinkType">
+	<summary>
+Перечисление Для связи журналов друг с другом
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumTargetType">
+	<summary>
+Перечисление Вариант уровня приложения, куда может генерироваться код
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumCacheType">
+	<summary>
+Перечисление Тип кеширования для расчета прав на объекты
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumMesureFormat">
+	<summary>
+Перечисление Формат индикатора
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumExportType">
+	<summary>
+Перечисление Тип экспорта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumWFStepClass">
+	<summary>
+Перечисление Тип шага процесса
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumDayInWeek">
+	<summary>
+Перечисление День недели
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumGeneratorStyle">
+	<summary>
+Перечисление GeneratorStyle
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumPlatType">
+	<summary>
+Перечисление Тип плательщика
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enummsgState">
+	<summary>
+Перечисление Состояние заявки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumOnJournalRowClick">
+	<summary>
+Перечисление действие при открытии строки журнала
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumPartType">
+	<summary>
+Перечисление PartType
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumReferenceType">
+	<summary>
+Перечисление ReferenceType
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumstateNomen">
+	<summary>
+Перечисление 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumConditionType">
+	<summary>
+Перечисление Варианты условий
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumFolderType">
+	<summary>
+Перечисление Тип папки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enummsgResult">
+	<summary>
+Перечисление Результат
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumPartAddBehaivor">
+	<summary>
+Перечисление Поведение при добавлении строки раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumExtentionType">
+	<summary>
+Перечисление Тип расширения
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumSex">
+	<summary>
+Перечисление Мужской / Женский
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumYesNo">
+	<summary>
+Перечисление Да / Нет (0 или 1)
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumAggregationType">
+	<summary>
+Перечисление Вариант агрегации по полю
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumWFFuncState">
+	<summary>
+Перечисление Состояние функции в бизнес процессе
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumEmployment">
+	<summary>
+Перечисление Занятость
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.enumTriState">
+	<summary>
+Перечисление Да / Нет / Не определено
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.Application.MyTypeName">
+	<summary>
+Название типа документа
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.Application.m_to_taskcomment">
+	<summary>
+ Внутренняя переменная для раздела Примечания
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.Application.to_taskcomment">
+	<summary>
+Свойство для доступа к строкам раздела Примечания
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.Application.m_to_taskinfo">
+	<summary>
+ Внутренняя переменная для раздела Описание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.Application.to_taskinfo">
+	<summary>
+Свойство для доступа к строкам раздела Описание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totask.totask.Application.m_to_taskchecks">
+	<summary>
+ Внутренняя переменная для раздела Проверки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.Application.to_taskchecks">
+	<summary>
+Свойство для доступа к строкам раздела Проверки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:totask.totask.Application.CountOfParts">
+	<summary>
+Количество разделов в объекте
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.Application.GetDocCollection_Base(System.Int64)">
+	<summary>
+Получить раздел по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.Application.FindInCollections(System.String,System.String)">
+	<summary>
+Поиск элемента в коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.Application.XMLLoadCollections(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Загрузка данных из XML  файла
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.Application.XMLSaveCollections(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Сохранение данных в XML  файле
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totask.totask.Application.BatchUpdate">
+	<summary>
+Сохранение изменений в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totask.totask.Application">
+	<summary>
+Реализация документа 
+ </summary>
+	<remarks>
+Задача
+ </remarks>
+</member>
+</members>
+</doc>

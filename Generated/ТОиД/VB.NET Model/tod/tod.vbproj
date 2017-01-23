@@ -4,7 +4,7 @@
  <PropertyGroup>
  <Configuration Condition = " '$(Configuration)' == '' ">Debug</Configuration>
       <Platform Condition = " '$(Platform)' == '' ">AnyCPU</Platform>
- <ProjectGuid>e5e7b9d9-8517-44f7-96bf-d60c61f39d7d</ProjectGuid>
+ <ProjectGuid>0b90abdc-c04c-458e-8485-b075a052ae03</ProjectGuid>
  <OutputType>Library</OutputType>
  <RootNamespace>tod</RootNamespace>
  <AssemblyName>tod</AssemblyName>
@@ -67,10 +67,24 @@
       <SubType>Code</SubType>
     </Compile>
 
+                <Compile Include="tod_factory.vb">
+                    <SubType>Code</SubType>
+                </Compile>
+                <Compile Include="tod_factory_col.vb">
+                    <SubType>Code</SubType>
+                </Compile>
+
                 <Compile Include="tod_bug.vb">
                     <SubType>Code</SubType>
                 </Compile>
                 <Compile Include="tod_bug_col.vb">
+                    <SubType>Code</SubType>
+                </Compile>
+
+                <Compile Include="tod_building.vb">
+                    <SubType>Code</SubType>
+                </Compile>
+                <Compile Include="tod_building_col.vb">
                     <SubType>Code</SubType>
                 </Compile>
 
@@ -92,6 +106,20 @@
                     <SubType>Code</SubType>
                 </Compile>
                 <Compile Include="tod_system_col.vb">
+                    <SubType>Code</SubType>
+                </Compile>
+
+                <Compile Include="tod_oprole.vb">
+                    <SubType>Code</SubType>
+                </Compile>
+                <Compile Include="tod_oprole_col.vb">
+                    <SubType>Code</SubType>
+                </Compile>
+
+                <Compile Include="tod_trand.vb">
+                    <SubType>Code</SubType>
+                </Compile>
+                <Compile Include="tod_trand_col.vb">
                     <SubType>Code</SubType>
                 </Compile>
 

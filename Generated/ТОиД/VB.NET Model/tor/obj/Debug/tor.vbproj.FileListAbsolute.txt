@@ -1,0 +1,7 @@
+C:\LATIR4\Build\tor.dll
+C:\LATIR4\Build\tor.pdb
+C:\LATIR4\Build\tor_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tor\obj\Debug\tor.vbprojResolveAssemblyReference.cache
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tor\obj\Debug\tor.dll
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tor\obj\Debug\tor_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tor\obj\Debug\tor.pdb

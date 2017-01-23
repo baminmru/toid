@@ -30,7 +30,7 @@ Namespace tod
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_Name  as String
+            private m_name  as String
 
 
 ''' <summary>
@@ -50,7 +50,7 @@ Namespace tod
 '''
 ''' </remarks>
         Public Overrides Sub CleanFields()
-            ' m_Name=   
+            ' m_name=   
             ' m_fullname=   
         End Sub
 
@@ -85,7 +85,7 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 0
                     Value = ID
                 Case 1
-                    Value = Name
+                    Value = name
                 Case 2
                     Value = fullname
             End Select
@@ -106,7 +106,7 @@ Public Overrides Property Value(ByVal Index As Object) As Object
             Case 0
                  ID=value
                 Case 1
-                    Name = value
+                    name = value
                 Case 2
                     fullname = value
         End Select
@@ -140,7 +140,7 @@ Public Overrides Function FieldNameByID(ByVal Index As long) As String
                 Case 0
                    Return "ID"
                 Case 1
-                    Return "Name"
+                    Return "name"
                 Case 2
                     Return "fullname"
                 Case else
@@ -164,7 +164,7 @@ End Function
             try
             dr("ID") =ID
             dr("Brief") =Brief
-             dr("Name") =Name
+             dr("name") =name
              dr("fullname") =fullname
             DestDataTable.Rows.Add (dr)
            catch ex as System.Exception
@@ -194,7 +194,7 @@ End Function
 '''
 ''' </remarks>
         Public Overrides Sub Pack(ByVal nv As LATIR2.NamedValues)
-          nv.Add("Name", Name, dbtype.string)
+          nv.Add("name", name, dbtype.string)
           nv.Add("fullname", fullname, dbtype.string)
             nv.Add(PartName() & "id", Application.Session.GetProvider.ID2Param(ID),  Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
         End Sub
@@ -218,7 +218,7 @@ End Function
 
             RowRetrived = True
             RetriveTime = Now
-          If reader.Table.Columns.Contains("Name") Then m_Name=reader.item("Name").ToString()
+          If reader.Table.Columns.Contains("name") Then m_name=reader.item("name").ToString()
           If reader.Table.Columns.Contains("fullname") Then m_fullname=reader.item("fullname").ToString()
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -232,15 +232,15 @@ End Function
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property Name() As String
+        Public Property name() As String
             Get
                 LoadFromDatabase()
-                Name = m_Name
+                name = m_name
                 AccessTime = Now
             End Get
             Set(ByVal Value As String )
                 LoadFromDatabase()
-                m_Name = Value
+                m_name = Value
                 ChangeTime = Now
             End Set
         End Property
@@ -275,7 +275,7 @@ End Function
         Protected Overrides sub XMLUnpack(ByVal node As System.Xml.XmlNode, Optional ByVal LoadMode As Integer = 0)
           Dim e_list As XmlNodeList
           try 
-            Name = node.Attributes.GetNamedItem("Name").Value
+            name = node.Attributes.GetNamedItem("name").Value
             fullname = node.Attributes.GetNamedItem("fullname").Value
              Changed = true
            catch ex as System.Exception
@@ -294,7 +294,7 @@ End Function
 ''' </remarks>
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
-          node.SetAttribute("Name", Name)  
+          node.SetAttribute("name", name)  
           node.SetAttribute("fullname", fullname)  
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)

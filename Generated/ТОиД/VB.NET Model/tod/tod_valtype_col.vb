@@ -45,9 +45,11 @@ Namespace tod
             dt.TableName="tod_valtype"
             dt.Columns.Add("ID", GetType(System.guid))
             dt.Columns.Add("Brief", Gettype(System.string))
-            dt.Columns.Add("Name", Gettype(System.string))
+            dt.Columns.Add("name", Gettype(System.string))
             dt.Columns.Add("edizm_ID" , GetType(System.guid))
             dt.Columns.Add("edizm", Gettype(System.string))
+            dt.Columns.Add("fieldtype_ID" , GetType(System.guid))
+            dt.Columns.Add("fieldtype", Gettype(System.string))
             return dt
         End Function
 
@@ -99,6 +101,7 @@ Public Overrides Function FieldList() As String
            mFieldList =mFieldList+","+.ID2Base("SecurityStyleID") 
            mFieldList =mFieldList+ ", name" 
            mFieldList =mFieldList+","+.ID2Base("edizm") 
+           mFieldList =mFieldList+","+.ID2Base("fieldtype") 
        end with
     End If
     Return mFieldList

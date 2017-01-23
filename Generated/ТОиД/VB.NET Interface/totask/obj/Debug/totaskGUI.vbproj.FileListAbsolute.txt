@@ -1,0 +1,10 @@
+C:\LATIR4\Build\totaskGUI.dll
+C:\LATIR4\Build\totaskGUI.pdb
+C:\LATIR4\Build\totaskGUI.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\totask\obj\Debug\totaskGUI.vbprojResolveAssemblyReference.cache
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\totask\obj\Debug\totaskGUI.dll
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\totask\obj\Debug\totaskGUI.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\totask\obj\Debug\totaskGUI.pdb
+E:\bin\Debug\totaskGUI.dll
+E:\bin\Debug\totaskGUI.pdb
+E:\bin\Debug\totaskGUI.xml

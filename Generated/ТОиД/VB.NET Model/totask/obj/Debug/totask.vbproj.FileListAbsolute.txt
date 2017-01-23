@@ -1,0 +1,7 @@
+C:\LATIR4\Build\totask.dll
+C:\LATIR4\Build\totask.pdb
+C:\LATIR4\Build\totask_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\totask\obj\Debug\totask.vbprojResolveAssemblyReference.cache
+C:\LATIR4\Generated\ТОиД\VB.NET Model\totask\obj\Debug\totask.dll
+C:\LATIR4\Generated\ТОиД\VB.NET Model\totask\obj\Debug\totask_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\totask\obj\Debug\totask.pdb

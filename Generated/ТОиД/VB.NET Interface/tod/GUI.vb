@@ -97,6 +97,220 @@ Public Class GUI
                 f = Nothing
             End If
 
+            If RowItem.PartName.ToUpper = "TOD_TRAND" Then
+                Dim f As frmtod_trand
+                f = New frmtod_trand
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_FACTORY" Then
+                Dim f As frmtod_factory
+                f = New frmtod_factory
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_BUILDING" Then
+                Dim f As frmtod_building
+                f = New frmtod_building
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_OPROLE" Then
+                Dim f As frmtod_oprole
+                f = New frmtod_oprole
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+        End If
+        If Mode = "main" Then
+
+            If RowItem.PartName.ToUpper = "TOD_MODEL" Then
+                Dim f As frmtod_modelmain
+                f = New frmtod_modelmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_ST" Then
+                Dim f As frmtod_stmain
+                f = New frmtod_stmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_SYSTEM" Then
+                Dim f As frmtod_systemmain
+                f = New frmtod_systemmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_EDIZM" Then
+                Dim f As frmtod_edizmmain
+                f = New frmtod_edizmmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_BUG" Then
+                Dim f As frmtod_bugmain
+                f = New frmtod_bugmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_VALTYPE" Then
+                Dim f As frmtod_valtypemain
+                f = New frmtod_valtypemain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_MATERIAL" Then
+                Dim f As frmtod_materialmain
+                f = New frmtod_materialmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_TRAND" Then
+                Dim f As frmtod_trandmain
+                f = New frmtod_trandmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_FACTORY" Then
+                Dim f As frmtod_factorymain
+                f = New frmtod_factorymain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_BUILDING" Then
+                Dim f As frmtod_buildingmain
+                f = New frmtod_buildingmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_OPROLE" Then
+                Dim f As frmtod_oprolemain
+                f = New frmtod_oprolemain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+        End If
+        If Mode = "adm" Then
+
+            If RowItem.PartName.ToUpper = "TOD_MODEL" Then
+                Dim f As frmtod_modeladm
+                f = New frmtod_modeladm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_ST" Then
+                Dim f As frmtod_stadm
+                f = New frmtod_stadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_SYSTEM" Then
+                Dim f As frmtod_systemadm
+                f = New frmtod_systemadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_EDIZM" Then
+                Dim f As frmtod_edizmadm
+                f = New frmtod_edizmadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_BUG" Then
+                Dim f As frmtod_bugadm
+                f = New frmtod_bugadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_VALTYPE" Then
+                Dim f As frmtod_valtypeadm
+                f = New frmtod_valtypeadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_MATERIAL" Then
+                Dim f As frmtod_materialadm
+                f = New frmtod_materialadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_TRAND" Then
+                Dim f As frmtod_trandadm
+                f = New frmtod_trandadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_FACTORY" Then
+                Dim f As frmtod_factoryadm
+                f = New frmtod_factoryadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_BUILDING" Then
+                Dim f As frmtod_buildingadm
+                f = New frmtod_buildingadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TOD_OPROLE" Then
+                Dim f As frmtod_oproleadm
+                f = New frmtod_oproleadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
         End If
 
     End Function
@@ -121,6 +335,24 @@ Public Class GUI
                 f = Nothing
             End If
         End If
+        If DocItem.TypeName.ToUpper = TypeName.ToUpper() Then
+            If mode = "main" Then
+                Dim fmain As frmtodmain
+                fmain = New frmtodmain
+                fmain.Attach(DocItem, Me.GUIManager,FormReadOnly)
+                ShowForm = (fmain.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                fmain = Nothing
+            End If
+        End If
+        If DocItem.TypeName.ToUpper = TypeName.ToUpper() Then
+            If mode = "adm" Then
+                Dim fadm As frmtodadm
+                fadm = New frmtodadm
+                fadm.Attach(DocItem, Me.GUIManager,FormReadOnly)
+                ShowForm = (fadm.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                fadm = Nothing
+            End If
+        End If
     End Function
 
 
@@ -131,6 +363,12 @@ Public Class GUI
 '''
 ''' </remarks>
     Public Overrides Function GetObjectControl(ByVal Mode As String, ByVal TypeName As String) As Object
+            If Mode = "main" Then
+                Return New Tabviewmain
+            End If
+            If Mode = "adm" Then
+                Return New Tabviewadm
+            End If
       Return New Tabview
     End Function
 

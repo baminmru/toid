@@ -89,7 +89,7 @@ Public Class frmtod_bug
         Me.Edittod_bug.AutoScroll = True
         Me.Edittod_bug.Location = New System.Drawing.Point(8, 8)
         Me.Edittod_bug.name = "Edittod_bug"
-        Me.Edittod_bug.Size = New System.Drawing.Size(490, 600)
+        Me.Edittod_bug.Size = New System.Drawing.Size(800-40-16, 600-16)
         Me.Edittod_bug.TabIndex = 20
         Me.Edittod_bug.Dock = System.Windows.Forms.DockStyle.Fill
         '
@@ -101,6 +101,7 @@ Public Class frmtod_bug
         Me.Controls.Add (Me.btnPanel)
         Me.name = "frmtod_bug"
         Me.Text = "Типичные проблемы"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout (False)
 
     End Sub
@@ -108,6 +109,7 @@ Public Class frmtod_bug
 #End Region
     Public Item As tod.tod.tod_bug
     Public GuiManager As LATIR2GuiManager.LATIRGuiManager
+    Private myResizer As LATIR2GuiManager.Resizer = New LATIR2GuiManager.Resizer
     Private mReadOnly As Boolean
 
 
@@ -156,8 +158,17 @@ Public Class frmtod_bug
         Exit Sub
         End If
     End Sub
-    Private Sub frmUsers_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Me.ClientSize() = New System.Drawing.Size(Edittod_bug.GetMaxX() + 10, Edittod_bug.GetMaxY() + 35)
-        LATIR2GuiManager.LATIRGuiManager.ScaleForm(Me)
+    Private Sub frm_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+          Me.StartPosition = FormStartPosition.Manual
+          Me.WindowState = FormWindowState.Normal
+          Me.Location = Screen.PrimaryScreen.WorkingArea.Location
+          Me.Size = Screen.PrimaryScreen.WorkingArea.Size
     End Sub
+    Private Sub frm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Me.ClientSize() = New System.Drawing.Size(Edittod_bug.GetMaxX() + 10, Edittod_bug.GetMaxY() + 35)
+        myResizer.FindAllControls(Me) 
+    End Sub
+    Private Sub frm_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+      myResizer.ResizeAllControls(Me)
+   End Sub
 End Class

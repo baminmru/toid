@@ -102,7 +102,7 @@ Public Class viewtod_valtype
         cs = New DataGridTextBoxColumn
         cs.ReadOnly = True
         cs.HeaderText = "Название"
-        cs.MappingName = "Name"
+        cs.MappingName = "name"
         cs.NullText = ""
         ts.GridColumnStyles.Add (cs)
 
@@ -110,6 +110,13 @@ Public Class viewtod_valtype
         cs.ReadOnly = True
         cs.HeaderText = "Ед. изм."
         cs.MappingName = "edizm"
+        cs.NullText = ""
+        ts.GridColumnStyles.Add (cs)
+
+        cs = New DataGridTextBoxColumn
+        cs.ReadOnly = True
+        cs.HeaderText = "Трактовка"
+        cs.MappingName = "fieldtype"
         cs.NullText = ""
         ts.GridColumnStyles.Add (cs)
 
@@ -151,6 +158,7 @@ Public Class viewtod_valtype
 ''' </remarks>
     Private Sub gv_OnDel(ByRef OK As Boolean, ByVal ID As System.Guid) Handles gv.OnGridDel
       If not mReadOnly Then
+    Exit Sub
         Dim ed As tod.tod.tod_valtype
         ed = item.FindRowObject("tod_valtype", ID)
         If MsgBox("Удалить <" & ed.Brief & "> ?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Удаление") = MsgBoxResult.Yes Then
@@ -175,6 +183,7 @@ Public Class viewtod_valtype
 ''' </remarks>
     Private Sub gv_OnAdd(ByRef OK As Boolean, ByVal ID As System.Guid) Handles gv.OnGridAdd
       If not mReadOnly Then
+    Exit Sub
         Dim ed As tod.tod.tod_valtype
         If ID.Equals(System.guid.Empty) Then
               ed = Item.tod_valtype.Add

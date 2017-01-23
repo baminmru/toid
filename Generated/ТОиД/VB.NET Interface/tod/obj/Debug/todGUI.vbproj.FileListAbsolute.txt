@@ -1,0 +1,7 @@
+C:\LATIR4\Build\todGUI.dll
+C:\LATIR4\Build\todGUI.pdb
+C:\LATIR4\Build\todGUI.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\tod\obj\Debug\todGUI.vbprojResolveAssemblyReference.cache
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\tod\obj\Debug\todGUI.dll
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\tod\obj\Debug\todGUI.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\tod\obj\Debug\todGUI.pdb

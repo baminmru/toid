@@ -25,6 +25,24 @@ Namespace totask
 
 
 ''' <summary>
+'''Локальная переменная для поля Примечание
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_thecomment  as STRING
+
+
+''' <summary>
+'''Локальная переменная для поля Дата комментария
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_the_date  as DATE
+
+
+''' <summary>
 '''Локальная переменная для поля Узел
 ''' </summary>
 ''' <remarks>
@@ -34,12 +52,12 @@ Namespace totask
 
 
 ''' <summary>
-'''Локальная переменная для поля Примечание
+'''Локальная переменная для поля Оператор
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_theComment  as STRING
+            private m_the_operator  as System.Guid
 
 
 
@@ -50,8 +68,10 @@ Namespace totask
 '''
 ''' </remarks>
         Public Overrides Sub CleanFields()
+            ' m_thecomment=   
+            ' m_the_date=   
             ' m_codetocomment=   
-            ' m_theComment=   
+            ' m_the_operator=   
         End Sub
 
 
@@ -64,7 +84,7 @@ Namespace totask
 ''' </remarks>
     Public Overrides ReadOnly Property Count() As Long
         Get
-           Count = 2
+           Count = 4
         End Get
     End Property
 
@@ -87,7 +107,11 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 1
                     Value = codetocomment
                 Case 2
-                    Value = theComment
+                    Value = thecomment
+                Case 3
+                    Value = the_operator
+                Case 4
+                    Value = the_date
             End Select
         else
         try
@@ -108,7 +132,11 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 1
                     codetocomment = value
                 Case 2
-                    theComment = value
+                    thecomment = value
+                Case 3
+                    the_operator = value
+                Case 4
+                    the_date = value
         End Select
      Else
         Try
@@ -142,7 +170,11 @@ Public Overrides Function FieldNameByID(ByVal Index As long) As String
                 Case 1
                     Return "codetocomment"
                 Case 2
-                    Return "theComment"
+                    Return "thecomment"
+                Case 3
+                    Return "the_operator"
+                Case 4
+                    Return "the_date"
                 Case else
                 return "" 
             End Select
@@ -171,7 +203,15 @@ End Function
                dr("codetocomment") =codetocomment.BRIEF
                dr("codetocomment_ID") =codetocomment.ID
              end if 
-             dr("theComment") =theComment
+             dr("thecomment") =thecomment
+             if the_operator is nothing then
+               dr("the_operator") =system.dbnull.value
+               dr("the_operator_ID") =System.Guid.Empty
+             else
+               dr("the_operator") =the_operator.BRIEF
+               dr("the_operator_ID") =the_operator.ID
+             end if 
+             dr("the_date") =the_date
             DestDataTable.Rows.Add (dr)
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -205,7 +245,17 @@ End Function
           else
             nv.Add("codetocomment", Application.Session.GetProvider.ID2Param(m_codetocomment), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           end if 
-          nv.Add("theComment", theComment, dbtype.string)
+          nv.Add("thecomment", thecomment, dbtype.string)
+          if m_the_operator.Equals(System.Guid.Empty) then
+            nv.Add("the_operator", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          else
+            nv.Add("the_operator", Application.Session.GetProvider.ID2Param(m_the_operator), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          end if 
+          if the_date=System.DateTime.MinValue then
+            nv.Add("the_date", system.dbnull.value, dbtype.DATETIME)
+          else
+            nv.Add("the_date", the_date, dbtype.DATETIME)
+          end if 
             nv.Add(PartName() & "id", Application.Session.GetProvider.ID2Param(ID),  Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
         End Sub
 
@@ -235,7 +285,21 @@ End Function
             If reader.Table.Columns.Contains("codetocomment") Then m_codetocomment= New System.Guid(reader.item("codetocomment").ToString())
           end if 
       end if 
-          If reader.Table.Columns.Contains("theComment") Then m_theComment=reader.item("theComment").ToString()
+          If reader.Table.Columns.Contains("thecomment") Then m_thecomment=reader.item("thecomment").ToString()
+      If reader.Table.Columns.Contains("the_operator") Then
+          if isdbnull(reader.item("the_operator")) then
+            If reader.Table.Columns.Contains("the_operator") Then m_the_operator = System.GUID.Empty
+          else
+            If reader.Table.Columns.Contains("the_operator") Then m_the_operator= New System.Guid(reader.item("the_operator").ToString())
+          end if 
+      end if 
+      If reader.Table.Columns.Contains("the_date") Then
+          if isdbnull(reader.item("the_date")) then
+            If reader.Table.Columns.Contains("the_date") Then m_the_date = System.DateTime.MinValue
+          else
+            If reader.Table.Columns.Contains("the_date") Then m_the_date=reader.item("the_date")
+          end if 
+      end if 
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
           end try
@@ -272,15 +336,59 @@ End Function
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property theComment() As STRING
+        Public Property thecomment() As STRING
             Get
                 LoadFromDatabase()
-                theComment = m_theComment
+                thecomment = m_thecomment
                 AccessTime = Now
             End Get
             Set(ByVal Value As STRING )
                 LoadFromDatabase()
-                m_theComment = Value
+                m_thecomment = Value
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Оператор
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property the_operator() As LATIR2.Document.docrow_base
+            Get
+                LoadFromDatabase()
+                the_operator = me.application.Findrowobject("to_oper",m_the_operator)
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As LATIR2.Document.docrow_base )
+                LoadFromDatabase()
+                if not Value is nothing then
+                    m_the_operator = Value.id
+                else
+                   m_the_operator=System.Guid.Empty
+                end if
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Дата комментария
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property the_date() As DATE
+            Get
+                LoadFromDatabase()
+                the_date = m_the_date
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As DATE )
+                LoadFromDatabase()
+                m_the_date = Value
                 ChangeTime = Now
             End Set
         End Property
@@ -296,7 +404,10 @@ End Function
           Dim e_list As XmlNodeList
           try 
             m_codetocomment = new system.guid(node.Attributes.GetNamedItem("codetocomment").Value)
-            theComment = node.Attributes.GetNamedItem("theComment").Value
+            thecomment = node.Attributes.GetNamedItem("thecomment").Value
+            m_the_operator = new system.guid(node.Attributes.GetNamedItem("the_operator").Value)
+            m_the_date = System.DateTime.MinValue
+            the_date = m_the_date.AddTicks( node.Attributes.GetNamedItem("the_date").Value)
              Changed = true
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -315,7 +426,10 @@ End Function
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
           node.SetAttribute("codetocomment", m_codetocomment.tostring)  
-          node.SetAttribute("theComment", theComment)  
+          node.SetAttribute("thecomment", thecomment)  
+          node.SetAttribute("the_operator", m_the_operator.tostring)  
+         ' if the_date = System.DateTime.MinValue then the_date=new Date(1899,12,30)  ' SQL Server trouble
+          node.SetAttribute("the_date", the_date.Ticks)  
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
           end try

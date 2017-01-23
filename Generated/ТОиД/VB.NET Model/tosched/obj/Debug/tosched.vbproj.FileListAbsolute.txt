@@ -1,0 +1,7 @@
+C:\LATIR4\Build\tosched.dll
+C:\LATIR4\Build\tosched.pdb
+C:\LATIR4\Build\tosched_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tosched\obj\Debug\tosched.vbprojResolveAssemblyReference.cache
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tosched\obj\Debug\tosched.dll
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tosched\obj\Debug\tosched_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tosched\obj\Debug\tosched.pdb

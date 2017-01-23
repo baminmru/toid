@@ -66,6 +66,60 @@ Public Class GUI
             End If
 
         End If
+        If Mode = "main" Then
+
+            If RowItem.PartName.ToUpper = "TO_CARDINFO" Then
+                Dim f As frmto_cardinfomain
+                f = New frmto_cardinfomain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_CARDCHECKS" Then
+                Dim f As frmto_cardchecksmain
+                f = New frmto_cardchecksmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_CARDDEVICES" Then
+                Dim f As frmto_carddevicesmain
+                f = New frmto_carddevicesmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+        End If
+        If Mode = "adm" Then
+
+            If RowItem.PartName.ToUpper = "TO_CARDINFO" Then
+                Dim f As frmto_cardinfoadm
+                f = New frmto_cardinfoadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_CARDCHECKS" Then
+                Dim f As frmto_cardchecksadm
+                f = New frmto_cardchecksadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_CARDDEVICES" Then
+                Dim f As frmto_carddevicesadm
+                f = New frmto_carddevicesadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+        End If
 
     End Function
 
@@ -89,6 +143,24 @@ Public Class GUI
                 f = Nothing
             End If
         End If
+        If DocItem.TypeName.ToUpper = TypeName.ToUpper() Then
+            If mode = "main" Then
+                Dim fmain As frmtocardmain
+                fmain = New frmtocardmain
+                fmain.Attach(DocItem, Me.GUIManager,FormReadOnly)
+                ShowForm = (fmain.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                fmain = Nothing
+            End If
+        End If
+        If DocItem.TypeName.ToUpper = TypeName.ToUpper() Then
+            If mode = "adm" Then
+                Dim fadm As frmtocardadm
+                fadm = New frmtocardadm
+                fadm.Attach(DocItem, Me.GUIManager,FormReadOnly)
+                ShowForm = (fadm.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                fadm = Nothing
+            End If
+        End If
     End Function
 
 
@@ -99,6 +171,12 @@ Public Class GUI
 '''
 ''' </remarks>
     Public Overrides Function GetObjectControl(ByVal Mode As String, ByVal TypeName As String) As Object
+            If Mode = "main" Then
+                Return New Tabviewmain
+            End If
+            If Mode = "adm" Then
+                Return New Tabviewadm
+            End If
       Return New Tabview
     End Function
 

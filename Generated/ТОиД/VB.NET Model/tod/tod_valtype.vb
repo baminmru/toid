@@ -30,7 +30,7 @@ Namespace tod
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_Name  as String
+            private m_name  as String
 
 
 ''' <summary>
@@ -42,6 +42,15 @@ Namespace tod
             private m_edizm  as System.Guid
 
 
+''' <summary>
+'''Локальная переменная для поля Трактовка
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_fieldtype  as System.Guid
+
+
 
 ''' <summary>
 '''Очистить поля раздела
@@ -50,8 +59,9 @@ Namespace tod
 '''
 ''' </remarks>
         Public Overrides Sub CleanFields()
-            ' m_Name=   
+            ' m_name=   
             ' m_edizm=   
+            ' m_fieldtype=   
         End Sub
 
 
@@ -64,7 +74,7 @@ Namespace tod
 ''' </remarks>
     Public Overrides ReadOnly Property Count() As Long
         Get
-           Count = 2
+           Count = 3
         End Get
     End Property
 
@@ -85,9 +95,11 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 0
                     Value = ID
                 Case 1
-                    Value = Name
+                    Value = name
                 Case 2
                     Value = edizm
+                Case 3
+                    Value = fieldtype
             End Select
         else
         try
@@ -106,9 +118,11 @@ Public Overrides Property Value(ByVal Index As Object) As Object
             Case 0
                  ID=value
                 Case 1
-                    Name = value
+                    name = value
                 Case 2
                     edizm = value
+                Case 3
+                    fieldtype = value
         End Select
      Else
         Try
@@ -140,9 +154,11 @@ Public Overrides Function FieldNameByID(ByVal Index As long) As String
                 Case 0
                    Return "ID"
                 Case 1
-                    Return "Name"
+                    Return "name"
                 Case 2
                     Return "edizm"
+                Case 3
+                    Return "fieldtype"
                 Case else
                 return "" 
             End Select
@@ -164,13 +180,20 @@ End Function
             try
             dr("ID") =ID
             dr("Brief") =Brief
-             dr("Name") =Name
+             dr("name") =name
              if edizm is nothing then
                dr("edizm") =system.dbnull.value
                dr("edizm_ID") =System.Guid.Empty
              else
                dr("edizm") =edizm.BRIEF
                dr("edizm_ID") =edizm.ID
+             end if 
+             if fieldtype is nothing then
+               dr("fieldtype") =system.dbnull.value
+               dr("fieldtype_ID") =System.Guid.Empty
+             else
+               dr("fieldtype") =fieldtype.BRIEF
+               dr("fieldtype_ID") =fieldtype.ID
              end if 
             DestDataTable.Rows.Add (dr)
            catch ex as System.Exception
@@ -200,11 +223,16 @@ End Function
 '''
 ''' </remarks>
         Public Overrides Sub Pack(ByVal nv As LATIR2.NamedValues)
-          nv.Add("Name", Name, dbtype.string)
+          nv.Add("name", name, dbtype.string)
           if m_edizm.Equals(System.Guid.Empty) then
             nv.Add("edizm", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           else
             nv.Add("edizm", Application.Session.GetProvider.ID2Param(m_edizm), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          end if 
+          if m_fieldtype.Equals(System.Guid.Empty) then
+            nv.Add("fieldtype", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          else
+            nv.Add("fieldtype", Application.Session.GetProvider.ID2Param(m_fieldtype), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           end if 
             nv.Add(PartName() & "id", Application.Session.GetProvider.ID2Param(ID),  Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
         End Sub
@@ -228,12 +256,19 @@ End Function
 
             RowRetrived = True
             RetriveTime = Now
-          If reader.Table.Columns.Contains("Name") Then m_Name=reader.item("Name").ToString()
+          If reader.Table.Columns.Contains("name") Then m_name=reader.item("name").ToString()
       If reader.Table.Columns.Contains("edizm") Then
           if isdbnull(reader.item("edizm")) then
             If reader.Table.Columns.Contains("edizm") Then m_edizm = System.GUID.Empty
           else
             If reader.Table.Columns.Contains("edizm") Then m_edizm= New System.Guid(reader.item("edizm").ToString())
+          end if 
+      end if 
+      If reader.Table.Columns.Contains("fieldtype") Then
+          if isdbnull(reader.item("fieldtype")) then
+            If reader.Table.Columns.Contains("fieldtype") Then m_fieldtype = System.GUID.Empty
+          else
+            If reader.Table.Columns.Contains("fieldtype") Then m_fieldtype= New System.Guid(reader.item("fieldtype").ToString())
           end if 
       end if 
            catch ex as System.Exception
@@ -248,15 +283,15 @@ End Function
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property Name() As String
+        Public Property name() As String
             Get
                 LoadFromDatabase()
-                Name = m_Name
+                name = m_name
                 AccessTime = Now
             End Get
             Set(ByVal Value As String )
                 LoadFromDatabase()
-                m_Name = Value
+                m_name = Value
                 ChangeTime = Now
             End Set
         End Property
@@ -287,6 +322,30 @@ End Function
 
 
 ''' <summary>
+'''Доступ к полю Трактовка
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property fieldtype() As LATIR2.Document.docrow_base
+            Get
+                LoadFromDatabase()
+                fieldtype = me.application.Findrowobject("fieldtype",m_fieldtype)
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As LATIR2.Document.docrow_base )
+                LoadFromDatabase()
+                if not Value is nothing then
+                    m_fieldtype = Value.id
+                else
+                   m_fieldtype=System.Guid.Empty
+                end if
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
 '''Заполнить поля данными из XML
 ''' </summary>
 ''' <remarks>
@@ -295,8 +354,9 @@ End Function
         Protected Overrides sub XMLUnpack(ByVal node As System.Xml.XmlNode, Optional ByVal LoadMode As Integer = 0)
           Dim e_list As XmlNodeList
           try 
-            Name = node.Attributes.GetNamedItem("Name").Value
+            name = node.Attributes.GetNamedItem("name").Value
             m_edizm = new system.guid(node.Attributes.GetNamedItem("edizm").Value)
+            m_fieldtype = new system.guid(node.Attributes.GetNamedItem("fieldtype").Value)
              Changed = true
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -314,8 +374,9 @@ End Function
 ''' </remarks>
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
-          node.SetAttribute("Name", Name)  
+          node.SetAttribute("name", name)  
           node.SetAttribute("edizm", m_edizm.tostring)  
+          node.SetAttribute("fieldtype", m_fieldtype.tostring)  
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
           end try

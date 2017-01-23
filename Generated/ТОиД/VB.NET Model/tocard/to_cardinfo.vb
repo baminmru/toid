@@ -34,21 +34,21 @@ Namespace tocard
 
 
 ''' <summary>
-'''Локальная переменная для поля Дата составления карты
-''' </summary>
-''' <remarks>
-'''
-''' </remarks>
-            private m_card_date  as DATE
-
-
-''' <summary>
 '''Локальная переменная для поля Архивная карта
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
             private m_card_archived  as enumBoolean
+
+
+''' <summary>
+'''Локальная переменная для поля Дата составления карты
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_card_date  as DATE
 
 
 
@@ -60,8 +60,8 @@ Namespace tocard
 ''' </remarks>
         Public Overrides Sub CleanFields()
             ' m_the_machine=   
-            ' m_card_date=   
             ' m_card_archived=   
+            ' m_card_date=   
         End Sub
 
 
@@ -373,7 +373,7 @@ End Function
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
           node.SetAttribute("the_machine", m_the_machine.tostring)  
-          if card_date = System.DateTime.MinValue then card_date=System.DateTime.Parse("12/30/1899")
+         ' if card_date = System.DateTime.MinValue then card_date=new Date(1899,12,30)  ' SQL Server trouble
           node.SetAttribute("card_date", card_date.Ticks)  
           node.SetAttribute("card_archived", card_archived)  
            catch ex as System.Exception

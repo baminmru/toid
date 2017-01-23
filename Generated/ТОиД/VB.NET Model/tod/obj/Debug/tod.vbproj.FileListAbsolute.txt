@@ -1,0 +1,7 @@
+C:\LATIR4\Build\tod.dll
+C:\LATIR4\Build\tod.pdb
+C:\LATIR4\Build\tod_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tod\obj\Debug\tod.vbprojResolveAssemblyReference.cache
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tod\obj\Debug\tod.dll
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tod\obj\Debug\tod_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\tod\obj\Debug\tod.pdb

@@ -45,10 +45,12 @@ Namespace toop
             dt.TableName="to_oper"
             dt.Columns.Add("ID", GetType(System.guid))
             dt.Columns.Add("Brief", Gettype(System.string))
-            dt.Columns.Add("Name", Gettype(System.string))
-            dt.Columns.Add("FamilyName", Gettype(System.string))
-            dt.Columns.Add("SurName", Gettype(System.string))
+            dt.Columns.Add("familyname", Gettype(System.string))
+            dt.Columns.Add("name", Gettype(System.string))
+            dt.Columns.Add("surname", Gettype(System.string))
             dt.Columns.Add("tnum", Gettype(System.string))
+            dt.Columns.Add("therole_ID" , GetType(System.guid))
+            dt.Columns.Add("therole", Gettype(System.string))
             dt.Columns.Add("login", Gettype(System.string))
             return dt
         End Function
@@ -99,10 +101,11 @@ Public Overrides Function FieldList() As String
        with application.Session.GetProvider
        mFieldList=.ID2Base("to_operID")
            mFieldList =mFieldList+","+.ID2Base("SecurityStyleID") 
-           mFieldList =mFieldList+ ", name" 
            mFieldList =mFieldList+ ", familyname" 
+           mFieldList =mFieldList+ ", name" 
            mFieldList =mFieldList+ ", surname" 
            mFieldList =mFieldList+ ", tnum" 
+           mFieldList =mFieldList+","+.ID2Base("therole") 
            mFieldList =mFieldList+ ", login" 
        end with
     End If

@@ -58,6 +58,44 @@ Public Class GUI
             End If
 
         End If
+        If Mode = "adm" Then
+
+            If RowItem.PartName.ToUpper = "TO_SCHEDINFO" Then
+                Dim f As frmto_schedinfoadm
+                f = New frmto_schedinfoadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_SCHEDITEMS" Then
+                Dim f As frmto_scheditemsadm
+                f = New frmto_scheditemsadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+        End If
+        If Mode = "main" Then
+
+            If RowItem.PartName.ToUpper = "TO_SCHEDINFO" Then
+                Dim f As frmto_schedinfomain
+                f = New frmto_schedinfomain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_SCHEDITEMS" Then
+                Dim f As frmto_scheditemsmain
+                f = New frmto_scheditemsmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+        End If
 
     End Function
 
@@ -81,6 +119,24 @@ Public Class GUI
                 f = Nothing
             End If
         End If
+        If DocItem.TypeName.ToUpper = TypeName.ToUpper() Then
+            If mode = "adm" Then
+                Dim fadm As frmtoschedadm
+                fadm = New frmtoschedadm
+                fadm.Attach(DocItem, Me.GUIManager,FormReadOnly)
+                ShowForm = (fadm.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                fadm = Nothing
+            End If
+        End If
+        If DocItem.TypeName.ToUpper = TypeName.ToUpper() Then
+            If mode = "main" Then
+                Dim fmain As frmtoschedmain
+                fmain = New frmtoschedmain
+                fmain.Attach(DocItem, Me.GUIManager,FormReadOnly)
+                ShowForm = (fmain.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                fmain = Nothing
+            End If
+        End If
     End Function
 
 
@@ -91,6 +147,12 @@ Public Class GUI
 '''
 ''' </remarks>
     Public Overrides Function GetObjectControl(ByVal Mode As String, ByVal TypeName As String) As Object
+            If Mode = "adm" Then
+                Return New Tabviewadm
+            End If
+            If Mode = "main" Then
+                Return New Tabviewmain
+            End If
       Return New Tabview
     End Function
 

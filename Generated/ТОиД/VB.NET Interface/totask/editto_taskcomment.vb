@@ -57,8 +57,13 @@ Friend WithEvents lblcodetocomment  as  System.Windows.Forms.Label
 Friend WithEvents txtcodetocomment As LATIR2GuiManager.TouchTextBox
 Friend WithEvents cmdcodetocomment As System.Windows.Forms.Button
 Friend WithEvents cmdcodetocommentClear As System.Windows.Forms.Button
-Friend WithEvents lbltheComment  as  System.Windows.Forms.Label
-Friend WithEvents txttheComment As LATIR2GuiManager.TouchTextBox
+Friend WithEvents lblthecomment  as  System.Windows.Forms.Label
+Friend WithEvents txtthecomment As LATIR2GuiManager.TouchTextBox
+Friend WithEvents lblthe_operator  as  System.Windows.Forms.Label
+Friend WithEvents txtthe_operator As LATIR2GuiManager.TouchTextBox
+Friend WithEvents cmdthe_operator As System.Windows.Forms.Button
+Friend WithEvents lblthe_date  as  System.Windows.Forms.Label
+Friend WithEvents dtpthe_date As System.Windows.Forms.DateTimePicker
 
 <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
 
@@ -79,8 +84,13 @@ Me.lblcodetocomment = New System.Windows.Forms.Label
 Me.txtcodetocomment = New LATIR2GuiManager.TouchTextBox
 Me.cmdcodetocomment = New System.Windows.Forms.Button
 Me.cmdcodetocommentClear = New System.Windows.Forms.Button
-Me.lbltheComment = New System.Windows.Forms.Label
-Me.txttheComment = New LATIR2GuiManager.TouchTextBox
+Me.lblthecomment = New System.Windows.Forms.Label
+Me.txtthecomment = New LATIR2GuiManager.TouchTextBox
+Me.lblthe_operator = New System.Windows.Forms.Label
+Me.txtthe_operator = New LATIR2GuiManager.TouchTextBox
+Me.cmdthe_operator = New System.Windows.Forms.Button
+Me.lblthe_date = New System.Windows.Forms.Label
+Me.dtpthe_date = New System.Windows.Forms.DateTimePicker
 
 Me.lblcodetocomment.Location = New System.Drawing.Point(20,5)
 Me.lblcodetocomment.name = "lblcodetocomment"
@@ -104,27 +114,63 @@ Me.cmdcodetocommentClear.name = "cmdcodetocommentClear"
 Me.cmdcodetocommentClear.Size = New System.Drawing.Size(22, 20)
 Me.cmdcodetocommentClear.TabIndex = 4
 Me.cmdcodetocommentClear.Text = "X" 
-Me.lbltheComment.Location = New System.Drawing.Point(20,52)
-Me.lbltheComment.name = "lbltheComment"
-Me.lbltheComment.Size = New System.Drawing.Size(200, 20)
-Me.lbltheComment.TabIndex = 5
-Me.lbltheComment.Text = "Примечание"
-Me.lbltheComment.ForeColor = System.Drawing.Color.Black
-Me.txttheComment.Location = New System.Drawing.Point(20,74)
-Me.txttheComment.name = "txttheComment"
-Me.txttheComment.MultiLine = True
-Me.txttheComment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-Me.txttheComment.Size = New System.Drawing.Size(200, 50 + 20)
-Me.txttheComment.TabIndex = 6
-Me.txttheComment.Text = "" 
+Me.lblthecomment.Location = New System.Drawing.Point(20,52)
+Me.lblthecomment.name = "lblthecomment"
+Me.lblthecomment.Size = New System.Drawing.Size(200, 20)
+Me.lblthecomment.TabIndex = 5
+Me.lblthecomment.Text = "Примечание"
+Me.lblthecomment.ForeColor = System.Drawing.Color.Black
+Me.txtthecomment.Location = New System.Drawing.Point(20,74)
+Me.txtthecomment.name = "txtthecomment"
+Me.txtthecomment.MultiLine = True
+Me.txtthecomment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+Me.txtthecomment.Size = New System.Drawing.Size(200, 50 + 20)
+Me.txtthecomment.TabIndex = 6
+Me.txtthecomment.Text = "" 
+Me.txtthecomment.ReadOnly = True
+Me.lblthe_operator.Location = New System.Drawing.Point(20,144)
+Me.lblthe_operator.name = "lblthe_operator"
+Me.lblthe_operator.Size = New System.Drawing.Size(200, 20)
+Me.lblthe_operator.TabIndex = 7
+Me.lblthe_operator.Text = "Оператор"
+Me.lblthe_operator.ForeColor = System.Drawing.Color.Black
+Me.txtthe_operator.Location = New System.Drawing.Point(20,166)
+Me.txtthe_operator.name = "txtthe_operator"
+Me.txtthe_operator.ReadOnly = True
+Me.txtthe_operator.Size = New System.Drawing.Size(176, 20)
+Me.txtthe_operator.TabIndex = 8
+Me.txtthe_operator.Text = "" 
+Me.cmdthe_operator.Location = New System.Drawing.Point(198,166)
+Me.cmdthe_operator.name = "cmdthe_operator"
+Me.cmdthe_operator.Size = New System.Drawing.Size(22, 20)
+Me.cmdthe_operator.TabIndex = 9
+Me.cmdthe_operator.Text = "..." 
+Me.lblthe_date.Location = New System.Drawing.Point(20,191)
+Me.lblthe_date.name = "lblthe_date"
+Me.lblthe_date.Size = New System.Drawing.Size(200, 20)
+Me.lblthe_date.TabIndex = 10
+Me.lblthe_date.Text = "Дата комментария"
+Me.lblthe_date.ForeColor = System.Drawing.Color.Black
+Me.dtpthe_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+Me.dtpthe_date.Location = New System.Drawing.Point(20,213)
+Me.dtpthe_date.name = "dtpthe_date"
+Me.dtpthe_date.Size = New System.Drawing.Size(200,  20)
+Me.dtpthe_date.TabIndex =11
+Me.dtpthe_date.CustomFormat = "dd/MM/yyyy HH:mm:ss"
+Me.dtpthe_date.ShowCheckBox=False
         Me.AutoScroll = True
 
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblcodetocomment)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtcodetocomment)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdcodetocomment)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdcodetocommentClear)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lbltheComment)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txttheComment)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblthecomment)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtthecomment)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblthe_operator)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtthe_operator)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdthe_operator)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblthe_date)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.dtpthe_date)
         Me.Controls.Add(Me.HolderPanel)
         Me.HolderPanel.ResumeLayout(False)
         Me.HolderPanel.PerformLayout()
@@ -143,24 +189,38 @@ private sub cmdcodetocomment_Click(ByVal sender As System.Object, ByVal e As Sys
 Dim id As guid
 Dim brief As String = string.Empty
 Dim OK as boolean 
-        If GuiManager.GetReferenceDialog("tod_system","",System.guid.Empty, id, brief) Then
-          txtcodetocomment.Tag = id
-          txtcodetocomment.text = brief
-        End If
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
         catch ex as System.Exception
         Debug.Print(ex.Message +" >> " + ex.StackTrace)
         end try
 end sub
 private sub cmdcodetocommentClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdcodetocommentClear.Click
   try
-          txtcodetocomment.Tag = Guid.Empty
-          txtcodetocomment.text = ""
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
         catch ex as System.Exception
         Debug.Print(ex.Message +" >> " + ex.StackTrace)
         end try
 end sub
-private sub txttheComment_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txttheComment.TextChanged
+private sub txtthecomment_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtthecomment.TextChanged
   Changing
+
+end sub
+private sub txtthe_operator_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtthe_operator.TextChanged
+  Changing
+
+end sub
+private sub cmdthe_operator_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdthe_operator.Click
+  try
+Dim id As guid
+Dim brief As String = string.Empty
+Dim OK as boolean 
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
+        catch ex as System.Exception
+        Debug.Print(ex.Message +" >> " + ex.StackTrace)
+        end try
+end sub
+private sub dtpthe_date_Change(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpthe_date.ValueChanged
+  Changing 
 
 end sub
 
@@ -189,7 +249,22 @@ else
   txtcodetocomment.Tag = System.Guid.Empty 
   txtcodetocomment.text = "" 
 End If
-txttheComment.text = item.theComment
+txtthecomment.text = item.thecomment
+If Not item.the_operator Is Nothing Then
+  txtthe_operator.Tag = item.the_operator.id
+  txtthe_operator.text = item.the_operator.brief
+else
+  txtthe_operator.Tag = System.Guid.Empty 
+  txtthe_operator.text = "" 
+End If
+dtpthe_date.value = System.DateTime.Now
+if item.the_date <> System.DateTime.MinValue then
+  try
+     dtpthe_date.value = item.the_date
+  catch
+   dtpthe_date.value = System.DateTime.MinValue
+  end try
+end if
         mOnInit = false
   raiseevent Refreshed()
 end sub
@@ -204,12 +279,6 @@ end sub
 Public Sub Save() Implements LATIR2GUIManager.IRowEditor.Save
   if mRowReadOnly =false then
 
-If not txtcodetocomment.Tag.Equals(System.Guid.Empty) Then
-  item.codetocomment = Item.Application.FindRowObject("tod_system",txtcodetocomment.Tag)
-Else
-   item.codetocomment = Nothing
-End If
-item.theComment = txttheComment.text
   end if
   mChanged = false
   raiseevent saved()
@@ -219,7 +288,9 @@ Public function IsOK() as boolean Implements LATIR2GUIManager.IRowEditor.IsOK
  mIsOK=true
  if mRowReadOnly  then return true
 
-if mIsOK then mIsOK =( txttheComment.text <> "" ) 
+if mIsOK then mIsOK =( txtthecomment.text <> "" ) 
+if mIsOK then mIsOK = not txtthe_operator.Tag.Equals(System.Guid.Empty)
+if mIsOK then mIsOK = (dtpthe_date.value <> System.DateTime.MinValue)
  return mIsOK
 end function
 Public function IsChanged() as boolean Implements LATIR2GUIManager.IRowEditor.IsChanged

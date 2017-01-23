@@ -45,12 +45,16 @@ Namespace totask
             dt.TableName="to_taskinfo"
             dt.Columns.Add("ID", GetType(System.guid))
             dt.Columns.Add("Brief", Gettype(System.string))
-            dt.Columns.Add("theMachine_ID" , GetType(System.guid))
-            dt.Columns.Add("theMachine", Gettype(System.string))
+            dt.Columns.Add("themachine_ID" , GetType(System.guid))
+            dt.Columns.Add("themachine", Gettype(System.string))
             dt.Columns.Add("oper_ID" , GetType(System.guid))
             dt.Columns.Add("oper", Gettype(System.string))
-            dt.Columns.Add("theCard_ID" , GetType(System.guid))
-            dt.Columns.Add("theCard", Gettype(System.string))
+            dt.Columns.Add("thecard_ID" , GetType(System.guid))
+            dt.Columns.Add("thecard", Gettype(System.string))
+            dt.Columns.Add("crdate", GetType(System.DateTime))
+            dt.Columns.Add("taskfinished_VAL" , Gettype(System.Int16))
+            dt.Columns.Add("taskfinished", Gettype(System.string))
+            dt.Columns.Add("finishtime", GetType(System.DateTime))
             return dt
         End Function
 
@@ -100,9 +104,12 @@ Public Overrides Function FieldList() As String
        with application.Session.GetProvider
        mFieldList=.ID2Base("to_taskinfoID")
            mFieldList =mFieldList+","+.ID2Base("SecurityStyleID") 
-           mFieldList =mFieldList+","+.ID2Base("theMachine") 
+           mFieldList =mFieldList+","+.ID2Base("themachine") 
            mFieldList =mFieldList+","+.ID2Base("oper") 
-           mFieldList =mFieldList+","+.ID2Base("theCard") 
+           mFieldList =mFieldList+","+.ID2Base("thecard") 
+           mFieldList =mFieldList+","+.Date2Base("crdate") 
+           mFieldList =mFieldList+ ", taskfinished" 
+           mFieldList =mFieldList+","+.Date2Base("finishtime") 
        end with
     End If
     Return mFieldList

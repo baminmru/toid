@@ -25,39 +25,12 @@ Namespace tocard
 
 
 ''' <summary>
-'''Локальная переменная для поля Узел
-''' </summary>
-''' <remarks>
-'''
-''' </remarks>
-            private m_the_system  as System.Guid
-
-
-''' <summary>
 '''Локальная переменная для поля Показатель
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
             private m_the_check  as String
-
-
-''' <summary>
-'''Локальная переменная для поля Нормочас
-''' </summary>
-''' <remarks>
-'''
-''' </remarks>
-            private m_normochas  as double
-
-
-''' <summary>
-'''Локальная переменная для поля Измерение
-''' </summary>
-''' <remarks>
-'''
-''' </remarks>
-            private m_ValueType  as System.Guid
 
 
 ''' <summary>
@@ -70,21 +43,30 @@ Namespace tocard
 
 
 ''' <summary>
-'''Локальная переменная для поля Верхняя граница ((=)
+'''Локальная переменная для поля Документация
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_hivalue  as String
+            private m_the_doc  as String
 
 
 ''' <summary>
-'''Локальная переменная для поля Примечание
+'''Локальная переменная для поля Группа узлов
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_the_comment  as STRING
+            private m_the_system  as System.Guid
+
+
+''' <summary>
+'''Локальная переменная для поля Измерение
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_valuetype  as System.Guid
 
 
 ''' <summary>
@@ -97,21 +79,39 @@ Namespace tocard
 
 
 ''' <summary>
-'''Локальная переменная для поля Фото
+'''Локальная переменная для поля Верхняя граница ((=)
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_the_image  as String
+            private m_hivalue  as String
 
 
 ''' <summary>
-'''Локальная переменная для поля Документация
+'''Локальная переменная для поля Нормочас
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_the_doc  as String
+            private m_normochas  as double
+
+
+''' <summary>
+'''Локальная переменная для поля Узел
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_thesubsystem  as String
+
+
+''' <summary>
+'''Локальная переменная для поля Примечание
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_the_comment  as STRING
 
 
 ''' <summary>
@@ -131,16 +131,16 @@ Namespace tocard
 '''
 ''' </remarks>
         Public Overrides Sub CleanFields()
-            ' m_the_system=   
             ' m_the_check=   
-            ' m_normochas=   
-            ' m_ValueType=   
             ' m_lowvalue=   
-            ' m_hivalue=   
-            ' m_the_comment=   
-            ' m_tagid=   
-            ' m_the_image=   
             ' m_the_doc=   
+            ' m_the_system=   
+            ' m_valuetype=   
+            ' m_tagid=   
+            ' m_hivalue=   
+            ' m_normochas=   
+            ' m_thesubsystem=   
+            ' m_the_comment=   
         End Sub
 
 
@@ -176,21 +176,21 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 1
                     Value = the_system
                 Case 2
-                    Value = the_check
+                    Value = thesubsystem
                 Case 3
-                    Value = normochas
+                    Value = the_check
                 Case 4
-                    Value = ValueType
+                    Value = normochas
                 Case 5
-                    Value = lowvalue
+                    Value = valuetype
                 Case 6
-                    Value = hivalue
+                    Value = lowvalue
                 Case 7
-                    Value = the_comment
+                    Value = hivalue
                 Case 8
-                    Value = tagid
+                    Value = the_comment
                 Case 9
-                    Value = the_image
+                    Value = tagid
                 Case 10
                     Value = the_doc
             End Select
@@ -213,21 +213,21 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 1
                     the_system = value
                 Case 2
-                    the_check = value
+                    thesubsystem = value
                 Case 3
-                    normochas = value
+                    the_check = value
                 Case 4
-                    ValueType = value
+                    normochas = value
                 Case 5
-                    lowvalue = value
+                    valuetype = value
                 Case 6
-                    hivalue = value
+                    lowvalue = value
                 Case 7
-                    the_comment = value
+                    hivalue = value
                 Case 8
-                    tagid = value
+                    the_comment = value
                 Case 9
-                    the_image = value
+                    tagid = value
                 Case 10
                     the_doc = value
         End Select
@@ -263,21 +263,21 @@ Public Overrides Function FieldNameByID(ByVal Index As long) As String
                 Case 1
                     Return "the_system"
                 Case 2
-                    Return "the_check"
+                    Return "thesubsystem"
                 Case 3
-                    Return "normochas"
+                    Return "the_check"
                 Case 4
-                    Return "ValueType"
+                    Return "normochas"
                 Case 5
-                    Return "lowvalue"
+                    Return "valuetype"
                 Case 6
-                    Return "hivalue"
+                    Return "lowvalue"
                 Case 7
-                    Return "the_comment"
+                    Return "hivalue"
                 Case 8
-                    Return "tagid"
+                    Return "the_comment"
                 Case 9
-                    Return "the_image"
+                    Return "tagid"
                 Case 10
                     Return "the_doc"
                 Case else
@@ -308,20 +308,20 @@ End Function
                dr("the_system") =the_system.BRIEF
                dr("the_system_ID") =the_system.ID
              end if 
+             dr("thesubsystem") =thesubsystem
              dr("the_check") =the_check
              dr("normochas") =normochas
-             if ValueType is nothing then
-               dr("ValueType") =system.dbnull.value
-               dr("ValueType_ID") =System.Guid.Empty
+             if valuetype is nothing then
+               dr("valuetype") =system.dbnull.value
+               dr("valuetype_ID") =System.Guid.Empty
              else
-               dr("ValueType") =ValueType.BRIEF
-               dr("ValueType_ID") =ValueType.ID
+               dr("valuetype") =valuetype.BRIEF
+               dr("valuetype_ID") =valuetype.ID
              end if 
              dr("lowvalue") =lowvalue
              dr("hivalue") =hivalue
              dr("the_comment") =the_comment
              dr("tagid") =tagid
-             dr("the_image") =the_image
              dr("the_doc") =the_doc
             DestDataTable.Rows.Add (dr)
            catch ex as System.Exception
@@ -358,18 +358,18 @@ End Function
           else
             nv.Add("the_system", Application.Session.GetProvider.ID2Param(m_the_system), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           end if 
+          nv.Add("thesubsystem", thesubsystem, dbtype.string)
           nv.Add("the_check", the_check, dbtype.string)
           nv.Add("normochas", normochas, dbtype.double)
-          if m_ValueType.Equals(System.Guid.Empty) then
-            nv.Add("ValueType", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          if m_valuetype.Equals(System.Guid.Empty) then
+            nv.Add("valuetype", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           else
-            nv.Add("ValueType", Application.Session.GetProvider.ID2Param(m_ValueType), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+            nv.Add("valuetype", Application.Session.GetProvider.ID2Param(m_valuetype), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           end if 
           nv.Add("lowvalue", lowvalue, dbtype.string)
           nv.Add("hivalue", hivalue, dbtype.string)
           nv.Add("the_comment", the_comment, dbtype.string)
           nv.Add("tagid", tagid, dbtype.string)
-          nv.Add("the_image", the_image, dbtype.string)
           nv.Add("the_doc", the_doc, dbtype.string)
             nv.Add(PartName() & "id", Application.Session.GetProvider.ID2Param(ID),  Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
         End Sub
@@ -400,20 +400,20 @@ End Function
             If reader.Table.Columns.Contains("the_system") Then m_the_system= New System.Guid(reader.item("the_system").ToString())
           end if 
       end if 
+          If reader.Table.Columns.Contains("thesubsystem") Then m_thesubsystem=reader.item("thesubsystem").ToString()
           If reader.Table.Columns.Contains("the_check") Then m_the_check=reader.item("the_check").ToString()
           If reader.Table.Columns.Contains("normochas") Then m_normochas=reader.item("normochas")
-      If reader.Table.Columns.Contains("ValueType") Then
-          if isdbnull(reader.item("ValueType")) then
-            If reader.Table.Columns.Contains("ValueType") Then m_ValueType = System.GUID.Empty
+      If reader.Table.Columns.Contains("valuetype") Then
+          if isdbnull(reader.item("valuetype")) then
+            If reader.Table.Columns.Contains("valuetype") Then m_valuetype = System.GUID.Empty
           else
-            If reader.Table.Columns.Contains("ValueType") Then m_ValueType= New System.Guid(reader.item("ValueType").ToString())
+            If reader.Table.Columns.Contains("valuetype") Then m_valuetype= New System.Guid(reader.item("valuetype").ToString())
           end if 
       end if 
           If reader.Table.Columns.Contains("lowvalue") Then m_lowvalue=reader.item("lowvalue").ToString()
           If reader.Table.Columns.Contains("hivalue") Then m_hivalue=reader.item("hivalue").ToString()
           If reader.Table.Columns.Contains("the_comment") Then m_the_comment=reader.item("the_comment").ToString()
           If reader.Table.Columns.Contains("tagid") Then m_tagid=reader.item("tagid").ToString()
-          If reader.Table.Columns.Contains("the_image") Then m_the_image=reader.item("the_image").ToString()
           If reader.Table.Columns.Contains("the_doc") Then m_the_doc=reader.item("the_doc").ToString()
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -422,7 +422,7 @@ End Function
 
 
 ''' <summary>
-'''Доступ к полю Узел
+'''Доступ к полю Группа узлов
 ''' </summary>
 ''' <remarks>
 '''
@@ -440,6 +440,26 @@ End Function
                 else
                    m_the_system=System.Guid.Empty
                 end if
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Узел
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property thesubsystem() As String
+            Get
+                LoadFromDatabase()
+                thesubsystem = m_thesubsystem
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As String )
+                LoadFromDatabase()
+                m_thesubsystem = Value
                 ChangeTime = Now
             End Set
         End Property
@@ -491,18 +511,18 @@ End Function
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property ValueType() As LATIR2.Document.docrow_base
+        Public Property valuetype() As LATIR2.Document.docrow_base
             Get
                 LoadFromDatabase()
-                ValueType = me.application.Findrowobject("tod_valtype",m_ValueType)
+                valuetype = me.application.Findrowobject("tod_valtype",m_valuetype)
                 AccessTime = Now
             End Get
             Set(ByVal Value As LATIR2.Document.docrow_base )
                 LoadFromDatabase()
                 if not Value is nothing then
-                    m_ValueType = Value.id
+                    m_valuetype = Value.id
                 else
-                   m_ValueType=System.Guid.Empty
+                   m_valuetype=System.Guid.Empty
                 end if
                 ChangeTime = Now
             End Set
@@ -590,26 +610,6 @@ End Function
 
 
 ''' <summary>
-'''Доступ к полю Фото
-''' </summary>
-''' <remarks>
-'''
-''' </remarks>
-        Public Property the_image() As String
-            Get
-                LoadFromDatabase()
-                the_image = m_the_image
-                AccessTime = Now
-            End Get
-            Set(ByVal Value As String )
-                LoadFromDatabase()
-                m_the_image = Value
-                ChangeTime = Now
-            End Set
-        End Property
-
-
-''' <summary>
 '''Доступ к полю Документация
 ''' </summary>
 ''' <remarks>
@@ -659,14 +659,14 @@ End Function
           Dim e_list As XmlNodeList
           try 
             m_the_system = new system.guid(node.Attributes.GetNamedItem("the_system").Value)
+            thesubsystem = node.Attributes.GetNamedItem("thesubsystem").Value
             the_check = node.Attributes.GetNamedItem("the_check").Value
             normochas = node.Attributes.GetNamedItem("normochas").Value
-            m_ValueType = new system.guid(node.Attributes.GetNamedItem("ValueType").Value)
+            m_valuetype = new system.guid(node.Attributes.GetNamedItem("valuetype").Value)
             lowvalue = node.Attributes.GetNamedItem("lowvalue").Value
             hivalue = node.Attributes.GetNamedItem("hivalue").Value
             the_comment = node.Attributes.GetNamedItem("the_comment").Value
             tagid = node.Attributes.GetNamedItem("tagid").Value
-            the_image = node.Attributes.GetNamedItem("the_image").Value
             the_doc = node.Attributes.GetNamedItem("the_doc").Value
             e_list = node.SelectNodes("to_carddevices_COL")
             to_carddevices.XMLLoad(e_list,LoadMode)
@@ -689,14 +689,14 @@ End Function
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
           node.SetAttribute("the_system", m_the_system.tostring)  
+          node.SetAttribute("thesubsystem", thesubsystem)  
           node.SetAttribute("the_check", the_check)  
           node.SetAttribute("normochas", normochas)  
-          node.SetAttribute("ValueType", m_ValueType.tostring)  
+          node.SetAttribute("valuetype", m_valuetype.tostring)  
           node.SetAttribute("lowvalue", lowvalue)  
           node.SetAttribute("hivalue", hivalue)  
           node.SetAttribute("the_comment", the_comment)  
           node.SetAttribute("tagid", tagid)  
-          node.SetAttribute("the_image", the_image)  
           node.SetAttribute("the_doc", the_doc)  
             to_carddevices.XMLSave(node,xdom)
            catch ex as System.Exception

@@ -53,14 +53,18 @@ Public Class editto_oper
 
  Dim iii As Integer
     Friend WithEvents HolderPanel As LATIR2GUIControls.AutoPanel
-Friend WithEvents lblName  as  System.Windows.Forms.Label
-Friend WithEvents txtName As LATIR2GuiManager.TouchTextBox
-Friend WithEvents lblFamilyName  as  System.Windows.Forms.Label
-Friend WithEvents txtFamilyName As LATIR2GuiManager.TouchTextBox
-Friend WithEvents lblSurName  as  System.Windows.Forms.Label
-Friend WithEvents txtSurName As LATIR2GuiManager.TouchTextBox
+Friend WithEvents lblfamilyname  as  System.Windows.Forms.Label
+Friend WithEvents txtfamilyname As LATIR2GuiManager.TouchTextBox
+Friend WithEvents lblname  as  System.Windows.Forms.Label
+Friend WithEvents txtname As LATIR2GuiManager.TouchTextBox
+Friend WithEvents lblsurname  as  System.Windows.Forms.Label
+Friend WithEvents txtsurname As LATIR2GuiManager.TouchTextBox
 Friend WithEvents lbltnum  as  System.Windows.Forms.Label
 Friend WithEvents txttnum As LATIR2GuiManager.TouchTextBox
+Friend WithEvents lbltherole  as  System.Windows.Forms.Label
+Friend WithEvents txttherole As LATIR2GuiManager.TouchTextBox
+Friend WithEvents cmdtherole As System.Windows.Forms.Button
+Friend WithEvents cmdtheroleClear As System.Windows.Forms.Button
 Friend WithEvents lbllogin  as  System.Windows.Forms.Label
 Friend WithEvents txtlogin As LATIR2GuiManager.TouchTextBox
 
@@ -79,50 +83,57 @@ Me.HolderPanel.Location = New System.Drawing.Point(0, 0)
 Me.HolderPanel.Name = "HolderPanel"
 Me.HolderPanel.Size = New System.Drawing.Size(232, 120)
 Me.HolderPanel.TabIndex = 0
-Me.lblName = New System.Windows.Forms.Label
-Me.txtName = New LATIR2GuiManager.TouchTextBox
-Me.lblFamilyName = New System.Windows.Forms.Label
-Me.txtFamilyName = New LATIR2GuiManager.TouchTextBox
-Me.lblSurName = New System.Windows.Forms.Label
-Me.txtSurName = New LATIR2GuiManager.TouchTextBox
+Me.lblfamilyname = New System.Windows.Forms.Label
+Me.txtfamilyname = New LATIR2GuiManager.TouchTextBox
+Me.lblname = New System.Windows.Forms.Label
+Me.txtname = New LATIR2GuiManager.TouchTextBox
+Me.lblsurname = New System.Windows.Forms.Label
+Me.txtsurname = New LATIR2GuiManager.TouchTextBox
 Me.lbltnum = New System.Windows.Forms.Label
 Me.txttnum = New LATIR2GuiManager.TouchTextBox
+Me.lbltherole = New System.Windows.Forms.Label
+Me.txttherole = New LATIR2GuiManager.TouchTextBox
+Me.cmdtherole = New System.Windows.Forms.Button
+Me.cmdtheroleClear = New System.Windows.Forms.Button
 Me.lbllogin = New System.Windows.Forms.Label
 Me.txtlogin = New LATIR2GuiManager.TouchTextBox
 
-Me.lblName.Location = New System.Drawing.Point(20,5)
-Me.lblName.name = "lblName"
-Me.lblName.Size = New System.Drawing.Size(200, 20)
-Me.lblName.TabIndex = 1
-Me.lblName.Text = "Имя"
-Me.lblName.ForeColor = System.Drawing.Color.Black
-Me.txtName.Location = New System.Drawing.Point(20,27)
-Me.txtName.name = "txtName"
-Me.txtName.Size = New System.Drawing.Size(200, 20)
-Me.txtName.TabIndex = 2
-Me.txtName.Text = "" 
-Me.lblFamilyName.Location = New System.Drawing.Point(20,52)
-Me.lblFamilyName.name = "lblFamilyName"
-Me.lblFamilyName.Size = New System.Drawing.Size(200, 20)
-Me.lblFamilyName.TabIndex = 3
-Me.lblFamilyName.Text = "Фамилия"
-Me.lblFamilyName.ForeColor = System.Drawing.Color.Black
-Me.txtFamilyName.Location = New System.Drawing.Point(20,74)
-Me.txtFamilyName.name = "txtFamilyName"
-Me.txtFamilyName.Size = New System.Drawing.Size(200, 20)
-Me.txtFamilyName.TabIndex = 4
-Me.txtFamilyName.Text = "" 
-Me.lblSurName.Location = New System.Drawing.Point(20,99)
-Me.lblSurName.name = "lblSurName"
-Me.lblSurName.Size = New System.Drawing.Size(200, 20)
-Me.lblSurName.TabIndex = 5
-Me.lblSurName.Text = "Отчество"
-Me.lblSurName.ForeColor = System.Drawing.Color.Black
-Me.txtSurName.Location = New System.Drawing.Point(20,121)
-Me.txtSurName.name = "txtSurName"
-Me.txtSurName.Size = New System.Drawing.Size(200, 20)
-Me.txtSurName.TabIndex = 6
-Me.txtSurName.Text = "" 
+Me.lblfamilyname.Location = New System.Drawing.Point(20,5)
+Me.lblfamilyname.name = "lblfamilyname"
+Me.lblfamilyname.Size = New System.Drawing.Size(200, 20)
+Me.lblfamilyname.TabIndex = 1
+Me.lblfamilyname.Text = "Фамилия"
+Me.lblfamilyname.ForeColor = System.Drawing.Color.Black
+Me.txtfamilyname.Location = New System.Drawing.Point(20,27)
+Me.txtfamilyname.name = "txtfamilyname"
+Me.txtfamilyname.Size = New System.Drawing.Size(200, 20)
+Me.txtfamilyname.TabIndex = 2
+Me.txtfamilyname.Text = "" 
+Me.txtfamilyname.ReadOnly = True
+Me.lblname.Location = New System.Drawing.Point(20,52)
+Me.lblname.name = "lblname"
+Me.lblname.Size = New System.Drawing.Size(200, 20)
+Me.lblname.TabIndex = 3
+Me.lblname.Text = "Имя"
+Me.lblname.ForeColor = System.Drawing.Color.Black
+Me.txtname.Location = New System.Drawing.Point(20,74)
+Me.txtname.name = "txtname"
+Me.txtname.Size = New System.Drawing.Size(200, 20)
+Me.txtname.TabIndex = 4
+Me.txtname.Text = "" 
+Me.txtname.ReadOnly = True
+Me.lblsurname.Location = New System.Drawing.Point(20,99)
+Me.lblsurname.name = "lblsurname"
+Me.lblsurname.Size = New System.Drawing.Size(200, 20)
+Me.lblsurname.TabIndex = 5
+Me.lblsurname.Text = "Отчество"
+Me.lblsurname.ForeColor = System.Drawing.Color.Black
+Me.txtsurname.Location = New System.Drawing.Point(20,121)
+Me.txtsurname.name = "txtsurname"
+Me.txtsurname.Size = New System.Drawing.Size(200, 20)
+Me.txtsurname.TabIndex = 6
+Me.txtsurname.Text = "" 
+Me.txtsurname.ReadOnly = True
 Me.lbltnum.Location = New System.Drawing.Point(20,146)
 Me.lbltnum.name = "lbltnum"
 Me.lbltnum.Size = New System.Drawing.Size(200, 20)
@@ -134,27 +145,55 @@ Me.txttnum.name = "txttnum"
 Me.txttnum.Size = New System.Drawing.Size(200, 20)
 Me.txttnum.TabIndex = 8
 Me.txttnum.Text = "" 
-Me.lbllogin.Location = New System.Drawing.Point(20,193)
+Me.txttnum.ReadOnly = True
+Me.lbltherole.Location = New System.Drawing.Point(20,193)
+Me.lbltherole.name = "lbltherole"
+Me.lbltherole.Size = New System.Drawing.Size(200, 20)
+Me.lbltherole.TabIndex = 9
+Me.lbltherole.Text = "Роль"
+Me.lbltherole.ForeColor = System.Drawing.Color.Blue
+Me.txttherole.Location = New System.Drawing.Point(20,215)
+Me.txttherole.name = "txttherole"
+Me.txttherole.ReadOnly = True
+Me.txttherole.Size = New System.Drawing.Size(155, 20)
+Me.txttherole.TabIndex = 10
+Me.txttherole.Text = "" 
+Me.cmdtherole.Location = New System.Drawing.Point(176,215)
+Me.cmdtherole.name = "cmdtherole"
+Me.cmdtherole.Size = New System.Drawing.Size(22, 20)
+Me.cmdtherole.TabIndex = 11
+Me.cmdtherole.Text = "..." 
+Me.cmdtheroleClear.Location = New System.Drawing.Point(198,215)
+Me.cmdtheroleClear.name = "cmdtheroleClear"
+Me.cmdtheroleClear.Size = New System.Drawing.Size(22, 20)
+Me.cmdtheroleClear.TabIndex = 12
+Me.cmdtheroleClear.Text = "X" 
+Me.lbllogin.Location = New System.Drawing.Point(20,240)
 Me.lbllogin.name = "lbllogin"
 Me.lbllogin.Size = New System.Drawing.Size(200, 20)
-Me.lbllogin.TabIndex = 9
+Me.lbllogin.TabIndex = 13
 Me.lbllogin.Text = "Логин"
 Me.lbllogin.ForeColor = System.Drawing.Color.Blue
-Me.txtlogin.Location = New System.Drawing.Point(20,215)
+Me.txtlogin.Location = New System.Drawing.Point(20,262)
 Me.txtlogin.name = "txtlogin"
 Me.txtlogin.Size = New System.Drawing.Size(200, 20)
-Me.txtlogin.TabIndex = 10
+Me.txtlogin.TabIndex = 14
 Me.txtlogin.Text = "" 
+Me.txtlogin.ReadOnly = True
         Me.AutoScroll = True
 
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblName)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtName)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblFamilyName)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtFamilyName)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblSurName)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtSurName)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblfamilyname)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtfamilyname)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblname)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtname)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblsurname)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtsurname)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lbltnum)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txttnum)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lbltherole)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txttherole)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdtherole)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdtheroleClear)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lbllogin)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtlogin)
         Me.Controls.Add(Me.HolderPanel)
@@ -166,21 +205,42 @@ CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtlogin)
     End Sub
 #End Region
 
-private sub txtName_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtName.TextChanged
+private sub txtfamilyname_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtfamilyname.TextChanged
   Changing
 
 end sub
-private sub txtFamilyName_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtFamilyName.TextChanged
+private sub txtname_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtname.TextChanged
   Changing
 
 end sub
-private sub txtSurName_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtSurName.TextChanged
+private sub txtsurname_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtsurname.TextChanged
   Changing
 
 end sub
 private sub txttnum_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txttnum.TextChanged
   Changing
 
+end sub
+private sub txttherole_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txttherole.TextChanged
+  Changing
+
+end sub
+private sub cmdtherole_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdtherole.Click
+  try
+Dim id As guid
+Dim brief As String = string.Empty
+Dim OK as boolean 
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
+        catch ex as System.Exception
+        Debug.Print(ex.Message +" >> " + ex.StackTrace)
+        end try
+end sub
+private sub cmdtheroleClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdtheroleClear.Click
+  try
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
+        catch ex as System.Exception
+        Debug.Print(ex.Message +" >> " + ex.StackTrace)
+        end try
 end sub
 private sub txtlogin_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtlogin.TextChanged
   Changing
@@ -205,10 +265,17 @@ Public Sub Attach(ByVal gm As LATIR2GuiManager.LATIRGuiManager, ByVal ri As LATI
         If Item Is Nothing Then Exit Sub
         mOnInit = true
 
-txtName.text = item.Name
-txtFamilyName.text = item.FamilyName
-txtSurName.text = item.SurName
+txtfamilyname.text = item.familyname
+txtname.text = item.name
+txtsurname.text = item.surname
 txttnum.text = item.tnum
+If Not item.therole Is Nothing Then
+  txttherole.Tag = item.therole.id
+  txttherole.text = item.therole.brief
+else
+  txttherole.Tag = System.Guid.Empty 
+  txttherole.text = "" 
+End If
 txtlogin.text = item.login
         mOnInit = false
   raiseevent Refreshed()
@@ -224,11 +291,6 @@ end sub
 Public Sub Save() Implements LATIR2GUIManager.IRowEditor.Save
   if mRowReadOnly =false then
 
-item.Name = txtName.text
-item.FamilyName = txtFamilyName.text
-item.SurName = txtSurName.text
-item.tnum = txttnum.text
-item.login = txtlogin.text
   end if
   mChanged = false
   raiseevent saved()
@@ -238,9 +300,9 @@ Public function IsOK() as boolean Implements LATIR2GUIManager.IRowEditor.IsOK
  mIsOK=true
  if mRowReadOnly  then return true
 
-if mIsOK then mIsOK =( txtName.text <> "" ) 
-if mIsOK then mIsOK =( txtFamilyName.text <> "" ) 
-if mIsOK then mIsOK =( txtSurName.text <> "" ) 
+if mIsOK then mIsOK =( txtfamilyname.text <> "" ) 
+if mIsOK then mIsOK =( txtname.text <> "" ) 
+if mIsOK then mIsOK =( txtsurname.text <> "" ) 
  return mIsOK
 end function
 Public function IsChanged() as boolean Implements LATIR2GUIManager.IRowEditor.IsChanged

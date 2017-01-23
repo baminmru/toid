@@ -1,0 +1,7 @@
+C:\LATIR4\Build\toimg.dll
+C:\LATIR4\Build\toimg.pdb
+C:\LATIR4\Build\toimg_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\toimg\obj\Debug\toimg.vbprojResolveAssemblyReference.cache
+C:\LATIR4\Generated\ТОиД\VB.NET Model\toimg\obj\Debug\toimg.dll
+C:\LATIR4\Generated\ТОиД\VB.NET Model\toimg\obj\Debug\toimg_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\toimg\obj\Debug\toimg.pdb

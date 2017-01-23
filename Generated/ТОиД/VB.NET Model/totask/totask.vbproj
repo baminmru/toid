@@ -4,7 +4,7 @@
  <PropertyGroup>
  <Configuration Condition = " '$(Configuration)' == '' ">Debug</Configuration>
       <Platform Condition = " '$(Platform)' == '' ">AnyCPU</Platform>
- <ProjectGuid>185fb3fb-01a9-43fe-8b01-f8ed05a21844</ProjectGuid>
+ <ProjectGuid>582e1524-dabf-4804-a9e1-8f87fc16a7a7</ProjectGuid>
  <OutputType>Library</OutputType>
  <RootNamespace>totask</RootNamespace>
  <AssemblyName>totask</AssemblyName>
@@ -74,13 +74,6 @@
                     <SubType>Code</SubType>
                 </Compile>
 
-                <Compile Include="to_taskvalues.vb">
-                    <SubType>Code</SubType>
-                </Compile>
-                <Compile Include="to_taskvalues_col.vb">
-                    <SubType>Code</SubType>
-                </Compile>
-
                 <Compile Include="to_taskinfo.vb">
                     <SubType>Code</SubType>
                 </Compile>
@@ -92,6 +85,13 @@
                     <SubType>Code</SubType>
                 </Compile>
                 <Compile Include="to_taskchecks_col.vb">
+                    <SubType>Code</SubType>
+                </Compile>
+
+                <Compile Include="to_taskcheckcomment.vb">
+                    <SubType>Code</SubType>
+                </Compile>
+                <Compile Include="to_taskcheckcomment_col.vb">
                     <SubType>Code</SubType>
                 </Compile>
 

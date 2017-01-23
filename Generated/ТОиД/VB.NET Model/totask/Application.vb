@@ -711,34 +711,6 @@ end enum
 
 
 ''' <summary>
-''' Внутренняя переменная для раздела Измеренные значения
-''' </summary>
-''' <remarks>
-'''
-''' </remarks>
-  Private m_to_taskvalues As to_taskvalues_col
-
-
-''' <summary>
-'''Свойство для доступа к строкам раздела Измеренные значения
-''' </summary>
-''' <remarks>
-'''
-''' </remarks>
-        Public ReadOnly Property to_taskvalues() As to_taskvalues_col
-            Get
-                If m_to_taskvalues Is Nothing Then
-                    m_to_taskvalues = New to_taskvalues_col
-                    m_to_taskvalues.Application = Me
-                    m_to_taskvalues.Parent = Me
-                    m_to_taskvalues.Refresh()
-                End If
-                to_taskvalues = m_to_taskvalues
-            End Get
-        End Property
-
-
-''' <summary>
 ''' Внутренняя переменная для раздела Описание
 ''' </summary>
 ''' <remarks>
@@ -802,7 +774,7 @@ end enum
 ''' </remarks>
         Public Overrides ReadOnly Property CountOfParts() As Long
             Get
-                CountOfParts = 4
+                CountOfParts = 3
             End Get
         End Property
 
@@ -821,8 +793,6 @@ end enum
          Case 2
             return to_taskchecks
          Case 3
-            return to_taskvalues
-         Case 4
             return to_taskcomment
             End Select
             return nothing
@@ -831,7 +801,6 @@ end enum
         Public Overrides Sub Dispose()
             to_taskinfo.Dispose()
             to_taskchecks.Dispose()
-            to_taskvalues.Dispose()
             to_taskcomment.Dispose()
         End Sub
 
@@ -849,8 +818,6 @@ end enum
             mFindInCollections = to_taskinfo.FindObject(Table, InstID)
             if not mFindInCollections is nothing then return mFindInCollections
             mFindInCollections = to_taskchecks.FindObject(Table, InstID)
-            if not mFindInCollections is nothing then return mFindInCollections
-            mFindInCollections = to_taskvalues.FindObject(Table, InstID)
             if not mFindInCollections is nothing then return mFindInCollections
             mFindInCollections = to_taskcomment.FindObject(Table, InstID)
             if not mFindInCollections is nothing then return mFindInCollections
@@ -871,8 +838,6 @@ end enum
             to_taskinfo.XMLLoad(e_list, LoadMode)
             e_list = node.SelectNodes("to_taskchecks_COL")
             to_taskchecks.XMLLoad(e_list, LoadMode)
-            e_list = node.SelectNodes("to_taskvalues_COL")
-            to_taskvalues.XMLLoad(e_list, LoadMode)
             e_list = node.SelectNodes("to_taskcomment_COL")
             to_taskcomment.XMLLoad(e_list, LoadMode)
 catch ex as System.Exception
@@ -891,7 +856,6 @@ end try
         Public Overrides Sub XMLSaveCollections(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
             to_taskinfo.XMLSave(node, Xdom)
             to_taskchecks.XMLSave(node, Xdom)
-            to_taskvalues.XMLSave(node, Xdom)
             to_taskcomment.XMLSave(node, Xdom)
         End Sub
 
@@ -906,7 +870,6 @@ end try
 Public Overrides Sub BatchUpdate()
     to_taskinfo.BatchUpdate
     to_taskchecks.BatchUpdate
-    to_taskvalues.BatchUpdate
     to_taskcomment.BatchUpdate
 End Sub
     End Class

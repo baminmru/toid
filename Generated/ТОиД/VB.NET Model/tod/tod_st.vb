@@ -25,12 +25,21 @@ Namespace tod
 
 
 ''' <summary>
+'''Локальная переменная для поля Модель станка
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_the_model  as System.Guid
+
+
+''' <summary>
 '''Локальная переменная для поля Инвентарный номер
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_INVN  as String
+            private m_invn  as String
 
 
 ''' <summary>
@@ -39,16 +48,16 @@ Namespace tod
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_Name  as String
+            private m_name  as String
 
 
 ''' <summary>
-'''Локальная переменная для поля Модель станка
+'''Локальная переменная для поля Цех
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_the_model  as System.Guid
+            private m_thebuilding  as System.Guid
 
 
 
@@ -59,9 +68,10 @@ Namespace tod
 '''
 ''' </remarks>
         Public Overrides Sub CleanFields()
-            ' m_INVN=   
-            ' m_Name=   
             ' m_the_model=   
+            ' m_invn=   
+            ' m_name=   
+            ' m_thebuilding=   
         End Sub
 
 
@@ -74,7 +84,7 @@ Namespace tod
 ''' </remarks>
     Public Overrides ReadOnly Property Count() As Long
         Get
-           Count = 3
+           Count = 4
         End Get
     End Property
 
@@ -95,11 +105,13 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 0
                     Value = ID
                 Case 1
-                    Value = INVN
+                    Value = invn
                 Case 2
-                    Value = Name
+                    Value = name
                 Case 3
                     Value = the_model
+                Case 4
+                    Value = thebuilding
             End Select
         else
         try
@@ -118,11 +130,13 @@ Public Overrides Property Value(ByVal Index As Object) As Object
             Case 0
                  ID=value
                 Case 1
-                    INVN = value
+                    invn = value
                 Case 2
-                    Name = value
+                    name = value
                 Case 3
                     the_model = value
+                Case 4
+                    thebuilding = value
         End Select
      Else
         Try
@@ -154,11 +168,13 @@ Public Overrides Function FieldNameByID(ByVal Index As long) As String
                 Case 0
                    Return "ID"
                 Case 1
-                    Return "INVN"
+                    Return "invn"
                 Case 2
-                    Return "Name"
+                    Return "name"
                 Case 3
                     Return "the_model"
+                Case 4
+                    Return "thebuilding"
                 Case else
                 return "" 
             End Select
@@ -180,14 +196,21 @@ End Function
             try
             dr("ID") =ID
             dr("Brief") =Brief
-             dr("INVN") =INVN
-             dr("Name") =Name
+             dr("invn") =invn
+             dr("name") =name
              if the_model is nothing then
                dr("the_model") =system.dbnull.value
                dr("the_model_ID") =System.Guid.Empty
              else
                dr("the_model") =the_model.BRIEF
                dr("the_model_ID") =the_model.ID
+             end if 
+             if thebuilding is nothing then
+               dr("thebuilding") =system.dbnull.value
+               dr("thebuilding_ID") =System.Guid.Empty
+             else
+               dr("thebuilding") =thebuilding.BRIEF
+               dr("thebuilding_ID") =thebuilding.ID
              end if 
             DestDataTable.Rows.Add (dr)
            catch ex as System.Exception
@@ -217,12 +240,17 @@ End Function
 '''
 ''' </remarks>
         Public Overrides Sub Pack(ByVal nv As LATIR2.NamedValues)
-          nv.Add("INVN", INVN, dbtype.string)
-          nv.Add("Name", Name, dbtype.string)
+          nv.Add("invn", invn, dbtype.string)
+          nv.Add("name", name, dbtype.string)
           if m_the_model.Equals(System.Guid.Empty) then
             nv.Add("the_model", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           else
             nv.Add("the_model", Application.Session.GetProvider.ID2Param(m_the_model), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          end if 
+          if m_thebuilding.Equals(System.Guid.Empty) then
+            nv.Add("thebuilding", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          else
+            nv.Add("thebuilding", Application.Session.GetProvider.ID2Param(m_thebuilding), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           end if 
             nv.Add(PartName() & "id", Application.Session.GetProvider.ID2Param(ID),  Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
         End Sub
@@ -246,13 +274,20 @@ End Function
 
             RowRetrived = True
             RetriveTime = Now
-          If reader.Table.Columns.Contains("INVN") Then m_INVN=reader.item("INVN").ToString()
-          If reader.Table.Columns.Contains("Name") Then m_Name=reader.item("Name").ToString()
+          If reader.Table.Columns.Contains("invn") Then m_invn=reader.item("invn").ToString()
+          If reader.Table.Columns.Contains("name") Then m_name=reader.item("name").ToString()
       If reader.Table.Columns.Contains("the_model") Then
           if isdbnull(reader.item("the_model")) then
             If reader.Table.Columns.Contains("the_model") Then m_the_model = System.GUID.Empty
           else
             If reader.Table.Columns.Contains("the_model") Then m_the_model= New System.Guid(reader.item("the_model").ToString())
+          end if 
+      end if 
+      If reader.Table.Columns.Contains("thebuilding") Then
+          if isdbnull(reader.item("thebuilding")) then
+            If reader.Table.Columns.Contains("thebuilding") Then m_thebuilding = System.GUID.Empty
+          else
+            If reader.Table.Columns.Contains("thebuilding") Then m_thebuilding= New System.Guid(reader.item("thebuilding").ToString())
           end if 
       end if 
            catch ex as System.Exception
@@ -267,15 +302,15 @@ End Function
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property INVN() As String
+        Public Property invn() As String
             Get
                 LoadFromDatabase()
-                INVN = m_INVN
+                invn = m_invn
                 AccessTime = Now
             End Get
             Set(ByVal Value As String )
                 LoadFromDatabase()
-                m_INVN = Value
+                m_invn = Value
                 ChangeTime = Now
             End Set
         End Property
@@ -287,15 +322,15 @@ End Function
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property Name() As String
+        Public Property name() As String
             Get
                 LoadFromDatabase()
-                Name = m_Name
+                name = m_name
                 AccessTime = Now
             End Get
             Set(ByVal Value As String )
                 LoadFromDatabase()
-                m_Name = Value
+                m_name = Value
                 ChangeTime = Now
             End Set
         End Property
@@ -326,6 +361,30 @@ End Function
 
 
 ''' <summary>
+'''Доступ к полю Цех
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property thebuilding() As LATIR2.Document.docrow_base
+            Get
+                LoadFromDatabase()
+                thebuilding = me.application.Findrowobject("tod_building",m_thebuilding)
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As LATIR2.Document.docrow_base )
+                LoadFromDatabase()
+                if not Value is nothing then
+                    m_thebuilding = Value.id
+                else
+                   m_thebuilding=System.Guid.Empty
+                end if
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
 '''Заполнить поля данными из XML
 ''' </summary>
 ''' <remarks>
@@ -334,9 +393,10 @@ End Function
         Protected Overrides sub XMLUnpack(ByVal node As System.Xml.XmlNode, Optional ByVal LoadMode As Integer = 0)
           Dim e_list As XmlNodeList
           try 
-            INVN = node.Attributes.GetNamedItem("INVN").Value
-            Name = node.Attributes.GetNamedItem("Name").Value
+            invn = node.Attributes.GetNamedItem("invn").Value
+            name = node.Attributes.GetNamedItem("name").Value
             m_the_model = new system.guid(node.Attributes.GetNamedItem("the_model").Value)
+            m_thebuilding = new system.guid(node.Attributes.GetNamedItem("thebuilding").Value)
              Changed = true
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -354,9 +414,10 @@ End Function
 ''' </remarks>
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
-          node.SetAttribute("INVN", INVN)  
-          node.SetAttribute("Name", Name)  
+          node.SetAttribute("invn", invn)  
+          node.SetAttribute("name", name)  
           node.SetAttribute("the_model", m_the_model.tostring)  
+          node.SetAttribute("thebuilding", m_thebuilding.tostring)  
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
           end try

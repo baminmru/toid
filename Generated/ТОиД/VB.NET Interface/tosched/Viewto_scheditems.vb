@@ -102,14 +102,42 @@ Public Class viewto_scheditems
         cs = New DataGridTextBoxColumn
         cs.ReadOnly = True
         cs.HeaderText = "Станок"
-        cs.MappingName = "TheMachine"
+        cs.MappingName = "themachine"
         cs.NullText = ""
         ts.GridColumnStyles.Add (cs)
 
         cs = New DataGridTextBoxColumn
         cs.ReadOnly = True
-        cs.HeaderText = "Дата проведения ТО"
+        cs.HeaderText = "Плановая дата ТО"
         cs.MappingName = "todate"
+        cs.NullText = ""
+        ts.GridColumnStyles.Add (cs)
+
+        cs = New DataGridTextBoxColumn
+        cs.ReadOnly = True
+        cs.HeaderText = "Взят в работу"
+        cs.MappingName = "checkin"
+        cs.NullText = ""
+        ts.GridColumnStyles.Add (cs)
+
+        cs = New DataGridTextBoxColumn
+        cs.ReadOnly = True
+        cs.HeaderText = "Оператор"
+        cs.MappingName = "oper"
+        cs.NullText = ""
+        ts.GridColumnStyles.Add (cs)
+
+        cs = New DataGridTextBoxColumn
+        cs.ReadOnly = True
+        cs.HeaderText = "ТО проведено"
+        cs.MappingName = "isdone"
+        cs.NullText = ""
+        ts.GridColumnStyles.Add (cs)
+
+        cs = New DataGridTextBoxColumn
+        cs.ReadOnly = True
+        cs.HeaderText = "Дата завершения ТО"
+        cs.MappingName = "finishdate"
         cs.NullText = ""
         ts.GridColumnStyles.Add (cs)
 
@@ -151,6 +179,7 @@ Public Class viewto_scheditems
 ''' </remarks>
     Private Sub gv_OnDel(ByRef OK As Boolean, ByVal ID As System.Guid) Handles gv.OnGridDel
       If not mReadOnly Then
+    Exit Sub
         Dim ed As tosched.tosched.to_scheditems
         ed = item.FindRowObject("to_scheditems", ID)
         If MsgBox("Удалить <" & ed.Brief & "> ?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Удаление") = MsgBoxResult.Yes Then
@@ -175,6 +204,7 @@ Public Class viewto_scheditems
 ''' </remarks>
     Private Sub gv_OnAdd(ByRef OK As Boolean, ByVal ID As System.Guid) Handles gv.OnGridAdd
       If not mReadOnly Then
+    Exit Sub
         Dim ed As tosched.tosched.to_scheditems
         If ID.Equals(System.guid.Empty) Then
               ed = Item.to_scheditems.Add

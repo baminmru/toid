@@ -109,7 +109,7 @@ Public Class viewtod_bug
         cs = New DataGridTextBoxColumn
         cs.ReadOnly = True
         cs.HeaderText = "Название "
-        cs.MappingName = "Name"
+        cs.MappingName = "name"
         cs.NullText = ""
         ts.GridColumnStyles.Add (cs)
 
@@ -158,6 +158,7 @@ Public Class viewtod_bug
 ''' </remarks>
     Private Sub gv_OnDel(ByRef OK As Boolean, ByVal ID As System.Guid) Handles gv.OnGridDel
       If not mReadOnly Then
+    Exit Sub
         Dim ed As tod.tod.tod_bug
         ed = item.FindRowObject("tod_bug", ID)
         If MsgBox("Удалить <" & ed.Brief & "> ?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Удаление") = MsgBoxResult.Yes Then
@@ -182,6 +183,7 @@ Public Class viewtod_bug
 ''' </remarks>
     Private Sub gv_OnAdd(ByRef OK As Boolean, ByVal ID As System.Guid) Handles gv.OnGridAdd
       If not mReadOnly Then
+    Exit Sub
         Dim ed As tod.tod.tod_bug
         If ID.Equals(System.guid.Empty) Then
               ed = Item.tod_bug.Add

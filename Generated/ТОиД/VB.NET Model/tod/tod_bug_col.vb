@@ -47,7 +47,7 @@ Namespace tod
             dt.Columns.Add("Brief", Gettype(System.string))
             dt.Columns.Add("the_system_ID" , GetType(System.guid))
             dt.Columns.Add("the_system", Gettype(System.string))
-            dt.Columns.Add("Name", Gettype(System.string))
+            dt.Columns.Add("name", Gettype(System.string))
             dt.Columns.Add("the_comment", Gettype(System.string))
             return dt
         End Function

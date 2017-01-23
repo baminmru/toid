@@ -50,6 +50,28 @@ Public Class GUI
             End If
 
         End If
+        If Mode = "adm" Then
+
+            If RowItem.PartName.ToUpper = "TO_OPER" Then
+                Dim f As frmto_operadm
+                f = New frmto_operadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+        End If
+        If Mode = "main" Then
+
+            If RowItem.PartName.ToUpper = "TO_OPER" Then
+                Dim f As frmto_opermain
+                f = New frmto_opermain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+        End If
 
     End Function
 
@@ -73,6 +95,24 @@ Public Class GUI
                 f = Nothing
             End If
         End If
+        If DocItem.TypeName.ToUpper = TypeName.ToUpper() Then
+            If mode = "adm" Then
+                Dim fadm As frmtoopadm
+                fadm = New frmtoopadm
+                fadm.Attach(DocItem, Me.GUIManager,FormReadOnly)
+                ShowForm = (fadm.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                fadm = Nothing
+            End If
+        End If
+        If DocItem.TypeName.ToUpper = TypeName.ToUpper() Then
+            If mode = "main" Then
+                Dim fmain As frmtoopmain
+                fmain = New frmtoopmain
+                fmain.Attach(DocItem, Me.GUIManager,FormReadOnly)
+                ShowForm = (fmain.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                fmain = Nothing
+            End If
+        End If
     End Function
 
 
@@ -83,6 +123,12 @@ Public Class GUI
 '''
 ''' </remarks>
     Public Overrides Function GetObjectControl(ByVal Mode As String, ByVal TypeName As String) As Object
+            If Mode = "adm" Then
+                Return New Tabviewadm
+            End If
+            If Mode = "main" Then
+                Return New Tabviewmain
+            End If
       Return New Tabview
     End Function
 

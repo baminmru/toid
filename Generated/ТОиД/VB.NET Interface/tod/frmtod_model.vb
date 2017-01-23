@@ -89,7 +89,7 @@ Public Class frmtod_model
         Me.Edittod_model.AutoScroll = True
         Me.Edittod_model.Location = New System.Drawing.Point(8, 8)
         Me.Edittod_model.name = "Edittod_model"
-        Me.Edittod_model.Size = New System.Drawing.Size(490, 600)
+        Me.Edittod_model.Size = New System.Drawing.Size(800-40-16, 600-16)
         Me.Edittod_model.TabIndex = 20
         Me.Edittod_model.Dock = System.Windows.Forms.DockStyle.Fill
         '
@@ -101,6 +101,7 @@ Public Class frmtod_model
         Me.Controls.Add (Me.btnPanel)
         Me.name = "frmtod_model"
         Me.Text = "Модели станков"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout (False)
 
     End Sub
@@ -108,6 +109,7 @@ Public Class frmtod_model
 #End Region
     Public Item As tod.tod.tod_model
     Public GuiManager As LATIR2GuiManager.LATIRGuiManager
+    Private myResizer As LATIR2GuiManager.Resizer = New LATIR2GuiManager.Resizer
     Private mReadOnly As Boolean
 
 
@@ -156,8 +158,17 @@ Public Class frmtod_model
         Exit Sub
         End If
     End Sub
-    Private Sub frmUsers_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Me.ClientSize() = New System.Drawing.Size(Edittod_model.GetMaxX() + 10, Edittod_model.GetMaxY() + 35)
-        LATIR2GuiManager.LATIRGuiManager.ScaleForm(Me)
+    Private Sub frm_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+          Me.StartPosition = FormStartPosition.Manual
+          Me.WindowState = FormWindowState.Normal
+          Me.Location = Screen.PrimaryScreen.WorkingArea.Location
+          Me.Size = Screen.PrimaryScreen.WorkingArea.Size
     End Sub
+    Private Sub frm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Me.ClientSize() = New System.Drawing.Size(Edittod_model.GetMaxX() + 10, Edittod_model.GetMaxY() + 35)
+        myResizer.FindAllControls(Me) 
+    End Sub
+    Private Sub frm_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+      myResizer.ResizeAllControls(Me)
+   End Sub
 End Class

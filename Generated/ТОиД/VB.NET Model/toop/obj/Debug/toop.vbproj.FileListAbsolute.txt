@@ -1,0 +1,7 @@
+C:\LATIR4\Build\toop.dll
+C:\LATIR4\Build\toop.pdb
+C:\LATIR4\Build\toop_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\toop\obj\Debug\toop.vbprojResolveAssemblyReference.cache
+C:\LATIR4\Generated\ТОиД\VB.NET Model\toop\obj\Debug\toop.dll
+C:\LATIR4\Generated\ТОиД\VB.NET Model\toop\obj\Debug\toop_doc.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Model\toop\obj\Debug\toop.pdb

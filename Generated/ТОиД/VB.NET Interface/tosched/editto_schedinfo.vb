@@ -148,13 +148,22 @@ Public Sub Attach(ByVal gm As LATIR2GuiManager.LATIRGuiManager, ByVal ri As LATI
 
 dtpdfrom.value = System.DateTime.Today
 if item.dfrom <> System.DateTime.MinValue then
- dtpdfrom.value = item.dfrom
+  try
+     dtpdfrom.value = item.dfrom
+  catch
+   dtpdfrom.value = System.DateTime.MinValue
+  end try
 end if
 dtpdto.value = System.DateTime.Today
 if item.dto <> System.DateTime.MinValue then
- dtpdto.value = item.dto
+  try
+     dtpdto.value = item.dto
+  catch
+   dtpdto.value = System.DateTime.MinValue
+  end try
 else
- dtpdto.value = System.DateTime.today
+   dtpdto.value = System.DateTime.Today
+   dtpdto.Checked =false
 end if
         mOnInit = false
   raiseevent Refreshed()
@@ -170,15 +179,19 @@ end sub
 Public Sub Save() Implements LATIR2GUIManager.IRowEditor.Save
   if mRowReadOnly =false then
 
-  if  dtpdfrom.value=System.DateTime.MinValue then
-    item.dfrom = System.DateTime.MinValue
-  else
+  try
     item.dfrom = dtpdfrom.value
-  end if
-  if  dtpdto.value=System.DateTime.MinValue then
-    item.dto = System.DateTime.MinValue
-  else
+  catch
+    item.dfrom = System.DateTime.MinValue
+  end try
+  if dtpdto.checked=false then
+       item.dto = System.DateTime.MinValue
+  else 
+  try
     item.dto = dtpdto.value
+  catch
+    item.dto = System.DateTime.MinValue
+  end try
   end if
   end if
   mChanged = false
@@ -189,7 +202,7 @@ Public function IsOK() as boolean Implements LATIR2GUIManager.IRowEditor.IsOK
  mIsOK=true
  if mRowReadOnly  then return true
 
-if mIsOK then mIsOK = (dtpdfrom.value <> nothing)
+if mIsOK then mIsOK = (dtpdfrom.value <> System.DateTime.MinValue)
  return mIsOK
 end function
 Public function IsChanged() as boolean Implements LATIR2GUIManager.IRowEditor.IsChanged

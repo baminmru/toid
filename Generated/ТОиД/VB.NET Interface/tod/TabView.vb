@@ -52,6 +52,14 @@ Public Class Tabview
     Friend WithEvents Viewtod_valtype As todGUI.viewtod_valtype
     Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
     Friend WithEvents Viewtod_material As todGUI.viewtod_material
+    Friend WithEvents TabPage8 As System.Windows.Forms.TabPage
+    Friend WithEvents Viewtod_trand As todGUI.viewtod_trand
+    Friend WithEvents TabPage9 As System.Windows.Forms.TabPage
+    Friend WithEvents Viewtod_factory As todGUI.viewtod_factory
+    Friend WithEvents TabPage10 As System.Windows.Forms.TabPage
+    Friend WithEvents Viewtod_building As todGUI.viewtod_building
+    Friend WithEvents TabPage11 As System.Windows.Forms.TabPage
+    Friend WithEvents Viewtod_oprole As todGUI.viewtod_oprole
    
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.tab = New System.Windows.Forms.TabControl
@@ -69,6 +77,14 @@ Public Class Tabview
    Viewtod_valtype = new viewtod_valtype
    TabPage7 = New System.Windows.Forms.TabPage
    Viewtod_material = new viewtod_material
+   TabPage8 = New System.Windows.Forms.TabPage
+   Viewtod_trand = new viewtod_trand
+   TabPage9 = New System.Windows.Forms.TabPage
+   Viewtod_factory = new viewtod_factory
+   TabPage10 = New System.Windows.Forms.TabPage
+   Viewtod_building = new viewtod_building
+   TabPage11 = New System.Windows.Forms.TabPage
+   Viewtod_oprole = new viewtod_oprole
         Me.tab.SuspendLayout()
    Me.TabPage1.SuspendLayout()
    Me.TabPage2.SuspendLayout()
@@ -77,6 +93,10 @@ Public Class Tabview
    Me.TabPage5.SuspendLayout()
    Me.TabPage6.SuspendLayout()
    Me.TabPage7.SuspendLayout()
+   Me.TabPage8.SuspendLayout()
+   Me.TabPage9.SuspendLayout()
+   Me.TabPage10.SuspendLayout()
+   Me.TabPage11.SuspendLayout()
         Me.SuspendLayout()
         '
         'tab
@@ -128,7 +148,7 @@ Public Class Tabview
         Me.TabPage3.Controls.Add (Me.Viewtod_system)
         Me.TabPage3.Location = New System.Drawing.Point(-10000, -10000)
         Me.TabPage3.name = "TabPage3"
-        Me.TabPage3.Text = "Узлы станков"
+        Me.TabPage3.Text = "Группы узлов"
         Me.TabPage3.Size = New System.Drawing.Size(520, 366)
         Me.TabPage3.TabIndex = 0
         Me.TabPage3.AutoScroll = True
@@ -212,6 +232,78 @@ Public Class Tabview
         Me.Viewtod_material.name = "Viewtod_material"
         Me.Viewtod_material.Size = New System.Drawing.Size(504, 352)
         Me.Viewtod_material.TabIndex = 0
+        '
+        'TabPage8
+        '
+        Me.TabPage8.Controls.Add (Me.Viewtod_trand)
+        Me.TabPage8.Location = New System.Drawing.Point(-10000, -10000)
+        Me.TabPage8.name = "TabPage8"
+        Me.TabPage8.Text = "Тип тренда"
+        Me.TabPage8.Size = New System.Drawing.Size(520, 366)
+        Me.TabPage8.TabIndex = 0
+        Me.TabPage8.AutoScroll = True
+        '
+        'Viewtod_trand
+        '
+        Me.Viewtod_trand.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Viewtod_trand.Location = New System.Drawing.Point(0, 0)
+        Me.Viewtod_trand.name = "Viewtod_trand"
+        Me.Viewtod_trand.Size = New System.Drawing.Size(504, 352)
+        Me.Viewtod_trand.TabIndex = 0
+        '
+        'TabPage9
+        '
+        Me.TabPage9.Controls.Add (Me.Viewtod_factory)
+        Me.TabPage9.Location = New System.Drawing.Point(-10000, -10000)
+        Me.TabPage9.name = "TabPage9"
+        Me.TabPage9.Text = "Завод"
+        Me.TabPage9.Size = New System.Drawing.Size(520, 366)
+        Me.TabPage9.TabIndex = 0
+        Me.TabPage9.AutoScroll = True
+        '
+        'Viewtod_factory
+        '
+        Me.Viewtod_factory.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Viewtod_factory.Location = New System.Drawing.Point(0, 0)
+        Me.Viewtod_factory.name = "Viewtod_factory"
+        Me.Viewtod_factory.Size = New System.Drawing.Size(504, 352)
+        Me.Viewtod_factory.TabIndex = 0
+        '
+        'TabPage10
+        '
+        Me.TabPage10.Controls.Add (Me.Viewtod_building)
+        Me.TabPage10.Location = New System.Drawing.Point(-10000, -10000)
+        Me.TabPage10.name = "TabPage10"
+        Me.TabPage10.Text = "Цех"
+        Me.TabPage10.Size = New System.Drawing.Size(520, 366)
+        Me.TabPage10.TabIndex = 0
+        Me.TabPage10.AutoScroll = True
+        '
+        'Viewtod_building
+        '
+        Me.Viewtod_building.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Viewtod_building.Location = New System.Drawing.Point(0, 0)
+        Me.Viewtod_building.name = "Viewtod_building"
+        Me.Viewtod_building.Size = New System.Drawing.Size(504, 352)
+        Me.Viewtod_building.TabIndex = 0
+        '
+        'TabPage11
+        '
+        Me.TabPage11.Controls.Add (Me.Viewtod_oprole)
+        Me.TabPage11.Location = New System.Drawing.Point(-10000, -10000)
+        Me.TabPage11.name = "TabPage11"
+        Me.TabPage11.Text = "Роль"
+        Me.TabPage11.Size = New System.Drawing.Size(520, 366)
+        Me.TabPage11.TabIndex = 0
+        Me.TabPage11.AutoScroll = True
+        '
+        'Viewtod_oprole
+        '
+        Me.Viewtod_oprole.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Viewtod_oprole.Location = New System.Drawing.Point(0, 0)
+        Me.Viewtod_oprole.name = "Viewtod_oprole"
+        Me.Viewtod_oprole.Size = New System.Drawing.Size(504, 352)
+        Me.Viewtod_oprole.TabIndex = 0
    Me.tab.Controls.Add (Me.TabPage1)
    Me.tab.Controls.Add (Me.TabPage2)
    Me.tab.Controls.Add (Me.TabPage3)
@@ -219,6 +311,10 @@ Public Class Tabview
    Me.tab.Controls.Add (Me.TabPage5)
    Me.tab.Controls.Add (Me.TabPage6)
    Me.tab.Controls.Add (Me.TabPage7)
+   Me.tab.Controls.Add (Me.TabPage8)
+   Me.tab.Controls.Add (Me.TabPage9)
+   Me.tab.Controls.Add (Me.TabPage10)
+   Me.tab.Controls.Add (Me.TabPage11)
         '
         'Tabview
         '
@@ -233,6 +329,10 @@ Public Class Tabview
    Me.TabPage5.ResumeLayout (False)
    Me.TabPage6.ResumeLayout (False)
    Me.TabPage7.ResumeLayout (False)
+   Me.TabPage8.ResumeLayout (False)
+   Me.TabPage9.ResumeLayout (False)
+   Me.TabPage10.ResumeLayout (False)
+   Me.TabPage11.ResumeLayout (False)
         Me.ResumeLayout (False)
 
     End Sub
@@ -279,6 +379,10 @@ Public Class Tabview
         Viewtod_bug.Attach(item, GuiManager,DocReadOnly)
         Viewtod_valtype.Attach(item, GuiManager,DocReadOnly)
         Viewtod_material.Attach(item, GuiManager,DocReadOnly)
+        Viewtod_trand.Attach(item, GuiManager,DocReadOnly)
+        Viewtod_factory.Attach(item, GuiManager,DocReadOnly)
+        Viewtod_building.Attach(item, GuiManager,DocReadOnly)
+        Viewtod_oprole.Attach(item, GuiManager,DocReadOnly)
     End Sub
 
 
@@ -298,6 +402,10 @@ Public Class Tabview
         ok = ok And Viewtod_bug.Save(Sielent, NoError)
         ok = ok And Viewtod_valtype.Save(Sielent, NoError)
         ok = ok And Viewtod_material.Save(Sielent, NoError)
+        ok = ok And Viewtod_trand.Save(Sielent, NoError)
+        ok = ok And Viewtod_factory.Save(Sielent, NoError)
+        ok = ok And Viewtod_building.Save(Sielent, NoError)
+        ok = ok And Viewtod_oprole.Save(Sielent, NoError)
        Return ok
     End function
 
@@ -318,6 +426,10 @@ Public Class Tabview
         ok = ok And Viewtod_bug.IsOK()
         ok = ok And Viewtod_valtype.IsOK()
         ok = ok And Viewtod_material.IsOK()
+        ok = ok And Viewtod_trand.IsOK()
+        ok = ok And Viewtod_factory.IsOK()
+        ok = ok And Viewtod_building.IsOK()
+        ok = ok And Viewtod_oprole.IsOK()
        Return ok
     End function
 
@@ -339,6 +451,10 @@ Public Class Tabview
         ok = ok or Viewtod_bug.IsChanged()
         ok = ok or Viewtod_valtype.IsChanged()
         ok = ok or Viewtod_material.IsChanged()
+        ok = ok or Viewtod_trand.IsChanged()
+        ok = ok or Viewtod_factory.IsChanged()
+        ok = ok or Viewtod_building.IsChanged()
+        ok = ok or Viewtod_oprole.IsChanged()
        Return ok
     End function
 
@@ -360,6 +476,10 @@ Public Class Tabview
         ok = ok And Viewtod_bug.Verify(NoError)
         ok = ok And Viewtod_valtype.Verify(NoError)
         ok = ok And Viewtod_material.Verify(NoError)
+        ok = ok And Viewtod_trand.Verify(NoError)
+        ok = ok And Viewtod_factory.Verify(NoError)
+        ok = ok And Viewtod_building.Verify(NoError)
+        ok = ok And Viewtod_oprole.Verify(NoError)
        Return ok
     End function
     Private Sub TabPage1_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabPage1.Leave
@@ -408,6 +528,34 @@ Public Class Tabview
         If Viewtod_material.IsChanged() Then
             If MsgBox("Сохранить изменения на вкладке <" + TabPage7.Text + "> ?", MsgBoxStyle.YesNo, "Изменения") = MsgBoxResult.Yes Then
                 Viewtod_material.Save(True, False)
+            End If
+        End If
+    End Sub
+    Private Sub TabPage8_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabPage8.Leave
+        If Viewtod_trand.IsChanged() Then
+            If MsgBox("Сохранить изменения на вкладке <" + TabPage8.Text + "> ?", MsgBoxStyle.YesNo, "Изменения") = MsgBoxResult.Yes Then
+                Viewtod_trand.Save(True, False)
+            End If
+        End If
+    End Sub
+    Private Sub TabPage9_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabPage9.Leave
+        If Viewtod_factory.IsChanged() Then
+            If MsgBox("Сохранить изменения на вкладке <" + TabPage9.Text + "> ?", MsgBoxStyle.YesNo, "Изменения") = MsgBoxResult.Yes Then
+                Viewtod_factory.Save(True, False)
+            End If
+        End If
+    End Sub
+    Private Sub TabPage10_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabPage10.Leave
+        If Viewtod_building.IsChanged() Then
+            If MsgBox("Сохранить изменения на вкладке <" + TabPage10.Text + "> ?", MsgBoxStyle.YesNo, "Изменения") = MsgBoxResult.Yes Then
+                Viewtod_building.Save(True, False)
+            End If
+        End If
+    End Sub
+    Private Sub TabPage11_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabPage11.Leave
+        If Viewtod_oprole.IsChanged() Then
+            If MsgBox("Сохранить изменения на вкладке <" + TabPage11.Text + "> ?", MsgBoxStyle.YesNo, "Изменения") = MsgBoxResult.Yes Then
+                Viewtod_oprole.Save(True, False)
             End If
         End If
     End Sub

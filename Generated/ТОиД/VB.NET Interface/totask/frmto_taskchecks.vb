@@ -89,7 +89,7 @@ Public Class frmto_taskchecks
         Me.Editto_taskchecks.AutoScroll = True
         Me.Editto_taskchecks.Location = New System.Drawing.Point(8, 8)
         Me.Editto_taskchecks.name = "Editto_taskchecks"
-        Me.Editto_taskchecks.Size = New System.Drawing.Size(490, 600)
+        Me.Editto_taskchecks.Size = New System.Drawing.Size(800-40-16, 600-16)
         Me.Editto_taskchecks.TabIndex = 20
         Me.Editto_taskchecks.Dock = System.Windows.Forms.DockStyle.Fill
         '
@@ -101,6 +101,7 @@ Public Class frmto_taskchecks
         Me.Controls.Add (Me.btnPanel)
         Me.name = "frmto_taskchecks"
         Me.Text = "Проверки"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout (False)
 
     End Sub
@@ -108,6 +109,7 @@ Public Class frmto_taskchecks
 #End Region
     Public Item As totask.totask.to_taskchecks
     Public GuiManager As LATIR2GuiManager.LATIRGuiManager
+    Private myResizer As LATIR2GuiManager.Resizer = New LATIR2GuiManager.Resizer
     Private mReadOnly As Boolean
 
 
@@ -156,8 +158,17 @@ Public Class frmto_taskchecks
         Exit Sub
         End If
     End Sub
-    Private Sub frmUsers_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Me.ClientSize() = New System.Drawing.Size(Editto_taskchecks.GetMaxX() + 10, Editto_taskchecks.GetMaxY() + 35)
-        LATIR2GuiManager.LATIRGuiManager.ScaleForm(Me)
+    Private Sub frm_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+          Me.StartPosition = FormStartPosition.Manual
+          Me.WindowState = FormWindowState.Normal
+          Me.Location = Screen.PrimaryScreen.WorkingArea.Location
+          Me.Size = Screen.PrimaryScreen.WorkingArea.Size
     End Sub
+    Private Sub frm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Me.ClientSize() = New System.Drawing.Size(Editto_taskchecks.GetMaxX() + 10, Editto_taskchecks.GetMaxY() + 35)
+        myResizer.FindAllControls(Me) 
+    End Sub
+    Private Sub frm_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+      myResizer.ResizeAllControls(Me)
+   End Sub
 End Class

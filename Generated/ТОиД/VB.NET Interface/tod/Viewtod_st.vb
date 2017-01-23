@@ -102,14 +102,14 @@ Public Class viewtod_st
         cs = New DataGridTextBoxColumn
         cs.ReadOnly = True
         cs.HeaderText = "Инвентарный номер"
-        cs.MappingName = "INVN"
+        cs.MappingName = "invn"
         cs.NullText = ""
         ts.GridColumnStyles.Add (cs)
 
         cs = New DataGridTextBoxColumn
         cs.ReadOnly = True
         cs.HeaderText = "Название"
-        cs.MappingName = "Name"
+        cs.MappingName = "name"
         cs.NullText = ""
         ts.GridColumnStyles.Add (cs)
 
@@ -117,6 +117,13 @@ Public Class viewtod_st
         cs.ReadOnly = True
         cs.HeaderText = "Модель станка"
         cs.MappingName = "the_model"
+        cs.NullText = ""
+        ts.GridColumnStyles.Add (cs)
+
+        cs = New DataGridTextBoxColumn
+        cs.ReadOnly = True
+        cs.HeaderText = "Цех"
+        cs.MappingName = "thebuilding"
         cs.NullText = ""
         ts.GridColumnStyles.Add (cs)
 
@@ -158,6 +165,7 @@ Public Class viewtod_st
 ''' </remarks>
     Private Sub gv_OnDel(ByRef OK As Boolean, ByVal ID As System.Guid) Handles gv.OnGridDel
       If not mReadOnly Then
+    Exit Sub
         Dim ed As tod.tod.tod_st
         ed = item.FindRowObject("tod_st", ID)
         If MsgBox("Удалить <" & ed.Brief & "> ?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Удаление") = MsgBoxResult.Yes Then
@@ -182,6 +190,7 @@ Public Class viewtod_st
 ''' </remarks>
     Private Sub gv_OnAdd(ByRef OK As Boolean, ByVal ID As System.Guid) Handles gv.OnGridAdd
       If not mReadOnly Then
+    Exit Sub
         Dim ed As tod.tod.tod_st
         If ID.Equals(System.guid.Empty) Then
               ed = Item.tod_st.Add

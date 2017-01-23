@@ -57,9 +57,9 @@ Public Class GUI
                 f = Nothing
             End If
 
-            If RowItem.PartName.ToUpper = "TO_TASKVALUES" Then
-                Dim f As frmto_taskvalues
-                f = New frmto_taskvalues
+            If RowItem.PartName.ToUpper = "TO_TASKCHECKCOMMENT" Then
+                Dim f As frmto_taskcheckcomment
+                f = New frmto_taskcheckcomment
                 f.Attach(RowItem, Me.GUIManager,FormReadOnly)
                 ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
                 f = Nothing
@@ -68,6 +68,76 @@ Public Class GUI
             If RowItem.PartName.ToUpper = "TO_TASKCOMMENT" Then
                 Dim f As frmto_taskcomment
                 f = New frmto_taskcomment
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+        End If
+        If Mode = "main" Then
+
+            If RowItem.PartName.ToUpper = "TO_TASKINFO" Then
+                Dim f As frmto_taskinfomain
+                f = New frmto_taskinfomain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_TASKCHECKS" Then
+                Dim f As frmto_taskchecksmain
+                f = New frmto_taskchecksmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_TASKCHECKCOMMENT" Then
+                Dim f As frmto_taskcheckcommentmain
+                f = New frmto_taskcheckcommentmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_TASKCOMMENT" Then
+                Dim f As frmto_taskcommentmain
+                f = New frmto_taskcommentmain
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+        End If
+        If Mode = "adm" Then
+
+            If RowItem.PartName.ToUpper = "TO_TASKINFO" Then
+                Dim f As frmto_taskinfoadm
+                f = New frmto_taskinfoadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_TASKCHECKS" Then
+                Dim f As frmto_taskchecksadm
+                f = New frmto_taskchecksadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_TASKCHECKCOMMENT" Then
+                Dim f As frmto_taskcheckcommentadm
+                f = New frmto_taskcheckcommentadm
+                f.Attach(RowItem, Me.GUIManager,FormReadOnly)
+                ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                f = Nothing
+            End If
+
+            If RowItem.PartName.ToUpper = "TO_TASKCOMMENT" Then
+                Dim f As frmto_taskcommentadm
+                f = New frmto_taskcommentadm
                 f.Attach(RowItem, Me.GUIManager,FormReadOnly)
                 ShowPartEditForm = (f.ShowDialog() = System.Windows.Forms.DialogResult.OK)
                 f = Nothing
@@ -97,6 +167,24 @@ Public Class GUI
                 f = Nothing
             End If
         End If
+        If DocItem.TypeName.ToUpper = TypeName.ToUpper() Then
+            If mode = "main" Then
+                Dim fmain As frmtotaskmain
+                fmain = New frmtotaskmain
+                fmain.Attach(DocItem, Me.GUIManager,FormReadOnly)
+                ShowForm = (fmain.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                fmain = Nothing
+            End If
+        End If
+        If DocItem.TypeName.ToUpper = TypeName.ToUpper() Then
+            If mode = "adm" Then
+                Dim fadm As frmtotaskadm
+                fadm = New frmtotaskadm
+                fadm.Attach(DocItem, Me.GUIManager,FormReadOnly)
+                ShowForm = (fadm.ShowDialog() = System.Windows.Forms.DialogResult.OK)
+                fadm = Nothing
+            End If
+        End If
     End Function
 
 
@@ -107,6 +195,12 @@ Public Class GUI
 '''
 ''' </remarks>
     Public Overrides Function GetObjectControl(ByVal Mode As String, ByVal TypeName As String) As Object
+            If Mode = "main" Then
+                Return New Tabviewmain
+            End If
+            If Mode = "adm" Then
+                Return New Tabviewadm
+            End If
       Return New Tabview
     End Function
 

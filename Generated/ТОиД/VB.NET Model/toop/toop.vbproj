@@ -4,7 +4,7 @@
  <PropertyGroup>
  <Configuration Condition = " '$(Configuration)' == '' ">Debug</Configuration>
       <Platform Condition = " '$(Platform)' == '' ">AnyCPU</Platform>
- <ProjectGuid>ff55bef2-3a49-410b-abb3-c3b3932aedaa</ProjectGuid>
+ <ProjectGuid>16e2e786-e614-4502-85de-6528b74c2c83</ProjectGuid>
  <OutputType>Library</OutputType>
  <RootNamespace>toop</RootNamespace>
  <AssemblyName>toop</AssemblyName>

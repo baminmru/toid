@@ -109,7 +109,21 @@ Public Class viewto_taskcomment
         cs = New DataGridTextBoxColumn
         cs.ReadOnly = True
         cs.HeaderText = "Примечание"
-        cs.MappingName = "theComment"
+        cs.MappingName = "thecomment"
+        cs.NullText = ""
+        ts.GridColumnStyles.Add (cs)
+
+        cs = New DataGridTextBoxColumn
+        cs.ReadOnly = True
+        cs.HeaderText = "Оператор"
+        cs.MappingName = "the_operator"
+        cs.NullText = ""
+        ts.GridColumnStyles.Add (cs)
+
+        cs = New DataGridTextBoxColumn
+        cs.ReadOnly = True
+        cs.HeaderText = "Дата комментария"
+        cs.MappingName = "the_date"
         cs.NullText = ""
         ts.GridColumnStyles.Add (cs)
 

@@ -126,6 +126,7 @@ Me.cmbcard_archived.Location = New System.Drawing.Point(20,121)
 Me.cmbcard_archived.name = "cmbcard_archived"
 Me.cmbcard_archived.Size = New System.Drawing.Size(200,  20)
 Me.cmbcard_archived.TabIndex = 7
+Me.cmbcard_archived.Enabled = true
         Me.AutoScroll = True
 
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblthe_machine)
@@ -153,10 +154,7 @@ private sub cmdthe_machine_Click(ByVal sender As System.Object, ByVal e As Syste
 Dim id As guid
 Dim brief As String = string.Empty
 Dim OK as boolean 
-        If GuiManager.GetReferenceDialog("tod_st","",System.guid.Empty, id, brief) Then
-          txtthe_machine.Tag = id
-          txtthe_machine.text = brief
-        End If
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
         catch ex as System.Exception
         Debug.Print(ex.Message +" >> " + ex.StackTrace)
         end try
@@ -201,9 +199,14 @@ else
 End If
 dtpcard_date.value = System.DateTime.Today
 if item.card_date <> System.DateTime.MinValue then
- dtpcard_date.value = item.card_date
+  try
+     dtpcard_date.value = item.card_date
+  catch
+   dtpcard_date.value = System.DateTime.MinValue
+  end try
 else
- dtpcard_date.value = System.DateTime.today
+   dtpcard_date.value = System.DateTime.Today
+   dtpcard_date.Checked =false
 end if
 cmbcard_archivedData = New DataTable
 cmbcard_archivedData.Columns.Add("name", GetType(System.String))
@@ -238,17 +241,6 @@ end sub
 Public Sub Save() Implements LATIR2GUIManager.IRowEditor.Save
   if mRowReadOnly =false then
 
-If not txtthe_machine.Tag.Equals(System.Guid.Empty) Then
-  item.the_machine = Item.Application.FindRowObject("tod_st",txtthe_machine.Tag)
-Else
-   item.the_machine = Nothing
-End If
-  if  dtpcard_date.value=System.DateTime.MinValue then
-    item.card_date = System.DateTime.MinValue
-  else
-    item.card_date = dtpcard_date.value
-  end if
-   item.card_archived = cmbcard_archived.SelectedValue
   end if
   mChanged = false
   raiseevent saved()

@@ -11,7 +11,7 @@ Namespace tod
 
 
 ''' <summary>
-'''Реализация раздела Узлы станковв виде коллекции
+'''Реализация раздела Группы узловв виде коллекции
 ''' </summary>
 ''' <remarks>
 '''
@@ -45,7 +45,7 @@ Namespace tod
             dt.TableName="tod_system"
             dt.Columns.Add("ID", GetType(System.guid))
             dt.Columns.Add("Brief", Gettype(System.string))
-            dt.Columns.Add("Name", Gettype(System.string))
+            dt.Columns.Add("name", Gettype(System.string))
             return dt
         End Function
 

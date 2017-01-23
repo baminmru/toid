@@ -53,12 +53,16 @@ Public Class edittod_valtype
 
  Dim iii As Integer
     Friend WithEvents HolderPanel As LATIR2GUIControls.AutoPanel
-Friend WithEvents lblName  as  System.Windows.Forms.Label
-Friend WithEvents txtName As LATIR2GuiManager.TouchTextBox
+Friend WithEvents lblname  as  System.Windows.Forms.Label
+Friend WithEvents txtname As LATIR2GuiManager.TouchTextBox
 Friend WithEvents lbledizm  as  System.Windows.Forms.Label
 Friend WithEvents txtedizm As LATIR2GuiManager.TouchTextBox
 Friend WithEvents cmdedizm As System.Windows.Forms.Button
 Friend WithEvents cmdedizmClear As System.Windows.Forms.Button
+Friend WithEvents lblfieldtype  as  System.Windows.Forms.Label
+Friend WithEvents txtfieldtype As LATIR2GuiManager.TouchTextBox
+Friend WithEvents cmdfieldtype As System.Windows.Forms.Button
+Friend WithEvents cmdfieldtypeClear As System.Windows.Forms.Button
 
 <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
 
@@ -75,24 +79,29 @@ Me.HolderPanel.Location = New System.Drawing.Point(0, 0)
 Me.HolderPanel.Name = "HolderPanel"
 Me.HolderPanel.Size = New System.Drawing.Size(232, 120)
 Me.HolderPanel.TabIndex = 0
-Me.lblName = New System.Windows.Forms.Label
-Me.txtName = New LATIR2GuiManager.TouchTextBox
+Me.lblname = New System.Windows.Forms.Label
+Me.txtname = New LATIR2GuiManager.TouchTextBox
 Me.lbledizm = New System.Windows.Forms.Label
 Me.txtedizm = New LATIR2GuiManager.TouchTextBox
 Me.cmdedizm = New System.Windows.Forms.Button
 Me.cmdedizmClear = New System.Windows.Forms.Button
+Me.lblfieldtype = New System.Windows.Forms.Label
+Me.txtfieldtype = New LATIR2GuiManager.TouchTextBox
+Me.cmdfieldtype = New System.Windows.Forms.Button
+Me.cmdfieldtypeClear = New System.Windows.Forms.Button
 
-Me.lblName.Location = New System.Drawing.Point(20,5)
-Me.lblName.name = "lblName"
-Me.lblName.Size = New System.Drawing.Size(200, 20)
-Me.lblName.TabIndex = 1
-Me.lblName.Text = "Название"
-Me.lblName.ForeColor = System.Drawing.Color.Black
-Me.txtName.Location = New System.Drawing.Point(20,27)
-Me.txtName.name = "txtName"
-Me.txtName.Size = New System.Drawing.Size(200, 20)
-Me.txtName.TabIndex = 2
-Me.txtName.Text = "" 
+Me.lblname.Location = New System.Drawing.Point(20,5)
+Me.lblname.name = "lblname"
+Me.lblname.Size = New System.Drawing.Size(200, 20)
+Me.lblname.TabIndex = 1
+Me.lblname.Text = "Название"
+Me.lblname.ForeColor = System.Drawing.Color.Black
+Me.txtname.Location = New System.Drawing.Point(20,27)
+Me.txtname.name = "txtname"
+Me.txtname.Size = New System.Drawing.Size(200, 20)
+Me.txtname.TabIndex = 2
+Me.txtname.Text = "" 
+Me.txtname.ReadOnly = True
 Me.lbledizm.Location = New System.Drawing.Point(20,52)
 Me.lbledizm.name = "lbledizm"
 Me.lbledizm.Size = New System.Drawing.Size(200, 20)
@@ -115,14 +124,40 @@ Me.cmdedizmClear.name = "cmdedizmClear"
 Me.cmdedizmClear.Size = New System.Drawing.Size(22, 20)
 Me.cmdedizmClear.TabIndex = 6
 Me.cmdedizmClear.Text = "X" 
+Me.lblfieldtype.Location = New System.Drawing.Point(20,99)
+Me.lblfieldtype.name = "lblfieldtype"
+Me.lblfieldtype.Size = New System.Drawing.Size(200, 20)
+Me.lblfieldtype.TabIndex = 7
+Me.lblfieldtype.Text = "Трактовка"
+Me.lblfieldtype.ForeColor = System.Drawing.Color.Blue
+Me.txtfieldtype.Location = New System.Drawing.Point(20,121)
+Me.txtfieldtype.name = "txtfieldtype"
+Me.txtfieldtype.ReadOnly = True
+Me.txtfieldtype.Size = New System.Drawing.Size(155, 20)
+Me.txtfieldtype.TabIndex = 8
+Me.txtfieldtype.Text = "" 
+Me.cmdfieldtype.Location = New System.Drawing.Point(176,121)
+Me.cmdfieldtype.name = "cmdfieldtype"
+Me.cmdfieldtype.Size = New System.Drawing.Size(22, 20)
+Me.cmdfieldtype.TabIndex = 9
+Me.cmdfieldtype.Text = "..." 
+Me.cmdfieldtypeClear.Location = New System.Drawing.Point(198,121)
+Me.cmdfieldtypeClear.name = "cmdfieldtypeClear"
+Me.cmdfieldtypeClear.Size = New System.Drawing.Size(22, 20)
+Me.cmdfieldtypeClear.TabIndex = 10
+Me.cmdfieldtypeClear.Text = "X" 
         Me.AutoScroll = True
 
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblName)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtName)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblname)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtname)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lbledizm)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtedizm)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdedizm)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdedizmClear)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblfieldtype)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtfieldtype)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdfieldtype)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdfieldtypeClear)
         Me.Controls.Add(Me.HolderPanel)
         Me.HolderPanel.ResumeLayout(False)
         Me.HolderPanel.PerformLayout()
@@ -132,7 +167,7 @@ CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.cmdedizmClear)
     End Sub
 #End Region
 
-private sub txtName_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtName.TextChanged
+private sub txtname_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtname.TextChanged
   Changing
 
 end sub
@@ -145,18 +180,35 @@ private sub cmdedizm_Click(ByVal sender As System.Object, ByVal e As System.Even
 Dim id As guid
 Dim brief As String = string.Empty
 Dim OK as boolean 
-        If GuiManager.GetReferenceDialog("tod_edizm","",System.guid.Empty, id, brief) Then
-          txtedizm.Tag = id
-          txtedizm.text = brief
-        End If
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
         catch ex as System.Exception
         Debug.Print(ex.Message +" >> " + ex.StackTrace)
         end try
 end sub
 private sub cmdedizmClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdedizmClear.Click
   try
-          txtedizm.Tag = Guid.Empty
-          txtedizm.text = ""
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
+        catch ex as System.Exception
+        Debug.Print(ex.Message +" >> " + ex.StackTrace)
+        end try
+end sub
+private sub txtfieldtype_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtfieldtype.TextChanged
+  Changing
+
+end sub
+private sub cmdfieldtype_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdfieldtype.Click
+  try
+Dim id As guid
+Dim brief As String = string.Empty
+Dim OK as boolean 
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
+        catch ex as System.Exception
+        Debug.Print(ex.Message +" >> " + ex.StackTrace)
+        end try
+end sub
+private sub cmdfieldtypeClear_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdfieldtypeClear.Click
+  try
+        MsgBox ("Режим не предусматривает редактирования",vbInformation)
         catch ex as System.Exception
         Debug.Print(ex.Message +" >> " + ex.StackTrace)
         end try
@@ -180,13 +232,20 @@ Public Sub Attach(ByVal gm As LATIR2GuiManager.LATIRGuiManager, ByVal ri As LATI
         If Item Is Nothing Then Exit Sub
         mOnInit = true
 
-txtName.text = item.Name
+txtname.text = item.name
 If Not item.edizm Is Nothing Then
   txtedizm.Tag = item.edizm.id
   txtedizm.text = item.edizm.brief
 else
   txtedizm.Tag = System.Guid.Empty 
   txtedizm.text = "" 
+End If
+If Not item.fieldtype Is Nothing Then
+  txtfieldtype.Tag = item.fieldtype.id
+  txtfieldtype.text = item.fieldtype.brief
+else
+  txtfieldtype.Tag = System.Guid.Empty 
+  txtfieldtype.text = "" 
 End If
         mOnInit = false
   raiseevent Refreshed()
@@ -202,12 +261,6 @@ end sub
 Public Sub Save() Implements LATIR2GUIManager.IRowEditor.Save
   if mRowReadOnly =false then
 
-item.Name = txtName.text
-If not txtedizm.Tag.Equals(System.Guid.Empty) Then
-  item.edizm = Item.Application.FindRowObject("tod_edizm",txtedizm.Tag)
-Else
-   item.edizm = Nothing
-End If
   end if
   mChanged = false
   raiseevent saved()
@@ -217,7 +270,7 @@ Public function IsOK() as boolean Implements LATIR2GUIManager.IRowEditor.IsOK
  mIsOK=true
  if mRowReadOnly  then return true
 
-if mIsOK then mIsOK =( txtName.text <> "" ) 
+if mIsOK then mIsOK =( txtname.text <> "" ) 
  return mIsOK
 end function
 Public function IsChanged() as boolean Implements LATIR2GUIManager.IRowEditor.IsChanged

@@ -53,8 +53,8 @@ Public Class edittod_edizm
 
  Dim iii As Integer
     Friend WithEvents HolderPanel As LATIR2GUIControls.AutoPanel
-Friend WithEvents lblName  as  System.Windows.Forms.Label
-Friend WithEvents txtName As LATIR2GuiManager.TouchTextBox
+Friend WithEvents lblname  as  System.Windows.Forms.Label
+Friend WithEvents txtname As LATIR2GuiManager.TouchTextBox
 Friend WithEvents lblfullname  as  System.Windows.Forms.Label
 Friend WithEvents txtfullname As LATIR2GuiManager.TouchTextBox
 
@@ -73,22 +73,23 @@ Me.HolderPanel.Location = New System.Drawing.Point(0, 0)
 Me.HolderPanel.Name = "HolderPanel"
 Me.HolderPanel.Size = New System.Drawing.Size(232, 120)
 Me.HolderPanel.TabIndex = 0
-Me.lblName = New System.Windows.Forms.Label
-Me.txtName = New LATIR2GuiManager.TouchTextBox
+Me.lblname = New System.Windows.Forms.Label
+Me.txtname = New LATIR2GuiManager.TouchTextBox
 Me.lblfullname = New System.Windows.Forms.Label
 Me.txtfullname = New LATIR2GuiManager.TouchTextBox
 
-Me.lblName.Location = New System.Drawing.Point(20,5)
-Me.lblName.name = "lblName"
-Me.lblName.Size = New System.Drawing.Size(200, 20)
-Me.lblName.TabIndex = 1
-Me.lblName.Text = "Название"
-Me.lblName.ForeColor = System.Drawing.Color.Black
-Me.txtName.Location = New System.Drawing.Point(20,27)
-Me.txtName.name = "txtName"
-Me.txtName.Size = New System.Drawing.Size(200, 20)
-Me.txtName.TabIndex = 2
-Me.txtName.Text = "" 
+Me.lblname.Location = New System.Drawing.Point(20,5)
+Me.lblname.name = "lblname"
+Me.lblname.Size = New System.Drawing.Size(200, 20)
+Me.lblname.TabIndex = 1
+Me.lblname.Text = "Название"
+Me.lblname.ForeColor = System.Drawing.Color.Black
+Me.txtname.Location = New System.Drawing.Point(20,27)
+Me.txtname.name = "txtname"
+Me.txtname.Size = New System.Drawing.Size(200, 20)
+Me.txtname.TabIndex = 2
+Me.txtname.Text = "" 
+Me.txtname.ReadOnly = True
 Me.lblfullname.Location = New System.Drawing.Point(20,52)
 Me.lblfullname.name = "lblfullname"
 Me.lblfullname.Size = New System.Drawing.Size(200, 20)
@@ -100,10 +101,11 @@ Me.txtfullname.name = "txtfullname"
 Me.txtfullname.Size = New System.Drawing.Size(200, 20)
 Me.txtfullname.TabIndex = 4
 Me.txtfullname.Text = "" 
+Me.txtfullname.ReadOnly = True
         Me.AutoScroll = True
 
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblName)
-CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtName)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblname)
+CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtname)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.lblfullname)
 CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtfullname)
         Me.Controls.Add(Me.HolderPanel)
@@ -115,7 +117,7 @@ CType(Me.HolderPanel.ClientArea, Panel).Controls.Add(Me.txtfullname)
     End Sub
 #End Region
 
-private sub txtName_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtName.TextChanged
+private sub txtname_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtname.TextChanged
   Changing
 
 end sub
@@ -142,7 +144,7 @@ Public Sub Attach(ByVal gm As LATIR2GuiManager.LATIRGuiManager, ByVal ri As LATI
         If Item Is Nothing Then Exit Sub
         mOnInit = true
 
-txtName.text = item.Name
+txtname.text = item.name
 txtfullname.text = item.fullname
         mOnInit = false
   raiseevent Refreshed()
@@ -158,8 +160,6 @@ end sub
 Public Sub Save() Implements LATIR2GUIManager.IRowEditor.Save
   if mRowReadOnly =false then
 
-item.Name = txtName.text
-item.fullname = txtfullname.text
   end if
   mChanged = false
   raiseevent saved()
@@ -169,7 +169,7 @@ Public function IsOK() as boolean Implements LATIR2GUIManager.IRowEditor.IsOK
  mIsOK=true
  if mRowReadOnly  then return true
 
-if mIsOK then mIsOK =( txtName.text <> "" ) 
+if mIsOK then mIsOK =( txtname.text <> "" ) 
  return mIsOK
 end function
 Public function IsChanged() as boolean Implements LATIR2GUIManager.IRowEditor.IsChanged

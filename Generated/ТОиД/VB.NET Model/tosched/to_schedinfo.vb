@@ -316,9 +316,9 @@ End Function
 ''' </remarks>
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
-          if dfrom = System.DateTime.MinValue then dfrom=System.DateTime.Parse("12/30/1899")
+         ' if dfrom = System.DateTime.MinValue then dfrom=new Date(1899,12,30)  ' SQL Server trouble
           node.SetAttribute("dfrom", dfrom.Ticks)  
-          if dto = System.DateTime.MinValue then dto=System.DateTime.Parse("12/30/1899")
+         ' if dto = System.DateTime.MinValue then dto=new Date(1899,12,30)  ' SQL Server trouble
           node.SetAttribute("dto", dto.Ticks)  
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)

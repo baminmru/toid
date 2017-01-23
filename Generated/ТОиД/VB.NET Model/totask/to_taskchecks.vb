@@ -30,34 +30,43 @@ Namespace totask
 ''' <remarks>
 '''
 ''' </remarks>
+            private m_thesubsystem  as String
+
+
+''' <summary>
+'''Локальная переменная для поля Основание для проверки
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_checkref  as System.Guid
+
+
+''' <summary>
+'''Локальная переменная для поля Группа узлов
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
             private m_the_system  as System.Guid
 
 
 ''' <summary>
-'''Локальная переменная для поля Показатель
+'''Локальная переменная для поля Примечание
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_the_check  as String
+            private m_the_comment  as STRING
 
 
 ''' <summary>
-'''Локальная переменная для поля Нормочас
+'''Локальная переменная для поля Документация
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_normochas  as double
-
-
-''' <summary>
-'''Локальная переменная для поля Измерение
-''' </summary>
-''' <remarks>
-'''
-''' </remarks>
-            private m_ValueType  as System.Guid
+            private m_the_doc  as String
 
 
 ''' <summary>
@@ -70,6 +79,15 @@ Namespace totask
 
 
 ''' <summary>
+'''Локальная переменная для поля Показатель
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_the_check  as String
+
+
+''' <summary>
 '''Локальная переменная для поля Верхняя граница ((=)
 ''' </summary>
 ''' <remarks>
@@ -79,12 +97,57 @@ Namespace totask
 
 
 ''' <summary>
-'''Локальная переменная для поля Примечание
+'''Локальная переменная для поля Нормочас
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_the_comment  as STRING
+            private m_normochas  as double
+
+
+''' <summary>
+'''Локальная переменная для поля Значение
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_thevalue  as String
+
+
+''' <summary>
+'''Локальная переменная для поля Измерение
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_valuetype  as System.Guid
+
+
+''' <summary>
+'''Локальная переменная для поля Метка
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_tagid  as String
+
+
+''' <summary>
+'''Локальная переменная для поля Дата регистрации метки
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_tagtime  as DATE
+
+
+''' <summary>
+'''Локальная переменная для дочернего раздела Комментарии к проверке
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        private m_to_taskcheckcomment As to_taskcheckcomment_col
 
 
 
@@ -95,13 +158,19 @@ Namespace totask
 '''
 ''' </remarks>
         Public Overrides Sub CleanFields()
+            ' m_thesubsystem=   
+            ' m_checkref=   
             ' m_the_system=   
-            ' m_the_check=   
-            ' m_normochas=   
-            ' m_ValueType=   
-            ' m_lowvalue=   
-            ' m_hivalue=   
             ' m_the_comment=   
+            ' m_the_doc=   
+            ' m_lowvalue=   
+            ' m_the_check=   
+            ' m_hivalue=   
+            ' m_normochas=   
+            ' m_thevalue=   
+            ' m_valuetype=   
+            ' m_tagid=   
+            ' m_tagtime=   
         End Sub
 
 
@@ -114,7 +183,7 @@ Namespace totask
 ''' </remarks>
     Public Overrides ReadOnly Property Count() As Long
         Get
-           Count = 7
+           Count = 13
         End Get
     End Property
 
@@ -137,17 +206,29 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 1
                     Value = the_system
                 Case 2
-                    Value = the_check
+                    Value = thesubsystem
                 Case 3
-                    Value = normochas
+                    Value = the_check
                 Case 4
-                    Value = ValueType
+                    Value = normochas
                 Case 5
-                    Value = lowvalue
+                    Value = valuetype
                 Case 6
-                    Value = hivalue
+                    Value = lowvalue
                 Case 7
+                    Value = hivalue
+                Case 8
                     Value = the_comment
+                Case 9
+                    Value = thevalue
+                Case 10
+                    Value = the_doc
+                Case 11
+                    Value = checkref
+                Case 12
+                    Value = tagid
+                Case 13
+                    Value = tagtime
             End Select
         else
         try
@@ -168,17 +249,29 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 1
                     the_system = value
                 Case 2
-                    the_check = value
+                    thesubsystem = value
                 Case 3
-                    normochas = value
+                    the_check = value
                 Case 4
-                    ValueType = value
+                    normochas = value
                 Case 5
-                    lowvalue = value
+                    valuetype = value
                 Case 6
-                    hivalue = value
+                    lowvalue = value
                 Case 7
+                    hivalue = value
+                Case 8
                     the_comment = value
+                Case 9
+                    thevalue = value
+                Case 10
+                    the_doc = value
+                Case 11
+                    checkref = value
+                Case 12
+                    tagid = value
+                Case 13
+                    tagtime = value
         End Select
      Else
         Try
@@ -212,17 +305,29 @@ Public Overrides Function FieldNameByID(ByVal Index As long) As String
                 Case 1
                     Return "the_system"
                 Case 2
-                    Return "the_check"
+                    Return "thesubsystem"
                 Case 3
-                    Return "normochas"
+                    Return "the_check"
                 Case 4
-                    Return "ValueType"
+                    Return "normochas"
                 Case 5
-                    Return "lowvalue"
+                    Return "valuetype"
                 Case 6
-                    Return "hivalue"
+                    Return "lowvalue"
                 Case 7
+                    Return "hivalue"
+                Case 8
                     Return "the_comment"
+                Case 9
+                    Return "thevalue"
+                Case 10
+                    Return "the_doc"
+                Case 11
+                    Return "checkref"
+                Case 12
+                    Return "tagid"
+                Case 13
+                    Return "tagtime"
                 Case else
                 return "" 
             End Select
@@ -251,18 +356,30 @@ End Function
                dr("the_system") =the_system.BRIEF
                dr("the_system_ID") =the_system.ID
              end if 
+             dr("thesubsystem") =thesubsystem
              dr("the_check") =the_check
              dr("normochas") =normochas
-             if ValueType is nothing then
-               dr("ValueType") =system.dbnull.value
-               dr("ValueType_ID") =System.Guid.Empty
+             if valuetype is nothing then
+               dr("valuetype") =system.dbnull.value
+               dr("valuetype_ID") =System.Guid.Empty
              else
-               dr("ValueType") =ValueType.BRIEF
-               dr("ValueType_ID") =ValueType.ID
+               dr("valuetype") =valuetype.BRIEF
+               dr("valuetype_ID") =valuetype.ID
              end if 
              dr("lowvalue") =lowvalue
              dr("hivalue") =hivalue
              dr("the_comment") =the_comment
+             dr("thevalue") =thevalue
+             dr("the_doc") =the_doc
+             if checkref is nothing then
+               dr("checkref") =system.dbnull.value
+               dr("checkref_ID") =System.Guid.Empty
+             else
+               dr("checkref") =checkref.BRIEF
+               dr("checkref_ID") =checkref.ID
+             end if 
+             dr("tagid") =tagid
+             dr("tagtime") =tagtime
             DestDataTable.Rows.Add (dr)
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -279,6 +396,8 @@ End Function
 ''' </remarks>
         Public Overrides Function FindInside(ByVal Table As String, ByVal RowID As String) As LATIR2.Document.DocRow_Base
             dim mFindInside As LATIR2.Document.DocRow_Base = Nothing
+            mFindInside = to_taskcheckcomment.FindObject(table,RowID)
+            if not mFindInside is nothing then return mFindInside
             Return Nothing
         End Function
 
@@ -296,16 +415,30 @@ End Function
           else
             nv.Add("the_system", Application.Session.GetProvider.ID2Param(m_the_system), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           end if 
+          nv.Add("thesubsystem", thesubsystem, dbtype.string)
           nv.Add("the_check", the_check, dbtype.string)
           nv.Add("normochas", normochas, dbtype.double)
-          if m_ValueType.Equals(System.Guid.Empty) then
-            nv.Add("ValueType", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          if m_valuetype.Equals(System.Guid.Empty) then
+            nv.Add("valuetype", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           else
-            nv.Add("ValueType", Application.Session.GetProvider.ID2Param(m_ValueType), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+            nv.Add("valuetype", Application.Session.GetProvider.ID2Param(m_valuetype), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
           end if 
           nv.Add("lowvalue", lowvalue, dbtype.string)
           nv.Add("hivalue", hivalue, dbtype.string)
           nv.Add("the_comment", the_comment, dbtype.string)
+          nv.Add("thevalue", thevalue, dbtype.string)
+          nv.Add("the_doc", the_doc, dbtype.string)
+          if m_checkref.Equals(System.Guid.Empty) then
+            nv.Add("checkref", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          else
+            nv.Add("checkref", Application.Session.GetProvider.ID2Param(m_checkref), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          end if 
+          nv.Add("tagid", tagid, dbtype.string)
+          if tagtime=System.DateTime.MinValue then
+            nv.Add("tagtime", system.dbnull.value, dbtype.DATETIME)
+          else
+            nv.Add("tagtime", tagtime, dbtype.DATETIME)
+          end if 
             nv.Add(PartName() & "id", Application.Session.GetProvider.ID2Param(ID),  Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
         End Sub
 
@@ -335,18 +468,36 @@ End Function
             If reader.Table.Columns.Contains("the_system") Then m_the_system= New System.Guid(reader.item("the_system").ToString())
           end if 
       end if 
+          If reader.Table.Columns.Contains("thesubsystem") Then m_thesubsystem=reader.item("thesubsystem").ToString()
           If reader.Table.Columns.Contains("the_check") Then m_the_check=reader.item("the_check").ToString()
           If reader.Table.Columns.Contains("normochas") Then m_normochas=reader.item("normochas")
-      If reader.Table.Columns.Contains("ValueType") Then
-          if isdbnull(reader.item("ValueType")) then
-            If reader.Table.Columns.Contains("ValueType") Then m_ValueType = System.GUID.Empty
+      If reader.Table.Columns.Contains("valuetype") Then
+          if isdbnull(reader.item("valuetype")) then
+            If reader.Table.Columns.Contains("valuetype") Then m_valuetype = System.GUID.Empty
           else
-            If reader.Table.Columns.Contains("ValueType") Then m_ValueType= New System.Guid(reader.item("ValueType").ToString())
+            If reader.Table.Columns.Contains("valuetype") Then m_valuetype= New System.Guid(reader.item("valuetype").ToString())
           end if 
       end if 
           If reader.Table.Columns.Contains("lowvalue") Then m_lowvalue=reader.item("lowvalue").ToString()
           If reader.Table.Columns.Contains("hivalue") Then m_hivalue=reader.item("hivalue").ToString()
           If reader.Table.Columns.Contains("the_comment") Then m_the_comment=reader.item("the_comment").ToString()
+          If reader.Table.Columns.Contains("thevalue") Then m_thevalue=reader.item("thevalue").ToString()
+          If reader.Table.Columns.Contains("the_doc") Then m_the_doc=reader.item("the_doc").ToString()
+      If reader.Table.Columns.Contains("checkref") Then
+          if isdbnull(reader.item("checkref")) then
+            If reader.Table.Columns.Contains("checkref") Then m_checkref = System.GUID.Empty
+          else
+            If reader.Table.Columns.Contains("checkref") Then m_checkref= New System.Guid(reader.item("checkref").ToString())
+          end if 
+      end if 
+          If reader.Table.Columns.Contains("tagid") Then m_tagid=reader.item("tagid").ToString()
+      If reader.Table.Columns.Contains("tagtime") Then
+          if isdbnull(reader.item("tagtime")) then
+            If reader.Table.Columns.Contains("tagtime") Then m_tagtime = System.DateTime.MinValue
+          else
+            If reader.Table.Columns.Contains("tagtime") Then m_tagtime=reader.item("tagtime")
+          end if 
+      end if 
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
           end try
@@ -354,7 +505,7 @@ End Function
 
 
 ''' <summary>
-'''Доступ к полю Узел
+'''Доступ к полю Группа узлов
 ''' </summary>
 ''' <remarks>
 '''
@@ -372,6 +523,26 @@ End Function
                 else
                    m_the_system=System.Guid.Empty
                 end if
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Узел
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property thesubsystem() As String
+            Get
+                LoadFromDatabase()
+                thesubsystem = m_thesubsystem
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As String )
+                LoadFromDatabase()
+                m_thesubsystem = Value
                 ChangeTime = Now
             End Set
         End Property
@@ -423,18 +594,18 @@ End Function
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property ValueType() As LATIR2.Document.docrow_base
+        Public Property valuetype() As LATIR2.Document.docrow_base
             Get
                 LoadFromDatabase()
-                ValueType = me.application.Findrowobject("tod_valtype",m_ValueType)
+                valuetype = me.application.Findrowobject("tod_valtype",m_valuetype)
                 AccessTime = Now
             End Get
             Set(ByVal Value As LATIR2.Document.docrow_base )
                 LoadFromDatabase()
                 if not Value is nothing then
-                    m_ValueType = Value.id
+                    m_valuetype = Value.id
                 else
-                   m_ValueType=System.Guid.Empty
+                   m_valuetype=System.Guid.Empty
                 end if
                 ChangeTime = Now
             End Set
@@ -502,6 +673,130 @@ End Function
 
 
 ''' <summary>
+'''Доступ к полю Значение
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property thevalue() As String
+            Get
+                LoadFromDatabase()
+                thevalue = m_thevalue
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As String )
+                LoadFromDatabase()
+                m_thevalue = Value
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Документация
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property the_doc() As String
+            Get
+                LoadFromDatabase()
+                the_doc = m_the_doc
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As String )
+                LoadFromDatabase()
+                m_the_doc = Value
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Основание для проверки
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property checkref() As LATIR2.Document.docrow_base
+            Get
+                LoadFromDatabase()
+                checkref = me.application.Findrowobject("to_cardchecks",m_checkref)
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As LATIR2.Document.docrow_base )
+                LoadFromDatabase()
+                if not Value is nothing then
+                    m_checkref = Value.id
+                else
+                   m_checkref=System.Guid.Empty
+                end if
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Метка
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property tagid() As String
+            Get
+                LoadFromDatabase()
+                tagid = m_tagid
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As String )
+                LoadFromDatabase()
+                m_tagid = Value
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Дата регистрации метки
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property tagtime() As DATE
+            Get
+                LoadFromDatabase()
+                tagtime = m_tagtime
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As DATE )
+                LoadFromDatabase()
+                m_tagtime = Value
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к дочернему разделу Комментарии к проверке
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public readonly Property to_taskcheckcomment() As to_taskcheckcomment_col
+            Get
+                if  m_to_taskcheckcomment is nothing then
+                  m_to_taskcheckcomment = new to_taskcheckcomment_col
+                  m_to_taskcheckcomment.Parent = me
+                  m_to_taskcheckcomment.Application = me.Application
+                  m_to_taskcheckcomment.Refresh
+                end if
+                to_taskcheckcomment = m_to_taskcheckcomment
+                AccessTime = Now
+            End Get
+        End Property
+
+
+''' <summary>
 '''Заполнить поля данными из XML
 ''' </summary>
 ''' <remarks>
@@ -511,18 +806,28 @@ End Function
           Dim e_list As XmlNodeList
           try 
             m_the_system = new system.guid(node.Attributes.GetNamedItem("the_system").Value)
+            thesubsystem = node.Attributes.GetNamedItem("thesubsystem").Value
             the_check = node.Attributes.GetNamedItem("the_check").Value
             normochas = node.Attributes.GetNamedItem("normochas").Value
-            m_ValueType = new system.guid(node.Attributes.GetNamedItem("ValueType").Value)
+            m_valuetype = new system.guid(node.Attributes.GetNamedItem("valuetype").Value)
             lowvalue = node.Attributes.GetNamedItem("lowvalue").Value
             hivalue = node.Attributes.GetNamedItem("hivalue").Value
             the_comment = node.Attributes.GetNamedItem("the_comment").Value
+            thevalue = node.Attributes.GetNamedItem("thevalue").Value
+            the_doc = node.Attributes.GetNamedItem("the_doc").Value
+            m_checkref = new system.guid(node.Attributes.GetNamedItem("checkref").Value)
+            tagid = node.Attributes.GetNamedItem("tagid").Value
+            m_tagtime = System.DateTime.MinValue
+            tagtime = m_tagtime.AddTicks( node.Attributes.GetNamedItem("tagtime").Value)
+            e_list = node.SelectNodes("to_taskcheckcomment_COL")
+            to_taskcheckcomment.XMLLoad(e_list,LoadMode)
              Changed = true
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
           end try
         End sub
         Public Overrides Sub Dispose()
+            to_taskcheckcomment.Dispose
         End Sub
 
 
@@ -535,12 +840,20 @@ End Function
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
           node.SetAttribute("the_system", m_the_system.tostring)  
+          node.SetAttribute("thesubsystem", thesubsystem)  
           node.SetAttribute("the_check", the_check)  
           node.SetAttribute("normochas", normochas)  
-          node.SetAttribute("ValueType", m_ValueType.tostring)  
+          node.SetAttribute("valuetype", m_valuetype.tostring)  
           node.SetAttribute("lowvalue", lowvalue)  
           node.SetAttribute("hivalue", hivalue)  
           node.SetAttribute("the_comment", the_comment)  
+          node.SetAttribute("thevalue", thevalue)  
+          node.SetAttribute("the_doc", the_doc)  
+          node.SetAttribute("checkref", m_checkref.tostring)  
+          node.SetAttribute("tagid", tagid)  
+         ' if tagtime = System.DateTime.MinValue then tagtime=new Date(1899,12,30)  ' SQL Server trouble
+          node.SetAttribute("tagtime", tagtime.Ticks)  
+            to_taskcheckcomment.XMLSave(node,xdom)
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
           end try
@@ -559,6 +872,7 @@ Public Overrides Sub BatchUpdate()
     Exit Sub
   End If
   If Changed Then Save
+            to_taskcheckcomment.BatchUpdate
 End Sub
 
 
@@ -570,7 +884,7 @@ End Sub
 ''' </remarks>
         Public Overrides ReadOnly Property CountOfParts() As Long
             Get
-                CountOfParts = 0
+                CountOfParts = 1
             End Get
         End Property
 
@@ -584,6 +898,8 @@ End Sub
 ''' </remarks>
         Public Overrides Function GetDocCollection_Base(ByVal Index As Long) As LATIR2.Document.DocCollection_Base
             Select Case Index
+         Case 1
+            return to_taskcheckcomment
             End Select
             return nothing
         End Function

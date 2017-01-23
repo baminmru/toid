@@ -89,7 +89,7 @@ Public Class frmto_cardinfo
         Me.Editto_cardinfo.AutoScroll = True
         Me.Editto_cardinfo.Location = New System.Drawing.Point(8, 8)
         Me.Editto_cardinfo.name = "Editto_cardinfo"
-        Me.Editto_cardinfo.Size = New System.Drawing.Size(490, 600)
+        Me.Editto_cardinfo.Size = New System.Drawing.Size(800-40-16, 600-16)
         Me.Editto_cardinfo.TabIndex = 20
         Me.Editto_cardinfo.Dock = System.Windows.Forms.DockStyle.Fill
         '
@@ -101,6 +101,7 @@ Public Class frmto_cardinfo
         Me.Controls.Add (Me.btnPanel)
         Me.name = "frmto_cardinfo"
         Me.Text = "Описание"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout (False)
 
     End Sub
@@ -108,6 +109,7 @@ Public Class frmto_cardinfo
 #End Region
     Public Item As tocard.tocard.to_cardinfo
     Public GuiManager As LATIR2GuiManager.LATIRGuiManager
+    Private myResizer As LATIR2GuiManager.Resizer = New LATIR2GuiManager.Resizer
     Private mReadOnly As Boolean
 
 
@@ -156,8 +158,17 @@ Public Class frmto_cardinfo
         Exit Sub
         End If
     End Sub
-    Private Sub frmUsers_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Me.ClientSize() = New System.Drawing.Size(Editto_cardinfo.GetMaxX() + 10, Editto_cardinfo.GetMaxY() + 35)
-        LATIR2GuiManager.LATIRGuiManager.ScaleForm(Me)
+    Private Sub frm_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+          Me.StartPosition = FormStartPosition.Manual
+          Me.WindowState = FormWindowState.Normal
+          Me.Location = Screen.PrimaryScreen.WorkingArea.Location
+          Me.Size = Screen.PrimaryScreen.WorkingArea.Size
     End Sub
+    Private Sub frm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Me.ClientSize() = New System.Drawing.Size(Editto_cardinfo.GetMaxX() + 10, Editto_cardinfo.GetMaxY() + 35)
+        myResizer.FindAllControls(Me) 
+    End Sub
+    Private Sub frm_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+      myResizer.ResizeAllControls(Me)
+   End Sub
 End Class

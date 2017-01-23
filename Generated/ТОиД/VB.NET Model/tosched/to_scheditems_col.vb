@@ -45,9 +45,15 @@ Namespace tosched
             dt.TableName="to_scheditems"
             dt.Columns.Add("ID", GetType(System.guid))
             dt.Columns.Add("Brief", Gettype(System.string))
-            dt.Columns.Add("TheMachine_ID" , GetType(System.guid))
-            dt.Columns.Add("TheMachine", Gettype(System.string))
+            dt.Columns.Add("themachine_ID" , GetType(System.guid))
+            dt.Columns.Add("themachine", Gettype(System.string))
             dt.Columns.Add("todate", GetType(System.DateTime))
+            dt.Columns.Add("checkin", GetType(System.DateTime))
+            dt.Columns.Add("oper_ID" , GetType(System.guid))
+            dt.Columns.Add("oper", Gettype(System.string))
+            dt.Columns.Add("isdone_VAL" , Gettype(System.Int16))
+            dt.Columns.Add("isdone", Gettype(System.string))
+            dt.Columns.Add("finishdate", GetType(System.DateTime))
             return dt
         End Function
 
@@ -97,8 +103,12 @@ Public Overrides Function FieldList() As String
        with application.Session.GetProvider
        mFieldList=.ID2Base("to_scheditemsID")
            mFieldList =mFieldList+","+.ID2Base("SecurityStyleID") 
-           mFieldList =mFieldList+","+.ID2Base("TheMachine") 
+           mFieldList =mFieldList+","+.ID2Base("themachine") 
            mFieldList =mFieldList+","+.Date2Base("todate") 
+           mFieldList =mFieldList+","+.Date2Base("checkin") 
+           mFieldList =mFieldList+","+.ID2Base("oper") 
+           mFieldList =mFieldList+ ", isdone" 
+           mFieldList =mFieldList+","+.Date2Base("finishdate") 
        end with
     End If
     Return mFieldList

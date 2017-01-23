@@ -1,0 +1,33 @@
+C:\LATIR4\Build\tocardGUI.dll
+C:\LATIR4\Build\tocardGUI.pdb
+C:\LATIR4\Build\tocardGUI.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\obj\Debug\tocardGUI.vbprojResolveAssemblyReference.cache
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\obj\Debug\tocardGUI.dll
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\obj\Debug\tocardGUI.xml
+C:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\obj\Debug\tocardGUI.pdb
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\tocardGUI.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\tocardGUI.pdb
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\tocardGUI.xml
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\L2Manager.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\LATIR2GuiManager.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\STDLATIRGUIControls.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\tocard.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\MySql.Data.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\NetronLight.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\SpreadSheetLight1.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\DocumentFormat.OpenXml.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\LATIR2GuiManager.pdb
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\LATIR2GuiManager.xml
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\L2Manager.pdb
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\L2Manager.xml
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\STDLATIRGUIControls.pdb
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\STDLATIRGUIControls.xml
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\tocard.pdb
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\NetronLight.pdb
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\SpreadSheetLight1.pdb
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\bin\Debug\DocumentFormat.OpenXml.xml
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\obj\Debug\tocardGUI.vbprojResolveAssemblyReference.cache
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\obj\Debug\tocardGUI.dll
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\obj\Debug\tocardGUI.xml
+E:\LATIR4\Generated\ТОиД\VB.NET Interface\tocard\obj\Debug\tocardGUI.pdb

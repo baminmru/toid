@@ -1,0 +1,759 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+totaskGUI
+</name>
+</assembly>
+<members>
+<member name="M:totaskGUI.viewto_taskcommentadm.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcommentadm.Init">
+	<summary>
+Load table settings
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcommentadm.gv_OnEdit(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание редактирования Edit action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcommentadm.gv_OnDel(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание удаления Delete action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcommentadm.gv_OnAdd(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание создания записи Create action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcommentadm.gv_OnRefresh">
+	<summary>
+Обслуживание кнопки (обновить) refresh action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcommentadm.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcommentadm.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskcommentadm">
+	<summary>
+Форма редактирования раздела Примечания режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcommentadm.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcommentadm.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskcommentadm">
+	<summary>
+Контрол редактирования раздела Примечания режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcheckcommentadm.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcheckcommentadm.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskcheckcommentadm">
+	<summary>
+Форма редактирования раздела Комментарии к проверке режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcheckcommentadm.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcheckcommentadm.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskcheckcommentadm">
+	<summary>
+Контрол редактирования раздела Комментарии к проверке режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskchecksadm.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskchecksadm.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskchecksadm">
+	<summary>
+Форма редактирования раздела Проверки режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskchecksadm.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskchecksadm.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskchecksadm">
+	<summary>
+Контрол редактирования раздела Проверки режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskinfoadm.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskinfoadm.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskinfoadm.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskinfoadm">
+	<summary>
+Форма редактирования раздела Описание режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskinfoadm.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskinfoadm.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskinfoadm">
+	<summary>
+Контрол редактирования раздела Описание режим:adm
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmtotaskadm.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+Процедура инициализации формы
+ </remarks>
+</member><member name="F:totaskGUI.Tabviewadm.item">
+	<summary>
+Редактируемый объект
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totaskGUI.Tabviewadm.GuiManager">
+	<summary>
+Объект управления визуальными компонентами
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabviewadm.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация контрольного элемента
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabviewadm.Save(System.Boolean,System.Boolean)">
+	<summary>
+Сохранение всех изменений
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabviewadm.IsOK">
+	<summary>
+Корректны ли измененные данные проверка после Verify
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabviewadm.IsChanged">
+	<summary>
+Были ли изменения данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabviewadm.Verify(System.Boolean)">
+	<summary>
+Проверить корректность данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcommentmain.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcommentmain.Init">
+	<summary>
+Load table settings
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcommentmain.gv_OnEdit(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание редактирования Edit action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcommentmain.gv_OnDel(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание удаления Delete action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcommentmain.gv_OnAdd(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание создания записи Create action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcommentmain.gv_OnRefresh">
+	<summary>
+Обслуживание кнопки (обновить) refresh action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcommentmain.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcommentmain.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskcommentmain">
+	<summary>
+Форма редактирования раздела Примечания режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcommentmain.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcommentmain.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskcommentmain">
+	<summary>
+Контрол редактирования раздела Примечания режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcheckcommentmain.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcheckcommentmain.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskcheckcommentmain">
+	<summary>
+Форма редактирования раздела Комментарии к проверке режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcheckcommentmain.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcheckcommentmain.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskcheckcommentmain">
+	<summary>
+Контрол редактирования раздела Комментарии к проверке режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskchecksmain.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskchecksmain.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskchecksmain">
+	<summary>
+Форма редактирования раздела Проверки режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskchecksmain.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskchecksmain.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskchecksmain">
+	<summary>
+Контрол редактирования раздела Проверки режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskinfomain.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskinfomain.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskinfomain.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskinfomain">
+	<summary>
+Форма редактирования раздела Описание режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskinfomain.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskinfomain.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskinfomain">
+	<summary>
+Контрол редактирования раздела Описание режим:main
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmtotaskmain.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+Процедура инициализации формы
+ </remarks>
+</member><member name="F:totaskGUI.Tabviewmain.item">
+	<summary>
+Редактируемый объект
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totaskGUI.Tabviewmain.GuiManager">
+	<summary>
+Объект управления визуальными компонентами
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabviewmain.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация контрольного элемента
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabviewmain.Save(System.Boolean,System.Boolean)">
+	<summary>
+Сохранение всех изменений
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabviewmain.IsOK">
+	<summary>
+Корректны ли измененные данные проверка после Verify
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabviewmain.IsChanged">
+	<summary>
+Были ли изменения данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabviewmain.Verify(System.Boolean)">
+	<summary>
+Проверить корректность данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcomment.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcomment.Init">
+	<summary>
+Load table settings
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcomment.gv_OnEdit(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание редактирования Edit action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcomment.gv_OnDel(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание удаления Delete action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcomment.gv_OnAdd(System.Boolean@,System.Guid)">
+	<summary>
+Обслуживание создания записи Create action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskcomment.gv_OnRefresh">
+	<summary>
+Обслуживание кнопки (обновить) refresh action
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcomment.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcomment.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskcomment">
+	<summary>
+Форма редактирования раздела Примечания режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcomment.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcomment.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskcomment">
+	<summary>
+Контрол редактирования раздела Примечания режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcheckcomment.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskcheckcomment.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskcheckcomment">
+	<summary>
+Форма редактирования раздела Комментарии к проверке режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcheckcomment.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskcheckcomment.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskcheckcomment">
+	<summary>
+Контрол редактирования раздела Комментарии к проверке режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskchecks.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskchecks.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskchecks">
+	<summary>
+Форма редактирования раздела Проверки режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskchecks.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskchecks.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskchecks">
+	<summary>
+Контрол редактирования раздела Проверки режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.viewto_taskinfo.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskinfo.Attach(LATIR2.Document.DocRow_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmto_taskinfo.btnOK_Click(System.Object,System.EventArgs)">
+	<summary>
+Завершение редактирования
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.frmto_taskinfo">
+	<summary>
+Форма редактирования раздела Описание режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskinfo.Attach(LATIR2GuiManager.LATIRGuiManager,LATIR2.Document.DocRow_Base,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.editto_taskinfo.Save">
+	<summary>
+Сохранения данных в полях объекта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.editto_taskinfo">
+	<summary>
+Контрол редактирования раздела Описание режим:
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.frmtotask.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация
+ </summary>
+	<remarks>
+Процедура инициализации формы
+ </remarks>
+</member><member name="F:totaskGUI.Tabview.item">
+	<summary>
+Редактируемый объект
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:totaskGUI.Tabview.GuiManager">
+	<summary>
+Объект управления визуальными компонентами
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabview.Attach(LATIR2.Document.Doc_Base,LATIR2GuiManager.LATIRGuiManager,System.Boolean)">
+	<summary>
+Инициализация контрольного элемента
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabview.Save(System.Boolean,System.Boolean)">
+	<summary>
+Сохранение всех изменений
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabview.IsOK">
+	<summary>
+Корректны ли измененные данные проверка после Verify
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabview.IsChanged">
+	<summary>
+Были ли изменения данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.Tabview.Verify(System.Boolean)">
+	<summary>
+Проверить корректность данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:totaskGUI.GUI.TypeName">
+	<summary>
+Имя типа
+ </summary>
+	<returns>
+Строковое значение кода типа объекта 
+ </returns>
+	<remarks>
+Код типа в метамодели
+ </remarks>
+</member><member name="M:totaskGUI.GUI.ShowPartEditForm(System.String,LATIR2.Document.DocRow_Base@,System.Boolean)">
+	<summary>
+Форма редактирования раздела
+ </summary>
+	<returns>
+Результат работы формы редактирования
+ </returns>
+	<remarks>
+Определяется какая форма должна быть вызвана, происходит инициализация и вызов формы
+ </remarks>
+</member><member name="M:totaskGUI.GUI.ShowForm(System.String,LATIR2.Document.Doc_Base@,System.Boolean)">
+	<summary>
+Форма редактирования документа
+ </summary>
+	<returns>
+Резултат работы формы редактирования
+ </returns>
+	<remarks>
+Определяется какая форма должна быть вызвана, происходит инициализация и вызов формы в модальном режиме
+ </remarks>
+</member><member name="M:totaskGUI.GUI.GetObjectControl(System.String,System.String)">
+	<summary>
+Получить контрол, реализующий работу в заданном режиме
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:totaskGUI.GUI">
+	<summary>
+Основной класс компонента
+ </summary>
+	<remarks>
+Класс обслуживает визуальное редактирование 
+ </remarks>
+</member>
+</members>
+</doc>

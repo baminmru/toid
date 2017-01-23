@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"  ToolsVersion="14.0" >
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
   <PropertyGroup>
-  <ProjectType>Local</ProjectType>
+    <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>"05182f14-1e1b-4fa9-84f5-44e0dacc7a8c"</ProjectGuid>
+    <ProjectGuid>{8910926F-02F2-48C2-9C0F-DF27E9C6843A}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ApplicationIcon>
@@ -27,27 +28,27 @@
     <MyType>Windows</MyType>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-<TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
-<OldToolsVersion>3.5</OldToolsVersion>
-<TargetFrameworkProfile />
-<PublishUrl>publish\</PublishUrl>
-<Install>true</Install>
-<InstallFrom>Disk</InstallFrom>
-<UpdateEnabled>false</UpdateEnabled>
-<UpdateMode>Foreground</UpdateMode>
-<UpdateInterval>7</UpdateInterval>
-<UpdateIntervalUnits>Days</UpdateIntervalUnits>
-<UpdatePeriodically>false</UpdatePeriodically>
-<UpdateRequired>false</UpdateRequired>
-<MapFileExtensions>true</MapFileExtensions>
-<ApplicationRevision>0</ApplicationRevision>
-<ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-<IsWebBootstrapper>false</IsWebBootstrapper>
-<UseApplicationTrust>false</UseApplicationTrust>
-<BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>C:\LATIR4\Build\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>tocardGUI.xml</DocumentationFile>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile>
@@ -85,27 +86,6 @@
     <DebugType>none</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="L2Manager">
-      <Name>L2Manager</Name>
-      <HintPath>C:\LATIR4\Build\L2Manager.dll</HintPath>
-       <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="LATIRGuiManager">
-      <Name>LATIRGuiManager</Name>
-      <HintPath>C:\LATIR4\Build\LATIR2GuiManager.dll</HintPath>
-       <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="LATIR2GUIControls">
-      <Name>LATIR2GUIControls</Name>
-      <HintPath>C:\LATIR4\Build\STDLATIRGUIControls.dll</HintPath>
-       <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="tocard">
-      <Name>tocard</Name>
-      <HintPath>C:\LATIR4\Build\tocard.dll</HintPath>
-       <SpecificVersion>False</SpecificVersion>
-    </Reference>
-
     <Reference Include="System">
       <Name>System</Name>
       <HintPath>System.dll</HintPath>
@@ -146,7 +126,6 @@
     <Compile Include="GUI.vb">
       <SubType>Code</SubType>
     </Compile>
-
     <Compile Include="Tabview.vb">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,7 +141,6 @@
     <Compile Include="viewto_cardinfo.vb">
       <SubType>UserControl</SubType>
     </Compile>
-
     <Compile Include="editto_cardchecks.vb">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,17 +150,93 @@
     <Compile Include="viewto_cardchecks.vb">
       <SubType>UserControl</SubType>
     </Compile>
-
     <Compile Include="editto_carddevices.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="frmto_carddevices.vb">
       <SubType>Form</SubType>
     </Compile>
-
+    <Compile Include="Tabviewmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtocardmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editto_cardinfomain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_cardinfomain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewto_cardinfomain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editto_cardchecksmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_cardchecksmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewto_cardchecksmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editto_carddevicesmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_carddevicesmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabviewadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtocardadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editto_cardinfoadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_cardinfoadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewto_cardinfoadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editto_cardchecksadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_cardchecksadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewto_cardchecksadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editto_carddevicesadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmto_carddevicesadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\GuiManager\Latir2GuiManager.vbproj">
+      <Project>{60996302-32d9-4636-9695-4046e51779be}</Project>
+      <Name>Latir2GuiManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\objmanager\L2Manager.vbproj">
+      <Project>{c2aed02b-2ed8-497a-b79e-afc4e5967f29}</Project>
+      <Name>L2Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\StdGuiControls\STDLATIRGUIControls.vbproj">
+      <Project>{1cb10a3b-3341-4e1d-b5b7-531919d79944}</Project>
+      <Name>STDLATIRGUIControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\VB.NET Model\tocard\tocard.vbproj">
+      <Project>{3efc65a6-24bd-4b5a-a2d2-de59ca884024}</Project>
+      <Name>tocard</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>

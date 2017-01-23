@@ -3,7 +3,7 @@
   <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>"12a99223-8839-4bbd-b520-030496f46ebc"</ProjectGuid>
+    <ProjectGuid>"cdfe96c9-1230-4158-82dc-4cb40e7a3154"</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ApplicationIcon>
@@ -220,6 +220,278 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="viewtod_material.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_trand.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_trand.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_trand.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_factory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_factory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_factory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_building.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_building.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_building.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_oprole.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_oprole.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_oprole.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="Tabviewmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtodmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edittod_modelmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_modelmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_modelmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_stmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_stmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_stmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_systemmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_systemmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_systemmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_edizmmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_edizmmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_edizmmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_bugmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_bugmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_bugmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_valtypemain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_valtypemain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_valtypemain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_materialmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_materialmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_materialmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_trandmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_trandmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_trandmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_factorymain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_factorymain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_factorymain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_buildingmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_buildingmain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_buildingmain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_oprolemain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_oprolemain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_oprolemain.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="Tabviewadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtodadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edittod_modeladm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_modeladm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_modeladm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_stadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_stadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_stadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_systemadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_systemadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_systemadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_edizmadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_edizmadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_edizmadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_bugadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_bugadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_bugadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_valtypeadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_valtypeadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_valtypeadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_materialadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_materialadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_materialadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_trandadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_trandadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_trandadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_factoryadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_factoryadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_factoryadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_buildingadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_buildingadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_buildingadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+
+    <Compile Include="edittod_oproleadm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmtod_oproleadm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewtod_oproleadm.vb">
       <SubType>UserControl</SubType>
     </Compile>
 

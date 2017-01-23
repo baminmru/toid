@@ -75,8 +75,15 @@ Public Class viewto_cardchecks
         cs = New DataGridTextBoxColumn
         ' TextBoxColumn
         cs.ReadOnly = True
-        cs.HeaderText = "Узел"
+        cs.HeaderText = "Группа узлов"
         cs.MappingName = "the_system"
+        cs.NullText = ""
+        ts.GridColumnStyles.Add(cs)
+        cs = New DataGridTextBoxColumn
+        ' TextBoxColumn
+        cs.ReadOnly = True
+        cs.HeaderText = "Узел"
+        cs.MappingName = "thesubsystem"
         cs.NullText = ""
         ts.GridColumnStyles.Add(cs)
         cs = New DataGridTextBoxColumn
@@ -97,7 +104,7 @@ Public Class viewto_cardchecks
         ' TextBoxColumn
         cs.ReadOnly = True
         cs.HeaderText = "Измерение"
-        cs.MappingName = "ValueType"
+        cs.MappingName = "valuetype"
         cs.NullText = ""
         ts.GridColumnStyles.Add(cs)
         cs = New DataGridTextBoxColumn
@@ -126,13 +133,6 @@ Public Class viewto_cardchecks
         cs.ReadOnly = True
         cs.HeaderText = "Метка"
         cs.MappingName = "tagid"
-        cs.NullText = ""
-        ts.GridColumnStyles.Add(cs)
-        cs = New DataGridTextBoxColumn
-        ' TextBoxColumn
-        cs.ReadOnly = True
-        cs.HeaderText = "Фото"
-        cs.MappingName = "the_image"
         cs.NullText = ""
         ts.GridColumnStyles.Add(cs)
         cs = New DataGridTextBoxColumn
@@ -171,6 +171,7 @@ Public Class viewto_cardchecks
     End Sub
     Private Sub gv_OnDel(ByRef OK As Boolean, ByVal ID As System.Guid) Handles gv.OnMasterGridDel
       if not mReadOnly then
+    Exit Sub
         Dim ed As tocard.tocard.to_cardchecks
         ed = item.FindRowObject("to_cardchecks", ID)
         If MsgBox("Удалить <" & ed.Brief & "> ?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Удаление строки") = MsgBoxResult.Yes Then
@@ -187,6 +188,7 @@ Public Class viewto_cardchecks
     End Sub
     Private Sub gv_OnAdd(ByRef OK As Boolean) Handles gv.OnMasterGridAdd
       if not mReadOnly then
+    Exit Sub
         Dim ed As tocard.tocard.to_cardchecks
         ed = item.to_cardchecks.Add
         Dim gui As Doc_GUIBase
@@ -222,6 +224,7 @@ Public Class viewto_cardchecks
     End Sub
     Private Sub gv_OnChildDel(ByRef OK As Boolean, ByVal ID As System.Guid) Handles gv.OnChildGridDel
       if not mReadOnly then
+    Exit Sub
         Dim parent As tocard.tocard.to_cardchecks
         parent = item.FindRowObject("to_cardchecks", gv.GetMasterID)
         Dim ed As tocard.tocard.to_carddevices
@@ -255,6 +258,7 @@ Public Class viewto_cardchecks
     End Sub
     Private Sub gv_OnChildAdd(Byref OK As Boolean) Handles gv.OnChildGridAdd
       if not mReadOnly then
+    Exit Sub
         Dim parent As tocard.tocard.to_cardchecks
         parent = item.FindRowObject("to_cardchecks", gv.GetMasterID)
         Dim ed As tocard.tocard.to_carddevices

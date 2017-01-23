@@ -25,21 +25,21 @@ Namespace toop
 
 
 ''' <summary>
-'''Локальная переменная для поля Имя
+'''Локальная переменная для поля Табельный номер
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_Name  as String
+            private m_tnum  as String
 
 
 ''' <summary>
-'''Локальная переменная для поля Фамилия
+'''Локальная переменная для поля Роль
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_FamilyName  as String
+            private m_therole  as System.Guid
 
 
 ''' <summary>
@@ -48,16 +48,7 @@ Namespace toop
 ''' <remarks>
 '''
 ''' </remarks>
-            private m_SurName  as String
-
-
-''' <summary>
-'''Локальная переменная для поля Табельный номер
-''' </summary>
-''' <remarks>
-'''
-''' </remarks>
-            private m_tnum  as String
+            private m_surname  as String
 
 
 ''' <summary>
@@ -69,6 +60,24 @@ Namespace toop
             private m_login  as String
 
 
+''' <summary>
+'''Локальная переменная для поля Имя
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_name  as String
+
+
+''' <summary>
+'''Локальная переменная для поля Фамилия
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+            private m_familyname  as String
+
+
 
 ''' <summary>
 '''Очистить поля раздела
@@ -77,11 +86,12 @@ Namespace toop
 '''
 ''' </remarks>
         Public Overrides Sub CleanFields()
-            ' m_Name=   
-            ' m_FamilyName=   
-            ' m_SurName=   
             ' m_tnum=   
+            ' m_therole=   
+            ' m_surname=   
             ' m_login=   
+            ' m_name=   
+            ' m_familyname=   
         End Sub
 
 
@@ -94,7 +104,7 @@ Namespace toop
 ''' </remarks>
     Public Overrides ReadOnly Property Count() As Long
         Get
-           Count = 5
+           Count = 6
         End Get
     End Property
 
@@ -115,14 +125,16 @@ Public Overrides Property Value(ByVal Index As Object) As Object
                 Case 0
                     Value = ID
                 Case 1
-                    Value = Name
+                    Value = familyname
                 Case 2
-                    Value = FamilyName
+                    Value = name
                 Case 3
-                    Value = SurName
+                    Value = surname
                 Case 4
                     Value = tnum
                 Case 5
+                    Value = therole
+                Case 6
                     Value = login
             End Select
         else
@@ -142,14 +154,16 @@ Public Overrides Property Value(ByVal Index As Object) As Object
             Case 0
                  ID=value
                 Case 1
-                    Name = value
+                    familyname = value
                 Case 2
-                    FamilyName = value
+                    name = value
                 Case 3
-                    SurName = value
+                    surname = value
                 Case 4
                     tnum = value
                 Case 5
+                    therole = value
+                Case 6
                     login = value
         End Select
      Else
@@ -182,14 +196,16 @@ Public Overrides Function FieldNameByID(ByVal Index As long) As String
                 Case 0
                    Return "ID"
                 Case 1
-                    Return "Name"
+                    Return "familyname"
                 Case 2
-                    Return "FamilyName"
+                    Return "name"
                 Case 3
-                    Return "SurName"
+                    Return "surname"
                 Case 4
                     Return "tnum"
                 Case 5
+                    Return "therole"
+                Case 6
                     Return "login"
                 Case else
                 return "" 
@@ -212,10 +228,17 @@ End Function
             try
             dr("ID") =ID
             dr("Brief") =Brief
-             dr("Name") =Name
-             dr("FamilyName") =FamilyName
-             dr("SurName") =SurName
+             dr("familyname") =familyname
+             dr("name") =name
+             dr("surname") =surname
              dr("tnum") =tnum
+             if therole is nothing then
+               dr("therole") =system.dbnull.value
+               dr("therole_ID") =System.Guid.Empty
+             else
+               dr("therole") =therole.BRIEF
+               dr("therole_ID") =therole.ID
+             end if 
              dr("login") =login
             DestDataTable.Rows.Add (dr)
            catch ex as System.Exception
@@ -245,10 +268,15 @@ End Function
 '''
 ''' </remarks>
         Public Overrides Sub Pack(ByVal nv As LATIR2.NamedValues)
-          nv.Add("Name", Name, dbtype.string)
-          nv.Add("FamilyName", FamilyName, dbtype.string)
-          nv.Add("SurName", SurName, dbtype.string)
+          nv.Add("familyname", familyname, dbtype.string)
+          nv.Add("name", name, dbtype.string)
+          nv.Add("surname", surname, dbtype.string)
           nv.Add("tnum", tnum, dbtype.string)
+          if m_therole.Equals(System.Guid.Empty) then
+            nv.Add("therole", system.dbnull.value, Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          else
+            nv.Add("therole", Application.Session.GetProvider.ID2Param(m_therole), Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
+          end if 
           nv.Add("login", login, dbtype.string)
             nv.Add(PartName() & "id", Application.Session.GetProvider.ID2Param(ID),  Application.Session.GetProvider.ID2DbType, Application.Session.GetProvider.ID2Size)
         End Sub
@@ -272,10 +300,17 @@ End Function
 
             RowRetrived = True
             RetriveTime = Now
-          If reader.Table.Columns.Contains("Name") Then m_Name=reader.item("Name").ToString()
-          If reader.Table.Columns.Contains("FamilyName") Then m_FamilyName=reader.item("FamilyName").ToString()
-          If reader.Table.Columns.Contains("SurName") Then m_SurName=reader.item("SurName").ToString()
+          If reader.Table.Columns.Contains("familyname") Then m_familyname=reader.item("familyname").ToString()
+          If reader.Table.Columns.Contains("name") Then m_name=reader.item("name").ToString()
+          If reader.Table.Columns.Contains("surname") Then m_surname=reader.item("surname").ToString()
           If reader.Table.Columns.Contains("tnum") Then m_tnum=reader.item("tnum").ToString()
+      If reader.Table.Columns.Contains("therole") Then
+          if isdbnull(reader.item("therole")) then
+            If reader.Table.Columns.Contains("therole") Then m_therole = System.GUID.Empty
+          else
+            If reader.Table.Columns.Contains("therole") Then m_therole= New System.Guid(reader.item("therole").ToString())
+          end if 
+      end if 
           If reader.Table.Columns.Contains("login") Then m_login=reader.item("login").ToString()
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)
@@ -284,40 +319,40 @@ End Function
 
 
 ''' <summary>
-'''Доступ к полю Имя
+'''Доступ к полю Фамилия
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property Name() As String
+        Public Property familyname() As String
             Get
                 LoadFromDatabase()
-                Name = m_Name
+                familyname = m_familyname
                 AccessTime = Now
             End Get
             Set(ByVal Value As String )
                 LoadFromDatabase()
-                m_Name = Value
+                m_familyname = Value
                 ChangeTime = Now
             End Set
         End Property
 
 
 ''' <summary>
-'''Доступ к полю Фамилия
+'''Доступ к полю Имя
 ''' </summary>
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property FamilyName() As String
+        Public Property name() As String
             Get
                 LoadFromDatabase()
-                FamilyName = m_FamilyName
+                name = m_name
                 AccessTime = Now
             End Get
             Set(ByVal Value As String )
                 LoadFromDatabase()
-                m_FamilyName = Value
+                m_name = Value
                 ChangeTime = Now
             End Set
         End Property
@@ -329,15 +364,15 @@ End Function
 ''' <remarks>
 '''
 ''' </remarks>
-        Public Property SurName() As String
+        Public Property surname() As String
             Get
                 LoadFromDatabase()
-                SurName = m_SurName
+                surname = m_surname
                 AccessTime = Now
             End Get
             Set(ByVal Value As String )
                 LoadFromDatabase()
-                m_SurName = Value
+                m_surname = Value
                 ChangeTime = Now
             End Set
         End Property
@@ -358,6 +393,30 @@ End Function
             Set(ByVal Value As String )
                 LoadFromDatabase()
                 m_tnum = Value
+                ChangeTime = Now
+            End Set
+        End Property
+
+
+''' <summary>
+'''Доступ к полю Роль
+''' </summary>
+''' <remarks>
+'''
+''' </remarks>
+        Public Property therole() As LATIR2.Document.docrow_base
+            Get
+                LoadFromDatabase()
+                therole = me.application.Findrowobject("tod_oprole",m_therole)
+                AccessTime = Now
+            End Get
+            Set(ByVal Value As LATIR2.Document.docrow_base )
+                LoadFromDatabase()
+                if not Value is nothing then
+                    m_therole = Value.id
+                else
+                   m_therole=System.Guid.Empty
+                end if
                 ChangeTime = Now
             End Set
         End Property
@@ -392,10 +451,11 @@ End Function
         Protected Overrides sub XMLUnpack(ByVal node As System.Xml.XmlNode, Optional ByVal LoadMode As Integer = 0)
           Dim e_list As XmlNodeList
           try 
-            Name = node.Attributes.GetNamedItem("Name").Value
-            FamilyName = node.Attributes.GetNamedItem("FamilyName").Value
-            SurName = node.Attributes.GetNamedItem("SurName").Value
+            familyname = node.Attributes.GetNamedItem("familyname").Value
+            name = node.Attributes.GetNamedItem("name").Value
+            surname = node.Attributes.GetNamedItem("surname").Value
             tnum = node.Attributes.GetNamedItem("tnum").Value
+            m_therole = new system.guid(node.Attributes.GetNamedItem("therole").Value)
             login = node.Attributes.GetNamedItem("login").Value
              Changed = true
            catch ex as System.Exception
@@ -414,10 +474,11 @@ End Function
 ''' </remarks>
         Protected Overrides sub XLMPack(ByVal node As System.Xml.XmlElement, ByVal Xdom As System.Xml.XmlDocument)
            try 
-          node.SetAttribute("Name", Name)  
-          node.SetAttribute("FamilyName", FamilyName)  
-          node.SetAttribute("SurName", SurName)  
+          node.SetAttribute("familyname", familyname)  
+          node.SetAttribute("name", name)  
+          node.SetAttribute("surname", surname)  
           node.SetAttribute("tnum", tnum)  
+          node.SetAttribute("therole", m_therole.tostring)  
           node.SetAttribute("login", login)  
            catch ex as System.Exception
               Debug.Print( ex.Message + " >> " + ex.StackTrace)

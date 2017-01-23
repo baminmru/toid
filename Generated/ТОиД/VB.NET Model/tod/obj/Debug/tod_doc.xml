@@ -1,0 +1,2022 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+tod
+</name>
+</assembly>
+<members>
+<member name="M:tod.tod.tod_edizm_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_edizm_col">
+	<summary>
+Реализация раздела Единицы измеренияв виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_edizm.m_name">
+	<summary>
+Локальная переменная для поля Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_edizm.m_fullname">
+	<summary>
+Локальная переменная для поля Полное наименование
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_edizm.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_edizm.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_edizm.name">
+	<summary>
+Доступ к полю Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_edizm.fullname">
+	<summary>
+Доступ к полю Полное наименование
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_edizm.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_edizm.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_edizm">
+	<summary>
+Реализация строки раздела Единицы измерения
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_material_col">
+	<summary>
+Реализация раздела Материалы и инструментыв виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_material.m_name">
+	<summary>
+Локальная переменная для поля Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_material.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_material.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_material.name">
+	<summary>
+Доступ к полю Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_material.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_material.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_material">
+	<summary>
+Реализация строки раздела Материалы и инструменты
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_st_col">
+	<summary>
+Реализация раздела Станкив виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_st.m_the_model">
+	<summary>
+Локальная переменная для поля Модель станка
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_st.m_invn">
+	<summary>
+Локальная переменная для поля Инвентарный номер
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_st.m_name">
+	<summary>
+Локальная переменная для поля Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_st.m_thebuilding">
+	<summary>
+Локальная переменная для поля Цех
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_st.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_st.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_st.invn">
+	<summary>
+Доступ к полю Инвентарный номер
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_st.name">
+	<summary>
+Доступ к полю Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_st.the_model">
+	<summary>
+Доступ к полю Модель станка
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_st.thebuilding">
+	<summary>
+Доступ к полю Цех
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_st.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_st.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_st">
+	<summary>
+Реализация строки раздела Станки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_trand_col">
+	<summary>
+Реализация раздела Тип трендав виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_trand.m_name">
+	<summary>
+Локальная переменная для поля Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_trand.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_trand.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_trand.name">
+	<summary>
+Доступ к полю Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_trand.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_trand.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_trand">
+	<summary>
+Реализация строки раздела Тип тренда
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_oprole_col">
+	<summary>
+Реализация раздела Рольв виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_oprole.m_docmode">
+	<summary>
+Локальная переменная для поля Режим документов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_oprole.m_name">
+	<summary>
+Локальная переменная для поля Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_oprole.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_oprole.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_oprole.name">
+	<summary>
+Доступ к полю Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_oprole.docmode">
+	<summary>
+Доступ к полю Режим документов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_oprole.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_oprole.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_oprole">
+	<summary>
+Реализация строки раздела Роль
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_system_col">
+	<summary>
+Реализация раздела Группы узловв виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_system.m_name">
+	<summary>
+Локальная переменная для поля Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_system.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_system.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_system.name">
+	<summary>
+Доступ к полю Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_system.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_system.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_system">
+	<summary>
+Реализация строки раздела Группы узлов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_model_col">
+	<summary>
+Реализация раздела Модели станковв виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_model.m_name">
+	<summary>
+Локальная переменная для поля Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_model.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_model.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_model.name">
+	<summary>
+Доступ к полю Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_model.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_model.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_model">
+	<summary>
+Реализация строки раздела Модели станков
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_valtype_col">
+	<summary>
+Реализация раздела Тип измеренияв виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_valtype.m_name">
+	<summary>
+Локальная переменная для поля Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_valtype.m_edizm">
+	<summary>
+Локальная переменная для поля Ед. изм.
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_valtype.m_fieldtype">
+	<summary>
+Локальная переменная для поля Трактовка
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_valtype.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_valtype.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_valtype.name">
+	<summary>
+Доступ к полю Название
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_valtype.edizm">
+	<summary>
+Доступ к полю Ед. изм.
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_valtype.fieldtype">
+	<summary>
+Доступ к полю Трактовка
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_valtype.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_valtype.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_valtype">
+	<summary>
+Реализация строки раздела Тип измерения
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_building_col">
+	<summary>
+Реализация раздела Цехв виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_building.m_thefactory">
+	<summary>
+Локальная переменная для поля Завод
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_building.m_name">
+	<summary>
+Локальная переменная для поля Цех
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_building.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_building.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_building.thefactory">
+	<summary>
+Доступ к полю Завод
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_building.name">
+	<summary>
+Доступ к полю Цех
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_building.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_building.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_building">
+	<summary>
+Реализация строки раздела Цех
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_bug_col">
+	<summary>
+Реализация раздела Типичные проблемыв виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_bug.m_the_comment">
+	<summary>
+Локальная переменная для поля Примечание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_bug.m_the_system">
+	<summary>
+Локальная переменная для поля Узел
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_bug.m_name">
+	<summary>
+Локальная переменная для поля Название 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_bug.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_bug.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_bug.the_system">
+	<summary>
+Доступ к полю Узел
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_bug.name">
+	<summary>
+Доступ к полю Название 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_bug.the_comment">
+	<summary>
+Доступ к полю Примечание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_bug.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_bug.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_bug">
+	<summary>
+Реализация строки раздела Типичные проблемы
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory_col.ChildPartName">
+	<summary>
+Имя раздела в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory_col.CreateDataTable">
+	<summary>
+Вернуть даные текущей коллекции в виде DataTable
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory_col.NewItem">
+	<summary>
+Создание нового элемента коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory_col.GetItem(System.Object)">
+	<summary>
+Получить элемент коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory_col.Item(System.Object)">
+	<summary>
+Получить элемент коллекции, более свежий вариант
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_factory_col">
+	<summary>
+Реализация раздела Заводв виде коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.tod_factory.m_name">
+	<summary>
+Локальная переменная для поля Завод
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory.CleanFields">
+	<summary>
+Очистить поля раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_factory.Count">
+	<summary>
+Количество полей в строке раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_factory.Value(System.Object)">
+	<summary>
+Получить \Задать поле по номеру 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory.FieldNameByID(System.Int64)">
+	<summary>
+Название поля по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory.FillDataTable(System.Data.DataTable@)">
+	<summary>
+Заполнить строку таблицы данными из полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory.FindInside(System.String,System.String)">
+	<summary>
+Найти строку в коллекции по идентификатору
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory.Pack(LATIR2.NamedValues)">
+	<summary>
+Заполнить коллекцю именованных полей
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory.Unpack(System.Data.DataRow)">
+	<summary>
+Заполнить поля из именованной коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_factory.name">
+	<summary>
+Доступ к полю Завод
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory.XMLUnpack(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Заполнить поля данными из XML
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory.XLMPack(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Записать данные раздела в XML файл
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory.BatchUpdate">
+	<summary>
+Записать изменения в базу данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.tod_factory.CountOfParts">
+	<summary>
+Количество дочерних разделов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.tod_factory.GetDocCollection_Base(System.Int64)">
+	<summary>
+Доступ к дочернему разделу по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.tod_factory">
+	<summary>
+Реализация строки раздела Завод
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumStructType">
+	<summary>
+Перечисление Тип раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumWFFuncParam">
+	<summary>
+Перечисление Вариант расшифровки параметра функции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumReportType">
+	<summary>
+Перечисление Вариант отчета
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumEducation">
+	<summary>
+Перечисление Образование
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumTypeStyle">
+	<summary>
+Перечисление Вариант трактовки типа поля
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumReplicationType">
+	<summary>
+Перечисление Вариант репликации докуента
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumNumerationRule">
+	<summary>
+Перечисление Правило нумерации
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumWFProcessState">
+	<summary>
+Перечисление Состояния процесса
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumMenuActionType">
+	<summary>
+Перечисление Вариант действия при выборе пункта меню
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumWFShortcutType">
+	<summary>
+Перечисление Варианты ярлыков, которые может размещать процесс
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumVHAlignment">
+	<summary>
+Перечисление Выравнивание
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumCurrencyType">
+	<summary>
+Перечисление Валюта платежа
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumInfoStoreType">
+	<summary>
+Перечисление Тип каталога
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumDevelopmentBase">
+	<summary>
+Перечисление Платформа разработки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumQuarter">
+	<summary>
+Перечисление Квартал
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumMonths">
+	<summary>
+Перечисление Месяцы
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumColumnSortType">
+	<summary>
+Перечисление Вариант сортиовки данных колонки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumBoolean">
+	<summary>
+Перечисление Да / Нет
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumJournalLinkType">
+	<summary>
+Перечисление Для связи журналов друг с другом
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumTargetType">
+	<summary>
+Перечисление Вариант уровня приложения, куда может генерироваться код
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumCacheType">
+	<summary>
+Перечисление Тип кеширования для расчета прав на объекты
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumMesureFormat">
+	<summary>
+Перечисление Формат индикатора
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumExportType">
+	<summary>
+Перечисление Тип экспорта
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumWFStepClass">
+	<summary>
+Перечисление Тип шага процесса
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumDayInWeek">
+	<summary>
+Перечисление День недели
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumGeneratorStyle">
+	<summary>
+Перечисление GeneratorStyle
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumPlatType">
+	<summary>
+Перечисление Тип плательщика
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enummsgState">
+	<summary>
+Перечисление Состояние заявки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumOnJournalRowClick">
+	<summary>
+Перечисление действие при открытии строки журнала
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumPartType">
+	<summary>
+Перечисление PartType
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumReferenceType">
+	<summary>
+Перечисление ReferenceType
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumstateNomen">
+	<summary>
+Перечисление 
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumConditionType">
+	<summary>
+Перечисление Варианты условий
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumFolderType">
+	<summary>
+Перечисление Тип папки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enummsgResult">
+	<summary>
+Перечисление Результат
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumPartAddBehaivor">
+	<summary>
+Перечисление Поведение при добавлении строки раздела
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumExtentionType">
+	<summary>
+Перечисление Тип расширения
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumSex">
+	<summary>
+Перечисление Мужской / Женский
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumYesNo">
+	<summary>
+Перечисление Да / Нет (0 или 1)
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumAggregationType">
+	<summary>
+Перечисление Вариант агрегации по полю
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumWFFuncState">
+	<summary>
+Перечисление Состояние функции в бизнес процессе
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumEmployment">
+	<summary>
+Перечисление Занятость
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.enumTriState">
+	<summary>
+Перечисление Да / Нет / Не определено
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.Application.MyTypeName">
+	<summary>
+Название типа документа
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.Application.m_tod_factory">
+	<summary>
+ Внутренняя переменная для раздела Завод
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.tod_factory">
+	<summary>
+Свойство для доступа к строкам раздела Завод
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.Application.m_tod_bug">
+	<summary>
+ Внутренняя переменная для раздела Типичные проблемы
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.tod_bug">
+	<summary>
+Свойство для доступа к строкам раздела Типичные проблемы
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.Application.m_tod_building">
+	<summary>
+ Внутренняя переменная для раздела Цех
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.tod_building">
+	<summary>
+Свойство для доступа к строкам раздела Цех
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.Application.m_tod_valtype">
+	<summary>
+ Внутренняя переменная для раздела Тип измерения
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.tod_valtype">
+	<summary>
+Свойство для доступа к строкам раздела Тип измерения
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.Application.m_tod_model">
+	<summary>
+ Внутренняя переменная для раздела Модели станков
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.tod_model">
+	<summary>
+Свойство для доступа к строкам раздела Модели станков
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.Application.m_tod_system">
+	<summary>
+ Внутренняя переменная для раздела Группы узлов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.tod_system">
+	<summary>
+Свойство для доступа к строкам раздела Группы узлов
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.Application.m_tod_oprole">
+	<summary>
+ Внутренняя переменная для раздела Роль
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.tod_oprole">
+	<summary>
+Свойство для доступа к строкам раздела Роль
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.Application.m_tod_trand">
+	<summary>
+ Внутренняя переменная для раздела Тип тренда
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.tod_trand">
+	<summary>
+Свойство для доступа к строкам раздела Тип тренда
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.Application.m_tod_st">
+	<summary>
+ Внутренняя переменная для раздела Станки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.tod_st">
+	<summary>
+Свойство для доступа к строкам раздела Станки
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.Application.m_tod_material">
+	<summary>
+ Внутренняя переменная для раздела Материалы и инструменты
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.tod_material">
+	<summary>
+Свойство для доступа к строкам раздела Материалы и инструменты
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="F:tod.tod.Application.m_tod_edizm">
+	<summary>
+ Внутренняя переменная для раздела Единицы измерения
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.tod_edizm">
+	<summary>
+Свойство для доступа к строкам раздела Единицы измерения
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="P:tod.tod.Application.CountOfParts">
+	<summary>
+Количество разделов в объекте
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.Application.GetDocCollection_Base(System.Int64)">
+	<summary>
+Получить раздел по номеру
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.Application.FindInCollections(System.String,System.String)">
+	<summary>
+Поиск элемента в коллекции
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.Application.XMLLoadCollections(System.Xml.XmlNode,System.Int32)">
+	<summary>
+Загрузка данных из XML  файла
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.Application.XMLSaveCollections(System.Xml.XmlElement,System.Xml.XmlDocument)">
+	<summary>
+Сохранение данных в XML  файле
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:tod.tod.Application.BatchUpdate">
+	<summary>
+Сохранение изменений в базе данных
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:tod.tod.Application">
+	<summary>
+Реализация документа 
+ </summary>
+	<remarks>
+Справочник
+ </remarks>
+</member>
+</members>
+</doc>
