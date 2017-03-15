@@ -1,8 +1,10 @@
 ﻿Imports LATIR2
 Imports LATIR2.Document
 Imports LATIR2GuiManager
-Imports FastExcel
+Imports SpreadsheetLight
 Imports System.IO
+Imports DocumentFormat.OpenXml
+
 
 Public Class Form1
     Private Manager As LATIR2.Manager
@@ -39,38 +41,63 @@ Public Class Form1
     Private tod As tod.tod.Application
     Private tc As tocard.tocard.Application
 
-    Private Function At(R As FastExcel.Row, colIdx As Integer) As FastExcel.Cell
+    Private Function At(R As Integer, colIdx As Integer) As SpreadsheetLight.SLCell
         Dim s As String
-        For Each cell As FastExcel.Cell In R.Cells
-            If cell.ColumnNumber = colIdx Then
-                s = cell.ColumnName + "::" + "C=" + colIdx.ToString() + " R=" + R.RowNumber.ToString() + " =>" + cell.Value.ToString()
-                Debug.Print(s)
-                Return cell
+        Dim slp As New SLCellPoint(R, colIdx)
+        Dim slc As SLCell
+        Try
+            slc = Cells(slp)
+            If slc.IsEmpty = False Then
+                If slc.DataType = DocumentFormat.OpenXml.Spreadsheet.CellValues.SharedString Then
+                    s = wb.GetCellTrueValue(slc)
+                    slc.CellText = s
+                Else
+
+                    If slc.DataType = DocumentFormat.OpenXml.Spreadsheet.CellValues.Number Then
+                        If slc.NumericValue = 0.0 Then
+                            slc.CellText = ""
+                        Else
+                            slc.CellText = slc.NumericValue.ToString()
+                        End If
+
+                    End If
+
+                End If
+
+
             End If
-        Next
-        Return Nothing
+        Catch ex As Exception
+            slc = Nothing
+        End Try
+
+
+
+        Return slc
 
     End Function
+    Public wb As SpreadsheetLight.SLDocument
+    Public Cells As Dictionary(Of SpreadsheetLight.SLCellPoint, SpreadsheetLight.SLCell)
+
     Private Sub cmdLoad_Click(sender As Object, e As EventArgs) Handles cmdLoad.Click
         If txtFile.Text = "" Then
             Exit Sub
         End If
 
 
-        Dim wb As FastExcel.FastExcel
-        Dim ws As Worksheet
-        Dim cell As FastExcel.Cell
-        Dim subsys As String = ""
 
-        Dim cell_0 As FastExcel.Cell = Nothing
-        Dim cell_A As FastExcel.Cell = Nothing
-        Dim cell_B As FastExcel.Cell = Nothing
-        Dim cell_C As FastExcel.Cell = Nothing
-        Dim cell_D As FastExcel.Cell = Nothing
-        Dim cell_E As FastExcel.Cell = Nothing
-        Dim cell_Enext As FastExcel.Cell = Nothing
-        Dim cell_F As FastExcel.Cell = Nothing
-        Dim cell_G As FastExcel.Cell = Nothing
+        Dim cell As SpreadsheetLight.SLCell
+        Dim subsys As String = ""
+        Dim gname As String = ""
+
+        Dim cell_0 As SpreadsheetLight.SLCell = Nothing
+        Dim cell_A As SpreadsheetLight.SLCell = Nothing
+        Dim cell_B As SpreadsheetLight.SLCell = Nothing
+        Dim cell_C As SpreadsheetLight.SLCell = Nothing
+        Dim cell_D As SpreadsheetLight.SLCell = Nothing
+        Dim cell_E As SpreadsheetLight.SLCell = Nothing
+        Dim cell_Enext As SpreadsheetLight.SLCell = Nothing
+        Dim cell_F As SpreadsheetLight.SLCell = Nothing
+        Dim cell_G As SpreadsheetLight.SLCell = Nothing
         Dim iii As Integer
 
         Dim tsys As tod.tod.tod_system = Nothing
@@ -87,29 +114,36 @@ Public Class Form1
 
         Dim i As Integer, j As Integer, startcell As Integer
         Dim inputFile As FileInfo = New FileInfo(txtFile.Text)
-        wb = New FastExcel.FastExcel(inputFile, True)
-        For Each ws In wb.Worksheets
-            i = ws.Index
+        wb = New SpreadsheetLight.SLDocument(txtFile.Text)
+        Dim worksheets As List(Of String)
+        worksheets = wb.GetSheetNames()
+        wb.CloseWithoutSaving()
+        Dim sName As String
 
-            txtLog.Text = ws.Name & vbCrLf & txtLog.Text
+        For Each sName In worksheets
+            wb = New SpreadsheetLight.SLDocument(txtFile.Text, sName)
+            ' i = ws.Index
 
+            txtLog.Text = sName & vbCrLf & txtLog.Text
+            Application.DoEvents 
 
-            tc = FindCard(ws.Name)
+            tc = FindCard(sName)
             If tc IsNot Nothing Then
-                ws.Read()
+                Cells = wb.GetCells()
 
 
-                Dim rows() As FastExcel.Row = ws.Rows().ToArray()
+                Dim RowCount As Integer
+                RowCount = wb.GetWorksheetStatistics().NumberOfRows
 
-                Dim Range As FastExcel.Row
+
                 startcell = -1
-                For j = 1 To rows.Count
-                    Range = rows(j)
+                For j = 1 To RowCount
 
 
-                    cell = At(Range, 2) 'ws.Range("B" & j.ToString(), "B" & j.ToString())
-                    If cell IsNot Nothing AndAlso cell.Value IsNot Nothing AndAlso cell.Value.ToString() <> "" Then
-                        If cell.Value.ToString.StartsWith("№") Then
+
+                    cell = At(j, 2) 'ws.Range("B" & j.ToString(), "B" & j.ToString())
+                    If cell IsNot Nothing AndAlso Not cell.IsEmpty AndAlso cell.CellText <> "" Then
+                        If cell.CellText.StartsWith("№") Then
                             startcell = j
                             Exit For
                         End If
@@ -117,170 +151,181 @@ Public Class Form1
                 Next
 
                 If startcell > 0 Then
-                    For j = startcell + 1 To rows.Count - 1
-                        Range = rows(j)
+                    For j = startcell + 1 To RowCount
 
-                        cell_0 = At(Range, 1)  '("A" & j.ToString(), "A" & j.ToString())
 
-                        If cell_0 IsNot Nothing AndAlso cell_0.Value IsNot Nothing AndAlso cell_0.Value.ToString() <> "" Then
-                            tsys = FindSys(cell_0.Value.ToString)
+                        cell_0 = At(j, 1)  '("A" & j.ToString(), "A" & j.ToString())
+
+                        If cell_0 IsNot Nothing AndAlso Not cell_0.IsEmpty AndAlso cell_0.CellText <> "" Then
+                            tsys = FindSys(cell_0.CellText)
+                            gname = cell_0.CellText
                         End If
 
 
-                        cell = At(Range, 2) 'ws.Range("B" & j.ToString(), "B" & j.ToString())
+                        cell = At(j, 2) 'ws.Range("B" & j.ToString(), "B" & j.ToString())
 
 
-                        If cell IsNot Nothing AndAlso cell.Value IsNot Nothing AndAlso cell.Value.ToString() <> "" Then
-                            If IsNumeric(cell.Value) Then
-                                cell_A = At(Range, 2) 'ws.Range("B" & j.ToString(), "B" & j.ToString())
-                                cell_B = At(Range, 3) 'ws.Range("C" & j.ToString(), "C" & j.ToString())
-                                cell_C = At(Range, 4) 'ws.Range("D" & j.ToString(), "D" & j.ToString())
-                                cell_D = At(Range, 5) 'ws.Range("E" & j.ToString(), "E" & j.ToString())
-                                cell_E = At(Range, 6) 'ws.Range("F" & j.ToString(), "F" & j.ToString())
-                                cell_F = At(Range, 7) 'ws.Range("G" & j.ToString(), "G" & j.ToString())
-                                cell_G = At(Range, 8) 'ws.Range("H" & j.ToString(), "H" & j.ToString())
+                        If cell IsNot Nothing AndAlso Not cell.IsEmpty AndAlso cell.CellText <> "" Then
+                            If IsNumeric(cell.CellText) Then
+                                cell_A = At(j, 2) 'ws.Range("B" & j.ToString(), "B" & j.ToString())
+                                cell_B = At(j, 3) 'ws.Range("C" & j.ToString(), "C" & j.ToString())
+                                cell_C = At(j, 4) 'ws.Range("D" & j.ToString(), "D" & j.ToString())
+                                cell_D = At(j, 5) 'ws.Range("E" & j.ToString(), "E" & j.ToString())
+                                cell_E = At(j, 6) 'ws.Range("F" & j.ToString(), "F" & j.ToString())
+                                cell_F = At(j, 7) 'ws.Range("G" & j.ToString(), "G" & j.ToString())
+                                cell_G = At(j, 8) 'ws.Range("H" & j.ToString(), "H" & j.ToString())
 
-                                Range = rows(j + 1)
 
-                                cell_Enext = At(Range, 6) 'ws.Range("F" & (j + 1).ToString(), "F" & (j + 1).ToString())
 
-                                If cell_B.Value IsNot Nothing Then
-                                    If cell_B.Value.ToString <> "" Then
-                                        txtLog.Text = cell_B.Value & vbCrLf & txtLog.Text
+                                cell_Enext = At(j + 1, 6) 'ws.Range("F" & (j + 1).ToString(), "F" & (j + 1).ToString())
+
+                                If Not cell_B.IsEmpty Then
+
+                                    If cell_B.CellText <> "" Then
+                                        txtLog.Text = gname & " " & subsys & " " & cell_B.CellText & vbCrLf & txtLog.Text
                                         Application.DoEvents()
-
-                                        For iii = 1 To tc.to_cardchecks.Count
-                                            tcc = tc.to_cardchecks.Item(iii)
-                                            If tcc.the_check = cell_B.Value.ToString And tcc.the_system.ID.Equals(tsys.ID) And tcc.thesubsystem = subsys Then
-                                                GoTo check_found
-                                            End If
-                                        Next
-
-                                        tcc = tc.to_cardchecks.Add()
-
-check_found:
-                                        tcc.the_system = tsys
-                                        tcc.thesubsystem = subsys
-                                        tcc.the_check = cell_B.Value.ToString
-                                        Try
-                                            tcc.normochas = cell_D.Value
-                                        Catch ex As Exception
-
-                                        End Try
-
-
-
-                                        Try
-                                            tcc.the_doc = cell_C.Value.ToString
-                                        Catch ex As Exception
-
-                                        End Try
-
-                                        If cell_E IsNot Nothing AndAlso cell_E.Value IsNot Nothing Then
-                                            Try
-                                                tcc.valuetype = FindValType(cell_E.Value.ToString)
-                                            Catch ex As Exception
-
-                                            End Try
-
-                                        End If
-
-                                        If cell_Enext IsNot Nothing AndAlso cell_Enext.Value IsNot Nothing Then
-                                            Dim lv As String
-                                            lv = cell_Enext.Value.ToString
-
-                                            If lv.IndexOf("≤") >= 0 Then
-                                                lv = lv.Replace("≤", "")
+                                        If tsys IsNot Nothing Then
+                                            For iii = 1 To tc.to_cardchecks.Count
+                                                tcc = tc.to_cardchecks.Item(iii)
                                                 Try
-
-                                                    tcc.hivalue = lv
-                                                Catch ex As Exception
-
-                                                End Try
-                                            ElseIf lv.IndexOf("≥") >= 0 Then
-                                                lv = lv.Replace("≥", "")
-                                                Try
-
-                                                    tcc.lowvalue = lv
-                                                Catch ex As Exception
-
-                                                End Try
-                                            Else
-                                                Try
-                                                    tcc.hivalue = lv
-                                                    'tcc.lowvalue = lv
-                                                Catch ex As Exception
-
-                                                End Try
-                                            End If
-
-                                        End If
-
-
-
-                                        If cell_G IsNot Nothing AndAlso cell_G.Value IsNot Nothing Then
-                                            Try
-                                                tcc.the_comment = cell_G.Value.ToString
-                                            Catch ex As Exception
-
-                                            End Try
-                                        End If
-
-
-                                        tcc.Save()
-
-
-                                        If cell_C IsNot Nothing AndAlso cell_C.Value IsNot Nothing Then
-                                            Dim ss() As String
-                                            Dim ms As String
-                                            Dim tm As tod.tod.tod_material
-                                            Dim dev As tocard.tocard.to_carddevices
-                                            ms = cell_C.Value.ToString()
-                                            ms = ms.Replace(vbCr, ".")
-                                            ms = ms.Replace(vbLf, ".")
-                                            ms = ms.Replace(",", ".")
-                                            ms = ms.Replace("-", " ")
-                                            ms = ms.Replace("  ", " ")
-                                            ms = ms.Replace("  ", " ")
-                                            ms = ms.Replace("  ", " ")
-                                            ms = ms.Replace("  ", " ")
-                                            ss = ms.Split(".")
-                                            Dim ii As Integer
-                                            For ii = LBound(ss) To UBound(ss)
-                                                If ss(ii) <> "" Then
-                                                    tm = FindMaterial(ss(ii))
-                                                    If Not tm Is Nothing Then
-                                                        dev = tcc.to_carddevices.Add()
-                                                        dev.mat = tm
-                                                        dev.Save()
-
+                                                    If tcc.the_check = cell_B.CellText And tcc.the_system.ID.Equals(tsys.ID) And tcc.thesubsystem = subsys Then
+                                                        GoTo check_found
                                                     End If
-                                                End If
+                                                Catch ex As Exception
+
+                                                End Try
 
                                             Next
 
+                                            tcc = tc.to_cardchecks.Add()
 
+check_found:
+                                            tcc.the_system = tsys
+                                            tcc.thesubsystem = subsys
+                                            tcc.the_check = cell_B.CellText
+                                            Try
+                                                tcc.normochas = cell_D.CellText
+                                            Catch ex As Exception
+
+                                            End Try
+
+
+
+                                            Try
+                                                tcc.the_doc = cell_C.CellText
+                                            Catch ex As Exception
+
+                                            End Try
+
+                                            If cell_E IsNot Nothing AndAlso Not cell_E.IsEmpty Then
+
+                                                Try
+                                                    tcc.valuetype = FindValType(cell_E.CellText)
+                                                Catch ex As Exception
+
+                                                End Try
+
+                                            End If
+
+                                            If cell_Enext IsNot Nothing AndAlso Not cell_Enext.IsEmpty Then
+                                                Dim lv As String
+                                                lv = cell_Enext.CellText
+
+                                                If lv.IndexOf("≤") >= 0 Then
+                                                    lv = lv.Replace("≤", "")
+                                                    Try
+
+                                                        tcc.hivalue = lv
+                                                    Catch ex As Exception
+
+                                                    End Try
+                                                ElseIf lv.IndexOf("≥") >= 0 Then
+                                                    lv = lv.Replace("≥", "")
+                                                    Try
+
+                                                        tcc.lowvalue = lv
+                                                    Catch ex As Exception
+
+                                                    End Try
+                                                Else
+                                                    Try
+                                                        tcc.hivalue = lv
+                                                        'tcc.lowvalue = lv
+                                                    Catch ex As Exception
+
+                                                    End Try
+                                                End If
+
+                                            End If
+
+
+
+                                            If cell_G IsNot Nothing AndAlso Not cell_G.IsEmpty Then
+
+                                                Try
+                                                    tcc.the_comment = cell_G.CellText
+                                                Catch ex As Exception
+
+                                                End Try
+                                            End If
+
+
+                                            tcc.Save()
+
+
+
+                                            If cell_C IsNot Nothing AndAlso Not cell_C.IsEmpty Then
+                                                Dim ss() As String
+                                                Dim ms As String
+                                                Dim tm As tod.tod.tod_material
+                                                Dim dev As tocard.tocard.to_carddevices
+                                                ms = cell_C.CellText
+                                                ms = ms.Replace(vbCr, ".")
+                                                ms = ms.Replace(vbLf, ".")
+                                                ms = ms.Replace(",", ".")
+                                                ms = ms.Replace("-", " ")
+                                                ms = ms.Replace("  ", " ")
+                                                ms = ms.Replace("  ", " ")
+                                                ms = ms.Replace("  ", " ")
+                                                ms = ms.Replace("  ", " ")
+                                                ss = ms.Split(".")
+                                                Dim ii As Integer
+                                                For ii = LBound(ss) To UBound(ss)
+                                                    If ss(ii) <> "" Then
+                                                        tm = FindMaterial(ss(ii))
+                                                        If Not tm Is Nothing Then
+                                                            dev = tcc.to_carddevices.Add()
+                                                            dev.mat = tm
+                                                            dev.Save()
+
+                                                        End If
+                                                    End If
+
+                                                Next
+
+
+                                            End If
                                         End If
                                     End If
                                 End If
 
                             Else
-                                Range = rows(j)
+
 
                                 ' это название подсистемы , или выход ...
-                                cell_A = At(Range, 2) ' ws.Range("B" & j.ToString(), "B" & j.ToString())
-                                cell_B = At(Range, 3) 'ws.Range("C" & j.ToString(), "C" & j.ToString())
-                                cell_C = At(Range, 4) 'ws.Range("D" & j.ToString(), "D" & j.ToString())
-                                If cell_B.Value Is Nothing Then
-                                    If cell_A.Value IsNot Nothing Then
-                                        subsys = cell.Value.ToString
-                                        txtLog.Text = cell.Value & vbCrLf & txtLog.Text
+                                cell_A = At(j, 2) ' ws.Range("B" & j.ToString(), "B" & j.ToString())
+                                cell_B = At(j, 3) 'ws.Range("C" & j.ToString(), "C" & j.ToString())
+                                cell_C = At(j, 4) 'ws.Range("D" & j.ToString(), "D" & j.ToString())
+                                If cell_B.CellText = "" Then
+                                    If Not cell_A.IsEmpty Then
+                                        subsys = cell.CellText
+                                        txtLog.Text = gname & " " & subsys & " " & cell.CellText & vbCrLf & txtLog.Text
                                         Application.DoEvents()
                                         'End If
                                     End If
                                 Else
-                                    If cell_B.Value.ToString <> "" Then
-                                        If cell_B.Value.ToString.ToLower().StartsWith("итого") Then
+                                    If cell_B.CellText <> "" Then
+                                        If cell_B.CellText.ToLower().StartsWith("итого") Then
                                             Exit For
                                         End If
                                     End If
@@ -288,18 +333,19 @@ check_found:
                             End If
                         Else
 
-                            Range = rows(j)
+
 
 
                             ' продолжение блока проверок  с дополнительными  точками контроля (X Y Z  и т.п. )
-                            cell_B = At(Range, 3) ' ws.Range("C" & j.ToString(), "C" & j.ToString())
-                            cell_C = At(Range, 4) 'ws.Range("D" & j.ToString(), "D" & j.ToString())
+                            cell_B = At(j, 3) ' ws.Range("C" & j.ToString(), "C" & j.ToString())
+                            cell_C = At(j, 4) 'ws.Range("D" & j.ToString(), "D" & j.ToString())
 
-                            If cell_B IsNot Nothing AndAlso cell_B.Value IsNot Nothing Then
-                                If cell_B.Value.ToString <> "" Then
+                            If cell_B IsNot Nothing AndAlso Not cell_B.IsEmpty Then
 
-                                    If cell_B.Value.ToString <> "" Then
-                                        If cell_B.Value.ToString.ToLower().StartsWith("итого") Then
+                                If cell_B.CellText <> "" Then
+
+                                    If cell_B.CellText <> "" Then
+                                        If cell_B.CellText.ToLower().StartsWith("итого") Then
                                             Exit For
                                         End If
                                     End If
@@ -309,9 +355,14 @@ check_found:
 
                                     For iii = 1 To tc.to_cardchecks.Count
                                         tcc = tc.to_cardchecks.Item(iii)
-                                        If tcc.the_check = cell_B.Value.ToString And tcc.the_system.ID.Equals(tsys.ID) And tcc.thesubsystem = subsys Then
-                                            GoTo check_found3
-                                        End If
+                                        Try
+                                            If tcc.the_check = cell_B.CellText And tcc.the_system.ID.Equals(tsys.ID) And tcc.thesubsystem = subsys Then
+                                                GoTo check_found3
+                                            End If
+                                        Catch ex As Exception
+
+                                        End Try
+
                                     Next
 
                                     tcc = tc.to_cardchecks.Add()
@@ -319,9 +370,9 @@ check_found:
 check_found3:
                                     tcc.the_system = tsys
                                     tcc.thesubsystem = subsys
-                                    tcc.the_check = cell_B.Value.ToString
+                                    tcc.the_check = cell_B.CellText
                                     Try
-                                        tcc.normochas = cell_D.Value
+                                        tcc.normochas = cell_D.CellText
                                     Catch ex As Exception
 
                                     End Try
@@ -329,23 +380,24 @@ check_found3:
 
 
                                     Try
-                                        tcc.the_doc = cell_C.Value.ToString
+                                        tcc.the_doc = cell_C.CellText
                                     Catch ex As Exception
 
                                     End Try
 
-                                    If cell_E IsNot Nothing AndAlso cell_E.Value IsNot Nothing Then
+                                    If cell_E IsNot Nothing AndAlso Not cell_E.IsEmpty Then
+
                                         Try
-                                            tcc.valuetype = FindValType(cell_E.Value.ToString)
+                                            tcc.valuetype = FindValType(cell_E.CellText)
                                         Catch ex As Exception
 
                                         End Try
 
                                     End If
 
-                                    If cell_Enext IsNot Nothing AndAlso cell_Enext.Value IsNot Nothing Then
+                                    If cell_Enext IsNot Nothing AndAlso Not cell_Enext.IsEmpty Then
                                         Dim lv As String
-                                        lv = cell_Enext.Value.ToString
+                                        lv = cell_Enext.CellText
 
                                         If lv.IndexOf("≤") >= 0 Then
                                             lv = lv.Replace("≤", "")
@@ -378,7 +430,7 @@ check_found3:
 
 
                                     Try
-                                        tcc.the_comment = cell_G.Value.ToString
+                                        tcc.the_comment = cell_G.CellText
                                     Catch ex As Exception
 
                                     End Try
@@ -387,12 +439,12 @@ check_found3:
                                     tcc.Save()
 
 
-                                    If cell_C IsNot Nothing AndAlso cell_C.Value IsNot Nothing Then
+                                    If cell_C IsNot Nothing AndAlso Not cell_C.IsEmpty Then
                                         Dim ss() As String
                                         Dim ms As String
                                         Dim tm As tod.tod.tod_material
                                         Dim dev As tocard.tocard.to_carddevices
-                                        ms = cell_C.Value.ToString()
+                                        ms = cell_C.CellText
                                         ms = ms.Replace(vbCr, ".")
                                         ms = ms.Replace(vbLf, ".")
                                         ms = ms.Replace(",", ".")
@@ -428,11 +480,13 @@ check_found3:
                 End If
 
             Else
-                    txtERR.Text = txtERR.Text & ws.Name & vbCrLf
+                txtERR.Text = txtERR.Text & sName & vbCrLf
             End If
+            wb.CloseWithoutSaving()
+            wb.Dispose()
         Next
 
-        wb.Dispose()
+
 
         txtLog.Text = "Загрузка завершена" & vbCrLf & txtLog.Text
 
