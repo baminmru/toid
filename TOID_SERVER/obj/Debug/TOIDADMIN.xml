@@ -8,123 +8,153 @@ TOIDADMIN
 <members>
 <member name="T:TOIDADMIN.My.Resources.Resources">
 <summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
+  Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.ResourceManager">
 <summary>
-  Returns the cached ResourceManager instance used by this class.
+  Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.Culture">
 <summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
+  Перезаписывает свойство CurrentUICulture текущего потока для всех
+  обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.add">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.add1">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.back">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.back1">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.bullet_home">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.chart_bar">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.copy">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.database_copy">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TOIDADMIN.My.Resources.Resources.export_arrow_481">
+<summary>
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TOIDADMIN.My.Resources.Resources.export_icon_29">
+<summary>
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TOIDADMIN.My.Resources.Resources.export_icon_29_1">
+<summary>
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.folder_wrench">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TOIDADMIN.My.Resources.Resources.gear_icon_32px">
+<summary>
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.group">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TOIDADMIN.My.Resources.Resources.IELTS_Line_Graph">
+<summary>
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.new_red">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.picture_add">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.pictures">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.Print">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.printer">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.refresh">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:TOIDADMIN.My.Resources.Resources.refresh_48">
+<summary>
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.robot1_32">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.table_add">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.table_refresh">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.user_key">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:TOIDADMIN.My.Resources.Resources.wrench_orange">
 <summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
+  Поиск локализованного ресурса типа System.Drawing.Bitmap.
 </summary>
 </member>
 </members>

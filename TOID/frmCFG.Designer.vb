@@ -36,6 +36,8 @@ Partial Class frmCFG
         Me.txtTempPath = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.chkTOTRN = New System.Windows.Forms.CheckBox()
+        Me.cmdClearDB = New System.Windows.Forms.Button()
+        Me.chkUpdateCardTags = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -44,7 +46,7 @@ Partial Class frmCFG
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label1.Location = New System.Drawing.Point(19, 128)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(252, 20)
+        Me.Label1.Size = New System.Drawing.Size(315, 25)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Путь  к хранилищу изображений"
         '
@@ -56,14 +58,14 @@ Partial Class frmCFG
         Me.txtPath2IMG.Location = New System.Drawing.Point(22, 153)
         Me.txtPath2IMG.Name = "txtPath2IMG"
         Me.txtPath2IMG.ReadOnly = True
-        Me.txtPath2IMG.Size = New System.Drawing.Size(452, 26)
+        Me.txtPath2IMG.Size = New System.Drawing.Size(556, 30)
         Me.txtPath2IMG.TabIndex = 1
         '
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Button1.Location = New System.Drawing.Point(480, 150)
+        Me.Button1.Location = New System.Drawing.Point(584, 150)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(43, 29)
         Me.Button1.TabIndex = 2
@@ -76,7 +78,7 @@ Partial Class frmCFG
         Me.chkTabTip.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.chkTabTip.Location = New System.Drawing.Point(23, 253)
         Me.chkTabTip.Name = "chkTabTip"
-        Me.chkTabTip.Size = New System.Drawing.Size(194, 24)
+        Me.chkTabTip.Size = New System.Drawing.Size(232, 29)
         Me.chkTabTip.TabIndex = 3
         Me.chkTabTip.Text = "Экранная клавиатура"
         Me.chkTabTip.UseVisualStyleBackColor = True
@@ -87,7 +89,7 @@ Partial Class frmCFG
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label2.Location = New System.Drawing.Point(21, 186)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(117, 20)
+        Me.Label2.Size = New System.Drawing.Size(142, 25)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Сайт  сервера"
         '
@@ -107,7 +109,7 @@ Partial Class frmCFG
         Me.lblText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblText.Location = New System.Drawing.Point(-2, -2)
         Me.lblText.Name = "lblText"
-        Me.lblText.Size = New System.Drawing.Size(554, 48)
+        Me.lblText.Size = New System.Drawing.Size(658, 48)
         Me.lblText.TabIndex = 7
         Me.lblText.Text = "Настройки"
         Me.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -118,7 +120,7 @@ Partial Class frmCFG
         Me.chkTools.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.chkTools.Location = New System.Drawing.Point(278, 253)
         Me.chkTools.Name = "chkTools"
-        Me.chkTools.Size = New System.Drawing.Size(247, 24)
+        Me.chkTools.Size = New System.Drawing.Size(308, 29)
         Me.chkTools.TabIndex = 8
         Me.chkTools.Text = "Инструменты для настройки"
         Me.chkTools.UseVisualStyleBackColor = True
@@ -128,14 +130,14 @@ Partial Class frmCFG
         Me.txtServerSite.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.txtServerSite.Location = New System.Drawing.Point(22, 213)
         Me.txtServerSite.Name = "txtServerSite"
-        Me.txtServerSite.Size = New System.Drawing.Size(503, 26)
+        Me.txtServerSite.Size = New System.Drawing.Size(503, 30)
         Me.txtServerSite.TabIndex = 9
         '
         'cmdTempPath
         '
         Me.cmdTempPath.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdTempPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.cmdTempPath.Location = New System.Drawing.Point(481, 86)
+        Me.cmdTempPath.Location = New System.Drawing.Point(585, 86)
         Me.cmdTempPath.Name = "cmdTempPath"
         Me.cmdTempPath.Size = New System.Drawing.Size(43, 29)
         Me.cmdTempPath.TabIndex = 12
@@ -150,7 +152,7 @@ Partial Class frmCFG
         Me.txtTempPath.Location = New System.Drawing.Point(23, 89)
         Me.txtTempPath.Name = "txtTempPath"
         Me.txtTempPath.ReadOnly = True
-        Me.txtTempPath.Size = New System.Drawing.Size(452, 26)
+        Me.txtTempPath.Size = New System.Drawing.Size(556, 30)
         Me.txtTempPath.TabIndex = 11
         '
         'Label3
@@ -159,7 +161,7 @@ Partial Class frmCFG
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label3.Location = New System.Drawing.Point(20, 64)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(242, 20)
+        Me.Label3.Size = New System.Drawing.Size(296, 25)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Папка для временных файлов"
         '
@@ -169,16 +171,39 @@ Partial Class frmCFG
         Me.chkTOTRN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.chkTOTRN.Location = New System.Drawing.Point(22, 300)
         Me.chkTOTRN.Name = "chkTOTRN"
-        Me.chkTOTRN.Size = New System.Drawing.Size(171, 24)
+        Me.chkTOTRN.Size = New System.Drawing.Size(210, 29)
         Me.chkTOTRN.TabIndex = 13
         Me.chkTOTRN.Text = "Загружать тренды"
         Me.chkTOTRN.UseVisualStyleBackColor = True
         '
+        'cmdClearDB
+        '
+        Me.cmdClearDB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.cmdClearDB.Location = New System.Drawing.Point(22, 351)
+        Me.cmdClearDB.Name = "cmdClearDB"
+        Me.cmdClearDB.Size = New System.Drawing.Size(294, 55)
+        Me.cmdClearDB.TabIndex = 14
+        Me.cmdClearDB.Text = "Очистить локальную базу"
+        Me.cmdClearDB.UseVisualStyleBackColor = True
+        '
+        'chkUpdateCardTags
+        '
+        Me.chkUpdateCardTags.AutoSize = True
+        Me.chkUpdateCardTags.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.chkUpdateCardTags.Location = New System.Drawing.Point(278, 300)
+        Me.chkUpdateCardTags.Name = "chkUpdateCardTags"
+        Me.chkUpdateCardTags.Size = New System.Drawing.Size(318, 29)
+        Me.chkUpdateCardTags.TabIndex = 15
+        Me.chkUpdateCardTags.Text = "Обновлять метки в карточках"
+        Me.chkUpdateCardTags.UseVisualStyleBackColor = True
+        '
         'frmCFG
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
-        Me.ClientSize = New System.Drawing.Size(554, 336)
+        Me.ClientSize = New System.Drawing.Size(658, 485)
         Me.ControlBox = False
+        Me.Controls.Add(Me.chkUpdateCardTags)
+        Me.Controls.Add(Me.cmdClearDB)
         Me.Controls.Add(Me.chkTOTRN)
         Me.Controls.Add(Me.cmdTempPath)
         Me.Controls.Add(Me.txtTempPath)
@@ -217,4 +242,6 @@ Partial Class frmCFG
     Friend WithEvents txtTempPath As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents chkTOTRN As CheckBox
+    Friend WithEvents cmdClearDB As Button
+    Friend WithEvents chkUpdateCardTags As CheckBox
 End Class

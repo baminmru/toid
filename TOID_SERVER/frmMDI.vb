@@ -232,6 +232,7 @@ Public Class frmMDI
         fSched.Attach(GuiManager, "tosched", "Расписание")
         AddHandler fSched.jv.JVOnAdd, AddressOf tosched_jv_JVOnAdd
         AddHandler fSched.jv.JVOnRun, AddressOf tosched_jv_JVOnRun
+        AddHandler fSched.jv.JVOnPrint, AddressOf tosched_jv_JVOnPrint
         fSched.Show()
         fSched.WindowState = FormWindowState.Maximized
 
@@ -343,6 +344,29 @@ Public Class frmMDI
         UseDefault = False
         Refresh = True
 
+    End Sub
+
+
+    Private Sub totask_jv_JVOnPrint(InstanceID As Guid, RowID As Guid, ViewBase As String, ByRef UseDefault As Boolean)
+        UseDefault = False
+
+
+        Dim f As frmRPT
+        f = New frmRPT
+        f.tID = InstanceID
+        f.WindowState = FormWindowState.Maximized
+        f.ShowDialog()
+    End Sub
+
+    Private Sub tosched_jv_JVOnPrint(InstanceID As Guid, RowID As Guid, ViewBase As String, ByRef UseDefault As Boolean)
+        UseDefault = False
+
+
+        Dim f As frmRPT_SHED
+        f = New frmRPT_SHED
+        f.tID = InstanceID
+        f.WindowState = FormWindowState.Maximized
+        f.ShowDialog()
     End Sub
 
 
@@ -461,8 +485,9 @@ Public Class frmMDI
         End If
         fTask = New frmJournalView
         fTask.MdiParent = Me
-        fTask.Attach(GuiManager, "totask", "Диагностика")
+        fTask.Attach(GuiManager, "totask", "Задачи диагностики")
         AddHandler fTask.jv.JVOnAdd, AddressOf totask_jv_JVOnAdd
+        AddHandler fTask.jv.JVOnPrint, AddressOf totask_jv_JVOnPrint
         fTask.Show()
         fTask.WindowState = FormWindowState.Maximized
     End Sub
@@ -532,5 +557,67 @@ Public Class frmMDI
             MessageBox.Show("Операция доступна только администратору")
         End If
 
+    End Sub
+
+    Private Sub mnuTaskChart_Click(sender As Object, e As EventArgs) Handles mnuTaskChart.Click
+
+        Dim fTG As frmTaskGraph
+        fTG = New frmTaskGraph
+        fTG.MdiParent = Me
+        fTG.Show()
+        fTG.WindowState = FormWindowState.Maximized
+    End Sub
+
+    Private Sub cmdActiveTask_Click(sender As Object, e As EventArgs) Handles cmdActiveTask.Click
+        If fTaskA IsNot Nothing Then
+            If fTaskA.Visible = True Then
+                fTaskA.Focus()
+                Exit Sub
+            End If
+            Try
+                fTaskA.Close()
+                fTaskA.Dispose()
+            Catch ex As Exception
+
+            End Try
+        End If
+        fTaskA = New frmJournalView
+        fTaskA.MdiParent = Me
+        fTaskA.jv.Filters.Add("autoto_taskinfo", "to_taskinfo_taskfinished ='Нет'")
+        fTaskA.Attach(GuiManager, "totask", "Активные задачи")
+
+        AddHandler fTaskA.jv.JVOnAdd, AddressOf totask_jv_JVOnAdd
+        AddHandler fTaskA.jv.JVOnPrint, AddressOf totask_jv_JVOnPrint
+        fTaskA.Show()
+        fTaskA.WindowState = FormWindowState.Maximized
+    End Sub
+
+    Private Sub ПоЗадачамToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ПоЗадачамToolStripMenuItem.Click
+        Dim f As frmRPT
+        f = New frmRPT
+        f.tID = Guid.Empty
+        f.MdiParent = Me
+
+        f.Show()
+
+    End Sub
+
+
+    Private Sub ПоПланамToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ПоПланамToolStripMenuItem.Click
+        Dim f As frmRPT_SHED
+        f = New frmRPT_SHED
+        f.tID = Guid.Empty
+        f.MdiParent = Me
+
+        f.Show()
+    End Sub
+
+    Private Sub mnuReportST_Click(sender As Object, e As EventArgs) Handles mnuReportST.Click
+        Dim f As frmRPT_ST
+        f = New frmRPT_ST
+        f.tID = Guid.Empty
+        f.MdiParent = Me
+
+        f.Show()
     End Sub
 End Class

@@ -38,6 +38,13 @@
             chkTools.Checked = False
         End If
 
+
+        If GetSetting("LATIR4", "CFG", "UpdateCardTags", "false") = "false" Then
+            chkUpdateCardTags.Checked = False
+        Else
+            chkUpdateCardTags.Checked = True
+        End If
+
         Dim totrn As String
         totrn = GetSetting("LATIR4", "CFG", "LOADTOTRN", "false")
         If totrn = "true" Then
@@ -96,6 +103,33 @@
             SaveSetting("LATIR4", "CFG", "LOADTOTRN", "true")
         Else
             SaveSetting("LATIR4", "CFG", "LOADTOTRN", "false")
+        End If
+    End Sub
+
+    Private Sub cmdClearDB_Click(sender As Object, e As EventArgs) Handles cmdClearDB.Click
+        If MsgBox("Удалить данные о задачах и расписании на планшете?", vbYesNo + vbQuestion, "Подтвердите очистку базы") = vbYes Then
+            If MsgBox("Все не переданные на сервер данные могут исчезнуть. Вы уверены ?", vbYesNo + vbQuestion, "Подтвердите очистку базы") = vbYes Then
+                ' Manager.GetData("delete From to_cardinfo")
+                ' Manager.GetData("delete From to_carddevices")
+                ' Manager.GetData("delete From to_cardchecks")
+                'Manager.GetData("delete From instance Where objtype ='tocard'")
+                Manager.GetData("delete From to_scheditems")
+                Manager.GetData("delete From to_schedinfo")
+                Manager.GetData("delete From instance Where objtype ='tosched'")
+                Manager.GetData("delete From to_taskcomment")
+                Manager.GetData("delete From to_taskinfo")
+                Manager.GetData("delete From to_taskcheckcomment")
+                Manager.GetData("delete From to_taskchecks")
+                Manager.GetData("delete From instance Where objtype ='totask'")
+            End If
+        End If
+    End Sub
+
+    Private Sub chkUpdateCardTags_CheckedChanged(sender As Object, e As EventArgs) Handles chkUpdateCardTags.CheckedChanged
+        If chkUpdateCardTags.Checked = True Then
+            SaveSetting("LATIR4", "CFG", "UpdateCardTags", "true")
+        Else
+            SaveSetting("LATIR4", "CFG", "UpdateCardTags", "false")
         End If
     End Sub
 End Class

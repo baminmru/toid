@@ -333,7 +333,11 @@ Public Class Replicator
                                 For Each sc In RegistedTags
                                     Try
                                         Log("Отсылка метки " & sc.Comment)
-                                        ServerManager.GetData("update to_cardchecks set changestamp =" & ServerManager.Provider.DateFunc() & ", tagid='" & LATIR2.Utils.GUID2String(New Guid(sc.Comment)) & "' where to_cardchecksid=" & Manager.ID2Const(sc.SystemID))
+
+                                        Dim q As String
+                                        q = "update to_cardchecks set changestamp =" & ServerManager.Provider.DateFunc() & ", tagid='" & LATIR2.Utils.GUID2String(New Guid(sc.Comment)) & "' where to_cardchecksid=" & ServerManager.ID2Const(sc.SystemID)
+                                        ServerManager.GetData(q)
+                                        Log(q)
                                         pc.Add(sc)
                                     Catch ex As Exception
                                         Log(ex.Message & vbCrLf & ex.StackTrace & vbCrLf & ex.Source)
@@ -341,6 +345,7 @@ Public Class Replicator
 
                                 Next
                                 For i = 0 To pc.Count - 1
+                                    Manager.GetData("delete from savedtags where tagsid='" & pc(i).Comment & "'")
                                     RegistedTags.Remove(pc(i))
                                 Next
                                 pc.Clear()
@@ -516,7 +521,7 @@ Public Class Replicator
             ' собираем список всех задач
             Try
                 If Manager.Connected And ServerManager.Connected Then
-                    srvdt2 = ServerManager.GetData("select distinct " & ServerManager.Base2ID("instanceid") & " from to_taskinfo where oper=" & ServerManager.ID2Const(SrvGetOper(ServerManager).ID))
+                    srvdt2 = ServerManager.GetData("select distinct " & ServerManager.Base2ID("instanceid") & " from to_taskinfo where (taskfinished=0 or taskfinished is null) and oper=" & ServerManager.ID2Const(SrvGetOper(ServerManager).ID))
                     For j = 0 To srvdt2.Rows.Count - 1
                         iid = New Guid(srvdt2.Rows(j)("instanceid").ToString).ToString()
                         Try
@@ -538,7 +543,7 @@ Public Class Replicator
             Try
                 If Manager.Connected And ServerManager.Connected Then
                     SyncLock Manager
-                        srvdt1 = Manager.GetData("select distinct " & Manager.Base2ID("instanceid") & " from to_taskinfo where oper=" & Manager.ID2Const(GetOper().ID))
+                        srvdt1 = Manager.GetData("select distinct " & Manager.Base2ID("instanceid") & " from to_taskinfo where  oper=" & Manager.ID2Const(GetOper().ID))
                     End SyncLock
 
                     For j = 0 To srvdt1.Rows.Count - 1
@@ -1103,24 +1108,27 @@ rstop:
             Dim dt As DataTable
             dt = ServerManager.GetData("select * from v_autoto_scheditems where id='" & LATIR2.Utils.GUID2String(New Guid(ShedID)) & "'")
             If dt.Rows.Count = 1 Then
-
                 Dim tsched As tosched.tosched.Application
                 Dim tsi As tosched.tosched.to_scheditems
                 tsched = ServerManager.GetInstanceObject(New Guid(dt.Rows(0)("instanceid").ToString()))
-                tsi = tsched.FindObject("to_scheditems", LATIR2.Utils.GUID2String(New Guid(ShedID)))
-                If Not tsi Is Nothing Then
+                tsi = tsched.to_scheditems.Item(New Guid(ShedID))
 
+                If Not tsi Is Nothing Then
                     tsi.finishdate = DateTime.Now
                     tsi.isdone = tosched.tosched.enumBoolean.Boolean_Da
                     tsi.Save()
                     ServerManager.Close()
                     Log("Задача на сервере завершена")
                     Return True
-
                 End If
             End If
-            Log("Задача на сервере не найдена")
+
             ServerManager.Close()
+            Log("Задача на сервере не найдена")
+            If MsgBox("Не найден пункт расписания для задачи на сервере. Закрыть все равно?", vbYesNo + vbQuestion, "Закрытие задачи") = vbYes Then
+                Return True
+            End If
+            Return False
         End If
         Log("Нет связи с сервером. Невозможно закрыть задачу.")
         MsgBox("Нет связи с сервером. Невозможно закрыть задачу.")

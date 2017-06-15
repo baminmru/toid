@@ -77,7 +77,7 @@ Public Class frmTaskSystem
                     prevSys = dt.Rows(i)("tod_system_name")
                     gi = New gPic.GaleryItem
                     gi.ID = New Guid(dt.Rows(i)("id").ToString)
-                    s = dt.Rows(i)("to_taskchecks_thesubsystem")
+                    s = dt.Rows(i)("tod_system_name").ToString() & "\" & dt.Rows(i)("to_taskchecks_thesubsystem")
 
                     Dim q As String
                     q = "select fname from  toimg_data  where instanceid=" & Manager.ID2Const(GetMyStore().ID) & " and toimg_data.link2id ='" & LATIR2.Utils.GUID2String(StID) & "' And toimg_data.link2part='tod_st' And toimg_data.link1part ='tod_system' and toimg_data.link1id='" & LATIR2.Utils.GUID2String(gi.ID) & "' order by changestamp desc"
@@ -183,6 +183,7 @@ Public Class frmTaskSystem
         Dim tdef As totask.totask.to_taskinfo
         tdef = tsk.to_taskinfo.Item(1)
         Dim chk As totask.totask.to_taskchecks
+        Dim tsys As tod.tod.tod_system
         Dim i As Integer
         Dim ok As Boolean
         Dim msg As String = "Не доделано:" & vbCrLf
@@ -194,21 +195,33 @@ Public Class frmTaskSystem
                 ok = False
             End If
             If chk.tagid = "" Then
-                msg += vbCrLf + "Метка для: " & chk.the_check & "(" & chk.thesubsystem & ")"
+                tsys = chk.the_system
+
+                If tsys IsNot Nothing Then
+                    msg += vbCrLf & "Метка " & tsys.name & " для: " & chk.the_check & "(" & chk.thesubsystem & ")"
+                Else
+                    msg += vbCrLf & "Метка  для: " & chk.the_check & "(" & chk.thesubsystem & ")"
+                End If
+
                 ok = False
             End If
-
         Next
 
         If ok Then
-
             Dim r As Replicator
             r = New Replicator(GetSetting("TOID", "CFG", "SERVERSITE", ""), Date.MinValue, Date.MinValue)
             If r.CloseTask(tdef.theMachine.ID.ToString) = True Then
 
                 tdef.taskFinished = totask.totask.enumBoolean.Boolean_Da
                 tdef.finishtime = Date.Now
-                tdef.Save()
+                Try
+                    tdef.Save()
+                    Log("Зафиксировано завершение задачи в базе планшета")
+                Catch ex As Exception
+                    Log("Ошибка при завершении задачи в базе планшета. " + ex.Message)
+                End Try
+
+
                 Me.DialogResult = DialogResult.OK
                 Me.Close()
             Else
@@ -221,6 +234,7 @@ Public Class frmTaskSystem
             If Len(ss) > 300 Then
                 ss = ss.Substring(0, 300) & " ..."
             End If
+            Log(msg)
             MsgBox(ss, vbExclamation + vbOKOnly, "Проверки не завершены")
         End If
 
@@ -232,20 +246,67 @@ Public Class frmTaskSystem
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If inTimer Then Return
         inTimer = True
+        Dim myCap As String
+        myCap = lblText.Text
         If HasTag Then
             HasTag = False
             TagID = Guid.Empty
             If NFCReader IsNot Nothing Then
                 If NFCReader.GetLastTagInfoCount > 0 Then
-
+                    lblText.Text = "Обнаружена NFC метка"
                     Dim ltag As List(Of TOIDTAG)
                     Dim tag As TOIDTAG
                     ltag = NFCReader.GetLastTagInfo()
+
+
+                    If GetSetting("LATIR4", "CFG", "UpdateCardTags", "false") = "true" Then
+                        For Each tag In ltag
+
+                            Application.DoEvents()
+
+                            If Not tag.ID.Equals(Guid.Empty) And tag.Part = "TOID" Then
+
+                                lblText.Text = "Обнаружена NFC метка ТОИД"
+                                Application.DoEvents()
+                                Dim dt As DataTable
+                                Dim ii As Integer
+                                If Manager.Provider.ProviderType = LATIR2.DBProvider.DBProviderType.MYSQL Then
+                                    dt = Manager.GetData("select c.id,s.to_cardinfo_the_machine,c.to_cardchecks_the_system  from v_autoto_cardchecks c join v_autoto_cardinfo s on  s.instanceid=c.instanceid and s.to_cardinfo_card_archived_val<>-1 where concat(s.to_cardinfo_the_machine_id,'|',c.to_cardchecks_the_system_id) ='" & tag.Data & "' ")
+                                ElseIf Manager.Provider.ProviderType = LATIR2.DBProvider.DBProviderType.ORACLE Then
+                                    dt = Manager.GetData("select c.id,s.to_cardinfo_the_machine,c.to_cardchecks_the_system  from v_autoto_cardchecks c join v_autoto_cardinfo s on  s.instanceid=c.instanceid and s.to_cardinfo_card_archived_val<>-1 where (s.to_cardinfo_the_machine_id || '|' || c.to_cardchecks_the_system_id) ='" & tag.Data.ToUpper & "' ")
+                                Else
+                                    dt = New DataTable
+                                End If
+
+
+                                Dim cid As Guid
+                                Dim sc As SystemComment
+                                lblText.Text = "Обновление привязки метки к карточке диагностики"
+                                Application.DoEvents()
+                                For ii = 0 To dt.Rows.Count - 1
+                                    cid = New Guid(dt.Rows(ii)("id").ToString())
+                                    Manager.GetData("update to_cardchecks set changestamp =" & Manager.Provider.DateFunc() & ", tagid='" & LATIR2.Utils.GUID2String(tag.ID) & "' where to_cardchecksid=" & Manager.ID2Const(cid))
+                                    sc = New SystemComment
+                                    sc.SystemID = cid
+                                    sc.Comment = tag.ID.ToString
+                                    SyncLock RegistedTags
+                                        RegistedTags.Add(sc)
+                                        Manager.GetData("insert into savedtags (st_id ,tagid ) values('" & LATIR2.Utils.GUID2String(cid) & "','" & LATIR2.Utils.GUID2String(tag.ID) & "'")
+                                    End SyncLock
+                                Next
+                            End If
+
+                        Next
+                    End If
+
+
 
                     Dim gi As gPic.GaleryItem
                     For Each tag In ltag
 
                         Log("Метка " & tag.ID.ToString)
+                        lblText.Text = "Поиск группы для считанной метки:" & tag.ID.ToString
+                        Application.DoEvents()
 
                         For Each gi In lgi
                             If gi.CustomInfo.ToUpper = tag.Data.ToUpper Then
@@ -257,6 +318,8 @@ Public Class frmTaskSystem
                                 inTimer = False
                                 NFCReader.ClearLastTagInfo()
                                 HasTag = False
+                                lblText.Text = myCap
+                                Application.DoEvents()
                                 Return
                             End If
                         Next
@@ -264,11 +327,15 @@ Public Class frmTaskSystem
                     NFCReader.ClearLastTagInfo()
                     HasTag = False
                     ltag.Clear()
+                    lblText.Text = "Группа для метки не найдена."
+                    Application.DoEvents()
                 End If
 
 
             End If
         End If
+        lblText.Text = myCap
+        Application.DoEvents()
         inTimer = False
     End Sub
 
@@ -346,5 +413,13 @@ Public Class frmTaskSystem
     Private HasTag As Boolean
     Private Sub mynfc_TagDetected() Handles mynfc.TagDetected
         HasTag = True
+    End Sub
+
+    Private Sub cmdDeleteTask_Click(sender As Object, e As EventArgs) Handles cmdDeleteTask.Click
+        If MsgBox("Переполучить данные для задачи ?", vbYesNo + vbQuestion, "Переполучение данных с сервера") = vbYes Then
+            Manager.DeleteInstance(tsk)
+            Me.DialogResult = DialogResult.OK
+            Me.Close()
+        End If
     End Sub
 End Class

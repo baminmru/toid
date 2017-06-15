@@ -246,6 +246,13 @@ Public Class frmStartup
             Log("*")
             Return
         End If
+        If Manager Is Nothing Then
+            Return
+        End If
+
+        If Manager.Session Is Nothing Then
+            Return
+        End If
         InTimer = True
         Try
             Dim r As Replicator
@@ -351,11 +358,12 @@ Public Class frmStartup
             Manager.Close()
             ClearOnLogOut()
         End SyncLock
-
+        Log("Сессия завершена. Ждем следующего входа.")
     End Sub
 
     Private Sub CloseButton1_Click(sender As Object, e As EventArgs) Handles CloseButton1.Click
         If MsgBox("Хотите завершить работу текущего оператора с программой?", vbQuestion + vbYesNo, "Подтвердите завершение") = vbYes Then
+            Timer1.Enabled = False
             Me.Close()
         End If
 
@@ -374,7 +382,28 @@ Public Class frmStartup
         If Not op Is Nothing Then
             lblText.Text = Application.ProductName & " (" & op.Brief & ") :: " & sitename
         End If
+        If RegistedTags Is Nothing Then
+            RegistedTags = New List(Of SystemComment)
+            Dim stag As DataTable
+            Dim sc As SystemComment
+            Try
+                stag = Manager.GetData("select count(*) cnt from savedtags")
+            Catch ex As Exception
+                Manager.GetData("create table savedtags (st_id varchar(64),tagid varchar(64))")
+            End Try
 
+            stag = Manager.GetData("select * cnt from savedtags")
+            Dim si As Integer
+            For si = 0 To stag.Rows.Count - 1
+                sc = New SystemComment
+                sc.SystemID = New Guid(stag.Rows(si)("st_id").ToString())
+                sc.Comment = stag.Rows(si)("tagid").ToString()
+                SyncLock RegistedTags
+                    RegistedTags.Add(sc)
+                End SyncLock
+            Next
+
+        End If
     End Sub
 
     Private Sub lblText_Click(sender As Object, e As EventArgs) Handles lblText.Click
@@ -384,5 +413,7 @@ Public Class frmStartup
         Me.Size = Screen.PrimaryScreen.WorkingArea.Size
     End Sub
 
+    Private Sub CloseButton1_Load(sender As Object, e As EventArgs) Handles CloseButton1.Load
 
+    End Sub
 End Class

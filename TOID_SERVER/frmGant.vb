@@ -1,4 +1,5 @@
 ﻿Imports Braincase.GanttChart
+
 Public Class frmGant
 
     Public SchedID As Guid
@@ -7,7 +8,7 @@ Public Class frmGant
     Private Sub frmGant_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim dt As DataTable
         Dim dd As Date
-        dt = Manager.Session.GetData("SELECT * FROM v_autoto_schedinfo  where instanceid=" & Manager.ID2Const(SchedID))
+        dt = Manager.Session.GetData("SELECT * FROM v_autoto_schedinfo  where instanceid='" & LATIR2.Utils.GUID2String(SchedID) & "' ")
         If dt.Rows.Count > 0 Then
             Try
                 dtpFrom.Value = dt.Rows(0)("to_schedinfo_dfrom")
@@ -42,7 +43,7 @@ Public Class frmGant
 
 
         Dim delay As Integer
-        dt = Manager.Session.GetData("SELECT * FROM v_autoto_scheditems  where to_scheditems_todate>=" & Manager.Date2Const(dtpFrom.Value) & " and to_scheditems_todate<=" & Manager.Date2Const(dtpTo.Value) & " and instanceid=" & Manager.ID2Const(SchedID) & "order by to_scheditems_todate")
+        dt = Manager.Session.GetData("SELECT * FROM v_autoto_scheditems  where to_scheditems_todate>=" & Manager.Date2Const(dtpFrom.Value) & " and to_scheditems_todate<=" & Manager.Date2Const(dtpTo.Value) & " and instanceid='" & LATIR2.Utils.GUID2String(SchedID) & "' order by to_scheditems_todate")
         'If dt.Rows.Count > 0 Then
         '    dd = dt.Rows(i)("to_scheditems_todate")
         'End If
@@ -399,5 +400,18 @@ Public Class frmGant
             End If
 
         End If
+    End Sub
+
+    Private Sub cmdReport_Click(sender As Object, e As EventArgs) Handles cmdReport.Click
+        Dim f As frmRPT_SHED
+        f = New frmRPT_SHED
+        f.tID = SchedID
+        f.dtpFrom.Value = dtpFrom.Value
+        f.dtpTo.Value = dtpTo.Value
+        f.chkUseDates.Checked = True
+
+
+        f.ShowDialog()
+        f = Nothing
     End Sub
 End Class

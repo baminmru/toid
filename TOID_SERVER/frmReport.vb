@@ -27,20 +27,20 @@ Public Class frmReport
     End Sub
 
     Private Sub frmReport_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Me.Location = Screen.PrimaryScreen.WorkingArea.Location
-        Me.Size = Screen.PrimaryScreen.WorkingArea.Size
+        'Me.Location = Screen.PrimaryScreen.WorkingArea.Location
+        'Me.Size = Screen.PrimaryScreen.WorkingArea.Size
 
-
+        'Timer1.Enabled = True
+        'AddHandler wb.Document.ContextMenuShowing, AddressOf WebContextMenuShowing
     End Sub
 
 
-    Private Sub BuildReport()
+    Public Sub BuildReport()
+        If StName Is Nothing Then Exit Sub
+
         wh = New StringBuilder
-        pb.Maximum = 100
-        pb.Minimum = 0
-        pb.Value = 0
-        pb.Visible = True
-        Label1.Visible = True
+
+
         Dim sTemp As String
         sTemp = GetSetting("TOID", "CFG", "PATH2IMG", "")
         wh.AppendLine("<!DOCTYPE html><html > <head>  <meta http-equiv=""content-type"" content=""text/html; charset=utf-8"" /></head><body>")
@@ -48,7 +48,7 @@ Public Class frmReport
         wh.AppendLine("<h" + H.ToString + ">")
         wh.Append("Станок: " & StName)
         wh.AppendLine("</h" + H.ToString + ">")
-        pb.Value += 10
+
 
         Dim sPath As String
         sPath = GetSetting("TOID", "CFG", "PATH2IMG", "")
@@ -73,246 +73,323 @@ Public Class frmReport
 
             wh.AppendLine("</tr></table>")
         End If
-        pb.Value += 10
+
 
         ChecksToHTML()
 
 
         wh.AppendLine("</body></html>")
+        'Dim rid As Guid
+        'rid = Guid.NewGuid
         File.WriteAllText(sTemp & "\report.html", wh.ToString)
-        pb.Value += 10
-        wb.Navigate(sTemp & "\report.html")
-        AddHandler wb.Document.ContextMenuShowing, AddressOf WebContextMenuShowing
-        pb.Value = 100
-        pb.Visible = False
-        Label1.Visible = False
+
+        wb.Navigate(sTemp & "\report.html", True)
+        'wb.Refresh()
+
+
     End Sub
 
 
-    Private Sub ChecksToHTML()
+    Private Sub dtpFrom_ValueChanged(sender As Object, e As EventArgs) Handles dtpFrom.ValueChanged
+        'BuildReport()
+    End Sub
 
-        Dim dt As DataTable, dt2 As DataTable, dt3 As DataTable
-        Dim _tcard As tocard.tocard.Application = Nothing
-        Dim _tcc As tocard.tocard.to_cardchecks
-        Dim _tsched As tosched.tosched.Application
-        Dim _tsi As tosched.tosched.to_scheditems
-        Dim _ttask As totask.totask.Application
-        Dim _tchk As totask.totask.to_taskchecks
-        Dim i As Integer, j As Integer, k As Integer
+    Private Sub dtpTo_ValueChanged(sender As Object, e As EventArgs) Handles dtpTo.ValueChanged
+        'BuildReport()
+    End Sub
+
+    Private Sub chkUseDates_CheckedChanged(sender As Object, e As EventArgs) Handles chkUseDates.CheckedChanged
+        Dim en As Boolean = False
+        If chkUseDates.Checked Then
+            en = True
+        Else
+            en = False
+        End If
+        dtpFrom.Enabled = en
+        dtpTo.Enabled = en
+        Label3.Enabled = en
+        Label2.Enabled = en
+        'BuildReport()
+    End Sub
+    Private Function LoadData(tid As Guid) As DataTable
+        Dim w As String = ""
+        Dim dtRows As DataTable
+        Dim dt As DataTable
+
+        Dim q1 As String
         Dim sPath As String
         sPath = GetSetting("TOID", "CFG", "PATH2IMG", "")
-        Dim dtImg As DataTable
-
-        Try
 
 
+        q1 = "SELECT distinct invn, thesubsystem,the_check,STID FROM
+          (
+              SELECT   invn, thesubsystem,the_check,STID FROM v_report_task WHERE STID='" + LATIR2.Utils.GUID2String(tid) + "' 
+              union ALL 
+              SELECT  invn, thesubsystem,the_check,STID FROM v_report_card  WHERE STID='" + LATIR2.Utils.GUID2String(tid) + "' 
+        )  U
+          order BY thesubsystem,the_check        "
 
-            dt = Manager.GetData("select * from v_autoto_scheditems  where  to_scheditems_themachine_id='" & LATIR2.Utils.GUID2String(StID) & "' order by to_scheditems_todate")
-            dt2 = Manager.GetData("select * from v_autoto_cardinfo where  to_cardinfo_card_archived_val=0 and to_cardinfo_the_machine_id='" & LATIR2.Utils.GUID2String(StID) & "'")
 
 
-            wh.AppendLine("<table border=""1"" style=""word-break:break-all;""><tr>")
 
-            pb.Value += 10
 
-            wh.AppendLine("<th>Узел</th>") ' узел
-            wh.AppendLine("<th>Показатель</th>")
-            wh.AppendLine("<th>нормочас</th>") ' нормочас
-            wh.AppendLine("<th>минимальное значение </th>") ' минимальное значение 
-            wh.AppendLine("<th>максимальное значение</th>") ' максимальное значение
-            wh.AppendLine("<th>тип значения</th>") ' тип значения
-            wh.AppendLine("</tr><tr>")
+        If chkUseDates.Checked Then
 
-            pb.Value += 10
+            w = w + " and crDATE>=" + Manager.Date2Const(dtpFrom.Value)
+            w = w + " and crDATE<=" + Manager.Date2Const(dtpTo.Value)
 
-            wh.AppendLine("<td>&nbsp;</td>") ' узел
-            wh.AppendLine("<td><strong>Плановая дата</strong></td>")
-            wh.AppendLine("<td>&nbsp;</td>") ' нормочас
-            wh.AppendLine("<td>&nbsp;</td>") ' минимальное значение 
-            wh.AppendLine("<td>&nbsp;</td>") ' максимальное значение
-            wh.AppendLine("<td>&nbsp;</td>") ' тип значения
+        End If
 
-            For i = 0 To dt.Rows.Count - 1
-                _tsched = Manager.GetInstanceObject(New Guid(dt.Rows(i)("instanceid").ToString))
-                _tsi = _tsched.to_scheditems.Item(New Guid(dt.Rows(i)("id").ToString))
-                wh.Append("<td>" & _tsi.todate.ToString("yyyy/MM/dd") & "</td>")
-            Next
 
-            pb.Value += 10
 
-            wh.AppendLine("</tr><tr>")
-            wh.AppendLine("<td>&nbsp;</td>") ' узел
-            wh.AppendLine("<td><strong>Фактическая дата</strong></td>")
-            wh.AppendLine("<td>&nbsp;</td>") ' нормочас
-            wh.AppendLine("<td>&nbsp;</td>") ' минимальное значение 
-            wh.AppendLine("<td>&nbsp;</td>") ' максимальное значение
-            wh.AppendLine("<td>&nbsp;</td>") ' тип значения
+        dtRows = Manager.GetData(q1)
+        pb.Minimum = 0
+        pb.Maximum = dtRows.Rows.Count
+        pb.Visible = True
+        pb.Value = 0
 
-            For i = 0 To dt.Rows.Count - 1
-                _tsched = Manager.GetInstanceObject(New Guid(dt.Rows(i)("instanceid").ToString))
-                _tsi = _tsched.to_scheditems.Item(New Guid(dt.Rows(i)("id").ToString))
-                wh.Append("<td>" & _tsi.finishdate.ToString("yyyy/MM/dd") & "</td>")
-            Next
 
-            pb.Value += 10
+        Dim r As Integer
+        Dim c As Integer
+        Dim dtCols As DataTable
 
-            wh.AppendLine("</tr><tr>")
-            wh.AppendLine("<td>&nbsp;</td>") ' узел
-            wh.AppendLine("<td><strong>Оператор</strong></td>")
-            wh.AppendLine("<td>&nbsp;</td>") ' нормочас
-            wh.AppendLine("<td>&nbsp;</td>") ' минимальное значение 
-            wh.AppendLine("<td>&nbsp;</td>") ' максимальное значение
-            wh.AppendLine("<td>&nbsp;</td>") ' тип значения
+        dtCols = Manager.GetData("select distinct tinst,crdate from v_report_task where stid='" + LATIR2.Utils.GUID2String(tid) + "' " + w + "  order by crdate")
 
-            For i = 0 To dt.Rows.Count - 1
-                _tsched = Manager.GetInstanceObject(New Guid(dt.Rows(i)("instanceid").ToString))
-                _tsi = _tsched.to_scheditems.Item(New Guid(dt.Rows(i)("id").ToString))
-                If _tsi.oper IsNot Nothing Then
-                    wh.Append("<td>" & _tsi.oper.Brief & "</td>")
-                Else
-                    wh.Append("<td></td>")
-                End If
 
-            Next
+        Dim dtGr As DataTable
 
-            wh.AppendLine("</tr>")
 
-            pb.Value += 10
+        dtGr = New DataTable
 
-            For j = 0 To dt2.Rows.Count - 1
-                _tcard = Manager.GetInstanceObject(New Guid(dt2.Rows(j)("instanceid").ToString))
-                Exit For
-            Next
+        dtGr.Columns.Add("ceh")
+        dtGr.Columns.Add("stname")
+        dtGr.Columns.Add("invn")
+        dtGr.Columns.Add("thesubsystem")
+        dtGr.Columns.Add("the_check")
+        dtGr.Columns.Add("vtname")
+        dtGr.Columns.Add("lowvalue")
+        dtGr.Columns.Add("hivalue")
+        For c = 0 To dtCols.Rows.Count - 1
+            dtGr.Columns.Add(dtCols.Rows(c)("tinst").ToString())
+            dtGr.Columns.Add(dtCols.Rows(c)("tinst").ToString() + "_COMMENTS")
+            dtGr.Columns.Add(dtCols.Rows(c)("tinst").ToString() + "_IMAGES")
+        Next
 
-            Dim prevsystem As String = ""
-            _tcard.to_cardchecks.Sort = "thesubsystem"
-            For k = 1 To _tcard.to_cardchecks.Count
+        Dim dr As DataRow
+        For r = 0 To dtRows.Rows.Count - 1
+            pb.Value = r
+            dt = Manager.GetData("select * from v_report_card where the_check='" & dtRows.Rows(r)("the_check") & "' and thesubsystem='" & dtRows.Rows(r)("thesubsystem") & "' and stid='" & dtRows.Rows(r)("stid") & "'")
+            If dt.Rows.Count = 0 Then
+                dt = Manager.GetData("select * from v_report_task where the_check='" & dtRows.Rows(r)("the_check") & "' and thesubsystem='" & dtRows.Rows(r)("thesubsystem") & "' and stid='" & dtRows.Rows(r)("stid") & "' order by crdate")
+            End If
 
-                _tcc = _tcard.to_cardchecks.Item(k)
-                wh.AppendLine("<tr>")
-                If _tcc.thesubsystem <> "" Then
-                    'wh.AppendLine("<td><strong>" & _tcc.the_system.Brief & "&nbsp;</strong>") ' узел
-                    wh.AppendLine("<td><strong>" & _tcc.thesubsystem & "&nbsp;</strong>") ' узел
+            If dt.Rows.Count > 0 Then
+                dr = dtGr.NewRow
+                dr("ceh") = dt.Rows(0)("ceh")
+                dr("stname") = dt.Rows(0)("stname")
+                dr("invn") = dt.Rows(0)("invn")
+                dr("thesubsystem") = dt.Rows(0)("thesubsystem")
+                dr("the_check") = dt.Rows(0)("the_check")
+                dr("vtname") = dt.Rows(0)("vtname")
+                dr("lowvalue") = dt.Rows(0)("lowvalue")
+                dr("hivalue") = dt.Rows(0)("hivalue")
 
-                    If prevsystem <> _tcc.thesubsystem Then
-                        prevsystem = _tcc.thesubsystem
-                        'Dim q As String
+                For c = 0 To dtCols.Rows.Count - 1
+                    dt = Manager.GetData("select * from v_report_task where the_check='" & dtRows.Rows(r)("the_check") & "' and thesubsystem='" & dtRows.Rows(r)("thesubsystem") & "' and tinst='" & dtCols.Rows(c)("tinst").ToString() & "' ")
 
-                        'q = "select " & Manager.Base2ID("rawimageid", "id") & ", fname from  rawimage where  link2id ='" & LATIR2.Utils.GUID2String(StID) & "' And link2part='tod_st' and  link1part='tod_system' and  link1id ='" & LATIR2.Utils.GUID2String(_tcc.the_system.ID) & "'  order by changestamp"
+                    If dt.Rows.Count > 0 Then
+                        Dim dtImg As DataTable
+                        dtImg = Manager.GetData("select " & Manager.Base2ID("rawimageid", "id") & ",fname from rawimage where link1id ='" & LATIR2.Utils.GUID2String(New Guid(dt.Rows(0)("TO_TASKCHECKSID").ToString())) & "' And link1part='to_taskchecks' order by changestamp")
 
-                        'dtImg = Manager.GetData(q)
+                        Dim imgString As StringBuilder
+                        imgString = New StringBuilder()
+                        If dtImg.Rows.Count > 0 Then
+                            imgString.AppendLine("<table  border=""1"" style=""word-break:break-all;"">")
+                            imgString.AppendLine("<tr><td colspan=""2"">Прикрепленные фото</td></tr>")
 
-                        'If dtImg.Rows.Count > 0 Then
-                        '    wh.AppendLine("<table  border=""1"" style=""word-break:break-all;"">")
-                        '    wh.AppendLine("<tr>")
-                        '    For l = 0 To dtImg.Rows.Count - 1
-                        '        wh.AppendLine("<td><img src=""" & dtImg.Rows(l)("fname") & """ width=""320"" height=""240"" border=""0""></td>")
-                        '        If Not File.Exists(sPath & "\" & dtImg.Rows(l)("fname")) Then
-                        '            Manager.Provider.SaveFileFromField(Manager.Connection, sPath & "\" & dtImg.Rows(l)("fname"), "rawimage", "image", New Guid(dtImg.Rows(l)("id").ToString))
-                        '        End If
+                            For l = 0 To dtImg.Rows.Count - 1
+                                imgString.AppendLine("<tr><td>" & (l + 1).ToString & "</td><td><img src=""" & dtImg.Rows(l)("fname") & """ width=""320"" height=""240"" border=""0""></td></tr>")
+                                If Not File.Exists(sPath & "\" & dtImg.Rows(l)("fname")) Then
+                                    Manager.Provider.SaveFileFromField(Manager.Connection, sPath & "\" & dtImg.Rows(l)("fname"), "rawimage", "image", New Guid(dtImg.Rows(l)("id").ToString))
+                                End If
 
-                        '    Next
+                            Next
 
-                        '    wh.AppendLine("</tr></table>")
-                        'End If
-
+                            imgString.AppendLine("</table>")
+                        End If
+                        dr(dtCols.Rows(c)("tinst").ToString() + "_IMAGES") = imgString.ToString()
                     End If
-                    wh.AppendLine("</td>")
-                Else
-                    wh.AppendLine("<td><strong>&nbsp;</strong></td>") ' узел
-                End If
-
-                wh.AppendLine("<td><strong>" & _tcc.the_check & "&nbsp;</strong></td>")
-                wh.AppendLine("<td>" & _tcc.normochas.ToString & "&nbsp;</td>") ' нормочас
-                wh.AppendLine("<td>" & _tcc.lowvalue & "&nbsp;</td>") ' минимальное значение 
-                wh.AppendLine("<td>" & _tcc.hivalue & "&nbsp;</td>") ' максимальное значение
-                If _tcc.ValueType IsNot Nothing Then
-                    wh.AppendLine("<td>" & _tcc.ValueType.Brief & "&nbsp;</td>") ' тип значения
-                Else
-                    wh.AppendLine("<td>&nbsp;</td>")
-                End If
 
 
-                For i = 0 To dt.Rows.Count - 1
-                    _tsched = Manager.GetInstanceObject(New Guid(dt.Rows(i)("instanceid").ToString))
-                    _tsi = _tsched.to_scheditems.Item(New Guid(dt.Rows(i)("id").ToString))
-
-
-
-                    dt3 = Manager.GetData("select v_autoto_taskchecks.*,v_autoto_taskinfo.to_taskinfo_themachine_id shedid " +
-                        " From v_autoto_taskchecks Join v_autoto_taskinfo On v_autoto_taskchecks.instanceid=v_autoto_taskinfo.instanceid " +
-                        " where  v_autoto_taskinfo.to_taskinfo_themachine_id='" & LATIR2.Utils.GUID2String(_tsi.ID) & "' and v_autoto_taskchecks.to_taskchecks_checkref_id='" & LATIR2.Utils.GUID2String(_tcc.ID) & "'")
-
-                    If dt3.Rows.Count > 0 Then
-                        Dim l As Integer
-                        _ttask = Manager.GetInstanceObject(New Guid(dt3.Rows(0)("instanceid").ToString))
-
-                        _tchk = _ttask.to_taskchecks.Item(New Guid(dt3.Rows(0)("id").ToString))
-                        If Not _tchk Is Nothing Then
-                            wh.AppendLine("<td>" & _tchk.theValue)
-
-                            If _tchk.to_taskcheckcomment.Count > 0 Then
-
-                                wh.AppendLine("<table  border=""1"" style=""word-break:break-all;"">")
-                                wh.AppendLine("<tr><td colspan=""2"">Коментарии оператора</td></tr>")
-                                Dim _tcm As totask.totask.to_taskcheckcomment
-
-                                _tchk.to_taskcheckcomment.Sort = "the_date"
-                                For l = 1 To _tchk.to_taskcheckcomment.Count
-                                    _tcm = _tchk.to_taskcheckcomment.Item(l)
-                                    wh.AppendLine("<tr><td>" & l.ToString & "</td><td>" & _tcm.Info & "</td></tr>")
-                                Next
-
-                                wh.AppendLine("</table>")
-
+                    Dim sComments As String
+                    sComments = ""
+                    For i = 0 To dt.Rows.Count - 1
+                        If i = 0 Then
+                            dr(dtCols.Rows(c)("tinst").ToString()) = dt.Rows(i)("thevalue")
+                        End If
+                        If dt.Rows(i)("info") & "" <> "" Then
+                            If sComments <> "" Then
+                                sComments += ("; " & vbCrLf)
                             End If
 
+                            sComments += dt.Rows(i)("info")
 
-
-
-                            dtImg = Manager.GetData("select " & Manager.Base2ID("rawimageid", "id") & ",fname from rawimage where link1id ='" & LATIR2.Utils.GUID2String(_tchk.ID) & "' And link1part='to_taskchecks' order by changestamp")
-
-                            If dtImg.Rows.Count > 0 Then
-                                wh.AppendLine("<table  border=""1"" style=""word-break:break-all;"">")
-                                wh.AppendLine("<tr><td colspan=""2"">Прикрепленные фото</td></tr>")
-
-                                For l = 0 To dtImg.Rows.Count - 1
-                                    wh.AppendLine("<tr><td>" & (l + 1).ToString & "</td><td><img src=""" & dtImg.Rows(l)("fname") & """ width=""320"" height=""240"" border=""0""></td></tr>")
-                                    If Not File.Exists(sPath & "\" & dtImg.Rows(l)("fname")) Then
-                                        Manager.Provider.SaveFileFromField(Manager.Connection, sPath & "\" & dtImg.Rows(l)("fname"), "rawimage", "image", New Guid(dtImg.Rows(l)("id").ToString))
-                                    End If
-
-                                Next
-
-                                wh.AppendLine("</table>")
-                            End If
-
-
-
-                            wh.AppendLine("</td>")
-
-
-                        Else
-                            wh.AppendLine("<td>&nbsp;</td>")
+                            sComments += (" (" & dt.Rows(i)("cname") & " " & dt.Rows(i)("cfamilyname") & ") ")
                         End If
 
+                    Next
 
 
-                    End If
+                    dr(dtCols.Rows(c)("tinst").ToString() + "_COMMENTS") = sComments
+
+
 
 
 
 
 
                 Next
-                wh.AppendLine("</tr>")
+
+                dtGr.Rows.Add(dr)
+            End If
+        Next
+
+
+        pb.Visible = False
+
+        gv.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+
+        gv.Columns.Clear()
+
+        gv.DataSource = dtGr
+
+        Dim dc As DataGridViewColumn
+        For Each dc In gv.Columns
+            Select Case dc.DataPropertyName.ToLower
+                'Case "commentator"
+                '    dc.HeaderText = "Комментировал"
+                '    dc.Width = 200
+
+                'Case "thecomment"
+                '    dc.HeaderText = "Комментарий"
+                '    dc.Width = 200
+                'Case "tagtime"
+                '    dc.HeaderText = "Зарегистрировано"
+                '    dc.Width = 200
+                Case "hivalue"
+                    dc.HeaderText = "Верхняя<br/>граница"
+                Case "thevalue"
+                    dc.HeaderText = "Значение"
+                    dc.Width = 50
+                Case "lowvalue"
+                    dc.HeaderText = "Нижняя<br/>граница"
+                    dc.Width = 50
+                Case "vtname"
+                    dc.HeaderText = "Измеряемый<br/>параметр"
+                    dc.Width = 200
+                Case "the_check"
+                    dc.HeaderText = "Проверка"
+                    dc.Width = 200
+                Case "ceh"
+                    dc.HeaderText = "ЦЕХ"
+                    dc.Width = 50
+                Case "invn"
+                    dc.HeaderText = "№"
+                    dc.Width = 50
+                Case "stname"
+                    dc.HeaderText = "Станок"
+                    dc.Width = 200
+                Case "todate"
+                    dc.HeaderText = "Плановая<br/>дата"
+
+                Case "opname"
+                    dc.HeaderText = "Оператор"
+                Case "thesubsystem"
+                    dc.HeaderText = "Cистема"
+                    dc.Width = 200
+                Case "stname"
+                    dc.HeaderText = "Станок"
+                    dc.Width = 200
+                Case Else
+                    For r = 0 To dtCols.Rows.Count - 1
+                        If dc.DataPropertyName.ToLower = dtCols.Rows(r)("tinst").ToString().ToLower() Then
+                            dc.HeaderText = CType(dtCols.Rows(r)("crdate"), Date).ToString("dd/MM/yyyy") & "<br/>результаты"
+                            dc.Width = 100
+                        End If
+
+                        If dc.DataPropertyName.ToLower = dtCols.Rows(r)("tinst").ToString().ToLower() & "_comments" Then
+                            dc.HeaderText = CType(dtCols.Rows(r)("crdate"), Date).ToString("dd/MM/yyyy") & "<br/>комментарии"
+                            dc.Width = 250
+                        End If
+
+                        If dc.DataPropertyName.ToLower = dtCols.Rows(r)("tinst").ToString().ToLower() & "_images" Then
+                            dc.HeaderText = CType(dtCols.Rows(r)("crdate"), Date).ToString("dd/MM/yyyy") & "<br/>фото"
+                            dc.Width = 300
+                        End If
+                    Next
+            End Select
+
+
+
+            dc.SortMode = DataGridViewColumnSortMode.NotSortable
+        Next
+        Return dtGr
+    End Function
+
+
+    Private Sub ChecksToHTML()
+
+
+        Dim i As Integer, j As Integer, k As Integer
+        Dim sPath As String
+        sPath = GetSetting("TOID", "CFG", "PATH2IMG", "")
+
+        Dim dtgr As DataTable
+
+
+        dtgr = LoadData(StID)
+        pb.Value = 0
+        pb.Minimum = 0
+        pb.Maximum = dtgr.Rows.Count
+
+
+        Try
+
+
+
+            wh.AppendLine("<table border=""1"" style=""word-break:break-all;""><tr>")
+
+
+            Dim dc As DataGridViewColumn
+            For Each dc In gv.Columns
+                If dc.Width > 0 Then
+                    wh.AppendLine("<th width='" + (dc.Width * 25).ToString() + "px'>" + dc.HeaderText + "</th>") ' узел
+                Else
+                    wh.AppendLine("<th >" + dc.HeaderText + "</th>") ' узел
+                End If
 
             Next
 
-            pb.Value += 10
+            wh.AppendLine("</tr>")
+
+            For i = 0 To dtgr.Rows.Count - 1
+                pb.Value = i
+                wh.AppendLine("<tr>")
+                For Each dc In gv.Columns
+                    If dtgr.Rows(i)(dc.DataPropertyName) & "" = "" Then
+                        wh.AppendLine("<td>&nbsp;</td>") ' узел
+                    Else
+                        wh.AppendLine("<td>" + dtgr.Rows(i)(dc.DataPropertyName) + "</td>") ' узел
+                    End If
+
+                Next
+                wh.AppendLine("</tr>")
+            Next
 
 
-            wh.AppendLine("</tr></table>")
+
+
+            wh.AppendLine("</table>")
 
         Catch ex As Exception
             Debug.Print(ex.Message)
@@ -326,20 +403,23 @@ Public Class frmReport
 
 
 
-
-
-
-
     Private Function Notabs(ByVal s As String) As String
         Notabs = Replace(Replace(Replace(Replace(Replace(s, "</td><td>", " "), vbCrLf, " "), vbCr, " "), vbLf, " "), "  ", " ")
     End Function
 
-    Private Sub frmReport_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        BuildReport()
-        cmdPrint.Enabled = True
+
+
+    Private Sub cmdPrint_Click(sender As Object, e As EventArgs)
+        wb.ShowPrintPreviewDialog()
     End Sub
 
-    Private Sub cmdPrint_Click(sender As Object, e As EventArgs) Handles cmdPrint.Click
-        wb.ShowPrintPreviewDialog()
+
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub cmdBuildReport_Click(sender As Object, e As EventArgs) Handles cmdBuildReport.Click
+        BuildReport()
     End Sub
 End Class

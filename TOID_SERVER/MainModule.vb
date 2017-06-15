@@ -8,6 +8,7 @@
     Public fOper As frmJournalView
     Public fCard As frmJournalView
     Public fTask As frmJournalView
+    Public fTaskA As frmJournalView
     Public fSched As frmJournalView
     Public fTOd As frmChild
     Public fGnt As frmGant
@@ -142,7 +143,7 @@
                                 tchk.checkref = tcard.to_cardchecks.Item(i)
                                 tchk.the_check = tcard.to_cardchecks.Item(i).the_check
                                 tchk.the_system = tcard.to_cardchecks.Item(i).the_system
-                                ' tchk.thesubsystem = tcard.to_cardchecks.Item(i).thesubsystem
+                                tchk.thesubsystem = tcard.to_cardchecks.Item(i).thesubsystem
                                 tchk.ValueType = tcard.to_cardchecks.Item(i).ValueType
                                 tchk.lowvalue = tcard.to_cardchecks.Item(i).lowvalue
                                 tchk.hivalue = tcard.to_cardchecks.Item(i).hivalue

@@ -12,6 +12,7 @@ Public Class frmJournalView
             Dim jdef As MTZJrnl.MTZJrnl.Application
             jdef = CType(GuiManager.Manager.GetInstanceObject(jID), MTZJrnl.MTZJrnl.Application)
             jv.Attach(GuiManager, jdef, Me)
+
         Else
             jID = Guid.Empty
         End If

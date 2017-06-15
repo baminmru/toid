@@ -76,6 +76,28 @@ Public Class frmAddPhoto
         If videoDevice IsNot Nothing Then
             Button1.Enabled = False
             Button2.Enabled = False
+
+            Dim myVideoCapabilities As VideoCapabilities()
+            myVideoCapabilities = videoDevice.VideoCapabilities()
+
+            Dim maxCapIdx As Integer
+            Dim curIdx As Integer
+            Dim maxRes As Long
+            maxCapIdx = -1
+            maxRes = 0
+            curIdx = -1
+            For Each capabilty As VideoCapabilities In myVideoCapabilities
+                curIdx += 1
+                If maxRes < capabilty.FrameSize.Width * capabilty.FrameSize.Height Then
+                    maxRes = capabilty.FrameSize.Width * capabilty.FrameSize.Height
+                    maxCapIdx = curIdx
+                End If
+            Next
+
+            If maxCapIdx >= 0 Then
+                videoDevice.VideoResolution = myVideoCapabilities(maxCapIdx)
+            End If
+
             VideoSourcePlayer.VideoSource = videoDevice
             VideoSourcePlayer.Start()
             cmdGetPhoto.Enabled = True
@@ -193,11 +215,35 @@ Public Class frmAddPhoto
         If videoDevice IsNot Nothing Then
             Button1.Enabled = False
             Button2.Enabled = False
+
+            Dim myVideoCapabilities As VideoCapabilities()
+            myVideoCapabilities = videoDevice.VideoCapabilities()
+
+            Dim maxCapIdx As Integer
+            Dim curIdx As Integer
+            Dim maxRes As Long
+            maxCapIdx = -1
+            maxRes = 0
+            curIdx = -1
+            For Each capabilty As VideoCapabilities In myVideoCapabilities
+                curIdx += 1
+                If maxRes < capabilty.FrameSize.Width * capabilty.FrameSize.Height Then
+                    maxRes = capabilty.FrameSize.Width * capabilty.FrameSize.Height
+                    maxCapIdx = curIdx
+                End If
+            Next
+
+            If maxCapIdx >= 0 Then
+                videoDevice.VideoResolution = myVideoCapabilities(maxCapIdx)
+            End If
+
+
             VideoSourcePlayer.VideoSource = videoDevice
-            VideoSourcePlayer.Start()
-            cmdGetPhoto.Enabled = True
-            cmdSave.Enabled = True
-        End If
+
+                VideoSourcePlayer.Start()
+                cmdGetPhoto.Enabled = True
+                cmdSave.Enabled = True
+            End If
 
     End Sub
 

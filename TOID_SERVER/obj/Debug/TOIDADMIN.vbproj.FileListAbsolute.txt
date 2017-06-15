@@ -1,4 +1,3 @@
-C:\LATIR4\Build\TOIDADMIN.exe
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.vbprojResolveAssemblyReference.cache
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.frmAdd2Schedule.resources
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.frmCFG.resources
@@ -11,7 +10,10 @@ E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.frmImageToolST.resources
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.frmJournalView.resources
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.frmMDI.resources
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.frmReport.resources
+E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.frmRPT.resources
+E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.frmRPT_SHED.resources
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.frmScale.resources
+E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.frmTaskGraph.resources
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.Resources.resources
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.SplashScreen1.resources
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.vbproj.GenerateResource.Cache
@@ -47,7 +49,6 @@ C:\LATIR4\Build\IMAGES\oper4.jpg
 C:\LATIR4\Build\IMAGES\oper5.jpg
 C:\LATIR4\Build\IMAGES\operrest.jpg
 C:\LATIR4\Build\IMAGES\other.png
-C:\LATIR4\Build\IMAGES\pusel.jpg
 C:\LATIR4\Build\IMAGES\report.jpg
 C:\LATIR4\Build\IMAGES\report2.jpg
 C:\LATIR4\Build\IMAGES\report3.jpg
@@ -56,13 +57,16 @@ C:\LATIR4\Build\IMAGES\todo.jpg
 C:\LATIR4\Build\IMAGES\tools.jpg
 C:\LATIR4\Build\IMAGES\zoom_ok.jpg
 C:\LATIR4\Build\IMAGES\login.png
-C:\LATIR4\Build\latir_sites.XML
+C:\LATIR4\Build\IMAGES\pusel.jpg
 C:\LATIR4\Build\IDMAP.txt
+C:\LATIR4\Build\latir_sites.XML
 C:\LATIR4\Build\WORDS.txt
 C:\LATIR4\Build\IMAGES\nophoto.jpg
 C:\LATIR4\Build\TOIDADMIN.exe.config
+C:\LATIR4\Build\TOIDADMIN.exe
 C:\LATIR4\Build\TOIDADMIN.pdb
 C:\LATIR4\Build\TOIDADMIN.xml
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.exe
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.xml
 E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.pdb
+E:\LATIR4\applications\TOID_SERVER\obj\Debug\TOIDADMIN.frmRPT_ST.resources

@@ -51,6 +51,10 @@
     <ApplicationIcon>wrench.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Open XML SDK\V2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="gPic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\LATIR4\Build\gPic.dll</HintPath>
@@ -78,10 +82,6 @@
     <Reference Include="NetronLight, Version=1.0.4966.29959, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\L2\NetronLight.dll</HintPath>
-    </Reference>
-    <Reference Include="SpreadsheetLight, Version=3.4.4.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SpreadsheetLight.3.4.4\lib\SpreadsheetLight.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -206,12 +206,39 @@
     <Compile Include="frmReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmRPT.Designer.vb">
+      <DependentUpon>frmRPT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRPT_SHED.Designer.vb">
+      <DependentUpon>frmRPT_SHED.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRPT_SHED.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRPT_ST.Designer.vb">
+      <DependentUpon>frmRPT_ST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRPT_ST.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmScale.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmScale.Designer.vb">
       <DependentUpon>frmScale.vb</DependentUpon>
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaskGraph.Designer.vb">
+      <DependentUpon>frmTaskGraph.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaskGraph.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GBGrid.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="MainModule.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -272,14 +299,26 @@
     <EmbeddedResource Include="frmReport.resx">
       <DependentUpon>frmReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRPT.resx">
+      <DependentUpon>frmRPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRPT_SHED.resx">
+      <DependentUpon>frmRPT_SHED.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRPT_ST.resx">
+      <DependentUpon>frmRPT_ST.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmScale.resx">
       <DependentUpon>frmScale.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTaskGraph.resx">
+      <DependentUpon>frmTaskGraph.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
@@ -329,6 +368,9 @@
     <Content Include="IMAGES\exit.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="IMAGES\export-arrow-down_318-30357.jpg" />
+    <None Include="IMAGES\export-icon-29.png" />
+    <None Include="IMAGES\export-icon-29_1.png" />
     <Content Include="IMAGES\gantt1.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -376,6 +418,11 @@
     <None Include="Resources\Print.ico" />
     <None Include="Resources\back.png" />
     <None Include="Resources\back.ico" />
+    <None Include="Resources\IELTS Line Graph.png" />
+    <None Include="Resources\gear-icon-32px.png" />
+    <None Include="Resources\export-arrow-48.jpg" />
+    <None Include="Resources\export-arrow-481.jpg" />
+    <None Include="IMAGES\refresh_48.png" />
     <Content Include="wrench.ico" />
     <None Include="Resources\bullet_home.png" />
     <None Include="Resources\robot1_32.png" />
@@ -464,6 +511,10 @@
       <Project>{3efc65a6-24bd-4b5a-a2d2-de59ca884024}</Project>
       <Name>tocard</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\SpreadSheetLight1\SpreadSheetLight1.csproj">
+      <Project>{d6987fb2-92ed-41c9-8d61-0ce555ae62d7}</Project>
+      <Name>SpreadSheetLight1</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\StdGuiControls\STDLATIRGUIControls.vbproj">
       <Project>{1cb10a3b-3341-4e1d-b5b7-531919d79944}</Project>
       <Name>STDLATIRGUIControls</Name>
@@ -492,7 +543,7 @@
       <Project>{c8dd25bf-d7a6-48f7-b94c-e9fbc33dbe31}</Project>
       <Name>ORAdbInstall</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\bami\projects\CM_2016\CardLoader\CardLoader\CardLoader.vbproj">
+    <ProjectReference Include="d:\bami\projects\CM_2016\CardLoader\CardLoader\CardLoader.vbproj">
       <Project>{878b2ad9-b43b-4713-896c-23846cbbf8e2}</Project>
       <Name>CardLoader</Name>
     </ProjectReference>

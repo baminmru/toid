@@ -28,22 +28,22 @@ Module MainModule
     End Structure
     Private Declare Function SetSystemTime Lib "kernel32" (ByRef lpSystemTime As SYSTEMTIME) As Boolean
 
-    Public Sub ChangeDate(NewDate As Date)
+    'Public Sub ChangeDate(NewDate As Date)
 
-        Dim st As SYSTEMTIME
+    '    Dim st As SYSTEMTIME
 
-        st.wYear = NewDate.Year
-        st.wMonth = NewDate.Month
-        st.wDayOfWeek = NewDate.DayOfWeek
-        st.wDay = NewDate.Day
-        st.wHour = NewDate.Hour
-        st.wMinute = NewDate.Minute
-        st.wSecond = NewDate.Second
-        st.wMilliseconds = NewDate.Millisecond
+    '    st.wYear = NewDate.Year
+    '    st.wMonth = NewDate.Month
+    '    st.wDayOfWeek = NewDate.DayOfWeek
+    '    st.wDay = NewDate.Day
+    '    st.wHour = NewDate.Hour
+    '    st.wMinute = NewDate.Minute
+    '    st.wSecond = NewDate.Second
+    '    st.wMilliseconds = NewDate.Millisecond
 
-        'Set the new time...
-        SetSystemTime(st)
-    End Sub
+    '    'Set the new time...
+    '    SetSystemTime(st)
+    'End Sub
 
     Public Sub ClearOnLogOut()
         UserAsOper = Nothing

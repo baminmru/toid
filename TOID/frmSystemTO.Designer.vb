@@ -26,9 +26,18 @@ Partial Class frmSystemTO
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSystemTO))
         Me.lblText = New System.Windows.Forms.Label()
         Me.panelInfo = New System.Windows.Forms.Panel()
+        Me.btnDelComment = New System.Windows.Forms.Button()
         Me.txtComment = New System.Windows.Forms.TextBox()
+        Me.btnCommentNext = New System.Windows.Forms.Button()
+        Me.btnAddComment = New System.Windows.Forms.Button()
+        Me.btnCommentPrev = New System.Windows.Forms.Button()
         Me.lblCommentHeader = New System.Windows.Forms.Label()
         Me.panelPhoto = New System.Windows.Forms.Panel()
+        Me.btnDelPhoto = New System.Windows.Forms.Button()
+        Me.picPhoto = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnAddPhoto = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.lblPhotoHeader = New System.Windows.Forms.Label()
         Me.lstMeasure = New System.Windows.Forms.ListView()
         Me.LargeImageList = New System.Windows.Forms.ImageList(Me.components)
@@ -46,19 +55,11 @@ Partial Class frmSystemTO
         Me.Button3 = New System.Windows.Forms.Button()
         Me.picIMAGE = New System.Windows.Forms.PictureBox()
         Me.cmdSave = New System.Windows.Forms.Button()
-        Me.btnDelPhoto = New System.Windows.Forms.Button()
-        Me.picPhoto = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnAddPhoto = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.btnDelComment = New System.Windows.Forms.Button()
-        Me.btnCommentNext = New System.Windows.Forms.Button()
-        Me.btnAddComment = New System.Windows.Forms.Button()
-        Me.btnCommentPrev = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.panelInfo.SuspendLayout()
         Me.panelPhoto.SuspendLayout()
-        CType(Me.picIMAGE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picPhoto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picIMAGE, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblText
@@ -68,8 +69,9 @@ Partial Class frmSystemTO
         Me.lblText.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.lblText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblText.Location = New System.Drawing.Point(1, -2)
+        Me.lblText.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblText.Name = "lblText"
-        Me.lblText.Size = New System.Drawing.Size(921, 48)
+        Me.lblText.Size = New System.Drawing.Size(1228, 59)
         Me.lblText.TabIndex = 19
         Me.lblText.Text = "ТО"
         Me.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -84,30 +86,81 @@ Partial Class frmSystemTO
         Me.panelInfo.Controls.Add(Me.btnAddComment)
         Me.panelInfo.Controls.Add(Me.btnCommentPrev)
         Me.panelInfo.Controls.Add(Me.lblCommentHeader)
-        Me.panelInfo.Location = New System.Drawing.Point(192, 342)
+        Me.panelInfo.Location = New System.Drawing.Point(256, 421)
+        Me.panelInfo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.panelInfo.Name = "panelInfo"
-        Me.panelInfo.Size = New System.Drawing.Size(349, 293)
+        Me.panelInfo.Size = New System.Drawing.Size(465, 360)
         Me.panelInfo.TabIndex = 22
+        '
+        'btnDelComment
+        '
+        Me.btnDelComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.btnDelComment.Image = Global.TOID.My.Resources.Resources.comment_delete
+        Me.btnDelComment.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnDelComment.Location = New System.Drawing.Point(231, 41)
+        Me.btnDelComment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDelComment.Name = "btnDelComment"
+        Me.btnDelComment.Size = New System.Drawing.Size(151, 42)
+        Me.btnDelComment.TabIndex = 6
+        Me.btnDelComment.Text = "Удалить"
+        Me.btnDelComment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDelComment.UseVisualStyleBackColor = True
         '
         'txtComment
         '
         Me.txtComment.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.txtComment.Location = New System.Drawing.Point(8, 73)
+        Me.txtComment.Location = New System.Drawing.Point(11, 90)
+        Me.txtComment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtComment.Multiline = True
         Me.txtComment.Name = "txtComment"
         Me.txtComment.ReadOnly = True
         Me.txtComment.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtComment.Size = New System.Drawing.Size(324, 208)
+        Me.txtComment.Size = New System.Drawing.Size(431, 255)
         Me.txtComment.TabIndex = 3
+        '
+        'btnCommentNext
+        '
+        Me.btnCommentNext.Image = Global.TOID.My.Resources.Resources.resultset_next
+        Me.btnCommentNext.Location = New System.Drawing.Point(389, 34)
+        Me.btnCommentNext.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCommentNext.Name = "btnCommentNext"
+        Me.btnCommentNext.Size = New System.Drawing.Size(53, 48)
+        Me.btnCommentNext.TabIndex = 2
+        Me.btnCommentNext.UseVisualStyleBackColor = True
+        '
+        'btnAddComment
+        '
+        Me.btnAddComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.btnAddComment.Image = Global.TOID.My.Resources.Resources.comment_add
+        Me.btnAddComment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAddComment.Location = New System.Drawing.Point(72, 41)
+        Me.btnAddComment.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAddComment.Name = "btnAddComment"
+        Me.btnAddComment.Size = New System.Drawing.Size(140, 42)
+        Me.btnAddComment.TabIndex = 5
+        Me.btnAddComment.Text = "Добавить"
+        Me.btnAddComment.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAddComment.UseVisualStyleBackColor = True
+        '
+        'btnCommentPrev
+        '
+        Me.btnCommentPrev.Image = Global.TOID.My.Resources.Resources.resultset_previous
+        Me.btnCommentPrev.Location = New System.Drawing.Point(11, 34)
+        Me.btnCommentPrev.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCommentPrev.Name = "btnCommentPrev"
+        Me.btnCommentPrev.Size = New System.Drawing.Size(53, 48)
+        Me.btnCommentPrev.TabIndex = 1
+        Me.btnCommentPrev.UseVisualStyleBackColor = True
         '
         'lblCommentHeader
         '
         Me.lblCommentHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lblCommentHeader.Location = New System.Drawing.Point(8, 5)
+        Me.lblCommentHeader.Location = New System.Drawing.Point(11, 6)
+        Me.lblCommentHeader.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCommentHeader.Name = "lblCommentHeader"
-        Me.lblCommentHeader.Size = New System.Drawing.Size(324, 25)
+        Me.lblCommentHeader.Size = New System.Drawing.Size(432, 31)
         Me.lblCommentHeader.TabIndex = 0
         Me.lblCommentHeader.Text = "Комментарии (1 из 2)"
         Me.lblCommentHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -122,17 +175,80 @@ Partial Class frmSystemTO
         Me.panelPhoto.Controls.Add(Me.btnAddPhoto)
         Me.panelPhoto.Controls.Add(Me.Button2)
         Me.panelPhoto.Controls.Add(Me.lblPhotoHeader)
-        Me.panelPhoto.Location = New System.Drawing.Point(547, 342)
+        Me.panelPhoto.Location = New System.Drawing.Point(729, 421)
+        Me.panelPhoto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.panelPhoto.Name = "panelPhoto"
-        Me.panelPhoto.Size = New System.Drawing.Size(375, 293)
+        Me.panelPhoto.Size = New System.Drawing.Size(499, 360)
         Me.panelPhoto.TabIndex = 23
+        '
+        'btnDelPhoto
+        '
+        Me.btnDelPhoto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.btnDelPhoto.Image = Global.TOID.My.Resources.Resources.camera_delete
+        Me.btnDelPhoto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnDelPhoto.Location = New System.Drawing.Point(275, 41)
+        Me.btnDelPhoto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDelPhoto.Name = "btnDelPhoto"
+        Me.btnDelPhoto.Size = New System.Drawing.Size(147, 43)
+        Me.btnDelPhoto.TabIndex = 7
+        Me.btnDelPhoto.Text = "Удалить"
+        Me.btnDelPhoto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDelPhoto.UseVisualStyleBackColor = True
+        '
+        'picPhoto
+        '
+        Me.picPhoto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.picPhoto.Location = New System.Drawing.Point(11, 90)
+        Me.picPhoto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.picPhoto.Name = "picPhoto"
+        Me.picPhoto.Size = New System.Drawing.Size(470, 256)
+        Me.picPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picPhoto.TabIndex = 5
+        Me.picPhoto.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.Image = Global.TOID.My.Resources.Resources.resultset_next
+        Me.Button1.Location = New System.Drawing.Point(429, 34)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(53, 48)
+        Me.Button1.TabIndex = 4
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btnAddPhoto
+        '
+        Me.btnAddPhoto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.btnAddPhoto.Image = Global.TOID.My.Resources.Resources.camera_add
+        Me.btnAddPhoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAddPhoto.Location = New System.Drawing.Point(72, 39)
+        Me.btnAddPhoto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAddPhoto.Name = "btnAddPhoto"
+        Me.btnAddPhoto.Size = New System.Drawing.Size(164, 44)
+        Me.btnAddPhoto.TabIndex = 4
+        Me.btnAddPhoto.Text = "Добавить"
+        Me.btnAddPhoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAddPhoto.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Image = Global.TOID.My.Resources.Resources.resultset_previous
+        Me.Button2.Location = New System.Drawing.Point(11, 34)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(53, 48)
+        Me.Button2.TabIndex = 3
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'lblPhotoHeader
         '
         Me.lblPhotoHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lblPhotoHeader.Location = New System.Drawing.Point(8, 5)
+        Me.lblPhotoHeader.Location = New System.Drawing.Point(11, 6)
+        Me.lblPhotoHeader.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPhotoHeader.Name = "lblPhotoHeader"
-        Me.lblPhotoHeader.Size = New System.Drawing.Size(353, 24)
+        Me.lblPhotoHeader.Size = New System.Drawing.Size(471, 30)
         Me.lblPhotoHeader.TabIndex = 0
         Me.lblPhotoHeader.Text = "Фотографии (1 из 2)"
         Me.lblPhotoHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -150,11 +266,12 @@ Partial Class frmSystemTO
         Me.lstMeasure.HideSelection = False
         Me.lstMeasure.LabelWrap = False
         Me.lstMeasure.LargeImageList = Me.LargeImageList
-        Me.lstMeasure.Location = New System.Drawing.Point(2, 48)
+        Me.lstMeasure.Location = New System.Drawing.Point(3, 59)
+        Me.lstMeasure.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lstMeasure.MultiSelect = False
         Me.lstMeasure.Name = "lstMeasure"
         Me.lstMeasure.ShowItemToolTips = True
-        Me.lstMeasure.Size = New System.Drawing.Size(184, 281)
+        Me.lstMeasure.Size = New System.Drawing.Size(245, 345)
         Me.lstMeasure.SmallImageList = Me.ImageList1
         Me.lstMeasure.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.lstMeasure.StateImageList = Me.ImageList1
@@ -183,9 +300,10 @@ Partial Class frmSystemTO
         '
         Me.lblValueType.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblValueType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lblValueType.Location = New System.Drawing.Point(803, 183)
+        Me.lblValueType.Location = New System.Drawing.Point(1059, 208)
+        Me.lblValueType.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblValueType.Name = "lblValueType"
-        Me.lblValueType.Size = New System.Drawing.Size(107, 74)
+        Me.lblValueType.Size = New System.Drawing.Size(155, 83)
         Me.lblValueType.TabIndex = 30
         '
         'lblComment
@@ -194,9 +312,10 @@ Partial Class frmSystemTO
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblComment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblComment.Location = New System.Drawing.Point(192, 183)
+        Me.lblComment.Location = New System.Drawing.Point(256, 225)
+        Me.lblComment.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblComment.Name = "lblComment"
-        Me.lblComment.Size = New System.Drawing.Size(349, 146)
+        Me.lblComment.Size = New System.Drawing.Size(465, 180)
         Me.lblComment.TabIndex = 29
         Me.lblComment.Text = "Примечание"
         '
@@ -204,9 +323,10 @@ Partial Class frmSystemTO
         '
         Me.lblMax.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblMax.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lblMax.Location = New System.Drawing.Point(848, 298)
+        Me.lblMax.Location = New System.Drawing.Point(1132, 335)
+        Me.lblMax.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMax.Name = "lblMax"
-        Me.lblMax.Size = New System.Drawing.Size(65, 31)
+        Me.lblMax.Size = New System.Drawing.Size(87, 25)
         Me.lblMax.TabIndex = 27
         Me.lblMax.Text = ">= 10"
         '
@@ -214,9 +334,10 @@ Partial Class frmSystemTO
         '
         Me.lblMin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblMin.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lblMin.Location = New System.Drawing.Point(844, 267)
+        Me.lblMin.Location = New System.Drawing.Point(1126, 310)
+        Me.lblMin.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMin.Name = "lblMin"
-        Me.lblMin.Size = New System.Drawing.Size(69, 31)
+        Me.lblMin.Size = New System.Drawing.Size(92, 25)
         Me.lblMin.TabIndex = 26
         Me.lblMin.Text = "5<="
         '
@@ -224,9 +345,10 @@ Partial Class frmSystemTO
         '
         Me.lblCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblCheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.lblCheck.Location = New System.Drawing.Point(192, 102)
+        Me.lblCheck.Location = New System.Drawing.Point(256, 126)
+        Me.lblCheck.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCheck.Name = "lblCheck"
-        Me.lblCheck.Size = New System.Drawing.Size(349, 64)
+        Me.lblCheck.Size = New System.Drawing.Size(465, 79)
         Me.lblCheck.TabIndex = 25
         Me.lblCheck.Text = "Работа механизма зажима поперечины"
         '
@@ -234,8 +356,9 @@ Partial Class frmSystemTO
         '
         Me.CloseButton1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.CloseButton1.Location = New System.Drawing.Point(-1, -2)
+        Me.CloseButton1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CloseButton1.Name = "CloseButton1"
-        Me.CloseButton1.Size = New System.Drawing.Size(49, 48)
+        Me.CloseButton1.Size = New System.Drawing.Size(65, 59)
         Me.CloseButton1.TabIndex = 18
         '
         'txtValue
@@ -244,10 +367,11 @@ Partial Class frmSystemTO
         Me.txtValue.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.txtValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtValue.InputMode = gPic.touchInput.iMode.Number
-        Me.txtValue.InputValue = "NaN"
-        Me.txtValue.Location = New System.Drawing.Point(547, 48)
+        Me.txtValue.InputValue = ""
+        Me.txtValue.Location = New System.Drawing.Point(729, 59)
+        Me.txtValue.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtValue.Name = "txtValue"
-        Me.txtValue.Size = New System.Drawing.Size(241, 296)
+        Me.txtValue.Size = New System.Drawing.Size(321, 364)
         Me.txtValue.TabIndex = 31
         '
         'Label1
@@ -255,9 +379,10 @@ Partial Class frmSystemTO
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label1.Location = New System.Drawing.Point(794, 267)
+        Me.Label1.Location = New System.Drawing.Point(1060, 310)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 20)
+        Me.Label1.Size = New System.Drawing.Size(55, 25)
         Me.Label1.TabIndex = 33
         Me.Label1.Text = "Мин."
         '
@@ -266,9 +391,10 @@ Partial Class frmSystemTO
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.Label2.Location = New System.Drawing.Point(794, 298)
+        Me.Label2.Location = New System.Drawing.Point(1060, 335)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 20)
+        Me.Label2.Size = New System.Drawing.Size(63, 25)
         Me.Label2.TabIndex = 34
         Me.Label2.Text = "Макс."
         '
@@ -277,9 +403,10 @@ Partial Class frmSystemTO
         Me.lblSubsystem.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblSubsystem.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.lblSubsystem.ForeColor = System.Drawing.Color.Blue
-        Me.lblSubsystem.Location = New System.Drawing.Point(192, 51)
+        Me.lblSubsystem.Location = New System.Drawing.Point(256, 63)
+        Me.lblSubsystem.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSubsystem.Name = "lblSubsystem"
-        Me.lblSubsystem.Size = New System.Drawing.Size(347, 43)
+        Me.lblSubsystem.Size = New System.Drawing.Size(463, 53)
         Me.lblSubsystem.TabIndex = 35
         Me.lblSubsystem.Text = "Шпиндель"
         '
@@ -289,9 +416,10 @@ Partial Class frmSystemTO
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Button3.Image = Global.TOID.My.Resources.Resources.cancel
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Button3.Location = New System.Drawing.Point(798, 113)
+        Me.Button3.Location = New System.Drawing.Point(1064, 139)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(120, 53)
+        Me.Button3.Size = New System.Drawing.Size(160, 65)
         Me.Button3.TabIndex = 36
         Me.Button3.Text = "Не проверен"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -302,9 +430,10 @@ Partial Class frmSystemTO
         Me.picIMAGE.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picIMAGE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picIMAGE.Location = New System.Drawing.Point(4, 342)
+        Me.picIMAGE.Location = New System.Drawing.Point(5, 421)
+        Me.picIMAGE.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.picIMAGE.Name = "picIMAGE"
-        Me.picIMAGE.Size = New System.Drawing.Size(181, 293)
+        Me.picIMAGE.Size = New System.Drawing.Size(241, 360)
         Me.picIMAGE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picIMAGE.TabIndex = 32
         Me.picIMAGE.TabStop = False
@@ -315,119 +444,35 @@ Partial Class frmSystemTO
         Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.cmdSave.Image = Global.TOID.My.Resources.Resources.accept
         Me.cmdSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdSave.Location = New System.Drawing.Point(798, 51)
+        Me.cmdSave.Location = New System.Drawing.Point(1064, 63)
+        Me.cmdSave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdSave.Name = "cmdSave"
-        Me.cmdSave.Size = New System.Drawing.Size(120, 53)
+        Me.cmdSave.Size = New System.Drawing.Size(160, 65)
         Me.cmdSave.TabIndex = 28
         Me.cmdSave.Text = "Сохранить"
         Me.cmdSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.cmdSave.UseVisualStyleBackColor = True
         '
-        'btnDelPhoto
+        'Button4
         '
-        Me.btnDelPhoto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.btnDelPhoto.Image = Global.TOID.My.Resources.Resources.camera_delete
-        Me.btnDelPhoto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnDelPhoto.Location = New System.Drawing.Point(206, 33)
-        Me.btnDelPhoto.Name = "btnDelPhoto"
-        Me.btnDelPhoto.Size = New System.Drawing.Size(110, 35)
-        Me.btnDelPhoto.TabIndex = 7
-        Me.btnDelPhoto.Text = "Удалить"
-        Me.btnDelPhoto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDelPhoto.UseVisualStyleBackColor = True
-        '
-        'picPhoto
-        '
-        Me.picPhoto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.picPhoto.Location = New System.Drawing.Point(8, 73)
-        Me.picPhoto.Name = "picPhoto"
-        Me.picPhoto.Size = New System.Drawing.Size(353, 208)
-        Me.picPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picPhoto.TabIndex = 5
-        Me.picPhoto.TabStop = False
-        '
-        'Button1
-        '
-        Me.Button1.Image = Global.TOID.My.Resources.Resources.resultset_next
-        Me.Button1.Location = New System.Drawing.Point(322, 28)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(40, 39)
-        Me.Button1.TabIndex = 4
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'btnAddPhoto
-        '
-        Me.btnAddPhoto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.btnAddPhoto.Image = Global.TOID.My.Resources.Resources.camera_add
-        Me.btnAddPhoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddPhoto.Location = New System.Drawing.Point(54, 32)
-        Me.btnAddPhoto.Name = "btnAddPhoto"
-        Me.btnAddPhoto.Size = New System.Drawing.Size(123, 36)
-        Me.btnAddPhoto.TabIndex = 4
-        Me.btnAddPhoto.Text = "Добавить"
-        Me.btnAddPhoto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAddPhoto.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Image = Global.TOID.My.Resources.Resources.resultset_previous
-        Me.Button2.Location = New System.Drawing.Point(8, 28)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(40, 39)
-        Me.Button2.TabIndex = 3
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'btnDelComment
-        '
-        Me.btnDelComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.btnDelComment.Image = Global.TOID.My.Resources.Resources.comment_delete
-        Me.btnDelComment.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnDelComment.Location = New System.Drawing.Point(173, 33)
-        Me.btnDelComment.Name = "btnDelComment"
-        Me.btnDelComment.Size = New System.Drawing.Size(113, 34)
-        Me.btnDelComment.TabIndex = 6
-        Me.btnDelComment.Text = "Удалить"
-        Me.btnDelComment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDelComment.UseVisualStyleBackColor = True
-        '
-        'btnCommentNext
-        '
-        Me.btnCommentNext.Image = Global.TOID.My.Resources.Resources.resultset_next
-        Me.btnCommentNext.Location = New System.Drawing.Point(292, 28)
-        Me.btnCommentNext.Name = "btnCommentNext"
-        Me.btnCommentNext.Size = New System.Drawing.Size(40, 39)
-        Me.btnCommentNext.TabIndex = 2
-        Me.btnCommentNext.UseVisualStyleBackColor = True
-        '
-        'btnAddComment
-        '
-        Me.btnAddComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.btnAddComment.Image = Global.TOID.My.Resources.Resources.comment_add
-        Me.btnAddComment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddComment.Location = New System.Drawing.Point(54, 33)
-        Me.btnAddComment.Name = "btnAddComment"
-        Me.btnAddComment.Size = New System.Drawing.Size(105, 34)
-        Me.btnAddComment.TabIndex = 5
-        Me.btnAddComment.Text = "Добавить"
-        Me.btnAddComment.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAddComment.UseVisualStyleBackColor = True
-        '
-        'btnCommentPrev
-        '
-        Me.btnCommentPrev.Image = Global.TOID.My.Resources.Resources.resultset_previous
-        Me.btnCommentPrev.Location = New System.Drawing.Point(8, 28)
-        Me.btnCommentPrev.Name = "btnCommentPrev"
-        Me.btnCommentPrev.Size = New System.Drawing.Size(40, 39)
-        Me.btnCommentPrev.TabIndex = 1
-        Me.btnCommentPrev.UseVisualStyleBackColor = True
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button4.Location = New System.Drawing.Point(1059, 364)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(160, 60)
+        Me.Button4.TabIndex = 37
+        Me.Button4.Text = "Не проверен узел"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'frmSystemTO
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(922, 640)
+        Me.ClientSize = New System.Drawing.Size(1229, 788)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.lblSubsystem)
         Me.Controls.Add(Me.Label2)
@@ -446,13 +491,14 @@ Partial Class frmSystemTO
         Me.Controls.Add(Me.CloseButton1)
         Me.Controls.Add(Me.lblText)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmSystemTO"
         Me.Text = "frmSystemTO"
         Me.panelInfo.ResumeLayout(False)
         Me.panelInfo.PerformLayout()
         Me.panelPhoto.ResumeLayout(False)
-        CType(Me.picIMAGE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picPhoto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picIMAGE, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -489,4 +535,5 @@ Partial Class frmSystemTO
     Friend WithEvents Label2 As Label
     Friend WithEvents lblSubsystem As Label
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class

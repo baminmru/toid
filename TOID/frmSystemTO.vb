@@ -487,4 +487,51 @@ Public Class frmSystemTO
             Log(ex.Message & vbCrLf & ex.StackTrace & vbCrLf & ex.Source)
         End Try
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim cInf As String
+        Dim chk2 As totask.totask.to_taskchecks
+        Try
+
+            If Not chk Is Nothing Then
+                If chk.to_taskcheckcomment.Count > 0 Then
+                    chk.thevalue = "не проверен"
+
+                    cinf = chk.to_taskcheckcomment.Item(1).info
+                    chk.Save()
+
+                    For Each l As ListViewItem In lstMeasure.Items
+                        chk2 = tsk.to_taskchecks.Item(l.Tag)
+
+                        If chk2.thevalue = "" Then
+                            chk2.thevalue = "не проверен"
+                            If Not TagID.Equals(Guid.Empty) Then
+                                If chk2.tagid <> LATIR2.Utils.GUID2String(TagID) Then
+                                    chk2.tagid = LATIR2.Utils.GUID2String(TagID)
+                                    chk2.tagtime = DateTime.Now()
+                                End If
+                            End If
+                            chk2.Save()
+                            l.ImageIndex = 2
+                            With CType(chk2.to_taskcheckcomment.Add, totask.totask.to_taskcheckcomment)
+                                .the_operator = GetOper()
+                                .info = cInf
+                                .Save()
+                            End With
+
+                        End If
+                    Next
+
+                    hasSave = True
+
+                Else
+                    MsgBox("Сначала введите комментарий", vbInformation & vbOKOnly, "Отметить как непроверенный")
+
+                End If
+            End If
+
+        Catch ex As Exception
+            Log(ex.Message & vbCrLf & ex.StackTrace & vbCrLf & ex.Source)
+        End Try
+    End Sub
 End Class

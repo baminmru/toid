@@ -20,6 +20,25 @@ Public Class frmNFC
         myresizer = New LATIR2GuiManager.Resizer
         If RegistedTags Is Nothing Then
             RegistedTags = New List(Of SystemComment)
+            Dim stag As DataTable
+            Dim sc As SystemComment
+            Try
+                stag = Manager.GetData("select count(*) cnt from savedtags")
+            Catch ex As Exception
+                Manager.GetData("create table savedtags (st_id varchar(64),tagid varchar(64))")
+            End Try
+
+            stag = Manager.GetData("select * cnt from savedtags")
+            Dim si As Integer
+            For si = 0 To stag.Rows.Count - 1
+                sc = New SystemComment
+                sc.SystemID = New Guid(stag.Rows(si)("st_id").ToString())
+                sc.Comment = stag.Rows(si)("tagid").ToString()
+                SyncLock RegistedTags
+                    RegistedTags.Add(sc)
+                End SyncLock
+            Next
+
         End If
 
 
@@ -114,9 +133,9 @@ Public Class frmNFC
                                     Dim dt As DataTable
                                     Dim ii As Integer
                                     If Manager.Provider.ProviderType = LATIR2.DBProvider.DBProviderType.MYSQL Then
-                                        dt = Manager.GetData("select c.id,s.to_cardinfo_the_machine,c.to_cardchecks_the_system  from v_autoto_cardchecks c join v_autoto_cardinfo s on  s.instanceid=c.instanceid where concat(s.to_cardinfo_the_machine_id,'|',c.to_cardchecks_the_system_id) ='" & .Data & "' ")
+                                        dt = Manager.GetData("select c.id,s.to_cardinfo_the_machine,c.to_cardchecks_the_system  from v_autoto_cardchecks c join v_autoto_cardinfo s on  s.instanceid=c.instanceid and s.to_cardinfo_card_archived_val<>-1 where concat(s.to_cardinfo_the_machine_id,'|',c.to_cardchecks_the_system_id) ='" & .Data & "' ")
                                     ElseIf Manager.Provider.ProviderType = LATIR2.DBProvider.DBProviderType.ORACLE Then
-                                        dt = Manager.GetData("select c.id,s.to_cardinfo_the_machine,c.to_cardchecks_the_system  from v_autoto_cardchecks c join v_autoto_cardinfo s on  s.instanceid=c.instanceid where (s.to_cardinfo_the_machine_id || '|' || c.to_cardchecks_the_system_id) ='" & .Data.ToUpper & "' ")
+                                        dt = Manager.GetData("select c.id,s.to_cardinfo_the_machine,c.to_cardchecks_the_system  from v_autoto_cardchecks c join v_autoto_cardinfo s on  s.instanceid=c.instanceid and s.to_cardinfo_card_archived_val<>-1 where (s.to_cardinfo_the_machine_id || '|' || c.to_cardchecks_the_system_id) ='" & .Data.ToUpper & "' ")
                                     Else
                                         dt = New DataTable
                                     End If
@@ -134,13 +153,26 @@ Public Class frmNFC
 
                                         Manager.GetData("update to_cardchecks set changestamp =" & Manager.Provider.DateFunc() & ", tagid='" & LATIR2.Utils.GUID2String(.ID) & "' where to_cardchecksid=" & Manager.ID2Const(cid))
 
+
+                                        Try
+                                            Dim stag As DataTable
+                                            stag = Manager.GetData("select count(*) cnt from savedtags")
+                                        Catch ex As Exception
+                                            Manager.GetData("create table savedtags (st_id varchar(64),tagid varchar(64))")
+                                        End Try
+
+
                                         '--------------
-                                        sc = New SystemComment
-                                        sc.SystemID = cid
-                                        sc.Comment = .ID.ToString
-                                        SyncLock RegistedTags
-                                            RegistedTags.Add(sc)
-                                        End SyncLock
+                                        If chkNoWrites.Checked = False Then
+                                            sc = New SystemComment
+                                            sc.SystemID = cid
+                                            sc.Comment = .ID.ToString
+                                            SyncLock RegistedTags
+                                                RegistedTags.Add(sc)
+                                                Manager.GetData("insert into savedtags (st_id ,tagid ) values('" & LATIR2.Utils.GUID2String(cid) & "','" & LATIR2.Utils.GUID2String(.ID) & "'")
+                                            End SyncLock
+                                        End If
+
 
                                     Next
                                 End If

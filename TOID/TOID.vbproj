@@ -538,11 +538,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\configurator\Configurator.vbproj">
-      <Project>{0bd8c5cd-f6f5-46fe-993b-6b8eb9c29eb8}</Project>
-      <Name>Configurator</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\bami\projects\CM_2016\gPic\gPic.vbproj">
+    <ProjectReference Include="d:\bami\projects\CM_2016\gPic\gPic.vbproj">
       <Project>{c3853a33-ee99-4c9a-a48b-3340a1ce171e}</Project>
       <Name>gPic</Name>
     </ProjectReference>

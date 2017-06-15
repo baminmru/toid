@@ -26,8 +26,8 @@ Public Class frmMyTask
             Dim q As String
 
             q = "select st.*,b2g(to_taskinfo.instanceid) tid from  v_autotod_st st "
-            q += " join  to_scheditems on  b2g(to_scheditems.themachine) =st.id"
-            q += " join to_taskinfo On to_scheditems.to_scheditemsid =to_taskinfo.themachine  where (to_taskinfo.taskFinished=0 or to_taskinfo.taskFinished is null) and to_taskinfo.oper =" & Manager.ID2Const(opid)
+            q += " join  to_scheditems on  b2g(to_scheditems.themachine) =st.id and to_scheditems.isdone <> -1 "
+            q += " join to_taskinfo On to_scheditems.to_scheditemsid =to_taskinfo.themachine  where (to_taskinfo.taskFinished=0 or to_taskinfo.taskFinished is null) and to_scheditems.todate<=" & Manager.Session.GetProvider().DateFunc() & " and to_taskinfo.oper =" & Manager.ID2Const(opid)
 
             ImageGallery1.TextColor = Color.Orange
 
